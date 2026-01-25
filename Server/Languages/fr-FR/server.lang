@@ -1,0 +1,6 @@
+npcRoles.Cat.name=Chat
+npcRoles.Cat_Pet.name=Chat apprivoisé
+items.Egg_Spawner_Cat_Empty.name=Collier pour chat
+items.Egg_Spawner_Cat_Empty.description=Parfait pour les félins les plus exigeants ! Si tu donnes du poisson cru à un chat, il te laissera peut-être lui mettre ça !
+items.Egg_Spawner_Cat.name=Chat de compagnie
+items.Egg_Spawner_Cat.description=Ton chat de compagnie ! Interagis avec du poisson cru pour le soigner, avec un collier pour chat pour le ramasser, et avec n'importe quoi d'autre/rien pour basculer entre Suivre/Rester.

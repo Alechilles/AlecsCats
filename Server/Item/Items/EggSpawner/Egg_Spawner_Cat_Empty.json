@@ -1,0 +1,37 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Egg_Spawner_Cat_Empty.name"
+  },
+  "Quality": "Rare",
+  "PlayerAnimationsId": "Item",
+  "Interactions": {
+    "Primary": {
+      "Interactions": [
+        {
+          "Type": "ContextualUseNPC",
+          "Context": "CaptureCat",
+          "Effects": {
+            "ItemAnimationId": "Interact",
+            "WaitForAnimationToFinish": true
+          }
+        }
+      ]
+    }
+  },
+  "Model": "Items/Pet Spawners/Collar/Collar.blockymodel",
+  "Texture": "Items/Pet Spawners/Collar/Collar_Texture.png",
+  "Icon": "Icons/ItemsGenerated/Egg_Spawner_Cat_Empty.png",
+  "IconProperties": {
+    "Scale": 0.9,
+    "Rotation": [
+      15,
+      283,
+      325
+    ],
+    "Translation": [
+      -1,
+      8
+    ]
+  },
+  "MaxStack": 1
+}

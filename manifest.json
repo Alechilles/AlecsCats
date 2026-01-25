@@ -1,0 +1,22 @@
+{
+  "Group": "Alechilles",
+  "Name": "Alec's Cats!",
+  "Version": "1.2.0",
+  "Description": "Adds tamable cats to the game!",
+  "Authors": [
+    {
+      "Name": "Alec (Alechilles)",
+      "Email": "",
+      "Url": "https://www.curseforge.com/members/alechilles/projects",
+      "Discord": "alechilles"
+    }
+  ],
+  "Website": "",
+  "ServerVersion": "",
+  "Dependencies": {},
+  "OptionalDependencies": {},
+  "LoadBefore": {},
+  "DisabledByDefault": false,
+  "IncludesAssetPack": false,
+  "SubPlugins": []
+}

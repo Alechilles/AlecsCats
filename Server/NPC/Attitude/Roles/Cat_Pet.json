@@ -1,0 +1,21 @@
+{
+  "Groups": {
+    "Friendly": [
+      "Self",
+      "Passive"
+    ],
+    "Hostile": [
+      "Predators",
+      "PredatorsBig",
+      "Vermin",
+      "Trork",
+      "Goblin",
+      "Void",
+      "Skeleton",
+      "Zombie"
+    ],
+    "Ignore": [
+      "Player"
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+npcRoles.Cat.name=Gato
+npcRoles.Cat_Pet.name=Gato domesticado
+items.Egg_Spawner_Cat_Empty.name=Coleira para gato
+items.Egg_Spawner_Cat_Empty.description=Feita para os felinos mais exigentes! Se você der peixe cru para um gato, talvez ele deixe você colocar isto nele!
+items.Egg_Spawner_Cat.name=Gato de estimação
+items.Egg_Spawner_Cat.description=Seu gato de estimação! Interaja com peixe cru para curá-lo, com uma coleira para gato para recolhê-lo, e com qualquer outra coisa ou nada para alternar entre Seguir e Ficar.

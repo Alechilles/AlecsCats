@@ -1,0 +1,6 @@
+npcRoles.Cat.name=Кот
+npcRoles.Cat_Pet.name=Приручённый кот
+items.Egg_Spawner_Cat_Empty.name=Ошейник для кота
+items.Egg_Spawner_Cat_Empty.description=Подходит для самых утончённых кошек! Если накормить кота сырой рыбой, возможно, он позволит надеть это!
+items.Egg_Spawner_Cat.name=Домашний кот
+items.Egg_Spawner_Cat.description=Твой домашний кот! Взаимодействуй с сырой рыбой, чтобы лечить, с ошейником для кота, чтобы забрать, и чем угодно/ничем, чтобы переключать Следовать/Оставаться.

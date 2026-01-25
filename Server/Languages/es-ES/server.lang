@@ -1,0 +1,6 @@
+npcRoles.Cat.name=Gato
+npcRoles.Cat_Pet.name=Gato domesticado
+items.Egg_Spawner_Cat_Empty.name=Collar para gato
+items.Egg_Spawner_Cat_Empty.description=¡Ideal para los felinos más exquisitos! Si alimentas a un gato con pescado crudo, quizá te deje ponérselo.
+items.Egg_Spawner_Cat.name=Gato mascota
+items.Egg_Spawner_Cat.description=¡Tu gato mascota! Interactúa con Pescado Crudo para curarlo, con un collar para gato para recogerlo, y con cualquier otra cosa/nada para alternar Seguir/Permanecer.

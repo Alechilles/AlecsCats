@@ -1,0 +1,6 @@
+npcRoles.Cat.name=قطة
+npcRoles.Cat_Pet.name=قطة مروّضة
+items.Egg_Spawner_Cat_Empty.name=طوق قطة
+items.Egg_Spawner_Cat_Empty.description=مناسب لأرقى القطط! إذا أطعمت قطة بعض السمك النيء، فقد تسمح لك أن تضعه لها!
+items.Egg_Spawner_Cat.name=قطة أليفة
+items.Egg_Spawner_Cat.description=قطتك الأليفة! تفاعل مع سمك نيء للشفاء، ومع طوق القطة لالتقاطها، ومع أي شيء آخر/لا شيء لتبديل اتبع/ابقَ.

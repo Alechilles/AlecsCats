@@ -1,0 +1,50 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Egg_Spawner_Cat.name"
+  },
+  "Quality": "Rare",
+  "PlayerAnimationsId": "Item",
+  "Interactions": {
+    "Primary": {
+      "Interactions": [
+        {
+          "Type": "SpawnNPC",
+          "EntityId": "Cat_Pet",
+          "SpawnOffset": {
+            "X": 0,
+            "Y": 0.5,
+            "Z": 0
+          },
+          "Next": {
+            "Type": "ModifyInventory",
+            "Operation": "RemoveHeldItem",
+            "ItemToRemove": {
+              "Id": "Egg_Spawner_Cat"
+            },
+            "ItemToAdd": {
+              "Id": "Egg_Spawner_Cat_Empty"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "Model": "NPC/Pets/Cat/Models/Cat/Model.blockymodel",
+  "Texture": "NPC/Pets/Cat/Models/Cat/Texture.png",
+  "Icon": "Icons/ItemsGenerated/Egg_Spawner_Cat.png",
+  "IconProperties": {
+    "Scale": 0.3,
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Translation": [
+      0,
+      -29
+    ]
+  },
+  "MaxStack": 1,
+  "Scale": 1,
+  "Animation": "NPC/Pets/Cat/Animations/Idle.blockyanim"
+}

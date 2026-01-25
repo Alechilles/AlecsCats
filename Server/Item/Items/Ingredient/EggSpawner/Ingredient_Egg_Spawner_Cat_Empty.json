@@ -1,0 +1,39 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Egg_Spawner_Cat_Empty.name",
+    "Description": "server.items.Egg_Spawner_Cat_Empty.description"
+  },
+  "Variant": true,
+  "Icon": "Icons/ItemsGenerated/Egg_Spawner_Cat_Empty.png",
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Ingredient_Leather_Light",
+        "Quantity": 3
+      },
+      {
+        "ItemId": "Ingredient_Bar_Gold",
+        "Quantity": 1
+      }
+    ],
+    "Output": [
+      {
+        "ItemId": "Egg_Spawner_Cat_Empty",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Workbench",
+        "RequiredTierLevel": 2,
+        "Categories": [
+          "Workbench_Tinkering"
+        ]
+      }
+    ],
+    "OutputQuantity": 1,
+    "TimeSeconds": 3
+  },
+  "MaxStack": 1
+}

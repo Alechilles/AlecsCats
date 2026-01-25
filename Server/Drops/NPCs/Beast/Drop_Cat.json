@@ -1,0 +1,21 @@
+{
+  "Container": {
+    "Type": "Multiple",
+    "Containers": [
+      {
+        "Type": "Choice",
+        "Weight": 100,
+        "Containers": [
+          {
+            "Type": "Single",
+            "Item": {
+              "ItemId": "Food_Wildmeat_Raw",
+              "QuantityMin": 1,
+              "QuantityMax": 2
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

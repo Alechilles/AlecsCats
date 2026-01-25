@@ -1,0 +1,95 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Predator",
+  "Modify": {
+    "Appearance": "Missy",
+    "DropList": "Drop_Cat",
+    "MaxHealth": 38,
+    "MaxSpeed": 8,
+    "WanderRadius": 10,
+    "ViewRange": 12,
+    "HearingRange": 8,
+    "AbsoluteDetectionRange": 2,
+    "AlertedRange": 18,
+    "AlertedTime": [
+      2,
+      4
+    ],
+    "MaintainDistanceWhileAlerted": false,
+    "ThreatenDelayRange": [
+      2,
+      2
+    ],
+    "ThreatenAnimation": "Threaten",
+    "FleeIfNotThreatened": true,
+    "FleeRange": 15,
+    "HardLeashDistance": 60,
+    "LeashDistance": 30,
+    "LeashMinPlayerDistance": 7,
+    "LeashTimer": [
+      4,
+      5
+    ],
+    "Attack": "Root_NPC_Cat_Attack",
+    "AttackDistance": 2.5,
+    "CombatBehaviorDistance": 6,
+    "CombatDirectWeight": 0,
+    "CombatStrafeWeight": 10,
+    "CombatBackOffAfterAttack": false,
+    "ChaseRelativeSpeed": 1,
+    "CombatMovingRelativeSpeed": 0.6,
+    "AlwaysSleepAtNight": false,
+    "NightFlavorAnimation": "Howl",
+    "DayTimeNapWeight": 6,
+    "DayTimeNapTimeRange": [
+      10,
+      12
+    ],
+    "TimidDuringDay": true,
+    "IsMemory": true,
+    "MemoriesCategory": "Predator",
+    "_InteractionVars": {
+      "Melee_Start": {
+        "Interactions": [
+          {
+            "Parent": "Cat_Left_Swipe",
+            "$Comment": "Sets animations and delay before hit",
+            "Effects": {
+              "ItemPlayerAnimationsId": "Cat_Default",
+              "ItemAnimationId": "Swing_Left"
+            },
+            "RunTime": 0.167
+          }
+        ]
+      },
+      "Left_Swipe_Damage": {
+        "Interactions": [
+          {
+            "Parent": "Cat_Left_Swipe_Damage",
+            "DamageCalculator": {
+              "Type": "Absolute",
+              "BaseDamage": {
+                "Physical": 17
+              },
+              "RandomPercentageModifier": 0.1
+            },
+            "DamageEffects": {
+              "Knockback": {
+                "Force": 0.5
+              }
+            }
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Cat.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

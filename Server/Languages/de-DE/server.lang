@@ -1,0 +1,6 @@
+npcRoles.Cat.name=Katze
+npcRoles.Cat_Pet.name=Gezähmte Katze
+items.Egg_Spawner_Cat_Empty.name=Katzenhalsband
+items.Egg_Spawner_Cat_Empty.description=Perfekt für die feinsten Stubentiger! Wenn du einer Katze rohen Fisch gibst, lässt sie dich das vielleicht anlegen!
+items.Egg_Spawner_Cat.name=Hauskatze
+items.Egg_Spawner_Cat.description=Deine Hauskatze! Mit rohem Fisch interagieren, um zu heilen; mit einem Katzenhalsband, um sie aufzunehmen; und mit allem anderen/gar nichts, um Folgen/Bleiben umzuschalten.

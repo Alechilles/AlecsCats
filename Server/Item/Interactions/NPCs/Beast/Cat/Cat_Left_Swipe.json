@@ -1,0 +1,49 @@
+{
+  "Type": "Simple",
+  "Effects": {
+    "ItemPlayerAnimationsId": "Cat_Default",
+    "ItemAnimationId": "Left_Swipe"
+  },
+  "$Comment": "Prepare Delay",
+  "RunTime": 0.167,
+  "Next": {
+    "Type": "Selector",
+    "Effects": {
+      "WorldSoundEventId": "SFX_NPC_Unarmed_Swing",
+      "ItemPlayerAnimationsId": "Cat_Default",
+      "ItemAnimationId": "Left_Swipe"
+    },
+    "$Comment": "Length of Combat",
+    "RunTime": 0.167,
+    "Selector": {
+      "Id": "Horizontal",
+      "Direction": "ToLeft",
+      "TestLineOfSight": false,
+      "ExtendTop": 0.5,
+      "ExtendBottom": 0.5,
+      "StartDistance": 0.5,
+      "EndDistance": 2,
+      "Length": 30,
+      "RollOffset": 90,
+      "YawStartOffset": -15
+    },
+    "HitEntity": {
+      "Interactions": [
+        {
+          "Type": "Replace",
+          "DefaultValue": {
+            "Interactions": [
+              "Cat_Left_Swipe_Damage"
+            ]
+          },
+          "Var": "Left_Swipe_Damage"
+        }
+      ]
+    },
+    "Next": {
+      "Type": "Simple",
+      "$Comment": "Pad the interaction length",
+      "RunTime": 0.167
+    }
+  }
+}

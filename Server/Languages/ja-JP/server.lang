@@ -1,0 +1,6 @@
+npcRoles.Cat.name=猫
+npcRoles.Cat_Pet.name=飼いならした猫
+items.Egg_Spawner_Cat_Empty.name=猫の首輪
+items.Egg_Spawner_Cat_Empty.description=最高級のネコにぴったり！生魚を与えれば、これを付けさせてくれるかもしれない。
+items.Egg_Spawner_Cat.name=飼い猫
+items.Egg_Spawner_Cat.description=あなたの飼い猫！生魚とインタラクトすると回復し、猫の首輪で拾い上げ、その他のもの/何もしないでフォロー/待機を切り替え。

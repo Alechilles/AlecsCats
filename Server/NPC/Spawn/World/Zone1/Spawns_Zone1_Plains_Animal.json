@@ -1,0 +1,76 @@
+{
+  "Environments": [
+    "Env_Zone1_Plains"
+  ],
+  "NPCs": [
+    {
+      "Weight": 5,
+      "SpawnBlockSet": "Soil",
+      "Id": "Tetrabird",
+      "Flock": "Group_Tiny"
+    },
+    {
+      "Weight": 5,
+      "SpawnBlockSet": "Soil",
+      "Id": "Deer_Stag",
+      "Flock": "Group_Small"
+    },
+    {
+      "Weight": 5,
+      "SpawnBlockSet": "Soil",
+      "Id": "Mosshorn_Plain",
+      "Flock": "Group_Medium"
+    },
+    {
+      "Weight": 4,
+      "SpawnBlockSet": "Soil",
+      "Id": "Cat",
+      "Flock": "Group_Tiny"
+    },
+    {
+      "Weight": 5,
+      "SpawnBlockSet": "Soil",
+      "Id": "Fox"
+    },
+    {
+      "Weight": 10,
+      "SpawnBlockSet": "Soil",
+      "Id": "Chicken",
+      "Flock": "Group_Small"
+    },
+    {
+      "Weight": 10,
+      "SpawnBlockSet": "Soil",
+      "Id": "Cow",
+      "Flock": "Group_Small"
+    },
+    {
+      "Weight": 5,
+      "SpawnBlockSet": "Soil",
+      "Id": "Horse",
+      "Flock": "Group_Medium"
+    },
+    {
+      "Weight": 10,
+      "SpawnBlockSet": "Soil",
+      "Id": "Pig",
+      "Flock": "Group_Small"
+    },
+    {
+      "Weight": 5,
+      "SpawnBlockSet": "Soil",
+      "Id": "Rabbit",
+      "Flock": "One_Or_Two"
+    },
+    {
+      "Weight": 10,
+      "SpawnBlockSet": "Soil",
+      "Id": "Sheep",
+      "Flock": "Group_Small"
+    }
+  ],
+  "DayTimeRange": [
+    6,
+    18
+  ]
+}

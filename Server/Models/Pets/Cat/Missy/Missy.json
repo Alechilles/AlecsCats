@@ -1,0 +1,149 @@
+{
+  "Model": "NPC/Pets/Cat/Models/Missy/Model.blockymodel",
+  "Texture": "NPC/Pets/Cat/Models/Missy/Texture.png",
+  "EyeHeight": 0.7,
+  "HitBox": {
+    "Max": {
+      "X": 0.3,
+      "Y": 0.9,
+      "Z": 0.3
+    },
+    "Min": {
+      "X": -0.3,
+      "Y": 0,
+      "Z": -0.3
+    }
+  },
+  "AnimationSets": {
+    "Idle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pets/Cat/Animations/Idle.blockyanim",
+          "Weight": 1
+        },
+        {
+          "Animation": "NPC/Pets/Cat/Animations/Idles/Lick.blockyanim",
+          "Weight": 0.2
+        },
+        {
+          "Animation": "NPC/Pets/Cat/Animations/Idles/Stretch.blockyanim",
+          "Weight": 0.2,
+          "Speed": 0.5
+        }
+      ]
+    },
+    "Walk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pets/Cat/Animations/Walk.blockyanim"
+        }
+      ]
+    },
+    "WalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pets/Cat/Animations/Walk_Backward.blockyanim"
+        }
+      ]
+    },
+    "Run": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pets/Cat/Animations/Run.blockyanim"
+        }
+      ]
+    },
+    "Jump": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pets/Cat/Animations/Jump.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false,
+          "Speed": 0.8
+        }
+      ]
+    },
+    "JumpWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pets/Cat/Animations/Jump_Far.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false,
+          "Speed": 0.8
+        }
+      ]
+    },
+    "JumpRun": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pets/Cat/Animations/Jump_Far.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false,
+          "Speed": 0.8
+        }
+      ]
+    },
+    "Alerted": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pets/Cat/Animations/Alerted.blockyanim",
+          "BlendingDuration": 0.1
+        }
+      ]
+    },
+    "Hurt": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pets/Cat/Animations/Hurt.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false
+        }
+      ]
+    },
+    "Death": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pets/Cat/Animations/Death.blockyanim",
+          "Looping": false
+        }
+      ]
+    },
+    "Sleep": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pets/Cat/Animations/Sleep.blockyanim"
+        }
+      ]
+    },
+    "Search": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pets/Cat/Animations/Search.blockyanim"
+        }
+      ]
+    },
+    "LeftSwipe": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pets/Cat/Animations/Attacks/Left_Swipe.blockyanim"
+        }
+      ]
+    },
+    "Laydown": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pets/Cat/Animations/Laydown.blockyanim",
+          "Looping": false
+        }
+      ]
+    },
+    "Wake": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pets/Cat/Animations/Wake.blockyanim",
+          "Looping": false
+        }
+      ]
+    }
+  }
+}

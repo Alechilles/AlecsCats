@@ -1,0 +1,6 @@
+npcRoles.Cat.name=Cat
+npcRoles.Cat_Pet.name=Tamed Cat
+items.Egg_Spawner_Cat_Empty.name=Cat Collar
+items.Egg_Spawner_Cat_Empty.description=Fit for the finest felines! If you feed a cat some raw fish, it might let you put this on!
+items.Egg_Spawner_Cat.name=Pet Cat
+items.Egg_Spawner_Cat.description=Your pet cat! Interact with Raw Fish to heal, a Cat Collar to pick up, and anything else/nothing to toggle Follow/Stay.

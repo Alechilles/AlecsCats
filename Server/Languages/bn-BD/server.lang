@@ -1,0 +1,6 @@
+npcRoles.Cat.name=বিড়াল
+npcRoles.Cat_Pet.name=পোষ মানানো বিড়াল
+items.Egg_Spawner_Cat_Empty.name=বিড়ালের কলার
+items.Egg_Spawner_Cat_Empty.description=সেরা সব বিড়ালের জন্য মানানসই! আপনি যদি কোনো বিড়ালকে কাঁচা মাছ খাওয়ান, তাহলে হয়তো সে আপনাকে এটা পরাতে দেবে!
+items.Egg_Spawner_Cat.name=পোষা বিড়াল
+items.Egg_Spawner_Cat.description=আপনার পোষা বিড়াল! কাঁচা মাছ দিয়ে ইন্টারঅ্যাক্ট করলে সুস্থ হবে, বিড়ালের কলার দিয়ে তুলে নিন, আর অন্য কিছু/কিছু নয় দিয়ে অনুসরণ/থাকা টগল করুন।

@@ -1,0 +1,13 @@
+{
+  "Model": "NPC_Spawn_Marker",
+  "NPCs": [
+    {
+      "Name": "Cat",
+      "Weight": 100,
+      "RealtimeRespawnTime": 420
+    }
+  ],
+  "ExclusionRadius": 20,
+  "RealtimeRespawn": true,
+  "MaxDropHeight": 4
+}

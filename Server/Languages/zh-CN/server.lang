@@ -1,0 +1,6 @@
+npcRoles.Cat.name=猫
+npcRoles.Cat_Pet.name=驯服的猫
+items.Egg_Spawner_Cat_Empty.name=猫项圈
+items.Egg_Spawner_Cat_Empty.description=为最挑剔的猫咪准备！如果你给猫喂点生鱼，它可能会让你给它戴上这个！
+items.Egg_Spawner_Cat.name=宠物猫
+items.Egg_Spawner_Cat.description=你的宠物猫！用生鱼互动来治疗，用猫项圈来收起，用其他任何东西/空手来切换跟随/停留。
