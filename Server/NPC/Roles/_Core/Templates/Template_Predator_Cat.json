@@ -3216,34 +3216,69 @@
     "Instructions": [
       {
         "Continue": true,
-        "Sensor": { "Type": "Any" },
+        "Sensor": {
+          "Type": "Any"
+        },
         "Actions": [
-          { "Type": "SetInteractable", "Interactable": true }
+          {
+            "Type": "SetInteractable",
+            "Interactable": true
+          }
         ]
       },
       {
-        "Sensor": { "Type": "HasInteracted" },
+        "Sensor": {
+          "Type": "HasInteracted"
+        },
         "Instructions": [
           {
             "Continue": true,
-            "Sensor": { "Type": "Any" },
+            "Sensor": {
+              "Type": "Any"
+            },
             "Actions": [
-              { "Type": "LockOnInteractionTarget" }
+              {
+                "Type": "LockOnInteractionTarget"
+              }
             ]
           },
           {
             "Sensor": {
               "Type": "And",
               "Sensors": [
-                      { "Type": "State", "State": "Pet"},
-                      { "Type": "Target","TargetSlot": "LockedTarget", "Filters": [
-                       { "Type": "ItemInHand", "Items": [ "Egg_Spawner_Cat_Empty" ] }]
-                      }
-                    ]},
+                {
+                  "Type": "State",
+                  "State": "Pet"
+                },
+                {
+                  "Type": "Target",
+                  "TargetSlot": "LockedTarget",
+                  "Filters": [
+                    {
+                      "Type": "ItemInHand",
+                      "Items": [
+                        "Egg_Spawner_Cat_Empty"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
             "Actions": [
-              { "Type": "Despawn" },
-              { "Type": "Inventory", "UseTarget": true, "Operation": "RemoveHeldItem"},
-              { "Type": "Inventory", "UseTarget":true, "Operation": "Add", "Item": "Egg_Spawner_Cat"}
+              {
+                "Type": "Despawn"
+              },
+              {
+                "Type": "Inventory",
+                "UseTarget": true,
+                "Operation": "RemoveHeldItem"
+              },
+              {
+                "Type": "Inventory",
+                "UseTarget": true,
+                "Operation": "Add",
+                "Item": "Egg_Spawner_Cat"
+              }
             ]
           },
           {
@@ -3255,33 +3290,76 @@
                 "Sensor": {
                   "Type": "And",
                   "Sensors": [
-                    { "Type": "State", "State": "Pet.Hold" }
+                    {
+                      "Type": "State",
+                      "State": "Pet.Hold"
+                    }
                   ]
                 },
                 "Actions": [
-                  { "Type": "State", "State": "Pet.Greet" }
+                  {
+                    "Type": "State",
+                    "State": "Pet.Greet"
+                  }
                 ]
               },
               {
                 "Sensor": {
                   "Type": "And",
                   "Sensors": [
-                    { "Type": "Not", "Sensor": { "Type": "State", "State": "Pet"} },
-                    { "Type": "Target","TargetSlot": "LockedTarget", "Filters": [
-                      { "Type": "ItemInHand", "Items": [ "Food_Fish_Raw" ] }]
+                    {
+                      "Type": "Not",
+                      "Sensor": {
+                        "Type": "State",
+                        "State": "Pet"
+                      }
+                    },
+                    {
+                      "Type": "Target",
+                      "TargetSlot": "LockedTarget",
+                      "Filters": [
+                        {
+                          "Type": "ItemInHand",
+                          "Items": [
+                            "Food_Fish_Raw"
+                          ]
+                        }
+                      ]
                     }
                   ]
                 },
                 "Actions": [
-                  { "Type": "State", "State": "Pet.Hold" },
-                  { "Type": "Inventory", "UseTarget": true, "Operation": "Remove", "Item": "Food_Fish_Raw" },
-                  { "Type": "SpawnParticles", "Offset": [ 0, 0.8, 0 ], "ParticleSystem": "Hearts" }
+                  {
+                    "Type": "State",
+                    "State": "Pet.Hold"
+                  },
+                  {
+                    "Type": "Inventory",
+                    "UseTarget": true,
+                    "Operation": "Remove",
+                    "Item": "Food_Fish_Raw"
+                  },
+                  {
+                    "Type": "SpawnParticles",
+                    "Offset": [
+                      0,
+                      0.8,
+                      0
+                    ],
+                    "ParticleSystem": "Hearts"
+                  }
                 ]
               },
               {
-                "Sensor": { "Type": "State", "State": "Pet"},
+                "Sensor": {
+                  "Type": "State",
+                  "State": "Pet"
+                },
                 "Actions": [
-                  { "Type": "State", "State": "Pet.Hold" }
+                  {
+                    "Type": "State",
+                    "State": "Pet.Hold"
+                  }
                 ]
               }
             ]

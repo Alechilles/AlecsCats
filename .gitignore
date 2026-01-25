@@ -1,0 +1,4 @@
+Server/NPC/Roles/_Core/Components/Component_Sensor_Standard_Detection.json
+Server/NPC/Roles/_Core/Components/Component_Sensor_Lost_Target_Detection.json
+Server/NPC/Roles/_Core/Components/Component_Instruction_Intelligent_Chase.json
+Server/NPC/Roles/_Core/Components/Component_Instruction_Combat_Back_Off.json

@@ -1,6 +1,5 @@
 {
   "StartState": "Hold",
-  "Debug": "DisplayState",
   "DefaultSubState": "Default",
   "Type": "Abstract",
   "Invulnerable": false,
@@ -73,11 +72,11 @@
       "Description": "Relative speed to use during combat specific movement (e.g. to achieve slower strafing)."
     },
     "Attack": {
-      "Value": "Root_NPC_Cat_Attack",
+      "Value": "Root_NPC_Attack_Melee",
       "Description": "The attack to use."
     },
     "AttackDistance": {
-      "Value": 2.5,
+      "Value": 3,
       "Description": "The distance to attack from."
     },
     "DayTimePeriod": {
@@ -317,7 +316,7 @@
       "Description": "How long the NPC must be more than the minimum distance form the player and too far from leash before giving up."
     },
     "HardLeashDistance": {
-      "Value": 60,
+      "Value": 30,
       "Description": "An absolute maximum from the the leash position the NPC can go before turning back."
     },
     "LeashRelativeSpeed": {
@@ -357,7 +356,7 @@
       "Description": "Overrides the memory name if set"
     },
     "BreathesInWater": {
-      "Value": false,
+      "Value": true,
       "Description": "Whether this NPC can breathe underwater."
     },
     "NameTranslationKey": {
@@ -494,20 +493,7 @@
     }
   ],
   "InteractionVars": {
-    "Melee_Start": {
-      "Interactions": [
-        {
-          "Parent": "Cat_Left_Swipe",
-          "$Comment": "Sets animations and delay before hit",
-          "Effects": {
-            "ItemPlayerAnimationsId": "Cat_Default",
-            "ItemAnimationId": "Swing_Left"
-          },
-          "RunTime": 0.167
-        }
-      ]
-    },
-    "Left_Swipe_Damage": {
+    "Melee_Damage": {
       "Interactions": [
         {
           "$Comment": "Config for a successful melee hit, default values for Effects and HitShape are not overwritten here, see each NPC_ file",
@@ -579,7 +565,8 @@
                   "Sensor": {
                     "Type": "Player",
                     "Range": 15,
-                    "LockOnTarget": true
+                    "LockOnTarget": true,
+                    "LockedTargetSlot": "MasterTarget"
                   },
                   "BodyMotion": {
                     "Type": "Seek",
@@ -590,7 +577,8 @@
                 },
                 {
                   "Sensor": {
-                    "Type": "Target"
+                    "Type": "Target",
+                    "TargetSlot": "MasterTarget"
                   },
                   "BodyMotion": {
                     "Type": "Teleport"
@@ -625,7 +613,8 @@
                 },
                 {
                   "Sensor": {
-                    "Type": "Target"
+                    "Type": "Target",
+                    "TargetSlot": "MasterTarget"
                   },
                   "BodyMotion": {
                     "Type": "MaintainDistance",
@@ -692,7 +681,8 @@
                 },
                 {
                   "Sensor": {
-                    "Type": "Target"
+                    "Type": "Target",
+                    "TargetSlot": "MasterTarget"
                   },
                   "BodyMotion": {
                     "Type": "MaintainDistance",
@@ -756,7 +746,8 @@
                 },
                 {
                   "Sensor": {
-                    "Type": "Target"
+                    "Type": "Target",
+                    "TargetSlot": "MasterTarget"
                   },
                   "BodyMotion": {
                     "Type": "MaintainDistance",
@@ -820,7 +811,8 @@
                 },
                 {
                   "Sensor": {
-                    "Type": "Target"
+                    "Type": "Target",
+                    "TargetSlot": "MasterTarget"
                   },
                   "BodyMotion": {
                     "Type": "MaintainDistance",
@@ -957,24 +949,37 @@
               "$Comment": "Engage nearby mobs (exclude self) while defending.",
               "Continue": true,
               "Sensor": {
-                "Type": "Mob",
-                "Range": {
-                  "Compute": "AlertedRange"
-                },
-                "LockOnTarget": true,
-                "LockedTargetSlot": "LockedTarget",
-                "Filters": [
+                "Type": "And",
+                "Sensors": [
                   {
-                    "Type": "Attitude",
-                    "Attitudes": [
-                      "Hostile"
-                    ]
+                    "Type": "Not",
+                    "Sensor": {
+                      "Type": "Target",
+                      "TargetSlot": "LockedTarget"
+                    }
                   },
                   {
-                    "Type": "NPCGroup",
-                    "ExcludeGroups": [
-                      "Self"
-                    ]
+                    "Reference": "Component_Sensor_Standard_Detection",
+                    "Modify": {
+                      "ViewRange": {
+                        "Compute": "AlertedRange"
+                      },
+                      "ViewSector": {
+                        "Compute": "ViewSector"
+                      },
+                      "HearingRange": {
+                        "Compute": "HearingRange"
+                      },
+                      "AbsoluteDetectionRange": {
+                        "Compute": "AbsoluteDetectionRange"
+                      },
+                      "Attitudes": [
+                        "Hostile"
+                      ],
+                      "ExcludeGroups": [
+                        "Self"
+                      ]
+                    }
                   }
                 ]
               },
@@ -982,6 +987,27 @@
                 {
                   "Type": "State",
                   "State": ".Combat"
+                }
+              ]
+            },
+            {
+              "$Comment": "Debug: show when combat target is assigned",
+              "Enabled": false,
+              "Continue": true,
+              "Sensor": {
+                "Type": "Target",
+                "TargetSlot": "LockedTarget",
+                "Once": true
+              },
+              "Actions": [
+                {
+                  "Type": "SpawnParticles",
+                  "ParticleSystem": "Follow",
+                  "Offset": [
+                    0,
+                    0.8,
+                    0
+                  ]
                 }
               ]
             },
@@ -1004,7 +1030,8 @@
                   {
                     "Type": "Player",
                     "Range": 30,
-                    "LockOnTarget": true
+                    "LockOnTarget": true,
+                    "LockedTargetSlot": "MasterTarget"
                   }
                 ]
               },
@@ -1039,7 +1066,8 @@
                   "Sensor": {
                     "Type": "Player",
                     "Range": 30,
-                    "LockOnTarget": true
+                    "LockOnTarget": true,
+                    "LockedTargetSlot": "MasterTarget"
                   },
                   "BodyMotion": {
                     "Type": "Seek",
@@ -1052,19 +1080,12 @@
                 {
                   "Continue": true,
                   "Sensor": {
-                    "Type": "Target"
+                    "Type": "Target",
+                    "TargetSlot": "MasterTarget"
                   },
                   "BodyMotion": {
                     "Type": "Teleport"
                   }
-                },
-                {
-                  "Actions": [
-                    {
-                      "Type": "DisplayName",
-                      "DisplayName": "Following player!"
-                    }
-                  ]
                 }
               ]
             },
@@ -1076,62 +1097,59 @@
               },
               "Instructions": [
                 {
-                  "$Comment": "Continuously lock a nearby hostile target while in combat.",
+                  "$Comment": "Chase until in attack range.",
                   "Continue": true,
                   "Sensor": {
-                    "Type": "Mob",
-                    "Range": {
-                      "Compute": "AlertedRange"
-                    },
-                    "LockOnTarget": true,
-                    "LockedTargetSlot": "LockedTarget",
-                    "Filters": [
+                    "Type": "And",
+                    "Sensors": [
                       {
-                        "Type": "Attitude",
-                        "Attitudes": [
-                          "Hostile"
-                        ]
+                        "Type": "Target",
+                        "TargetSlot": "LockedTarget"
                       },
                       {
-                        "Type": "NPCGroup",
-                        "ExcludeGroups": [
-                          "Self"
-                        ]
+                        "Type": "Not",
+                        "Sensor": {
+                          "Type": "Target",
+                          "TargetSlot": "LockedTarget",
+                          "Range": {
+                            "Compute": "AttackDistance"
+                          },
+                          "Filters": [
+                            {
+                              "Type": "LineOfSight"
+                            }
+                          ]
+                        }
                       }
                     ]
-                  }
-                },
-                {
-                  "$Comment": "Close distance to the hostile target.",
-                  "Continue": true,
-                  "Sensor": {
-                    "Type": "Target",
-                    "TargetSlot": "LockedTarget",
-                    "Filters": [
-                      {
-                        "Type": "Attitude",
-                        "Attitudes": [
-                          "Hostile"
-                        ]
-                      }
-                    ],
-                    "Range": {
-                      "Compute": "HardLeashDistance"
-                    }
                   },
-                  "BodyMotion": {
-                    "Type": "Seek",
-                    "UsePathfinder": true,
-                    "RelativeSpeed": {
-                      "Compute": "ChaseRelativeSpeed"
-                    },
-                    "SlowDownDistance": {
-                      "Compute": "AttackDistance"
-                    },
-                    "StopDistance": {
-                      "Compute": "AttackDistance * 0.6"
+                  "Instructions": [
+                    {
+                      "Reference": "Component_Instruction_Intelligent_Chase",
+                      "Modify": {
+                        "_ExportStates": [
+                          "Defend.Default",
+                          "Defend.Default",
+                          "Defend.Default"
+                        ],
+                        "ViewRange": {
+                          "Compute": "AlertedRange"
+                        },
+                        "HearingRange": {
+                          "Compute": "HearingRange"
+                        },
+                        "RelativeSpeed": {
+                          "Compute": "ChaseRelativeSpeed"
+                        },
+                        "SlowDownDistance": {
+                          "Compute": "AttackDistance"
+                        },
+                        "StopDistance": {
+                          "Compute": "AttackDistance * 0.6"
+                        }
+                      }
                     }
-                  }
+                  ]
                 },
                 {
                   "$Comment": "Attack when in range with line of sight.",
@@ -1154,17 +1172,8 @@
                       }
                     ]
                   },
-                  "ActionsBlocking": true,
+                  "ActionsBlocking": false,
                   "Actions": [
-                    {
-                      "Type": "SpawnParticles",
-                      "Offset": [
-                        0,
-                        0.8,
-                        0
-                      ],
-                      "ParticleSystem": "Alerted"
-                    },
                     {
                       "Type": "Timeout",
                       "Delay": {
@@ -1185,6 +1194,20 @@
                       "Delay": {
                         "Compute": "CombatAttackPostDelay"
                       }
+                    },
+                    {
+                      "Type": "TimerStart",
+                      "Name": "Combat_Back_Off",
+                      "StartValueRange": {
+                        "Compute": "CombatBackOffDurationRange"
+                      },
+                      "RestartValueRange": {
+                        "Compute": "CombatBackOffDurationRange"
+                      }
+                    },
+                    {
+                      "Type": "TimerRestart",
+                      "Name": "Combat_Back_Off"
                     }
                   ],
                   "HeadMotion": {
@@ -1195,42 +1218,36 @@
                   }
                 },
                 {
-                  "$Comment": "Otherwise, chase/strafe to stay near target.",
-                  "Continue": true,
-                  "Sensor": {
-                    "Type": "Target",
-                    "TargetSlot": "LockedTarget",
-                    "Filters": [
-                      {
-                        "Type": "Attitude",
-                        "Attitudes": [
-                          "Hostile"
-                        ]
-                      }
-                    ]
-                  },
-                  "BodyMotion": {
-                    "Type": "MaintainDistance",
-                    "DesiredDistanceRange": [
-                      1.5,
-                      2.5
-                    ],
-                    "MoveThreshold": 0.2,
-                    "StrafingDurationRange": {
+                  "Reference": "Component_Instruction_Combat_Back_Off",
+                  "Modify": {
+                    "TimerName": "Combat_Back_Off",
+                    "CombatBackOffAfterAttack": {
+                      "Compute": "CombatBackOffAfterAttack"
+                    },
+                    "CombatBackOffDistanceRange": {
+                      "Compute": "CombatBackOffDistanceRange"
+                    },
+                    "CombatBackOffDurationRange": {
+                      "Compute": "CombatBackOffDurationRange"
+                    },
+                    "BlockAbility": {
+                      "Compute": "BlockAbility"
+                    },
+                    "BlockProbability": {
+                      "Compute": "BlockProbability"
+                    },
+                    "CombatStrafingDurationRange": {
                       "Compute": "CombatStrafingDurationRange"
                     },
-                    "StrafingFrequencyRange": {
+                    "CombatStrafingFrequencyRange": {
                       "Compute": "CombatStrafingFrequencyRange"
                     },
-                    "RelativeForwardsSpeed": {
-                      "Compute": "ChaseRelativeSpeed"
+                    "CombatBehaviorDistance": {
+                      "Compute": "CombatBehaviorDistance"
                     },
-                    "RelativeBackwardsSpeed": {
+                    "CombatMovingRelativeSpeed": {
                       "Compute": "CombatMovingRelativeSpeed"
                     }
-                  },
-                  "HeadMotion": {
-                    "Type": "Watch"
                   }
                 },
                 {
@@ -1238,19 +1255,39 @@
                   "Sensor": {
                     "Type": "Not",
                     "Sensor": {
-                      "Type": "Target",
-                      "TargetSlot": "LockedTarget",
-                      "Filters": [
+                      "Type": "And",
+                      "Sensors": [
                         {
-                          "Type": "Attitude",
-                          "Attitudes": [
-                            "Hostile"
+                          "Reference": "Component_Sensor_Lost_Target_Detection",
+                          "Modify": {
+                            "ViewRange": {
+                              "Compute": "AlertedRange"
+                            },
+                            "ViewSector": {
+                              "Compute": "ViewSector"
+                            },
+                            "HearingRange": {
+                              "Compute": "HearingRange"
+                            },
+                            "AbsoluteDetectionRange": {
+                              "Compute": "AbsoluteDetectionRange"
+                            },
+                            "TargetSlot": "LockedTarget"
+                          }
+                        },
+                        {
+                          "Type": "Target",
+                          "TargetSlot": "LockedTarget",
+                          "Filters": [
+                            {
+                              "Type": "Attitude",
+                              "Attitudes": [
+                                "Hostile"
+                              ]
+                            }
                           ]
                         }
-                      ],
-                      "Range": {
-                        "Compute": "AlertedRange"
-                      }
+                      ]
                     }
                   },
                   "Actions": [
@@ -1615,14 +1652,15 @@
             },
             "Actions": [
               {
-                "Type": "LockOnInteractionTarget"
+                "Type": "LockOnInteractionTarget",
+                "TargetSlot": "MasterTarget"
               }
             ]
           },
           {
             "Sensor": {
               "Type": "Target",
-              "TargetSlot": "LockedTarget",
+              "TargetSlot": "MasterTarget",
               "Filters": [
                 {
                   "Type": "ItemInHand",
@@ -1663,7 +1701,7 @@
             "$Comment": "If player is holding raw fish, remove it from their inventory and heal the cat.",
             "Sensor": {
               "Type": "Target",
-              "TargetSlot": "LockedTarget",
+              "TargetSlot": "MasterTarget",
               "Filters": [
                 {
                   "Type": "ItemInHand",
@@ -1735,7 +1773,8 @@
             },
             "Actions": [
               {
-                "Type": "LockOnInteractionTarget"
+                "Type": "LockOnInteractionTarget",
+                "TargetSlot": "MasterTarget"
               },
               {
                 "Type": "State",
@@ -1762,7 +1801,8 @@
                 },
                 "Actions": [
                   {
-                    "Type": "LockOnInteractionTarget"
+                    "Type": "LockOnInteractionTarget",
+                    "TargetSlot": "MasterTarget"
                   },
                   {
                     "Type": "State",
