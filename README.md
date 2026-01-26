@@ -1,3 +1,5 @@
+Please give my [GitHub repo](https://github.com/Alechilles/AlecsCats) a star if you enjoy the mod and/or found my mod helpful as a reference when building your own! <3
+
 ## Summary:
 
 This mod makes use of the existing but unused Cat model and animations in the Hytale assets. Starting with the default Fox behavior, I've expanded it significantly with my own taming system and textures of my own cats.
