@@ -383,7 +383,7 @@
       "Description": "Defines if the NPC is a memory"
     },
     "MemoriesCategory": {
-      "Value": "Mammal",
+      "Value": "Predators",
       "Description": "Defines the category of the memory"
     },
     "MemoriesNameOverride": {
