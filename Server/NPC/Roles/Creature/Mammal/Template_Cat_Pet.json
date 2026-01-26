@@ -93,7 +93,7 @@
     "DayTimeNapTimeRange": {
       "Value": [
         10,
-        12
+        30
       ],
       "Description": "How long a daytime nap should last."
     },
@@ -117,13 +117,13 @@
       "Description": "How long to play the night flavor animation."
     },
     "DayFlavorAnimation": {
-      "Value": "",
+      "Value": "Sit",
       "Description": "A flavor animation to play during the day. Ignored if null or empty."
     },
     "DayFlavorAnimationLength": {
       "Value": [
-        3,
-        5
+        15,
+        30
       ],
       "Description": "How long to play the daytime flavor animation."
     },
@@ -489,6 +489,22 @@
       ],
       "Actions": {
         "Reference": "Component_ActionList_Wake"
+      }
+    },
+    {
+      "States": [
+        {
+          "From": [
+            "Hold"
+          ],
+          "To": [
+            "Idle",
+            "Defend"
+          ]
+        }
+      ],
+      "Actions": {
+        "Reference": "Component_ActionList_StandUp"
       }
     }
   ],
@@ -868,7 +884,7 @@
                     {
                       "Type": "PlayAnimation",
                       "Slot": "Status",
-                      "Animation": "IdlePassive"
+                      "Animation": "Idle"
                     },
                     {
                       "Type": "Timeout",
@@ -1322,8 +1338,8 @@
               "$Comment": "Execute daytime idle behaviors.",
               "Type": "Random",
               "ExecuteFor": [
-                15,
-                20
+                30,
+                60
               ],
               "Sensor": {
                 "Type": "Time",
@@ -1333,54 +1349,6 @@
                 "CheckDay": true
               },
               "Instructions": [
-                {
-                  "$Comment": "Regular wander.",
-                  "Weight": 20,
-                  "Instructions": [
-                    {
-                      "Continue": true,
-                      "Actions": [
-                        {
-                          "Type": "Crouch",
-                          "Crouch": false
-                        }
-                      ]
-                    },
-                    {
-                      "BodyMotion": {
-                        "Type": "Sequence",
-                        "Looped": true,
-                        "Motions": [
-                          {
-                            "Type": "Timer",
-                            "Time": [
-                              1,
-                              5
-                            ],
-                            "Motion": {
-                              "Type": "WanderInCircle",
-                              "Radius": {
-                                "Compute": "WanderRadius"
-                              },
-                              "MaxHeadingChange": 60,
-                              "RelativeSpeed": 0.18
-                            }
-                          },
-                          {
-                            "Type": "Timer",
-                            "Time": [
-                              3,
-                              8
-                            ],
-                            "Motion": {
-                              "Type": "Nothing"
-                            }
-                          }
-                        ]
-                      }
-                    }
-                  ]
-                },
                 {
                   "$Comment": "Play a daytime flavor animation.",
                   "Enabled": {

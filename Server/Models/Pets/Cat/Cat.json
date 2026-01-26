@@ -144,6 +144,22 @@
           "Looping": false
         }
       ]
+    },
+    "Sit": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pets/Cat/Animations/Idles/Sit.blockyanim",
+          "Looping": true
+        }
+      ]
+    },
+    "StandUp": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pets/Cat/Animations/StandUp.blockyanim",
+          "Looping": false
+        }
+      ]
     }
   },
   "RandomAttachmentSets": {
