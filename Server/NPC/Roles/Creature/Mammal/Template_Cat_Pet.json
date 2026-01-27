@@ -1,5 +1,6 @@
 {
   "StartState": "Hold",
+  "Debug": "DisplayState, DisplayTarget",
   "DefaultSubState": "Default",
   "Type": "Abstract",
   "Invulnerable": false,
@@ -402,7 +403,7 @@
   "FlockAllowedNPC": {
     "Compute": "FlockArray"
   },
-  "ApplySeparation": true,
+  "ApplySeparation": false,
   "SeparationDistance": 2.5,
   "SeparationWeight": 1.2,
   "SeparationDistanceTarget": 1.5,
@@ -635,7 +636,7 @@
                   "BodyMotion": {
                     "Type": "MaintainDistance",
                     "DesiredDistanceRange": [
-                      0,
+                      1,
                       4
                     ],
                     "StrafingDurationRange": [
@@ -703,7 +704,7 @@
                   "BodyMotion": {
                     "Type": "MaintainDistance",
                     "DesiredDistanceRange": [
-                      0,
+                      1,
                       4
                     ],
                     "StrafingDurationRange": [
@@ -768,7 +769,7 @@
                   "BodyMotion": {
                     "Type": "MaintainDistance",
                     "DesiredDistanceRange": [
-                      0,
+                      1,
                       4
                     ],
                     "StrafingDurationRange": [
@@ -833,7 +834,7 @@
                   "BodyMotion": {
                     "Type": "MaintainDistance",
                     "DesiredDistanceRange": [
-                      0,
+                      1,
                       4
                     ],
                     "StrafingDurationRange": [
@@ -1514,6 +1515,24 @@
             "State": "Hold"
           },
           "Instructions": [
+            {
+              "$Comment": "Clear follow/combat targets when entering Hold.",
+              "Continue": true,
+              "Sensor": {
+                "Type": "Any",
+                "Once": true
+              },
+              "Actions": [
+                {
+                  "Type": "ReleaseTarget",
+                  "TargetSlot": "MasterTarget"
+                },
+                {
+                  "Type": "ReleaseTarget",
+                  "TargetSlot": "LockedTarget"
+                }
+              ]
+            },
             {
               "Continue": true,
               "BodyMotion": {
