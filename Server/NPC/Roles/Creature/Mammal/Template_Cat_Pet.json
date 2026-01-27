@@ -1,6 +1,5 @@
 {
   "StartState": "Hold",
-  "Debug": "DisplayState, DisplayTarget",
   "DefaultSubState": "Default",
   "Type": "Abstract",
   "Invulnerable": false,
