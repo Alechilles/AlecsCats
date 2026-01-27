@@ -1516,17 +1516,13 @@
           },
           "Instructions": [
             {
-              "$Comment": "Clear follow/combat targets when entering Hold.",
+              "$Comment": "Clear combat target when entering Hold.",
               "Continue": true,
               "Sensor": {
                 "Type": "Any",
                 "Once": true
               },
               "Actions": [
-                {
-                  "Type": "ReleaseTarget",
-                  "TargetSlot": "MasterTarget"
-                },
                 {
                   "Type": "ReleaseTarget",
                   "TargetSlot": "LockedTarget"
