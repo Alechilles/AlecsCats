@@ -16,8 +16,8 @@
     ],
     "ThreatenAnimation": "Threaten",
     "FleeRange": 15,
-    "HardLeashDistance": 60,
-    "LeashDistance": 30,
+    "HardLeashDistance": 30,
+    "LeashDistance": 20,
     "LeashMinPlayerDistance": 7,
     "LeashTimer": [
       4,
@@ -28,12 +28,16 @@
     "CombatBehaviorDistance": 6,
     "CombatDirectWeight": 0,
     "CombatStrafeWeight": 10,
-    "CombatBackOffAfterAttack": false,
+    "CombatBackOffAfterAttack": true,
+    "CombatBackOffDistanceRange": [
+      3,
+      5
+    ],
     "ChaseRelativeSpeed": 1,
     "CombatMovingRelativeSpeed": 0.6,
     "AlwaysSleepAtNight": false,
     "NightFlavorAnimation": "Sit",
-    "DayTimeNapWeight": 2,
+    "DayTimeNapWeight": 1,
     "DayTimeNapTimeRange": [
       20,
       60

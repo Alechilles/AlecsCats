@@ -39,7 +39,11 @@
     "CombatBehaviorDistance": 6,
     "CombatDirectWeight": 0,
     "CombatStrafeWeight": 10,
-    "CombatBackOffAfterAttack": false,
+    "CombatBackOffAfterAttack": true,
+    "CombatBackOffDistanceRange": [
+      3,
+      5
+    ],
     "ChaseRelativeSpeed": 1,
     "CombatMovingRelativeSpeed": 0.6,
     "AlwaysSleepAtNight": false,

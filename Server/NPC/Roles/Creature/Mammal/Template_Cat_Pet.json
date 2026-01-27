@@ -1,5 +1,6 @@
 {
   "StartState": "Hold",
+  "Debug": "DisplayState, DisplayTarget",
   "DefaultSubState": "Default",
   "Type": "Abstract",
   "Invulnerable": false,
@@ -197,8 +198,8 @@
     },
     "CombatBackOffDistanceRange": {
       "Value": [
-        4,
-        4
+        3,
+        5
       ],
       "Description": "How far to back off after performing an attack. Max should be lower than the CombatBehaviorDistance."
     },
@@ -402,7 +403,7 @@
   "FlockAllowedNPC": {
     "Compute": "FlockArray"
   },
-  "ApplySeparation": true,
+  "ApplySeparation": false,
   "SeparationDistance": 2.5,
   "SeparationWeight": 1.2,
   "SeparationDistanceTarget": 1.5,
@@ -635,8 +636,8 @@
                   "BodyMotion": {
                     "Type": "MaintainDistance",
                     "DesiredDistanceRange": [
-                      2,
-                      3
+                      1,
+                      4
                     ],
                     "StrafingDurationRange": [
                       1,
@@ -703,8 +704,8 @@
                   "BodyMotion": {
                     "Type": "MaintainDistance",
                     "DesiredDistanceRange": [
-                      2,
-                      3
+                      1,
+                      4
                     ],
                     "StrafingDurationRange": [
                       1,
@@ -768,8 +769,8 @@
                   "BodyMotion": {
                     "Type": "MaintainDistance",
                     "DesiredDistanceRange": [
-                      2,
-                      3
+                      1,
+                      4
                     ],
                     "StrafingDurationRange": [
                       1,
@@ -833,8 +834,8 @@
                   "BodyMotion": {
                     "Type": "MaintainDistance",
                     "DesiredDistanceRange": [
-                      2,
-                      3
+                      1,
+                      4
                     ],
                     "StrafingDurationRange": [
                       1,
@@ -940,16 +941,25 @@
               "$Comment": "If a combat target is already locked, enter combat.",
               "Continue": true,
               "Sensor": {
-                "Type": "Target",
-                "TargetSlot": "LockedTarget",
-                "Range": {
-                  "Compute": "AlertedRange"
-                },
-                "Filters": [
+                "Type": "And",
+                "Sensors": [
                   {
-                    "Type": "Attitude",
-                    "Attitudes": [
-                      "Hostile"
+                    "Type": "State",
+                    "State": ".Default"
+                  },
+                  {
+                    "Type": "Target",
+                    "TargetSlot": "LockedTarget",
+                    "Range": {
+                      "Compute": "AlertedRange"
+                    },
+                    "Filters": [
+                      {
+                        "Type": "Attitude",
+                        "Attitudes": [
+                          "Hostile"
+                        ]
+                      }
                     ]
                   }
                 ]
@@ -962,11 +972,15 @@
               ]
             },
             {
-              "$Comment": "Engage nearby mobs (exclude self) while defending.",
+              "$Comment": "Engage nearby mobs while defending.",
               "Continue": true,
               "Sensor": {
                 "Type": "And",
                 "Sensors": [
+                  {
+                    "Type": "State",
+                    "State": ".Default"
+                  },
                   {
                     "Type": "Not",
                     "Sensor": {
@@ -1008,7 +1022,7 @@
             },
             {
               "$Comment": "Debug: show when combat target is assigned",
-              "Enabled": false,
+              "Enabled": true,
               "Continue": true,
               "Sensor": {
                 "Type": "Target",
@@ -1018,7 +1032,7 @@
               "Actions": [
                 {
                   "Type": "SpawnParticles",
-                  "ParticleSystem": "Follow",
+                  "ParticleSystem": "Alerted",
                   "Offset": [
                     0,
                     0.8,
@@ -1113,6 +1127,25 @@
               },
               "Instructions": [
                 {
+                  "$Comment": "Always watch the target.",
+                  "Continue": true,
+                  "Sensor": {
+                    "Type": "Target",
+                    "TargetSlot": "LockedTarget",
+                    "Range": {
+                      "Compute": "ViewRange"
+                    },
+                    "Filters": [
+                      {
+                        "Type": "LineOfSight"
+                      }
+                    ]
+                  },
+                  "HeadMotion": {
+                    "Type": "Watch"
+                  }
+                },
+                {
                   "$Comment": "Chase until in attack range.",
                   "Continue": true,
                   "Sensor": {
@@ -1135,6 +1168,12 @@
                               "Type": "LineOfSight"
                             }
                           ]
+                        }
+                      },
+                      {
+                        "Type": "Not",
+                        "Sensor": {
+                          "Type": "IsBackingAway"
                         }
                       }
                     ]
@@ -1188,7 +1227,7 @@
                       }
                     ]
                   },
-                  "ActionsBlocking": false,
+                  "ActionsBlocking": true,
                   "Actions": [
                     {
                       "Type": "Timeout",
@@ -1224,6 +1263,16 @@
                     {
                       "Type": "TimerRestart",
                       "Name": "Combat_Back_Off"
+                    },
+                    {
+                      "$Comment": "Debug: show that the full attack loop is playing",
+                      "Type": "SpawnParticles",
+                      "ParticleSystem": "Follow",
+                      "Offset": [
+                        0,
+                        0.8,
+                        0
+                      ]
                     }
                   ],
                   "HeadMotion": {
@@ -1265,6 +1314,144 @@
                       "Compute": "CombatMovingRelativeSpeed"
                     }
                   }
+                },
+                {
+                  "$Comment": "Execute combat-oriented movement.",
+                  "Type": "Random",
+                  "ExecuteFor": [
+                    5,
+                    5
+                  ],
+                  "Sensor": {
+                    "Type": "Target",
+                    "TargetSlot": "LockedTarget",
+                    "Range": {
+                      "Compute": "CombatBehaviorDistance"
+                    }
+                  },
+                  "Instructions": [
+                    {
+                      "$Comment": "Strafe around the target while fighting.",
+                      "Enabled": {
+                        "Compute": "CombatStrafeWeight > 0"
+                      },
+                      "Weight": {
+                        "Compute": "CombatStrafeWeight"
+                      },
+                      "Sensor": {
+                        "Type": "Target",
+                        "TargetSlot": "LockedTarget",
+                        "Range": {
+                          "Compute": "CombatBehaviorDistance"
+                        }
+                      },
+                      "BodyMotion": {
+                        "Type": "MaintainDistance",
+                        "DesiredDistanceRange": {
+                          "Compute": "makeRange(AttackDistance - 1)"
+                        },
+                        "StrafingDurationRange": {
+                          "Compute": "CombatStrafingDurationRange"
+                        },
+                        "StrafingFrequencyRange": {
+                          "Compute": "CombatStrafingFrequencyRange"
+                        },
+                        "RelativeForwardsSpeed": {
+                          "Compute": "CombatMovingRelativeSpeed"
+                        }
+                      },
+                      "HeadMotion": {
+                        "Type": "Watch"
+                      }
+                    },
+                    {
+                      "$Comment": "Attack the target without strafing.",
+                      "Enabled": {
+                        "Compute": "CombatDirectWeight > 0"
+                      },
+                      "Weight": {
+                        "Compute": "CombatDirectWeight"
+                      },
+                      "Sensor": {
+                        "Type": "Target",
+                        "TargetSlot": "LockedTarget",
+                        "Range": {
+                          "Compute": "CombatBehaviorDistance"
+                        }
+                      },
+                      "BodyMotion": {
+                        "Type": "MaintainDistance",
+                        "DesiredDistanceRange": {
+                          "Compute": "makeRange(AttackDistance - 1)"
+                        },
+                        "StrafingDurationRange": [
+                          0,
+                          0
+                        ],
+                        "RelativeForwardsSpeed": {
+                          "Compute": "ChaseRelativeSpeed"
+                        }
+                      },
+                      "HeadMotion": {
+                        "Type": "Watch"
+                      }
+                    },
+                    {
+                      "$Comment": "Attack the target without strafing.",
+                      "Enabled": {
+                        "Compute": "CombatAlwaysMovingWeight > 0"
+                      },
+                      "Weight": {
+                        "Compute": "CombatAlwaysMovingWeight"
+                      },
+                      "Sensor": {
+                        "Type": "Target",
+                        "TargetSlot": "LockedTarget",
+                        "Range": {
+                          "Compute": "CombatBehaviorDistance"
+                        }
+                      },
+                      "HeadMotion": {
+                        "Type": "Aim",
+                        "RelativeTurnSpeed": {
+                          "Compute": "CombatRelativeTurnSpeed"
+                        }
+                      },
+                      "BodyMotion": {
+                        "Type": "Seek",
+                        "RelativeSpeed": {
+                          "Compute": "ChaseRelativeSpeed"
+                        },
+                        "StopDistance": {
+                          "Compute": "AttackDistance * 0.8"
+                        },
+                        "SlowDownDistance": {
+                          "Compute": "AttackDistance"
+                        }
+                      }
+                    },
+                    {
+                      "Reference": {
+                        "Compute": "AdditionalCombatBehaviorMacroElement"
+                      },
+                      "Interfaces": [
+                        "Hytale.Instruction.Null",
+                        "Hytale.Instruction.CombatBehavior"
+                      ],
+                      "Modify": {
+                        "_InterfaceParameters": {
+                          "Hytale.Instruction.CombatBehavior": {
+                            "CombatBehaviorDistance": {
+                              "Compute": "CombatBehaviorDistance"
+                            },
+                            "ChaseRelativeSpeed": {
+                              "Compute": "ChaseRelativeSpeed"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
                 },
                 {
                   "$Comment": "If target lost or non-hostile, return to Default.",
@@ -1328,6 +1515,20 @@
             "State": "Hold"
           },
           "Instructions": [
+            {
+              "$Comment": "Clear combat target when entering Hold.",
+              "Continue": true,
+              "Sensor": {
+                "Type": "Any",
+                "Once": true
+              },
+              "Actions": [
+                {
+                  "Type": "ReleaseTarget",
+                  "TargetSlot": "LockedTarget"
+                }
+              ]
+            },
             {
               "Continue": true,
               "BodyMotion": {
