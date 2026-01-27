@@ -197,8 +197,8 @@
     },
     "CombatBackOffDistanceRange": {
       "Value": [
-        4,
-        4
+        3,
+        5
       ],
       "Description": "How far to back off after performing an attack. Max should be lower than the CombatBehaviorDistance."
     },
@@ -635,8 +635,8 @@
                   "BodyMotion": {
                     "Type": "MaintainDistance",
                     "DesiredDistanceRange": [
-                      2,
-                      3
+                      0,
+                      4
                     ],
                     "StrafingDurationRange": [
                       1,
@@ -703,8 +703,8 @@
                   "BodyMotion": {
                     "Type": "MaintainDistance",
                     "DesiredDistanceRange": [
-                      2,
-                      3
+                      0,
+                      4
                     ],
                     "StrafingDurationRange": [
                       1,
@@ -768,8 +768,8 @@
                   "BodyMotion": {
                     "Type": "MaintainDistance",
                     "DesiredDistanceRange": [
-                      2,
-                      3
+                      0,
+                      4
                     ],
                     "StrafingDurationRange": [
                       1,
@@ -833,8 +833,8 @@
                   "BodyMotion": {
                     "Type": "MaintainDistance",
                     "DesiredDistanceRange": [
-                      2,
-                      3
+                      0,
+                      4
                     ],
                     "StrafingDurationRange": [
                       1,
@@ -971,7 +971,7 @@
               ]
             },
             {
-              "$Comment": "Engage nearby mobs (exclude self) while defending.",
+              "$Comment": "Engage nearby mobs while defending.",
               "Continue": true,
               "Sensor": {
                 "Type": "And",
@@ -1167,6 +1167,12 @@
                               "Type": "LineOfSight"
                             }
                           ]
+                        }
+                      },
+                      {
+                        "Type": "Not",
+                        "Sensor": {
+                          "Type": "IsBackingAway"
                         }
                       }
                     ]
