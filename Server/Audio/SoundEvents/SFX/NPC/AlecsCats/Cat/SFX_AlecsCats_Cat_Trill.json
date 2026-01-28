@@ -1,0 +1,30 @@
+{
+  "Layers": [
+    {
+      "Files": [
+        "Sounds/NPC/AlecsCats/Cat/AlecsCats_Cat_Trill_01.ogg",
+        "Sounds/NPC/AlecsCats/Cat/AlecsCats_Cat_Trill_02.ogg",
+        "Sounds/NPC/AlecsCats/Cat/AlecsCats_Cat_Trill_03.ogg",
+        "Sounds/NPC/AlecsCats/Cat/AlecsCats_Cat_Trill_04.ogg",
+        "Sounds/NPC/AlecsCats/Cat/AlecsCats_Cat_Trill_05.ogg",
+        "Sounds/NPC/AlecsCats/Cat/AlecsCats_Cat_Trill_06.ogg"
+      ],
+      "RandomSettings": {
+        "MinPitch": -1.8240371213405997,
+        "MinVolume": -6,
+        "MaxPitch": 2.6500422849992202,
+        "MaxVolume": 0
+      },
+      "Probability": 100,
+      "Volume": -1,
+      "Looping": false
+    }
+  ],
+  "MaxInstance": 5,
+  "Volume": -3.2,
+  "PreventSoundInterruption": false,
+  "AudioCategory": "AudioCat_NPC_AlecsCats_Cat",
+  "Parent": "SFX_Attn_Moderate",
+  "MaxDistance": 16,
+  "Pitch": 0
+}
