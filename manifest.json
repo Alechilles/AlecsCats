@@ -14,11 +14,11 @@
   "Website": "",
   "ServerVersion": "",
   "Dependencies": {
-    "Alechilles:Alec's Tamework!": "1.0.0"
+    "Alechilles:Alec's Tamework!": "*"
   },
   "OptionalDependencies": {},
   "LoadBefore": {},
   "DisabledByDefault": false,
-  "IncludesAssetPack": false,
+  "IncludesAssetPack": true,
   "SubPlugins": []
 }
