@@ -1,0 +1,1026 @@
+{
+  "StartState": "Hold",
+  "DefaultSubState": "Default",
+  "Type": "Abstract",
+  "Invulnerable": false,
+  "Parameters": {
+    "Appearance": {
+      "Value": "Cat",
+      "Description": "Model to be used."
+    },
+    "WanderRadius": {
+      "Value": 8,
+      "Description": "General wander radius."
+    },
+    "ViewRange": {
+      "Value": 24,
+      "Description": "The range from which the target will be seen. If zero, sight will be disabled."
+    },
+    "ViewSector": {
+      "Value": 120,
+      "Description": "The view sector within which the target needs to be to be seen."
+    },
+    "AlertedRange": {
+      "Value": 28,
+      "Description": "Range to search for threats while defending."
+    },
+    "HearingRange": {
+      "Value": 12,
+      "Description": "The range from which the target will be heard. If zero, hearing will be disabled."
+    },
+    "AbsoluteDetectionRange": {
+      "Value": 4,
+      "Description": "The range at which a target is guaranteed to be detected. If zero, absolute detection will be disabled."
+    },
+    "FleeRange": {
+      "Value": 15,
+      "Description": "How far to try and get away when fleeing."
+    },
+    "ThreatenAnimation": {
+      "Value": "",
+      "Description": "An optional animation to play to threaten the target before initiating combat."
+    },
+    "ThreatenDelayRange": {
+      "Value": [
+        2,
+        4
+      ],
+      "Description": "Delay before the threaten animation is played."
+    },
+    "DropList": {
+      "Value": "Empty",
+      "Description": "Drop Items."
+    },
+    "MaxSpeed": {
+      "Value": 8,
+      "Description": "Maximum walking speed."
+    },
+    "RunThreshold": {
+      "Value": 0.55,
+      "Description": "At what ratio NPC switches to run animation e.g MaxSpeed is 10, at RunThreshold 0.55 NPC will run at speed 5.5."
+    },
+    "Chase": {
+      "Value": true,
+      "Description": "Whether the NPC will chase the target during combat."
+    },
+    "ChaseRelativeSpeed": {
+      "Value": 1,
+      "Description": "Relative chasing speed when pursuing a target."
+    },
+    "CombatMovingRelativeSpeed": {
+      "Value": 0.6,
+      "Description": "Relative speed to use during combat specific movement (e.g. to achieve slower strafing)."
+    },
+    "Attack": {
+      "Value": "Root_NPC_Attack_Melee",
+      "Description": "The attack to use."
+    },
+    "AttackDistance": {
+      "Value": 3,
+      "Description": "The distance to attack from."
+    },
+    "DayTimePeriod": {
+      "Value": [
+        6.01,
+        17.99
+      ],
+      "Description": "The hour range considered to be daytime for this NPC."
+    },
+    "DayTimeNapWeight": {
+      "Value": 2,
+      "Description": "Weight used to determine if the NPC should have a short nap during the day. Set to 0 to disable."
+    },
+    "DayTimeNapTimeRange": {
+      "Value": [
+        10,
+        30
+      ],
+      "Description": "How long a daytime nap should last."
+    },
+    "TimidDuringDay": {
+      "Value": false,
+      "Description": "Whether this NPC is a bit more timid during the day."
+    },
+    "AlwaysSleepAtNight": {
+      "Value": true,
+      "Description": "Whether this NPC always sleeps through the whole night."
+    },
+    "NightFlavorAnimation": {
+      "Value": "Idle",
+      "Description": "A flavor animation to play at night. Ignored if null or empty."
+    },
+    "NightFlavorAnimationAfter": {
+      "Value": "",
+      "Description": "Optional animation to play after the night flavor animation."
+    },
+    "NightFlavorAnimationLength": {
+      "Value": [
+        3,
+        5
+      ],
+      "Description": "How long to play the night flavor animation."
+    },
+    "DayFlavorAnimation": {
+      "Value": "Idle",
+      "Description": "A flavor animation to play during the day. Ignored if null or empty."
+    },
+    "DayFlavorAnimationAfter": {
+      "Value": "",
+      "Description": "Optional animation to play after the daytime flavor animation."
+    },
+    "DayFlavorAnimationLength": {
+      "Value": [
+        15,
+        30
+      ],
+      "Description": "How long to play the daytime flavor animation."
+    },
+    "AttitudeGroup": {
+      "Value": "Cat_Pet",
+      "Description": "This NPC's attitude group."
+    },
+    "FlockArray": {
+      "Value": [],
+      "TypeHint": "String",
+      "Description": "Array containing NPCs for this flock type."
+    },
+    "SpawnerEmptyItemID": {
+      "Value": [
+        "Egg_Spawner_Cat_Empty"
+      ],
+      "TypeHint": "String",
+      "Description": "Item IDs that can be used to pick up the pet (empty spawner)."
+    },
+    "SpawnerItemID": {
+      "Value": "Egg_Spawner_Cat",
+      "Description": "Filled spawner item ID granted when picking up the pet."
+    },
+    "FoodItemIDs": {
+      "Value": [
+        "Food_Fish_Raw"
+      ],
+      "TypeHint": "String",
+      "Description": "Food item IDs accepted for feeding."
+    },
+    "InteractSoundHold": {
+      "Value": "SFX_Torch_Swing_Right_Local",
+      "Description": "Sound to play when switching to Hold."
+    },
+    "InteractSoundFollow": {
+      "Value": "SFX_Torch_Swing_Right_Local",
+      "Description": "Sound to play when switching to Follow."
+    },
+    "InteractSoundDefend": {
+      "Value": "SFX_Torch_Swing_Right_Local",
+      "Description": "Sound to play when switching to Defend."
+    },
+    "InteractSoundFeed": {
+      "Value": "SFX_Torch_Swing_Right_Local",
+      "Description": "Sound to play when feeding."
+    },
+    "InteractSoundPickUp": {
+      "Value": "SFX_Torch_Swing_Right_Local",
+      "Description": "Sound to play when picking up the cat."
+    },
+    "AttackPauseRange": {
+      "Value": [
+        2,
+        3
+      ],
+      "Description": "The range for absolute minimum time before an NPC can execute a second attack."
+    },
+    "CombatRelativeTurnSpeed": {
+      "Value": 1.5,
+      "Description": "Modifier that decides turn speed difference in combat."
+    },
+    "CombatBehaviorDistance": {
+      "Value": 5,
+      "Description": "The distance within which to switch from smart chasing to combat-oriented movement behavior."
+    },
+    "CombatAlwaysMovingWeight": {
+      "Value": 10,
+      "Description": "Weight for the combat movement behavior where the npcs will always chharge at you,put 0 to disable."
+    },
+    "CombatDirectWeight": {
+      "Value": 10,
+      "Description": "Weight for the direct combat movement behavior (i.e. just going straight at the target, maintaining a close distance and attacking. Set to 0 to disable."
+    },
+    "CombatStrafeWeight": {
+      "Value": 10,
+      "Description": "Weight for the combat strafing movement behavior. Set to 0 to disable."
+    },
+    "CombatAttackPreDelay": {
+      "Value": [
+        0.3,
+        0.3
+      ],
+      "Description": "The time delay range before the NPC performs an attack, provided it's in attack range."
+    },
+    "CombatAttackPostDelay": {
+      "Value": [
+        0.4,
+        0.4
+      ],
+      "Description": "The time delay range after the NPC performs an attack, provided it's in attack range."
+    },
+    "CombatStrafingDurationRange": {
+      "Value": [
+        1,
+        1
+      ],
+      "Description": "How long to strafe for when in the combat strafing movement behavior. Only applies if CombatStrafeWeight is greater than 0."
+    },
+    "CombatStrafingFrequencyRange": {
+      "Value": [
+        2,
+        2
+      ],
+      "Description": "How frequently to strafe when in the combat strafing movement behavior. Only applies if CombatStrafeWeight is greater than 0."
+    },
+    "CombatBackOffAfterAttack": {
+      "Value": true,
+      "Description": "Whether to back off after performing an attack."
+    },
+    "CombatBackOffDistanceRange": {
+      "Value": [
+        3,
+        5
+      ],
+      "Description": "How far to back off after performing an attack. Max should be lower than the CombatBehaviorDistance."
+    },
+    "CombatBackOffDurationRange": {
+      "Value": [
+        2,
+        3
+      ],
+      "Description": "How long to back off for after performing an attack."
+    },
+    "Weapons": {
+      "Value": [],
+      "TypeHint": "String",
+      "Description": "Weapons to equip in hotbar."
+    },
+    "BlockAbility": {
+      "Value": "",
+      "Description": "The interaction to use for blocking when backing away. Set to empty to disable blocking."
+    },
+    "BlockProbability": {
+      "Value": 50,
+      "Description": "The probability this NPC will block when backing away if a BlockAbility is set."
+    },
+    "AdditionalCombatBehaviorMacroElement": {
+      "Value": "Component_Instruction_Null",
+      "Description": "An optional macro element for supplying more bespoke combat movement behavior. Weight for the behavior must be internally defined in the macro element."
+    },
+    "BlockStepDetectionBlockSet": {
+      "Value": "",
+      "Description": "Optional blockset that this NPC will passively detect steps on."
+    },
+    "BlockStepDetectionRange": {
+      "Value": 30,
+      "Description": "Detection range for the block step detection."
+    },
+    "BlockStepDetectionIncludePlayers": {
+      "Value": true,
+      "Description": "Whether block steps from players will be detected."
+    },
+    "BlockStepDetectionIncludeNPCs": {
+      "Value": false,
+      "Description": "Whether block steps from NPCs will be detected."
+    },
+    "BlockStepDetectionRelativeSpeed": {
+      "Value": 0.75,
+      "Description": "The relative motion speed at which the NPC will investigate a stepped block"
+    },
+    "BlockStepDetectionIgnoreGroups": {
+      "Value": [
+        "Self"
+      ],
+      "Description": "The NPC groups whose steps will be ignored."
+    },
+    "MaxHealth": {
+      "Value": 50,
+      "Description": "Max health for the NPC."
+    },
+    "KnockbackScale": {
+      "Value": 0.5,
+      "Description": "Scale factor for knockback."
+    },
+    "ClimbHeight": {
+      "Value": 1,
+      "Description": "The maximum climb height, in blocks."
+    },
+    "MinJumpHeight": {
+      "Value": 0.8,
+      "Description": "The minimum jump height."
+    },
+    "AscentAnimationType": {
+      "Value": "Walk",
+      "Description": "Animation when climbing up. Options: Walk, Jump, Climb, Fly, Idle."
+    },
+    "ClimbSpeedMult": {
+      "Value": 0,
+      "Description": "Climb speed multiplier (const + mult * walkspeed^pow)."
+    },
+    "ClimbSpeedPow": {
+      "Value": 1,
+      "Description": "Climb speed power (const + mult * walkspeed^pow)."
+    },
+    "ClimbSpeedConst": {
+      "Value": 5,
+      "Description": "Climb speed constant (const + mult * walkspeed^pow)."
+    },
+    "DescendSpeedCompensation": {
+      "Value": 0.9,
+      "Description": "Factor to compensate forward speed reduction while moving downwards."
+    },
+    "DescendFlatness": {
+      "Value": 0.7,
+      "Description": "Relative scale how fast NPC moves forward while climbing down."
+    },
+    "DescentSteepness": {
+      "Value": 1.4,
+      "Description": "The relative steepness of the descent."
+    },
+    "DescentBlending": {
+      "Value": 1.8,
+      "Description": "Blending of the descent pattern. 0 is linear, higher values more curved."
+    },
+    "LeashDistance": {
+      "Value": 20,
+      "Description": "The range after which an NPC will start to want to return to their spawn point."
+    },
+    "LeashMinPlayerDistance": {
+      "Value": 4,
+      "Description": "The minimum distance from the player before the NPC will be willing to give up on the chase."
+    },
+    "LeashTimer": {
+      "Value": [
+        3,
+        5
+      ],
+      "Description": "How long the NPC must be more than the minimum distance form the player and too far from leash before giving up."
+    },
+    "HardLeashDistance": {
+      "Value": 30,
+      "Description": "An absolute maximum from the the leash position the NPC can go before turning back."
+    },
+    "LeashRelativeSpeed": {
+      "Value": 0.6,
+      "Description": "The relative speed at which the NPC will return to its leash position"
+    },
+    "ConfusedTimeRange": {
+      "Value": [
+        1,
+        2
+      ],
+      "Description": "How long the NPC should act confused for when losing its target before beginning the search. While confused the NPC detection range is lowered."
+    },
+    "SearchTimeRange": {
+      "Value": [
+        5,
+        8
+      ],
+      "Description": "How long the NPC should actively search for its lost target before giving up and going back to idle."
+    },
+    "DisableDamageGroups": {
+      "Value": [
+        "Self"
+      ],
+      "Description": "Groups not to take damage from."
+    },
+    "IsMemory": {
+      "Value": false,
+      "Description": "Defines if the NPC is a memory"
+    },
+    "MemoriesCategory": {
+      "Value": "Mammal",
+      "Description": "Defines the category of the memory"
+    },
+    "MemoriesNameOverride": {
+      "Value": "",
+      "Description": "Overrides the memory name if set"
+    },
+    "BreathesInWater": {
+      "Value": true,
+      "Description": "Whether this NPC can breathe underwater."
+    },
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Template.name",
+      "Description": "Translation key for NPC name display"
+    }
+  },
+  "IsMemory": {
+    "Compute": "IsMemory"
+  },
+  "MemoriesCategory": {
+    "Compute": "MemoriesCategory"
+  },
+  "MemoriesNameOverride": {
+    "Compute": "MemoriesNameOverride"
+  },
+  "BreathesInWater": {
+    "Compute": "BreathesInWater"
+  },
+  "MaxHealth": {
+    "Compute": "MaxHealth"
+  },
+  "Appearance": {
+    "Compute": "Appearance"
+  },
+  "DropList": {
+    "Compute": "DropList"
+  },
+  "HotbarItems": {
+    "Compute": "Weapons"
+  },
+  "DisableDamageGroups": {
+    "Compute": "DisableDamageGroups"
+  },
+  "DefaultNPCAttitude": "Ignore",
+  "DefaultPlayerAttitude": "Neutral",
+  "AttitudeGroup": {
+    "Compute": "AttitudeGroup"
+  },
+  "FlockSpawnTypes": {
+    "Compute": "FlockArray"
+  },
+  "FlockAllowedNPC": {
+    "Compute": "FlockArray"
+  },
+  "ApplySeparation": true,
+  "SeparationDistance": 0.5,
+  "SeparationWeight": 1.2,
+  "SeparationDistanceTarget": 1.5,
+  "SeparationNearRadiusTarget": 3,
+  "SeparationFarRadiusTarget": 8,
+  "KnockbackScale": {
+    "Compute": "KnockbackScale"
+  },
+  "MotionControllerList": [
+    {
+      "Type": "Walk",
+      "MaxWalkSpeed": {
+        "Compute": "MaxSpeed"
+      },
+      "Gravity": 10,
+      "RunThreshold": {
+        "Compute": "RunThreshold"
+      },
+      "RunThresholdRange": 0.05,
+      "MaxFallSpeed": 15,
+      "MaxRotationSpeed": 180,
+      "Acceleration": 10,
+      "MaxClimbHeight": {
+        "Compute": "ClimbHeight"
+      },
+      "MinJumpHeight": {
+        "Compute": "MinJumpHeight"
+      },
+      "AscentAnimationType": {
+        "Compute": "AscentAnimationType"
+      },
+      "ClimbSpeedMult": {
+        "Compute": "ClimbSpeedMult"
+      },
+      "ClimbSpeedPow": {
+        "Compute": "ClimbSpeedPow"
+      },
+      "ClimbSpeedConst": {
+        "Compute": "ClimbSpeedConst"
+      },
+      "DescendSpeedCompensation": {
+        "Compute": "DescendSpeedCompensation"
+      },
+      "DescendFlatness": {
+        "Compute": "DescendFlatness"
+      },
+      "DescentSteepness": {
+        "Compute": "DescentSteepness"
+      },
+      "DescentBlending": {
+        "Compute": "DescentBlending"
+      }
+    }
+  ],
+  "StateTransitions": [
+    {
+      "States": [
+        {
+          "From": [
+            "Idle",
+            "Hold"
+          ],
+          "To": [
+            "Sleep"
+          ]
+        }
+      ],
+      "Actions": {
+        "Reference": "Component_ActionList_Sleep"
+      }
+    },
+    {
+      "States": [
+        {
+          "From": [
+            "Sleep"
+          ],
+          "To": [
+            "Idle",
+            "Hold",
+            "Defend"
+          ]
+        }
+      ],
+      "Actions": {
+        "Reference": "Component_ActionList_Wake"
+      }
+    },
+    {
+      "States": [
+        {
+          "From": [
+            "Hold"
+          ],
+          "To": [
+            "Idle",
+            "Defend"
+          ]
+        }
+      ],
+      "Actions": {
+        "Reference": "Component_ActionList_StandUp"
+      }
+    }
+  ],
+  "InteractionVars": {
+    "Melee_Damage": {
+      "Interactions": [
+        {
+          "$Comment": "Config for a successful melee hit, default values for Effects and HitShape are not overwritten here, see each NPC_ file",
+          "Parent": "NPC_Attack_Melee_Damage",
+          "DamageCalculator": {
+            "Type": "Absolute",
+            "BaseDamage": {
+              "Physical": 10
+            },
+            "RandomPercentageModifier": 0.1
+          }
+        }
+      ]
+    }
+  },
+  "Instructions": [
+    {
+      "$Comment": "Despawn if in the Despawn state. (Triggered by interacting with empty spawner)",
+      "Instructions": [
+        {
+          "Sensor": {
+            "Type": "State",
+            "State": "Despawn"
+          },
+          "ActionsAtomic": true,
+          "Instructions": [
+            {
+              "ActionsBlocking": true,
+              "Actions": [
+                {
+                  "Type": "Despawn"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "$Comment": "Default Idle State: Cat will follow player and try to stay within sight, teleporting if necessary.",
+          "Sensor": {
+            "Type": "State",
+            "State": "Idle"
+          },
+          "Instructions": [
+            {
+              "Reference": "Component_Tamework_Instruction_IdleFollow",
+              "Modify": {
+                "MasterTargetSlot": "MasterTarget"
+              }
+            }
+          ]
+        },
+        {
+          "$Comment": "Defend State: Cat will defend itself against nearby threats.",
+          "Sensor": {
+            "Type": "State",
+            "State": "Defend"
+          },
+          "Instructions": [
+            {
+              "Reference": "Component_Tamework_Instruction_Defend",
+              "Modify": {
+                "HardLeashDistance": {
+                  "Compute": "HardLeashDistance"
+                },
+                "AlertedRange": {
+                  "Compute": "AlertedRange"
+                },
+                "ViewSector": {
+                  "Compute": "ViewSector"
+                },
+                "HearingRange": {
+                  "Compute": "HearingRange"
+                },
+                "AbsoluteDetectionRange": {
+                  "Compute": "AbsoluteDetectionRange"
+                },
+                "ViewRange": {
+                  "Compute": "ViewRange"
+                },
+                "Attack": {
+                  "Compute": "Attack"
+                },
+                "AttackDistance": {
+                  "Compute": "AttackDistance"
+                },
+                "AttackPauseRange": {
+                  "Compute": "AttackPauseRange"
+                },
+                "CombatAttackPreDelay": {
+                  "Compute": "CombatAttackPreDelay"
+                },
+                "CombatAttackPostDelay": {
+                  "Compute": "CombatAttackPostDelay"
+                },
+                "CombatBackOffAfterAttack": {
+                  "Compute": "CombatBackOffAfterAttack"
+                },
+                "CombatBackOffDistanceRange": {
+                  "Compute": "CombatBackOffDistanceRange"
+                },
+                "CombatBackOffDurationRange": {
+                  "Compute": "CombatBackOffDurationRange"
+                },
+                "BlockAbility": {
+                  "Compute": "BlockAbility"
+                },
+                "BlockProbability": {
+                  "Compute": "BlockProbability"
+                },
+                "CombatStrafingDurationRange": {
+                  "Compute": "CombatStrafingDurationRange"
+                },
+                "CombatStrafingFrequencyRange": {
+                  "Compute": "CombatStrafingFrequencyRange"
+                },
+                "CombatBehaviorDistance": {
+                  "Compute": "CombatBehaviorDistance"
+                },
+                "CombatMovingRelativeSpeed": {
+                  "Compute": "CombatMovingRelativeSpeed"
+                },
+                "CombatStrafeWeight": {
+                  "Compute": "CombatStrafeWeight"
+                },
+                "CombatDirectWeight": {
+                  "Compute": "CombatDirectWeight"
+                },
+                "CombatAlwaysMovingWeight": {
+                  "Compute": "CombatAlwaysMovingWeight"
+                },
+                "CombatRelativeTurnSpeed": {
+                  "Compute": "CombatRelativeTurnSpeed"
+                },
+                "ChaseRelativeSpeed": {
+                  "Compute": "ChaseRelativeSpeed"
+                },
+                "AdditionalCombatBehaviorMacroElement": {
+                  "Compute": "AdditionalCombatBehaviorMacroElement"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "$Comment": "Hold State: Cat will sit still and sometimes sleep.",
+          "Sensor": {
+            "Type": "State",
+            "State": "Hold"
+          },
+          "Instructions": [
+            {
+              "Reference": "Component_Tamework_Instruction_Hold",
+              "Modify": {
+                "_ExportStates": [
+                  "Sleep"
+                ],
+                "DayFlavorAnimation": {
+                  "Compute": "DayFlavorAnimation"
+                },
+                "DayFlavorAnimationAfter": {
+                  "Compute": "DayFlavorAnimationAfter"
+                },
+                "DayFlavorAnimationLength": {
+                  "Compute": "DayFlavorAnimationLength"
+                },
+                "DayTimePeriod": {
+                  "Compute": "DayTimePeriod"
+                },
+                "NightFlavorAnimation": {
+                  "Compute": "NightFlavorAnimation"
+                },
+                "NightFlavorAnimationAfter": {
+                  "Compute": "NightFlavorAnimationAfter"
+                },
+                "NightFlavorAnimationLength": {
+                  "Compute": "NightFlavorAnimationLength"
+                },
+                "DayTimeNapWeight": {
+                  "Compute": "DayTimeNapWeight"
+                },
+                "HearingRange": {
+                  "Compute": "HearingRange"
+                },
+                "Attitudes": [
+                  "Hostile"
+                ],
+                "AlwaysSleepAtNight": {
+                  "Compute": "AlwaysSleepAtNight"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Sensor": {
+            "Type": "State",
+            "State": "Sleep"
+          },
+          "Instructions": [
+            {
+              "Reference": "Component_Tamework_Instruction_Sleep",
+              "Modify": {
+                "_ExportStates": [
+                  "Defend",
+                  "Defend",
+                  "Hold",
+                  "Hold",
+                  "Hold"
+                ],
+                "DayTimePeriod": {
+                  "Compute": "DayTimePeriod"
+                },
+                "DayTimeNapWeight": {
+                  "Compute": "DayTimeNapWeight"
+                },
+                "DayTimeNapTimeRange": {
+                  "Compute": "DayTimeNapTimeRange"
+                },
+                "HearingRange": {
+                  "Compute": "HearingRange"
+                },
+                "Attitudes": [
+                  "Hostile"
+                ],
+                "FlockArray": {
+                  "Compute": "FlockArray"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "InteractionInstruction": {
+    "Instructions": [
+      {
+        "Continue": true,
+        "Sensor": {
+          "Type": "Any"
+        },
+        "Actions": [
+          {
+            "Type": "SetInteractable",
+            "Interactable": true
+          }
+        ]
+      },
+      {
+        "Sensor": {
+          "Type": "HasInteracted"
+        },
+        "Instructions": [
+          {
+            "Continue": true,
+            "Sensor": {
+              "Type": "Any"
+            },
+            "Actions": [
+              {
+                "Type": "LockOnInteractionTarget",
+                "TargetSlot": "MasterTarget"
+              }
+            ]
+          },
+          {
+            "Sensor": {
+              "Type": "Target",
+              "TargetSlot": "MasterTarget",
+              "Filters": [
+                {
+                  "Type": "ItemInHand",
+                  "Items": {
+                    "Compute": "SpawnerEmptyItemID"
+                  }
+                }
+              ]
+            },
+            "Actions": [
+              {
+                "Type": "State",
+                "State": "Despawn"
+              },
+              {
+                "Type": "Inventory",
+                "UseTarget": true,
+                "Operation": "RemoveHeldItem"
+              },
+              {
+                "Type": "Inventory",
+                "UseTarget": true,
+                "Operation": "Add",
+                "Item": {
+                  "Compute": "SpawnerItemID"
+                }
+              },
+              {
+                "Type": "SpawnParticles",
+                "Offset": [
+                  0,
+                  0.1,
+                  0
+                ],
+                "ParticleSystem": "Poof_Small"
+              },
+              {
+                "Type": "PlaySound",
+                "SoundEventId": {
+                  "Compute": "InteractSoundPickUp"
+                }
+              }
+            ]
+          },
+          {
+            "$Comment": "If player is holding raw fish, remove it from their inventory and heal the cat.",
+            "Sensor": {
+              "Type": "Target",
+              "TargetSlot": "MasterTarget",
+              "Filters": [
+                {
+                  "Type": "ItemInHand",
+                  "Items": {
+                    "Compute": "FoodItemIDs"
+                  }
+                }
+              ]
+            },
+            "Actions": [
+              {
+                "Type": "Inventory",
+                "UseTarget": true,
+                "Operation": "RemoveHeldItem",
+                "Count": 1
+              },
+              {
+                "Type": "SetStat",
+                "Stat": "Health",
+                "Value": 50
+              },
+              {
+                "Type": "SpawnParticles",
+                "Offset": [
+                  0,
+                  0.6,
+                  0
+                ],
+                "ParticleSystem": "Cat_Heal"
+              },
+              {
+                "Type": "PlaySound",
+                "SoundEventId": {
+                  "Compute": "InteractSoundFeed"
+                }
+              }
+            ]
+          },
+          {
+            "$Comment": "If Cat is in Defend state, switch to Hold state",
+            "Sensor": {
+              "Type": "State",
+              "State": "Defend"
+            },
+            "Actions": [
+              {
+                "Type": "State",
+                "State": "Hold"
+              },
+              {
+                "Type": "SpawnParticles",
+                "Offset": [
+                  0,
+                  0.8,
+                  0
+                ],
+                "ParticleSystem": "Hold"
+              },
+              {
+                "Type": "PlaySound",
+                "SoundEventId": {
+                  "Compute": "InteractSoundHold"
+                }
+              }
+            ]
+          },
+          {
+            "$Comment": "If Cat is in Hold state, switch to Idle state.",
+            "Sensor": {
+              "Type": "Or",
+              "Sensors": [
+                {
+                  "Type": "State",
+                  "State": "Hold"
+                },
+                {
+                  "Type": "State",
+                  "State": "Sleep"
+                }
+              ]
+            },
+            "Actions": [
+              {
+                "Type": "LockOnInteractionTarget",
+                "TargetSlot": "MasterTarget"
+              },
+              {
+                "Type": "State",
+                "State": "Idle.Default"
+              },
+              {
+                "Type": "SpawnParticles",
+                "Offset": [
+                  0,
+                  0.8,
+                  0
+                ],
+                "ParticleSystem": "Follow"
+              },
+              {
+                "Type": "PlaySound",
+                "SoundEventId": {
+                  "Compute": "InteractSoundFollow"
+                }
+              }
+            ]
+          },
+          {
+            "$Comment": "If Cat is in Idle state, switch to Defend state",
+            "Instructions": [
+              {
+                "Sensor": {
+                  "Type": "State",
+                  "State": "Idle"
+                },
+                "Actions": [
+                  {
+                    "Type": "LockOnInteractionTarget",
+                    "TargetSlot": "MasterTarget"
+                  },
+                  {
+                    "Type": "State",
+                    "State": "Defend.Default"
+                  },
+                  {
+                    "Type": "SpawnParticles",
+                    "Offset": [
+                      0,
+                      0.8,
+                      0
+                    ],
+                    "ParticleSystem": "Defend"
+                  },
+                  {
+                    "Type": "PlaySound",
+                    "SoundEventId": {
+                      "Compute": "InteractSoundDefend"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "NameTranslationKey": "server.npcRoles.Cat_Pet.name"
+}
+

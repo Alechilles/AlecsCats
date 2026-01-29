@@ -47,7 +47,23 @@
     "ChaseRelativeSpeed": 1,
     "CombatMovingRelativeSpeed": 0.6,
     "AlwaysSleepAtNight": false,
-    "NightFlavorAnimation": "Howl",
+    "NightFlavorAnimation": "",
+    "NightFlavorAnimationAfter": "",
+    "DayFlavorAnimation": "",
+    "DayFlavorAnimationAfter": "",
+    "DayFlavorAnimationLength": [
+      15,
+      30
+    ],
+    "NightFlavorAnimationLength": [
+      15,
+      30
+    ],
+    "InteractSoundHold": "SFX_AlecsCats_Cat_Trill",
+    "InteractSoundFollow": "SFX_AlecsCats_Cat_Trill",
+    "InteractSoundDefend": "SFX_AlecsCats_Cat_Trill",
+    "InteractSoundFeed": "SFX_AlecsCats_Cat_Trill",
+    "InteractSoundPickUp": "SFX_Tamework_Poof",
     "DayTimeNapWeight": 6,
     "DayTimeNapTimeRange": [
       10,

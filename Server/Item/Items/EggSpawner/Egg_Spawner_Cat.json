@@ -8,23 +8,44 @@
     "Primary": {
       "Interactions": [
         {
-          "Type": "SpawnNPC",
-          "EntityId": "Cat_Pet",
-          "SpawnOffset": {
-            "X": 0,
-            "Y": 0.5,
-            "Z": 0
-          },
-          "Next": {
-            "Type": "ModifyInventory",
-            "Operation": "RemoveHeldItem",
-            "ItemToRemove": {
-              "Id": "Egg_Spawner_Cat"
+          "Type": "Serial",
+          "Interactions": [
+            {
+              "Type": "Simple",
+              "RunTime": 0.1,
+              "Effects": {
+                "Particles": [
+                  {
+                    "SystemId": "Poof_Small",
+                    "PositionOffset": {
+                      "X": 0,
+                      "Y": 0,
+                      "Z": 0
+                    },
+                    "TargetEntityPart": "Self",
+                    "DetachedFromModel": false
+                  }
+                ],
+                "WorldSoundEventId": "SFX_Tamework_Poof"
+              }
             },
-            "ItemToAdd": {
-              "Id": "Egg_Spawner_Cat_Empty"
+            {
+              "Type": "SpawnNPC",
+              "EntityId": "Cat_Pet",
+              "SpawnOffset": {
+                "X": 0,
+                "Y": 0.5,
+                "Z": 0
+              },
+              "Next": {
+                "Type": "ModifyInventory",
+                "AdjustHeldItemQuantity": -1,
+                "ItemToAdd": {
+                  "Id": "Egg_Spawner_Cat_Empty"
+                }
+              }
             }
-          }
+          ]
         }
       ]
     }
@@ -46,5 +67,5 @@
   },
   "MaxStack": 1,
   "Scale": 1,
-  "Animation": "NPC/Pets/Cat/Animations/Idle.blockyanim"
+  "Animation": "NPC/Pets/Cat/Animations/Idles/Sit.blockyanim"
 }

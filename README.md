@@ -51,11 +51,18 @@ They are fairly uncommon, but not exceedingly rare. You are meant to have to loo
 ## <a id="in-progress">In-Progress</a>
 *   Refining the taming system
     *   More advanced defend combat behavior
+*   Componentizing the codebase to make expansion to other mobs simpler
+    *   Will be branching into two mods
+    *   New mod will be a taming framework that this mod will reference and will be open to integrate with other people's mods
 *   Adding more variants
     *   Next is Lulu (White with gray/brown accents, like a toasted marshmallow) 
     *   If you want to see your own cat in the game, send me lots of pictures of your cat and if I can, I will try to make a texture for them in the game :)
+        *   Currently in queue: Lulu (White with gray/brown accents), Piper (Tabby), Ahsoka (Torbie), Toulouse (White with faint brown highlights), Noodles (Black and white)
 
 ## <a id="future-plans">Future Plans</a>
+*   Pet whistle item that commands all currently following pets to do something
+*   Plugin to tie first taming player to the mob so other people can't steal it
+*   A way to ensure spawned cats stay persistent through server cleanup
 *   Rare magical variants
 *   Add more animations
 *   Add kittens

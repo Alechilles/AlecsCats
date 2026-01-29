@@ -8,8 +8,8 @@
     "Primary": {
       "Interactions": [
         {
-          "Type": "ContextualUseNPC",
-          "Context": "CaptureCat",
+          "Type": "Simple",
+          "RunTime": 0.1,
           "Effects": {
             "ItemAnimationId": "Interact",
             "WaitForAnimationToFinish": true

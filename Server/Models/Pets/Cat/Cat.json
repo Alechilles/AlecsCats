@@ -23,7 +23,8 @@
         },
         {
           "Animation": "NPC/Pets/Cat/Animations/Idles/Lick.blockyanim",
-          "Weight": 0.2
+          "Weight": 0.2,
+          "BlendingDuration": 0.6
         },
         {
           "Animation": "NPC/Pets/Cat/Animations/Idles/Stretch.blockyanim",
@@ -111,7 +112,8 @@
     "Sleep": {
       "Animations": [
         {
-          "Animation": "NPC/Pets/Cat/Animations/Sleep.blockyanim"
+          "Animation": "NPC/Pets/Cat/Animations/Sleep.blockyanim",
+          "SoundEventId": "SFX_AlecsCats_Cat_Purr"
         }
       ]
     },

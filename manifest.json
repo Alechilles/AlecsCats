@@ -13,7 +13,9 @@
   ],
   "Website": "",
   "ServerVersion": "",
-  "Dependencies": {},
+  "Dependencies": {
+    "Alechilles:Alec's Tamework!": "1.0.0"
+  },
   "OptionalDependencies": {},
   "LoadBefore": {},
   "DisabledByDefault": false,

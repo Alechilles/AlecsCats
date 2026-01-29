@@ -1,7 +1,7 @@
 {
   "Type": "Variant",
   "Reference": "Template_Cat_Pet",
-    "Modify": {
+  "Modify": {
     "Appearance": "Cat",
     "DropList": "Drop_Cat",
     "MaxHealth": 50,
@@ -37,10 +37,33 @@
     "CombatMovingRelativeSpeed": 0.6,
     "AlwaysSleepAtNight": false,
     "NightFlavorAnimation": "Sit",
+    "NightFlavorAnimationAfter": "StandUp",
+    "DayFlavorAnimation": "Sit",
+    "DayFlavorAnimationAfter": "StandUp",
+    "DayFlavorAnimationLength": [
+      15,
+      30
+    ],
+    "NightFlavorAnimationLength": [
+      15,
+      30
+    ],
+    "InteractSoundHold": "SFX_AlecsCats_Cat_Trill",
+    "InteractSoundFollow": "SFX_AlecsCats_Cat_Trill",
+    "InteractSoundDefend": "SFX_AlecsCats_Cat_Trill",
+    "InteractSoundFeed": "SFX_AlecsCats_Cat_Trill",
+    "InteractSoundPickUp": "SFX_Tamework_Poof",
     "DayTimeNapWeight": 1,
     "DayTimeNapTimeRange": [
       20,
       60
+    ],
+    "SpawnerEmptyItemID": [
+      "Egg_Spawner_Cat_Empty"
+    ],
+    "SpawnerItemID": "Egg_Spawner_Cat",
+    "FoodItemIDs": [
+      "Food_Fish_Raw"
     ],
     "TimidDuringDay": true,
     "IsMemory": true,
