@@ -19,11 +19,10 @@
                     "SystemId": "Poof_Small",
                     "PositionOffset": {
                       "X": 0,
-                      "Y": 0,
-                      "Z": 0
+                      "Y": 0.2,
+                      "Z": 0.2
                     },
-                    "TargetEntityPart": "Self",
-                    "DetachedFromModel": false
+                    "TargetEntityPart": "PrimaryItem"
                   }
                 ],
                 "WorldSoundEventId": "SFX_Tamework_Poof"

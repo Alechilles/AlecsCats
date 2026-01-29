@@ -2,6 +2,9 @@
 
 All notable changes to **Alec's Cats!** will be documented in this file.
 
+## Unreleased
+- _TBD_
+
 ## 1.3.0 - Massive Refactor and Sounds - 2026-01-29
 ### Added
 - Dependency on **Alec's Tamework!** for shared tame/follow/hold/defend/sleep components.
