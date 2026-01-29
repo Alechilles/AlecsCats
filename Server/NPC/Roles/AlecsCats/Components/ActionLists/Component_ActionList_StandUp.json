@@ -9,9 +9,13 @@
     {
       "Type": "Timeout",
       "Delay": [
-        1,
-        1
+        0.83,
+        0.83
       ]
+    },
+    {
+      "Type": "PlayAnimation",
+      "Slot": "Status"
     }
   ],
   "Type": "Component"

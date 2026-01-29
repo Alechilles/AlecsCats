@@ -1,23 +1,34 @@
 {
   "Type": "Variant",
-  "Reference": "Template_Cat_Pet",
-    "Modify": {
+  "Reference": "Template_Predator_Cat",
+  "Modify": {
     "Appearance": "Cat",
+    "FlockArray": [
+      "Cat"
+    ],
+    "ChanceToBeAlertedWhenFlockAlerted": 70,
     "DropList": "Drop_Cat",
-    "MaxHealth": 50,
+    "MaxHealth": 38,
     "MaxSpeed": 8,
     "WanderRadius": 10,
     "ViewRange": 12,
     "HearingRange": 8,
     "AbsoluteDetectionRange": 2,
+    "AlertedRange": 18,
+    "AlertedTime": [
+      2,
+      4
+    ],
+    "MaintainDistanceWhileAlerted": false,
     "ThreatenDelayRange": [
       2,
       2
     ],
     "ThreatenAnimation": "Threaten",
+    "FleeIfNotThreatened": true,
     "FleeRange": 15,
-    "HardLeashDistance": 30,
-    "LeashDistance": 20,
+    "HardLeashDistance": 60,
+    "LeashDistance": 30,
     "LeashMinPlayerDistance": 7,
     "LeashTimer": [
       4,
@@ -36,11 +47,27 @@
     "ChaseRelativeSpeed": 1,
     "CombatMovingRelativeSpeed": 0.6,
     "AlwaysSleepAtNight": false,
-    "NightFlavorAnimation": "Sit",
-    "DayTimeNapWeight": 1,
+    "NightFlavorAnimation": "",
+    "NightFlavorAnimationAfter": "",
+    "DayFlavorAnimation": "",
+    "DayFlavorAnimationAfter": "",
+    "DayFlavorAnimationLength": [
+      15,
+      30
+    ],
+    "NightFlavorAnimationLength": [
+      15,
+      30
+    ],
+    "InteractSoundHold": "SFX_AlecsCats_Cat_Trill",
+    "InteractSoundFollow": "SFX_AlecsCats_Cat_Trill",
+    "InteractSoundDefend": "SFX_AlecsCats_Cat_Trill",
+    "InteractSoundFeed": "SFX_AlecsCats_Cat_Trill",
+    "InteractSoundPickUp": "SFX_Tamework_Poof",
+    "DayTimeNapWeight": 6,
     "DayTimeNapTimeRange": [
-      20,
-      60
+      10,
+      12
     ],
     "TimidDuringDay": true,
     "IsMemory": true,
@@ -86,7 +113,7 @@
   },
   "Parameters": {
     "NameTranslationKey": {
-      "Value": "server.npcRoles.Cat_Pet.name",
+      "Value": "server.npcRoles.Cat.name",
       "Description": "Translation key for NPC name display"
     }
   }

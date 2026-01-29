@@ -1,0 +1,26 @@
+{
+  "Layers": [
+    {
+      "Files": [
+        "Sounds/NPC/AlecsCats/Cat/AlecsCats_Cat_Purr_01.ogg",
+        "Sounds/NPC/AlecsCats/Cat/AlecsCats_Cat_Purr_02.ogg",
+        "Sounds/NPC/AlecsCats/Cat/AlecsCats_Cat_Purr_03.ogg"
+      ],
+      "RandomSettings": {
+        "MinPitch": -1.8240371213405997,
+        "MinVolume": -0.9151498112135024,
+        "MaxPitch": 1.6500422849992202,
+        "MaxVolume": 0
+      },
+      "Probability": 100,
+      "Volume": -7.979400086720375,
+      "Looping": true
+    }
+  ],
+  "MaxInstance": 5,
+  "Volume": -5,
+  "PreventSoundInterruption": false,
+  "AudioCategory": "AudioCat_NPC_AlecsCats_Cat",
+  "Parent": "SFX_Attn_Moderate",
+  "MaxDistance": 10
+}

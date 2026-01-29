@@ -144,6 +144,10 @@
       "Value": "",
       "Description": "A flavor animation to play at night. Ignored if null or empty."
     },
+    "NightFlavorAnimationAfter": {
+      "Value": "",
+      "Description": "Optional animation to play after the night flavor animation."
+    },
     "NightFlavorAnimationLength": {
       "Value": [
         3,
@@ -154,6 +158,10 @@
     "DayFlavorAnimation": {
       "Value": "",
       "Description": "A flavor animation to play during the day. Ignored if null or empty."
+    },
+    "DayFlavorAnimationAfter": {
+      "Value": "",
+      "Description": "Optional animation to play after the daytime flavor animation."
     },
     "DayFlavorAnimationLength": {
       "Value": [
@@ -170,6 +178,44 @@
       "Value": [],
       "TypeHint": "String",
       "Description": "Array containing NPCs for this flock type."
+    },
+    "SpawnerEmptyItemID": {
+      "Value": [
+        "Egg_Spawner_Cat_Empty"
+      ],
+      "TypeHint": "String",
+      "Description": "Item IDs that can be used to pick up the pet (empty spawner)."
+    },
+    "SpawnerItemID": {
+      "Value": "Egg_Spawner_Cat",
+      "Description": "Filled spawner item ID granted when picking up the pet."
+    },
+    "FoodItemIDs": {
+      "Value": [
+        "Food_Fish_Raw"
+      ],
+      "TypeHint": "String",
+      "Description": "Food item IDs accepted for feeding."
+    },
+    "InteractSoundHold": {
+      "Value": "SFX_AlecsCats_Cat_Trill",
+      "Description": "Sound to play when switching to Hold."
+    },
+    "InteractSoundFollow": {
+      "Value": "SFX_AlecsCats_Cat_Trill",
+      "Description": "Sound to play when switching to Follow."
+    },
+    "InteractSoundDefend": {
+      "Value": "SFX_AlecsCats_Cat_Trill",
+      "Description": "Sound to play when switching to Defend."
+    },
+    "InteractSoundFeed": {
+      "Value": "SFX_AlecsCats_Cat_Trill",
+      "Description": "Sound to play when feeding."
+    },
+    "InteractSoundPickUp": {
+      "Value": "SFX_AlecsCats_Cat_Trill",
+      "Description": "Sound to play when picking up the cat."
     },
     "AttackPauseRange": {
       "Value": [
@@ -435,7 +481,7 @@
     "Compute": "FlockArray"
   },
   "ApplySeparation": true,
-  "SeparationDistance": 2.5,
+  "SeparationDistance": 0.5,
   "SeparationWeight": 1.2,
   "SeparationDistanceTarget": 1.5,
   "SeparationNearRadiusTarget": 3,
@@ -519,6 +565,54 @@
       ],
       "Actions": {
         "Reference": "Component_ActionList_Wake"
+      }
+    },
+    {
+      "$Comment": "Pet sleep transitions (mirrors Cat_Pet wake/sleep behavior).",
+      "States": [
+        {
+          "From": [
+            "Pet",
+            "Hold"
+          ],
+          "To": [
+            "PetSleep"
+          ]
+        }
+      ],
+      "Actions": {
+        "Reference": "Component_ActionList_Sleep"
+      }
+    },
+    {
+      "States": [
+        {
+          "From": [
+            "PetSleep"
+          ],
+          "To": [
+            "Pet",
+            "Hold"
+          ]
+        }
+      ],
+      "Actions": {
+        "Reference": "Component_ActionList_Wake"
+      }
+    },
+    {
+      "States": [
+        {
+          "From": [
+            "Hold"
+          ],
+          "To": [
+            "Pet"
+          ]
+        }
+      ],
+      "Actions": {
+        "Reference": "Component_ActionList_StandUp"
       }
     },
     {
@@ -936,9 +1030,61 @@
                   ]
                 },
                 {
+                  "$Comment": "Play a daytime flavor animation (with optional follow-up).",
+                  "Enabled": {
+                    "Compute": "!isEmpty(DayFlavorAnimation) && !isEmpty(DayFlavorAnimationAfter)"
+                  },
+                  "Weight": 3,
+                  "Instructions": [
+                    {
+                      "ActionsBlocking": true,
+                      "Actions": [
+                        {
+                          "Type": "PlayAnimation",
+                          "Slot": "Status",
+                          "Animation": {
+                            "Compute": "DayFlavorAnimation"
+                          }
+                        },
+                        {
+                          "Type": "Timeout",
+                          "Delay": {
+                            "Compute": "DayFlavorAnimationLength"
+                          }
+                        },
+                        {
+                          "Type": "PlayAnimation",
+                          "Slot": "Status"
+                        },
+                        {
+                          "Type": "PlayAnimation",
+                          "Slot": "Status",
+                          "Animation": {
+                            "Compute": "DayFlavorAnimationAfter"
+                          }
+                        },
+                        {
+                          "Type": "Timeout",
+                          "Delay": [
+                            1,
+                            1
+                          ]
+                        },
+                        {
+                          "Type": "PlayAnimation",
+                          "Slot": "Status"
+                        },
+                        {
+                          "Type": "ResetInstructions"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
                   "$Comment": "Play a daytime flavor animation.",
                   "Enabled": {
-                    "Compute": "!isEmpty(DayFlavorAnimation)"
+                    "Compute": "!isEmpty(DayFlavorAnimation) && isEmpty(DayFlavorAnimationAfter)"
                   },
                   "Weight": 3,
                   "Instructions": [
@@ -982,7 +1128,7 @@
                       "Actions": [
                         {
                           "Type": "State",
-                          "State": "Sleep.Nap"
+                          "State": "Sleep"
                         }
                       ]
                     }
@@ -1142,9 +1288,61 @@
                   ]
                 },
                 {
+                  "$Comment": "Play a night-time flavor animation (with optional follow-up).",
+                  "Enabled": {
+                    "Compute": "!isEmpty(NightFlavorAnimation) && !isEmpty(NightFlavorAnimationAfter)"
+                  },
+                  "Weight": 3,
+                  "Instructions": [
+                    {
+                      "ActionsBlocking": true,
+                      "Actions": [
+                        {
+                          "Type": "PlayAnimation",
+                          "Slot": "Status",
+                          "Animation": {
+                            "Compute": "NightFlavorAnimation"
+                          }
+                        },
+                        {
+                          "Type": "Timeout",
+                          "Delay": {
+                            "Compute": "NightFlavorAnimationLength"
+                          }
+                        },
+                        {
+                          "Type": "PlayAnimation",
+                          "Slot": "Status"
+                        },
+                        {
+                          "Type": "PlayAnimation",
+                          "Slot": "Status",
+                          "Animation": {
+                            "Compute": "NightFlavorAnimationAfter"
+                          }
+                        },
+                        {
+                          "Type": "Timeout",
+                          "Delay": [
+                            1,
+                            1
+                          ]
+                        },
+                        {
+                          "Type": "PlayAnimation",
+                          "Slot": "Status"
+                        },
+                        {
+                          "Type": "ResetInstructions"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
                   "$Comment": "Play a night-time flavor animation.",
                   "Enabled": {
-                    "Compute": "!isEmpty(NightFlavorAnimation)"
+                    "Compute": "!isEmpty(NightFlavorAnimation) && isEmpty(NightFlavorAnimationAfter)"
                   },
                   "Weight": 3,
                   "Instructions": [
@@ -1208,102 +1406,75 @@
           },
           "Instructions": [
             {
-              "$Comment": "Wake up if an enemy attacks a flock member.",
-              "Enabled": {
-                "Compute": "!isEmptyStringArray(FlockArray)"
-              },
-              "Sensor": {
-                "Type": "Beacon",
-                "Message": "Flock_Attack",
-                "TargetSlot": "LockedTarget"
-              },
-              "Actions": [
-                {
-                  "Type": "State",
-                  "State": "Alerted"
-                }
-              ]
-            },
-            {
-              "$Comment": "Just a little nap.",
-              "Enabled": {
-                "Compute": "DayTimeNapWeight > 0"
-              },
-              "Sensor": {
-                "Type": "State",
-                "State": ".Nap"
-              },
-              "Instructions": [
-                {
-                  "$Comment": "Start the nap timer",
-                  "Continue": true,
-                  "Sensor": {
-                    "Type": "Any",
-                    "Once": true
-                  },
-                  "Actions": [
-                    {
-                      "Type": "TimerStart",
-                      "Name": "NapTimer",
-                      "StartValueRange": {
-                        "Compute": "DayTimeNapTimeRange"
-                      },
-                      "RestartValueRange": {
-                        "Compute": "DayTimeNapTimeRange"
-                      }
-                    },
-                    {
-                      "Type": "TimerRestart",
-                      "Name": "NapTimer"
-                    }
-                  ]
+              "Reference": "Component_Tamework_Instruction_Sleep",
+              "Modify": {
+                "_ExportStates": [
+                  "Combat.Message",
+                  "Panic",
+                  "Alerted",
+                  "Idle",
+                  "Alerted"
+                ],
+                "DayTimePeriod": {
+                  "Compute": "DayTimePeriod"
                 },
-                {
-                  "Reference": "Component_Instruction_Wild_Sleep_State",
-                  "Modify": {
-                    "_ExportStates": [
-                      "Combat.Message",
-                      "Panic",
-                      "Alerted",
-                      "Idle"
-                    ],
-                    "HearingRange": {
-                      "Compute": "HearingRange"
-                    },
-                    "Attitudes": [
-                      "Hostile",
-                      "Neutral"
-                    ],
-                    "WakeupSensor": "Component_Sensor_Timed_Nap"
-                  }
+                "DayTimeNapWeight": {
+                  "Compute": "DayTimeNapWeight"
+                },
+                "DayTimeNapTimeRange": {
+                  "Compute": "DayTimeNapTimeRange"
+                },
+                "HearingRange": {
+                  "Compute": "HearingRange"
+                },
+                "Attitudes": [
+                  "Hostile",
+                  "Neutral"
+                ],
+                "FlockArray": {
+                  "Compute": "FlockArray"
                 }
-              ]
-            },
+              }
+            }
+          ]
+        },
+        {
+          "$Comment": "Pet sleep uses the same sleep component but returns to Pet instead of Alerted.",
+          "Sensor": {
+            "Type": "State",
+            "State": "PetSleep"
+          },
+          "Instructions": [
             {
-              "$Comment": "Night-time sleep.",
-              "Instructions": [
-                {
-                  "Reference": "Component_Instruction_Wild_Sleep_State",
-                  "Modify": {
-                    "_ExportStates": [
-                      "Combat.Message",
-                      "Panic",
-                      "Alerted",
-                      "Idle"
-                    ],
-                    "HearingRange": {
-                      "Compute": "HearingRange"
-                    },
-                    "Attitudes": [
-                      "Hostile",
-                      "Neutral"
-                    ],
-                    "DayTimePeriod": {
-                      "Compute": "DayTimePeriod"
-                    }
-                  }
+              "Reference": "Component_Tamework_Instruction_Sleep",
+              "Modify": {
+                "_ExportStates": [
+                  "Pet",
+                  "Pet",
+                  "Hold",
+                  "Hold",
+                  "Pet"
+                ],
+                "DayTimePeriod": {
+                  "Compute": "DayTimePeriod"
+                },
+                "DayTimeNapWeight": {
+                  "Compute": "DayTimeNapWeight"
+                },
+                "DayTimeNapTimeRange": {
+                  "Compute": "DayTimeNapTimeRange"
+                },
+                "HearingRange": {
+                  "Compute": "HearingRange"
+                },
+                "Attitudes": [
+                  "Hostile",
+                  "Neutral"
+                ],
+                "FlockArray": {
+                  "Compute": "FlockArray"
                 }
-              ]
+              }
             }
           ]
         },
@@ -2809,402 +2980,79 @@
           ]
         },
         {
+          "$Comment": "Pet Follow State: use Tamework idle-follow behavior.",
           "Sensor": {
             "Type": "State",
-            "State": "Pet.Greet"
+            "State": "Pet"
           },
           "Instructions": [
             {
-              "ActionsBlocking": true,
-              "Actions": [
-                {
-                  "Type": "Timeout",
-                  "Delay": [
-                    1,
-                    1
-                  ]
-                },
-                {
-                  "Type": "PlayAnimation",
-                  "Slot": "Status",
-                  "Animation": "Alerted2"
-                },
-                {
-                  "Type": "Timeout",
-                  "Delay": [
-                    1.5,
-                    1.5
-                  ]
-                },
-                {
-                  "Type": "PlayAnimation",
-                  "Slot": "Status"
-                },
-                {
-                  "Type": "State",
-                  "State": "Pet.IdleDefault"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "Sensor": {
-            "Type": "State",
-            "State": "Pet.IdleDefault"
-          },
-          "Instructions": [
-            {
-              "Sensor": {
-                "Type": "Player",
-                "Range": 5,
-                "Filters": [
-                  {
-                    "Type": "SpotsMe",
-                    "ViewAngle": 45
-                  }
-                ]
-              },
-              "ActionsBlocking": true,
-              "Actions": [
-                {
-                  "Type": "State",
-                  "State": "Pet.Idle90"
-                }
-              ]
-            },
-            {
-              "Sensor": {
-                "Type": "Player",
-                "Range": 15,
-                "LockOnTarget": true
-              },
-              "BodyMotion": {
-                "Type": "Seek",
-                "SlowDownDistance": 5,
-                "StopDistance": 3,
-                "RelativeSpeed": 1
-              }
-            },
-            {
-              "Sensor": {
-                "Type": "Target"
-              },
-              "BodyMotion": {
-                "Type": "Teleport"
-              }
-            }
-          ]
-        },
-        {
-          "Sensor": {
-            "Type": "State",
-            "State": "Pet.Idle90"
-          },
-          "Instructions": [
-            {
-              "Sensor": {
-                "Type": "Player",
-                "Range": 10,
-                "Filters": [
-                  {
-                    "Type": "SpotsMe",
-                    "ViewAngle": 180
-                  }
-                ]
-              },
-              "ActionsBlocking": true,
-              "Actions": [
-                {
-                  "Type": "State",
-                  "State": "Pet.Idle180"
-                }
-              ]
-            },
-            {
-              "Sensor": {
-                "Type": "Target"
-              },
-              "BodyMotion": {
-                "Type": "MaintainDistance",
-                "DesiredDistanceRange": [
-                  2,
-                  3
-                ],
-                "StrafingDurationRange": [
-                  1,
-                  1
-                ],
-                "StrafingFrequencyRange": [
-                  2,
-                  2
-                ],
-                "MoveThreshold": 0.2,
-                "RelativeForwardsSpeed": 1,
-                "RelativeBackwardsSpeed": 1
-              },
-              "ActionsBlocking": true,
-              "Actions": [
-                {
-                  "Type": "Timeout",
-                  "Delay": [
-                    2,
-                    2
-                  ]
-                },
-                {
-                  "Type": "State",
-                  "State": "Pet.IdleDefault"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "Sensor": {
-            "Type": "State",
-            "State": "Pet.Idle180"
-          },
-          "Instructions": [
-            {
-              "Sensor": {
-                "Type": "Player",
-                "Range": 10,
-                "Filters": [
-                  {
-                    "Type": "Not",
-                    "Filter": {
-                      "Type": "SpotsMe",
-                      "ViewAngle": 180
-                    }
-                  }
-                ]
-              },
-              "ActionsBlocking": true,
-              "Actions": [
-                {
-                  "Type": "State",
-                  "State": "Pet.Idle270"
-                }
-              ]
-            },
-            {
-              "Sensor": {
-                "Type": "Target"
-              },
-              "BodyMotion": {
-                "Type": "MaintainDistance",
-                "DesiredDistanceRange": [
-                  2,
-                  3
-                ],
-                "StrafingDurationRange": [
-                  1,
-                  1
-                ],
-                "StrafingFrequencyRange": [
-                  2,
-                  2
-                ],
-                "MoveThreshold": 0.2,
-                "RelativeForwardsSpeed": 1,
-                "RelativeBackwardsSpeed": 1
-              },
-              "ActionsBlocking": true,
-              "Actions": [
-                {
-                  "Type": "Timeout",
-                  "Delay": [
-                    2,
-                    2
-                  ]
-                },
-                {
-                  "Type": "State",
-                  "State": "Pet.IdleDefault"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "Sensor": {
-            "Type": "State",
-            "State": "Pet.Idle270"
-          },
-          "Instructions": [
-            {
-              "Sensor": {
-                "Type": "Player",
-                "Range": 10,
-                "Filters": [
-                  {
-                    "Type": "SpotsMe",
-                    "ViewAngle": 180
-                  }
-                ]
-              },
-              "ActionsBlocking": true,
-              "Actions": [
-                {
-                  "Type": "State",
-                  "State": "Pet.Idle360"
-                }
-              ]
-            },
-            {
-              "Sensor": {
-                "Type": "Target"
-              },
-              "BodyMotion": {
-                "Type": "MaintainDistance",
-                "DesiredDistanceRange": [
-                  2,
-                  3
-                ],
-                "StrafingDurationRange": [
-                  1,
-                  1
-                ],
-                "StrafingFrequencyRange": [
-                  2,
-                  2
-                ],
-                "MoveThreshold": 0.2,
-                "RelativeForwardsSpeed": 1,
-                "RelativeBackwardsSpeed": 1
-              },
-              "ActionsBlocking": true,
-              "Actions": [
-                {
-                  "Type": "Timeout",
-                  "Delay": [
-                    2,
-                    2
-                  ]
-                },
-                {
-                  "Type": "State",
-                  "State": "Pet.IdleDefault"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "Sensor": {
-            "Type": "State",
-            "State": "Pet.Idle360"
-          },
-          "Instructions": [
-            {
-              "Sensor": {
-                "Type": "Player",
-                "Range": 10,
-                "Filters": [
-                  {
-                    "Type": "SpotsMe",
-                    "ViewAngle": 90
-                  }
-                ]
-              },
-              "ActionsBlocking": true,
-              "Actions": [
-                {
-                  "Type": "State",
-                  "State": "Pet.Spin"
-                }
-              ]
-            },
-            {
-              "Sensor": {
-                "Type": "Target"
-              },
-              "BodyMotion": {
-                "Type": "MaintainDistance",
-                "DesiredDistanceRange": [
-                  2,
-                  3
-                ],
-                "StrafingDurationRange": [
-                  1,
-                  1
-                ],
-                "StrafingFrequencyRange": [
-                  2,
-                  2
-                ],
-                "MoveThreshold": 0.2,
-                "RelativeForwardsSpeed": 1,
-                "RelativeBackwardsSpeed": 1
-              },
-              "ActionsBlocking": true,
-              "Actions": [
-                {
-                  "Type": "Timeout",
-                  "Delay": [
-                    2,
-                    2
-                  ]
-                },
-                {
-                  "Type": "State",
-                  "State": "Pet.IdleDefault"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "Sensor": {
-            "Type": "State",
-            "State": "Pet.Spin"
-          },
-          "Instructions": [
-            {
-              "ActionsBlocking": true,
-              "Actions": [
-                {
-                  "Type": "Timeout",
-                  "Delay": [
-                    1,
-                    1
-                  ]
-                },
-                {
-                  "Type": "PlayAnimation",
-                  "Slot": "Status",
-                  "Animation": "IdlePassive"
-                },
-                {
-                  "Type": "Timeout",
-                  "Delay": [
-                    2.55,
-                    2.55
-                  ]
-                },
-                {
-                  "Type": "PlayAnimation",
-                  "Slot": "Status"
-                },
-                {
-                  "Type": "State",
-                  "State": "Pet.IdleDefault"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "Sensor": {
-            "Type": "State",
-            "State": "Pet.Hold"
-          },
-          "Instructions": [
-            {
+              "$Comment": "Clear any lingering sleep/status animation on enter.",
               "Continue": true,
-              "BodyMotion": {
-                "Type": "Nothing"
+              "Sensor": {
+                "Type": "Any",
+                "Once": true
+              },
+              "Actions": [
+                {
+                  "Type": "PlayAnimation",
+                  "Slot": "Status"
+                }
+              ]
+            },
+            {
+              "Reference": "Component_Tamework_Instruction_IdleFollow",
+              "Modify": {
+                "MasterTargetSlot": "LockedTarget"
+              }
+            }
+          ]
+        },
+        {
+          "$Comment": "Pet Hold State: stay still and use Tamework hold behavior.",
+          "Sensor": {
+            "Type": "State",
+            "State": "Hold"
+          },
+          "Instructions": [
+            {
+              "Reference": "Component_Tamework_Instruction_Hold",
+              "Modify": {
+                "_ExportStates": [
+                  "PetSleep"
+                ],
+                "DayFlavorAnimation": {
+                  "Compute": "DayFlavorAnimation"
+                },
+                "DayFlavorAnimationAfter": {
+                  "Compute": "DayFlavorAnimationAfter"
+                },
+                "DayFlavorAnimationLength": {
+                  "Compute": "DayFlavorAnimationLength"
+                },
+                "DayTimePeriod": {
+                  "Compute": "DayTimePeriod"
+                },
+                "NightFlavorAnimation": {
+                  "Compute": "NightFlavorAnimation"
+                },
+                "NightFlavorAnimationAfter": {
+                  "Compute": "NightFlavorAnimationAfter"
+                },
+                "NightFlavorAnimationLength": {
+                  "Compute": "NightFlavorAnimationLength"
+                },
+                "DayTimeNapWeight": {
+                  "Compute": "DayTimeNapWeight"
+                },
+                "HearingRange": {
+                  "Compute": "HearingRange"
+                },
+                "Attitudes": [
+                  "Hostile",
+                  "Neutral"
+                ],
+                "AlwaysSleepAtNight": false
               }
             }
           ]
@@ -3247,8 +3095,17 @@
               "Type": "And",
               "Sensors": [
                 {
-                  "Type": "State",
-                  "State": "Pet"
+                  "Type": "Or",
+                  "Sensors": [
+                    {
+                      "Type": "State",
+                      "State": "Pet"
+                    },
+                    {
+                      "Type": "State",
+                      "State": "Hold"
+                    }
+                  ]
                 },
                 {
                   "Type": "Target",
@@ -3256,9 +3113,9 @@
                   "Filters": [
                     {
                       "Type": "ItemInHand",
-                      "Items": [
-                        "Egg_Spawner_Cat_Empty"
-                      ]
+                      "Items": {
+                        "Compute": "SpawnerEmptyItemID"
+                      }
                     }
                   ]
                 }
@@ -3277,7 +3134,15 @@
                 "Type": "Inventory",
                 "UseTarget": true,
                 "Operation": "Add",
-                "Item": "Egg_Spawner_Cat"
+                "Item": {
+                  "Compute": "SpawnerItemID"
+                }
+              },
+              {
+                "Type": "PlaySound",
+                "SoundEventId": {
+                  "Compute": "InteractSoundPickUp"
+                }
               }
             ]
           },
@@ -3288,18 +3153,19 @@
             "Instructions": [
               {
                 "Sensor": {
-                  "Type": "And",
-                  "Sensors": [
-                    {
-                      "Type": "State",
-                      "State": "Pet.Hold"
-                    }
-                  ]
+                  "Type": "State",
+                  "State": "Hold"
                 },
                 "Actions": [
                   {
                     "Type": "State",
-                    "State": "Pet.Greet"
+                    "State": "Pet"
+                  },
+                  {
+                    "Type": "PlaySound",
+                    "SoundEventId": {
+                      "Compute": "InteractSoundFollow"
+                    }
                   }
                 ]
               },
@@ -3310,8 +3176,17 @@
                     {
                       "Type": "Not",
                       "Sensor": {
-                        "Type": "State",
-                        "State": "Pet"
+                        "Type": "Or",
+                        "Sensors": [
+                          {
+                            "Type": "State",
+                            "State": "Pet"
+                          },
+                          {
+                            "Type": "State",
+                            "State": "Hold"
+                          }
+                        ]
                       }
                     },
                     {
@@ -3320,9 +3195,9 @@
                       "Filters": [
                         {
                           "Type": "ItemInHand",
-                          "Items": [
-                            "Food_Fish_Raw"
-                          ]
+                          "Items": {
+                            "Compute": "FoodItemIDs"
+                          }
                         }
                       ]
                     }
@@ -3331,13 +3206,13 @@
                 "Actions": [
                   {
                     "Type": "State",
-                    "State": "Pet.Hold"
+                    "State": "Hold"
                   },
                   {
                     "Type": "Inventory",
                     "UseTarget": true,
-                    "Operation": "Remove",
-                    "Item": "Food_Fish_Raw"
+                    "Operation": "RemoveHeldItem",
+                    "Count": 1
                   },
                   {
                     "Type": "SpawnParticles",
@@ -3347,6 +3222,12 @@
                       0
                     ],
                     "ParticleSystem": "Hearts"
+                  },
+                  {
+                    "Type": "PlaySound",
+                    "SoundEventId": {
+                      "Compute": "InteractSoundFeed"
+                    }
                   }
                 ]
               },
@@ -3358,7 +3239,13 @@
                 "Actions": [
                   {
                     "Type": "State",
-                    "State": "Pet.Hold"
+                    "State": "Hold"
+                  },
+                  {
+                    "Type": "PlaySound",
+                    "SoundEventId": {
+                      "Compute": "InteractSoundHold"
+                    }
                   }
                 ]
               }
@@ -3372,3 +3259,4 @@
     "Compute": "NameTranslationKey"
   }
 }
+

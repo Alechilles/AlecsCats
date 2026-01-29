@@ -2,3 +2,7 @@ Server/NPC/Roles/_Core/Components/Component_Sensor_Standard_Detection.json
 Server/NPC/Roles/_Core/Components/Component_Sensor_Lost_Target_Detection.json
 Server/NPC/Roles/_Core/Components/Component_Instruction_Intelligent_Chase.json
 Server/NPC/Roles/_Core/Components/Component_Instruction_Combat_Back_Off.json
+Server/NPC/Roles/_Core/Templates/Template_Predator.json
+Server/NPC/Roles/_Core/Test_Set_State_From_Component.json
+Server/NPC/Roles/_Core/Test_Component_Set_State.json
+Server/NPC/Roles/_Core/Components/Selectors/Component_Instruction_Wild_Sleep_State.json
