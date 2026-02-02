@@ -2,8 +2,20 @@
 
 All notable changes to **Alec's Cats!** will be documented in this file.
 
-## Unreleased
-- _TBD_
+## 1.4.0 - Tamework Integration and Capture Flow - 2026-02-02
+### Added
+- Ownership and tamed state stored on NPCs via new Tamework components.
+- Attachment preservation when capturing/spawning cats (coat variants persist).
+- Damage configuration options (invulnerable to owner (default), all players, or all sources).
+- Inventory icons for captured Cats change dynamically to match the stored Cat's appearance.
+
+### Changed
+- Taming flow now uses the new Tamework capture system.
+- Interaction logic aligned with Tamework owner/tamed rules (owner-only interaction and capture).
+- Merged Cat_Pet logic into Cat logic, using the new IsTamed flag from Tamework, allowing for one Cat to handle both the wild and tamed behaviors in one.
+
+### Notes
+- Tamework settings control owner damage protection and related rules in `Alec's Cats!/Server/Tamework/`
 
 ## 1.3.0 - Massive Refactor and Sounds - 2026-01-29
 ### Added
