@@ -35,5 +35,7 @@
     "OutputQuantity": 1,
     "TimeSeconds": 3
   },
-  "MaxStack": 1
+  "MaxStack": 1,
+  "Model": "Items/Pet Spawners/Collar/Collar.blockymodel",
+  "Texture": "Items/Pet Spawners/Collar/Collar_Texture.png"
 }
