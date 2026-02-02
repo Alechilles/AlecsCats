@@ -696,6 +696,30 @@
   },
   "Instructions": [
     {
+      "$Comment": "If tamed, force pet state when not already in a pet state.",
+      "Sensor": {
+        "Type": "And",
+        "Sensors": [
+          { "Type": "TameworkIsTamed" },
+          {
+            "Type": "Not",
+            "Sensor": {
+              "Type": "Or",
+              "Sensors": [
+                { "Type": "State", "State": "Pet" },
+                { "Type": "State", "State": "Hold" },
+                { "Type": "State", "State": "Defend" },
+                { "Type": "State", "State": "PetSleep" }
+              ]
+            }
+          }
+        ]
+      },
+      "Actions": [
+        { "Type": "State", "State": "Pet" }
+      ]
+    },
+    {
       "$Comment": "This is separate so it can run all the time regardless of the rest of the script",
       "Continue": true,
       "Instructions": [
@@ -3003,8 +3027,20 @@
             {
               "Reference": "Component_Tamework_Instruction_IdleFollow",
               "Modify": {
-                "MasterTargetSlot": "LockedTarget"
+                "MasterTargetSlot": "MasterTarget"
               }
+            }
+          ]
+        },
+        {
+          "$Comment": "Pet Defend State: cat will defend itself against nearby threats.",
+          "Sensor": {
+            "Type": "State",
+            "State": "Defend"
+          },
+          "Instructions": [
+            {
+              "Reference": "Component_Tamework_Instruction_Defend"
             }
           ]
         },
@@ -3060,195 +3096,207 @@
       ]
     }
   ],
-  "InteractionInstruction": {
+    "InteractionInstruction": {
     "Instructions": [
       {
         "Continue": true,
-        "Sensor": {
-          "Type": "Any"
-        },
+        "Sensor": { "Type": "Any" },
         "Actions": [
-          {
-            "Type": "SetInteractable",
-            "Interactable": true
-          }
+          { "Type": "SetInteractable", "Interactable": true }
         ]
       },
       {
-        "Sensor": {
-          "Type": "HasInteracted"
-        },
+        "Sensor": { "Type": "HasInteracted" },
         "Instructions": [
           {
             "Continue": true,
-            "Sensor": {
-              "Type": "Any"
-            },
+            "Sensor": { "Type": "Any" },
             "Actions": [
-              {
-                "Type": "LockOnInteractionTarget"
-              }
+              { "Type": "LockOnInteractionTarget", "TargetSlot": "MasterTarget" }
             ]
           },
           {
+            "$Comment": "Tame when fed (wild only).",
             "Sensor": {
               "Type": "And",
               "Sensors": [
-                {
-                  "Type": "Or",
-                  "Sensors": [
-                    {
-                      "Type": "State",
-                      "State": "Pet"
-                    },
-                    {
-                      "Type": "State",
-                      "State": "Hold"
-                    }
-                  ]
-                },
+                { "Type": "Not", "Sensor": { "Type": "TameworkIsTamed" } },
                 {
                   "Type": "Target",
-                  "TargetSlot": "LockedTarget",
+                  "TargetSlot": "MasterTarget",
                   "Filters": [
-                    {
-                      "Type": "ItemInHand",
-                      "Items": {
-                        "Compute": "SpawnerEmptyItemID"
-                      }
-                    }
+                    { "Type": "ItemInHand", "Items": { "Compute": "FoodItemIDs" } }
                   ]
                 }
               ]
             },
             "Actions": [
-              {
-                "Type": "Despawn"
-              },
-              {
-                "Type": "Inventory",
-                "UseTarget": true,
-                "Operation": "RemoveHeldItem"
-              },
-              {
-                "Type": "Inventory",
-                "UseTarget": true,
-                "Operation": "Add",
-                "Item": {
-                  "Compute": "SpawnerItemID"
-                }
-              },
-              {
-                "Type": "PlaySound",
-                "SoundEventId": {
-                  "Compute": "InteractSoundPickUp"
-                }
-              }
+              { "Type": "Inventory", "UseTarget": true, "Operation": "RemoveHeldItem", "Count": 1 },
+              { "Type": "SpawnParticles", "Offset": [0, 0.8, 0], "ParticleSystem": "Hearts" },
+              { "Type": "PlaySound", "SoundEventId": { "Compute": "InteractSoundFeed" } },
+              { "Type": "TameworkSetOwner" },
+              { "Type": "TameworkSetTamed", "Value": true },
+              { "Type": "State", "State": "Pet" },
+              { "Type": "PlaySound", "SoundEventId": { "Compute": "InteractSoundFollow" } }
             ]
           },
           {
+            "$Comment": "Non-owner interaction warning.",
             "Sensor": {
-              "Type": "Any"
+              "Type": "And",
+              "Sensors": [
+                { "Type": "TameworkIsTamed" },
+                { "Type": "TameworkHasOwner" },
+                { "Type": "Not", "Sensor": { "Type": "TameworkIsOwner" } }
+              ]
             },
-            "Instructions": [
-              {
-                "Sensor": {
-                  "Type": "State",
-                  "State": "Hold"
-                },
-                "Actions": [
-                  {
-                    "Type": "State",
-                    "State": "Pet"
-                  },
-                  {
-                    "Type": "PlaySound",
-                    "SoundEventId": {
-                      "Compute": "InteractSoundFollow"
-                    }
-                  }
-                ]
-              },
-              {
-                "Sensor": {
-                  "Type": "And",
-                  "Sensors": [
-                    {
-                      "Type": "Not",
-                      "Sensor": {
-                        "Type": "Or",
-                        "Sensors": [
-                          {
-                            "Type": "State",
-                            "State": "Pet"
-                          },
-                          {
-                            "Type": "State",
-                            "State": "Hold"
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "Type": "Target",
-                      "TargetSlot": "LockedTarget",
-                      "Filters": [
-                        {
-                          "Type": "ItemInHand",
-                          "Items": {
-                            "Compute": "FoodItemIDs"
-                          }
-                        }
-                      ]
-                    }
+            "Actions": [
+              { "Type": "TameworkDenyInteract" }
+            ]
+          },
+          {
+            "$Comment": "Owner capture (tamed only).",
+            "Sensor": {
+              "Type": "And",
+              "Sensors": [
+                { "Type": "TameworkIsTamed" },
+                { "Type": "TameworkIsOwner" },
+                {
+                  "Type": "Target",
+                  "TargetSlot": "MasterTarget",
+                  "Filters": [
+                    { "Type": "ItemInHand", "Items": { "Compute": "SpawnerEmptyItemID" } }
                   ]
-                },
-                "Actions": [
-                  {
-                    "Type": "State",
-                    "State": "Hold"
-                  },
-                  {
-                    "Type": "Inventory",
-                    "UseTarget": true,
-                    "Operation": "RemoveHeldItem",
-                    "Count": 1
-                  },
-                  {
-                    "Type": "SpawnParticles",
-                    "Offset": [
-                      0,
-                      0.8,
-                      0
-                    ],
-                    "ParticleSystem": "Hearts"
-                  },
-                  {
-                    "Type": "PlaySound",
-                    "SoundEventId": {
-                      "Compute": "InteractSoundFeed"
-                    }
-                  }
-                ]
-              },
-              {
-                "Sensor": {
-                  "Type": "State",
-                  "State": "Pet"
-                },
-                "Actions": [
-                  {
-                    "Type": "State",
-                    "State": "Hold"
-                  },
-                  {
-                    "Type": "PlaySound",
-                    "SoundEventId": {
-                      "Compute": "InteractSoundHold"
-                    }
-                  }
-                ]
-              }
+                }
+              ]
+            },
+            "Actions": [
+              { "Type": "TameworkCaptureOwner" },
+              { "Type": "SpawnParticles", "Offset": [0, 0.8, 0], "ParticleSystem": "Poof_Small" },
+              { "Type": "PlaySound", "SoundEventId": { "Compute": "InteractSoundPickUp" } }
+            ]
+          },
+          {
+            "$Comment": "Stranger capture (tamed only).",
+            "Sensor": {
+              "Type": "And",
+              "Sensors": [
+                { "Type": "TameworkIsTamed" },
+                { "Type": "TameworkHasOwner" },
+                { "Type": "Not", "Sensor": { "Type": "TameworkIsOwner" } },
+                {
+                  "Type": "Target",
+                  "TargetSlot": "MasterTarget",
+                  "Filters": [
+                    { "Type": "ItemInHand", "Items": { "Compute": "SpawnerEmptyItemID" } }
+                  ]
+                }
+              ]
+            },
+            "Actions": [
+              { "Type": "TameworkCaptureStranger" },
+              { "Type": "SpawnParticles", "Offset": [0, 0.8, 0], "ParticleSystem": "Poof_Small" },
+              { "Type": "PlaySound", "SoundEventId": { "Compute": "InteractSoundPickUp" } }
+            ]
+          },
+          {
+            "$Comment": "Wild capture (tamed only, no owner).",
+            "Sensor": {
+              "Type": "And",
+              "Sensors": [
+                { "Type": "TameworkIsTamed" },
+                { "Type": "Not", "Sensor": { "Type": "TameworkHasOwner" } },
+                {
+                  "Type": "Target",
+                  "TargetSlot": "MasterTarget",
+                  "Filters": [
+                    { "Type": "ItemInHand", "Items": { "Compute": "SpawnerEmptyItemID" } }
+                  ]
+                }
+              ]
+            },
+            "Actions": [
+              { "Type": "TameworkCaptureWild" },
+              { "Type": "SpawnParticles", "Offset": [0, 0.8, 0], "ParticleSystem": "Poof_Small" },
+              { "Type": "PlaySound", "SoundEventId": { "Compute": "InteractSoundPickUp" } }
+            ]
+          },
+          {
+            "$Comment": "Owner feed/heal (tamed only).",
+            "Sensor": {
+              "Type": "And",
+              "Sensors": [
+                { "Type": "TameworkIsTamed" },
+                { "Type": "TameworkIsOwner" },
+                {
+                  "Type": "Target",
+                  "TargetSlot": "MasterTarget",
+                  "Filters": [
+                    { "Type": "ItemInHand", "Items": { "Compute": "FoodItemIDs" } }
+                  ]
+                }
+              ]
+            },
+            "Actions": [
+              { "Type": "Inventory", "UseTarget": true, "Operation": "RemoveHeldItem", "Count": 1 },
+              { "Type": "SpawnParticles", "Offset": [0, 0.8, 0], "ParticleSystem": "Hearts" },
+              { "Type": "PlaySound", "SoundEventId": { "Compute": "InteractSoundFeed" } }
+            ]
+          },
+          {
+            "$Comment": "If Cat is in Defend state, switch to Hold state",
+            "Sensor": {
+              "Type": "And",
+              "Sensors": [
+                { "Type": "TameworkIsTamed" },
+                { "Type": "TameworkIsOwner" },
+                { "Type": "State", "State": "Defend" }
+              ]
+            },
+            "Actions": [
+              { "Type": "State", "State": "Hold" },
+              { "Type": "SpawnParticles", "Offset": [0, 0.8, 0], "ParticleSystem": "Hold" },
+              { "Type": "PlaySound", "SoundEventId": { "Compute": "InteractSoundHold" } }
+            ]
+          },
+          {
+            "$Comment": "If Cat is in Hold state, switch to Pet state.",
+            "Sensor": {
+              "Type": "And",
+              "Sensors": [
+                { "Type": "TameworkIsTamed" },
+                { "Type": "TameworkIsOwner" },
+                {
+                  "Type": "Or",
+                  "Sensors": [
+                    { "Type": "State", "State": "Hold" },
+                    { "Type": "State", "State": "PetSleep" }
+                  ]
+                }
+              ]
+            },
+            "Actions": [
+              { "Type": "LockOnInteractionTarget", "TargetSlot": "MasterTarget" },
+              { "Type": "State", "State": "Pet" },
+              { "Type": "SpawnParticles", "Offset": [0, 0.8, 0], "ParticleSystem": "Follow" },
+              { "Type": "PlaySound", "SoundEventId": { "Compute": "InteractSoundFollow" } }
+            ]
+          },
+          {
+            "$Comment": "If Cat is in Pet state, switch to Defend state",
+            "Sensor": {
+              "Type": "And",
+              "Sensors": [
+                { "Type": "TameworkIsTamed" },
+                { "Type": "TameworkIsOwner" },
+                { "Type": "State", "State": "Pet" }
+              ]
+            },
+            "Actions": [
+              { "Type": "LockOnInteractionTarget", "TargetSlot": "MasterTarget" },
+              { "Type": "State", "State": "Defend" },
+              { "Type": "SpawnParticles", "Offset": [0, 0.8, 0], "ParticleSystem": "Defend" },
+              { "Type": "PlaySound", "SoundEventId": { "Compute": "InteractSoundDefend" } }
             ]
           }
         ]
@@ -3259,4 +3307,6 @@
     "Compute": "NameTranslationKey"
   }
 }
+
+
 

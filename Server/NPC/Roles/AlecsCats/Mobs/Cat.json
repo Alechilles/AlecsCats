@@ -69,6 +69,13 @@
       10,
       12
     ],
+    "SpawnerEmptyItemID": [
+      "Egg_Spawner_Cat_Empty"
+    ],
+    "SpawnerItemID": "Egg_Spawner_Cat",
+    "FoodItemIDs": [
+      "Food_Fish_Raw"
+    ],
     "TimidDuringDay": true,
     "IsMemory": true,
     "MemoriesCategory": "Predator",

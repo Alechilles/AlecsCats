@@ -29,28 +29,19 @@
               }
             },
             {
-              "Type": "SpawnNPC",
-              "EntityId": "Cat_Pet",
-              "SpawnOffset": {
-                "X": 0,
-                "Y": 0.5,
-                "Z": 0
-              },
-              "Next": {
-                "Type": "ModifyInventory",
-                "AdjustHeldItemQuantity": -1,
-                "ItemToAdd": {
-                  "Id": "Egg_Spawner_Cat_Empty"
-                }
-              }
+              "Type": "TameworkSpawn",
+              "SpawnerRoleId": "Cat_Pet",
+              "EmptyItemId": "Egg_Spawner_Cat_Empty",
+              "SpawnAssignsOwner": true,
+              "AllowUncaptured": false
             }
           ]
         }
       ]
     }
   },
-  "Model": "NPC/Pets/Cat/Models/Cat/Model.blockymodel",
-  "Texture": "NPC/Pets/Cat/Models/Cat/Texture.png",
+  "Model": "Items/Pet Spawners/Lantern/AlecsCats_Soul_Lantern.blockymodel",
+  "Texture": "Items/Pet Spawners/Lantern/AlecsCats_Soul_Lantern_Texture.png",
   "Icon": "Icons/ItemsGenerated/Egg_Spawner_Cat.png",
   "IconProperties": {
     "Scale": 0.3,
@@ -66,5 +57,20 @@
   },
   "MaxStack": 1,
   "Scale": 1,
-  "Animation": "NPC/Pets/Cat/Animations/Idles/Sit.blockyanim"
+  "Animation": "NPC/Pets/Cat/Animations/Idles/Sit.blockyanim",
+  "Particles": [
+    {
+      "SystemId": "AlecsCats_Soul_Lantern",
+      "Color": "#00f3f3",
+      "PositionOffset": {
+        "Y": 0.17
+      },
+      "Scale": 0.5
+    }
+  ],
+  "Light": {
+    "Color": "#045",
+    "Radius": 0
+  },
+  "SoundEventId": "SFX_AlecsCats_Soul_Lantern_Loop"
 }

@@ -1,0 +1,53 @@
+{
+  "$Comment": "Tamework item feature config for Alec's Cats!",
+  "Items": {
+    "Egg_Spawner_Cat_Empty": {
+      "Spawner": true,
+      "CaptureClearsOwner": true,
+      "SpawnAssignsOwner": true,
+      "SpawnerAllowUncaptured": false,
+      "Whistle": false,
+      "WhistleRadius": 64,
+      "SpawnerRoleId": "Cat_Pet",
+      "SpawnerFilledItemId": "Egg_Spawner_Cat",
+      "OwnerRestricted": true
+    },
+    "Egg_Spawner_Cat": {
+      "Spawner": true,
+      "CaptureClearsOwner": true,
+      "SpawnAssignsOwner": true,
+      "SpawnerAllowUncaptured": true,
+      "Whistle": false,
+      "WhistleRadius": 64,
+      "SpawnerRoleId": "Cat_Pet",
+      "OwnerRestricted": true,
+      "SpawnerIconDefault": "Icons/ItemsGenerated/Egg_Spawner_Cat.png",
+      "SpawnerIconOverrides": [
+        {
+          "Icon": "Icons/ItemsGenerated/Egg_Spawner_Cat_Lulu.png",
+          "Attachments": {
+            "Coat": "Lulu"
+          }
+        },
+        {
+          "Icon": "Icons/ItemsGenerated/Egg_Spawner_Cat_Missy.png",
+          "Attachments": {
+            "Coat": "Missy"
+          }
+        },
+        {
+          "Icon": "Icons/ItemsGenerated/Egg_Spawner_Cat_Nyxie.png",
+          "Attachments": {
+            "Coat": "Nyxie"
+          }
+        },
+        {
+          "Icon": "Icons/ItemsGenerated/Egg_Spawner_Cat.png",
+          "Attachments": {
+            "Coat": "Empty"
+          }
+        }
+      ]
+    }
+  }
+}

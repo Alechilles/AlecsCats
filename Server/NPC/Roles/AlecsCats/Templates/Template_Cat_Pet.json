@@ -576,23 +576,6 @@
       "$Comment": "Despawn if in the Despawn state. (Triggered by interacting with empty spawner)",
       "Instructions": [
         {
-          "Sensor": {
-            "Type": "State",
-            "State": "Despawn"
-          },
-          "ActionsAtomic": true,
-          "Instructions": [
-            {
-              "ActionsBlocking": true,
-              "Actions": [
-                {
-                  "Type": "Despawn"
-                }
-              ]
-            }
-          ]
-        },
-        {
           "$Comment": "Default Idle State: Cat will follow player and try to stay within sight, teleporting if necessary.",
           "Sensor": {
             "Type": "State",
@@ -822,35 +805,147 @@
             ]
           },
           {
+            "$Comment": "Non-owner interaction warning",
             "Sensor": {
-              "Type": "Target",
-              "TargetSlot": "MasterTarget",
-              "Filters": [
+              "Type": "And",
+              "Sensors": [
                 {
-                  "Type": "ItemInHand",
-                  "Items": {
-                    "Compute": "SpawnerEmptyItemID"
+                  "Type": "TameworkHasOwner"
+                },
+                {
+                  "Type": "Not",
+                  "Sensor": {
+                    "Type": "TameworkIsOwner"
+                  }
+                },
+                {
+                  "Type": "Not",
+                  "Sensor": {
+                    "Type": "Target",
+                    "TargetSlot": "MasterTarget",
+                    "Filters": [
+                      {
+                        "Type": "ItemInHand",
+                        "Items": {
+                          "Compute": "SpawnerEmptyItemID"
+                        }
+                      }
+                    ]
                   }
                 }
               ]
             },
             "Actions": [
               {
-                "Type": "State",
-                "State": "Despawn"
-              },
-              {
-                "Type": "Inventory",
-                "UseTarget": true,
-                "Operation": "RemoveHeldItem"
-              },
-              {
-                "Type": "Inventory",
-                "UseTarget": true,
-                "Operation": "Add",
-                "Item": {
-                  "Compute": "SpawnerItemID"
+                "Type": "TameworkDenyInteract"
+              }
+            ]
+          },
+          {
+            "$Comment": "Owner capture with empty spawner",
+            "Sensor": {
+              "Type": "And",
+              "Sensors": [
+                {
+                  "Type": "Target",
+                  "TargetSlot": "MasterTarget",
+                  "Filters": [
+                    {
+                      "Type": "ItemInHand",
+                      "Items": {
+                        "Compute": "SpawnerEmptyItemID"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "Type": "TameworkIsOwner"
                 }
+              ]
+            },
+            "Actions": [
+              {
+                "Type": "TameworkCaptureOwner"
+              },
+              {
+                "Type": "SpawnParticles",
+                "Offset": [
+                  0,
+                  0.1,
+                  0
+                ],
+                "ParticleSystem": "Poof_Small"
+              },
+              {
+                "Type": "PlaySound",
+                "SoundEventId": {
+                  "Compute": "InteractSoundPickUp"
+                }
+              }
+            ]
+          },
+          {
+            "$Comment": "Block non-owner capture",
+            "Sensor": {
+              "Type": "And",
+              "Sensors": [
+                {
+                  "Type": "Target",
+                  "TargetSlot": "MasterTarget",
+                  "Filters": [
+                    {
+                      "Type": "ItemInHand",
+                      "Items": {
+                        "Compute": "SpawnerEmptyItemID"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "Type": "TameworkHasOwner"
+                },
+                {
+                  "Type": "Not",
+                  "Sensor": {
+                    "Type": "TameworkIsOwner"
+                  }
+                }
+              ]
+            },
+            "Actions": [
+              {
+                "Type": "TameworkCaptureStranger"
+              }
+            ]
+          },
+          {
+            "$Comment": "Wild capture with empty spawner",
+            "Sensor": {
+              "Type": "And",
+              "Sensors": [
+                {
+                  "Type": "Target",
+                  "TargetSlot": "MasterTarget",
+                  "Filters": [
+                    {
+                      "Type": "ItemInHand",
+                      "Items": {
+                        "Compute": "SpawnerEmptyItemID"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "Type": "Not",
+                  "Sensor": {
+                    "Type": "TameworkHasOwner"
+                  }
+                }
+              ]
+            },
+            "Actions": [
+              {
+                "Type": "TameworkCaptureWild"
               },
               {
                 "Type": "SpawnParticles",
@@ -872,14 +967,22 @@
           {
             "$Comment": "If player is holding raw fish, remove it from their inventory and heal the cat.",
             "Sensor": {
-              "Type": "Target",
-              "TargetSlot": "MasterTarget",
-              "Filters": [
+              "Type": "And",
+              "Sensors": [
                 {
-                  "Type": "ItemInHand",
-                  "Items": {
-                    "Compute": "FoodItemIDs"
-                  }
+                  "Type": "TameworkIsOwner"
+                },
+                {
+                  "Type": "Target",
+                  "TargetSlot": "MasterTarget",
+                  "Filters": [
+                    {
+                      "Type": "ItemInHand",
+                      "Items": {
+                        "Compute": "FoodItemIDs"
+                      }
+                    }
+                  ]
                 }
               ]
             },
@@ -915,8 +1018,16 @@
           {
             "$Comment": "If Cat is in Defend state, switch to Hold state",
             "Sensor": {
-              "Type": "State",
-              "State": "Defend"
+              "Type": "And",
+              "Sensors": [
+                {
+                  "Type": "TameworkIsOwner"
+                },
+                {
+                  "Type": "State",
+                  "State": "Defend"
+                }
+              ]
             },
             "Actions": [
               {
@@ -943,15 +1054,23 @@
           {
             "$Comment": "If Cat is in Hold state, switch to Idle state.",
             "Sensor": {
-              "Type": "Or",
+              "Type": "And",
               "Sensors": [
                 {
-                  "Type": "State",
-                  "State": "Hold"
+                  "Type": "TameworkIsOwner"
                 },
                 {
-                  "Type": "State",
-                  "State": "Sleep"
+                  "Type": "Or",
+                  "Sensors": [
+                    {
+                      "Type": "State",
+                      "State": "Hold"
+                    },
+                    {
+                      "Type": "State",
+                      "State": "Sleep"
+                    }
+                  ]
                 }
               ]
             },
@@ -986,8 +1105,16 @@
             "Instructions": [
               {
                 "Sensor": {
-                  "Type": "State",
-                  "State": "Idle"
+                  "Type": "And",
+                  "Sensors": [
+                    {
+                      "Type": "TameworkIsOwner"
+                    },
+                    {
+                      "Type": "State",
+                      "State": "Idle"
+                    }
+                  ]
                 },
                 "Actions": [
                   {
@@ -1023,4 +1150,3 @@
   },
   "NameTranslationKey": "server.npcRoles.Cat_Pet.name"
 }
-
