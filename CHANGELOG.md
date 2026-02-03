@@ -13,6 +13,9 @@ All notable changes to **Alec's Cats!** will be documented in this file.
 - Taming flow now uses the new Tamework capture system.
 - Interaction logic aligned with Tamework owner/tamed rules (owner-only interaction and capture).
 - Merged Cat_Pet logic into Cat logic, using the new IsTamed flag from Tamework, allowing for one Cat to handle both the wild and tamed behaviors in one.
+- Interaction particles/icons now come from **Alec's Tamework!** assets (client must load the Tamework assets pack).
+- Per-world item config overrides load from:
+  `<UserData>/Saves/<World>/mods/Alec's Cats!/Tamework_Items_Config.json` (auto-created empty; leave empty to inherit defaults).
 
 ### Notes
 - Tamework settings control owner damage protection and related rules in `Alec's Cats!/Server/Tamework/`
