@@ -1,6 +1,9 @@
 
 ## <a id="summary">Summary</a>
-This mod makes use of the existing but unused Cat model and animations in the Hytale assets. Originally I just swapped out a few values to turn a Fox into a Cat, but now I've expanded it significantly with my own taming system, animations, and textures of my own cats (and working on textures of cats submitted by the community)!
+This mod makes use of the existing but unused Cat model and animations in the Hytale assets. Originally I just swapped out a few values to turn a Fox into a Cat, but now it's expanded with a full taming system powered by **Alec's Tamework!**, custom behaviors, and textures of my own cats (and community submissions)!
+
+
+**Requires Alec's Tamework!** ([plugin](https://www.curseforge.com/hytale/mods/alecs-tamework) + [assets pack](https://legacy.curseforge.com/hytale/mods/alecs-tamework-assets)). The mod relies on Tamework components for capture, ownership, and pet interactions.
 
 ## Thank You
 Thank you so much for checking out my mod! This is my first real mod and I've really enjoyed working on it and seeing so many people enjoy it. 
@@ -20,9 +23,10 @@ Please give my [GitHub repo](https://github.com/Alechilles/AlecsCats) a star if 
 *   **Taming Process:**
     *   Craft a Cat Collar at a Workbench (Tier 2, Tinkering Tab) with 3 Light Leather and 1 Gold Bar
     *   Feed a cat a piece of raw fish to make it friendly
-    *   Use the Cat Collar on the Cat to pick it up and tame it permanently
+    *   Use the Cat Collar on the Cat to capture it and tame it permanently
 *   **Tamed Behavior:**
-    *   Click with the Lantern containing the Cat in your hand to place it in the world
+    *   Captured cats preserve their appearance (coat variants persist) when stored and re-spawned
+    *   Click with the **Lantern** containing the Cat in your hand to place it in the world
     *   You will get the Collar back and can use it on the Cat again to pick it back up
     *   On placement it will stay still (default behavior so it doesn't chase you down if you left it somewhere and reloaded your game)
     *   Interact with the Cat with Raw Fish in your hand to feed the Cat and restore its health
@@ -37,9 +41,10 @@ Please give my [GitHub repo](https://github.com/Alechilles/AlecsCats) a star if 
 ## Ownership
 *   Ownership will be applied to the Cat upon taming
 *   Only the original tamer will be able to interact with and store the Cat
-*   When a cat is stored in an item, it's ownership is cleared until it is re-spawned to enable trading with other players
+*   When a cat is stored in an item, its ownership is cleared until it is re-spawned (enables trading)
 *   By default, the owner cannot damage their own cat, but other players, NPCs, and environments can
-    *   You can adjust the config in Alec's Cats!/Tamework/Tamework_Settings.json to tweak:
+    *   You can adjust the config in Alec's Cats!/Server/Tamework/Tamework_Settings.json to tweak:
+    *   Local per-world overrides: `.../UserData/Saves/<World>/mods/Alec's Cats!/Tamework_Items_Config.json` (auto-created empty; only add overrides)
         *   Invulnerability from owner
         *   Invulnerability from players
         *   Invulnerability from all sources
