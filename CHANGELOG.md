@@ -2,6 +2,11 @@
 
 All notable changes to **Alec's Cats!** will be documented in this file.
 
+## 1.4.1 - Tamework Integration and Capture Flow - 2026-02-07
+### Changed
+- Small tweaks for compatability with new Tamework follow components
+- Slight progress on Lulu texture
+
 ## 1.4.0 - Tamework Integration and Capture Flow - 2026-02-02
 ### Added
 - Ownership and tamed state stored on NPCs via new Tamework components.
