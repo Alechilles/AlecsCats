@@ -1,5 +1,5 @@
 {
-  "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
+  "Model": "NPC/Pets/Cat/Models/Lulu/Model.blockymodel",
   "Texture": "NPC/Pets/Cat/Models/Lulu/Lulu.png",
   "EyeHeight": 0.7,
   "HitBox": {
