@@ -1,6 +1,6 @@
 {
-  "Model": "NPC/Pets/Cat/Models/Lulu/Model.blockymodel",
-  "Texture": "NPC/Pets/Cat/Models/Lulu/Texture.png",
+  "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
+  "Texture": "NPC/Pets/Cat/Models/Lulu/Lulu.png",
   "EyeHeight": 0.7,
   "HitBox": {
     "Max": {
