@@ -3004,7 +3004,7 @@
           ]
         },
         {
-          "$Comment": "Pet Follow State: use Tamework idle-follow behavior.",
+          "$Comment": "Pet Follow State: use Tamework follow behavior.",
           "Sensor": {
             "Type": "State",
             "State": "Pet"
@@ -3025,7 +3025,7 @@
               ]
             },
             {
-              "Reference": "Component_Tamework_Instruction_IdleFollow",
+              "Reference": "Component_Tamework_Instruction_Follow_Advanced",
               "Modify": {
                 "MasterTargetSlot": "MasterTarget"
               }
