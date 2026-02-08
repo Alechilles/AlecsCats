@@ -8,12 +8,12 @@
     "Primary": {
       "Interactions": [
         {
-          "Type": "Simple",
-          "RunTime": 0.1,
-          "Effects": {
-            "ItemAnimationId": "Interact",
-            "WaitForAnimationToFinish": true
-          }
+          "Type": "TameworkSpawn",
+          "Failed": {
+            "Type": "Simple",
+            "RunTime": 0.05
+          },
+          "CancelOnItemChange": false
         }
       ]
     }

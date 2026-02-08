@@ -11,29 +11,7 @@
           "Type": "Serial",
           "Interactions": [
             {
-              "Type": "Simple",
-              "RunTime": 0.1,
-              "Effects": {
-                "Particles": [
-                  {
-                    "SystemId": "Poof_Small",
-                    "PositionOffset": {
-                      "X": 0,
-                      "Y": 0.2,
-                      "Z": 0.2
-                    },
-                    "TargetEntityPart": "PrimaryItem"
-                  }
-                ],
-                "WorldSoundEventId": "SFX_Tamework_Poof"
-              }
-            },
-            {
-              "Type": "TameworkSpawn",
-              "SpawnerRoleId": "Cat_Pet",
-              "EmptyItemId": "Egg_Spawner_Cat_Empty",
-              "SpawnAssignsOwner": true,
-              "AllowUncaptured": false
+              "Type": "TameworkSpawn"
             }
           ]
         }
