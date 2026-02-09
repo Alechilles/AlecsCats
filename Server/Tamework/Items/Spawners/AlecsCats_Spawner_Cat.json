@@ -1,21 +1,30 @@
 {
-  "Id": "Egg_Spawner_Cat_Empty",
+  "EmptyItemId": "Egg_Spawner_Cat_Empty",
   "FilledItemId": "Egg_Spawner_Cat",
   "IconDefault": "Icons/ItemsGenerated/Egg_Spawner_Cat.png",
   "AllowedRoles": {
-    "Mode": "AllowAll"
+    "Mode": "Allowlist",
+    "Allowlist": [
+      "Cat_Pet",
+      "Cat"
+    ]
   },
   "Capture": {
     "ClearsOwner": true,
+    "RequireTamed": true,
     "OwnerRestricted": true,
     "ParticleSystem": "Poof_Small",
-    "SoundEvent": "SFX_Tamework_Poof"
+    "SoundEvent": "SFX_Tamework_Poof",
+    "MaxDistance": 5,
+    "CooldownMs": 300
   },
   "Spawn": {
     "AssignsOwner": true,
     "OwnerRestricted": true,
     "ParticleSystem": "Poof_Small",
-    "SoundEvent": "SFX_Tamework_Poof"
+    "SoundEvent": "SFX_Tamework_Poof",
+    "MaxDistance": 5,
+    "CooldownMs": 300
   },
   "IconOverrides": [],
   "IconOverridesByRole": {
@@ -73,3 +82,5 @@
     ]
   }
 }
+
+
