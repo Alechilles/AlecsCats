@@ -1,0 +1,75 @@
+{
+  "Id": "Egg_Spawner_Cat_Empty",
+  "FilledItemId": "Egg_Spawner_Cat",
+  "IconDefault": "Icons/ItemsGenerated/Egg_Spawner_Cat.png",
+  "AllowedRoles": {
+    "Mode": "AllowAll"
+  },
+  "Capture": {
+    "ClearsOwner": true,
+    "OwnerRestricted": true,
+    "ParticleSystem": "Poof_Small",
+    "SoundEvent": "SFX_Tamework_Poof"
+  },
+  "Spawn": {
+    "AssignsOwner": true,
+    "OwnerRestricted": true,
+    "ParticleSystem": "Poof_Small",
+    "SoundEvent": "SFX_Tamework_Poof"
+  },
+  "IconOverrides": [],
+  "IconOverridesByRole": {
+    "Cat_Pet": [
+      {
+        "Icon": "Icons/ItemsGenerated/Egg_Spawner_Cat_Lulu.png",
+        "Attachments": {
+          "Coat": "Lulu"
+        }
+      },
+      {
+        "Icon": "Icons/ItemsGenerated/Egg_Spawner_Cat_Missy.png",
+        "Attachments": {
+          "Coat": "Missy"
+        }
+      },
+      {
+        "Icon": "Icons/ItemsGenerated/Egg_Spawner_Cat_Nyxie.png",
+        "Attachments": {
+          "Coat": "Nyxie"
+        }
+      },
+      {
+        "Icon": "Icons/ItemsGenerated/Egg_Spawner_Cat.png",
+        "Attachments": {
+          "Coat": "Empty"
+        }
+      }
+    ],
+    "Cat": [
+      {
+        "Icon": "Icons/ItemsGenerated/Egg_Spawner_Cat_Lulu.png",
+        "Attachments": {
+          "Coat": "Lulu"
+        }
+      },
+      {
+        "Icon": "Icons/ItemsGenerated/Egg_Spawner_Cat_Missy.png",
+        "Attachments": {
+          "Coat": "Missy"
+        }
+      },
+      {
+        "Icon": "Icons/ItemsGenerated/Egg_Spawner_Cat_Nyxie.png",
+        "Attachments": {
+          "Coat": "Nyxie"
+        }
+      },
+      {
+        "Icon": "Icons/ItemsGenerated/Egg_Spawner_Cat.png",
+        "Attachments": {
+          "Coat": "Empty"
+        }
+      }
+    ]
+  }
+}
