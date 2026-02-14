@@ -43,11 +43,14 @@ Please give my [GitHub repo](https://github.com/Alechilles/AlecsCats) a star if 
 *   Only the original tamer will be able to interact with and store the Cat
 *   When a cat is stored in an item, its ownership is cleared until it is re-spawned (enables trading)
 *   By default, the owner cannot damage their own cat, but other players, NPCs, and environments can
-    *   You can adjust the config in Alec's Cats!/Server/Tamework/Tamework_Settings.json to tweak:
-    *   Local per-world overrides: `.../UserData/Saves/<World>/mods/Alec's Cats!/Tamework_Items_Config.json` (auto-created empty; only add overrides)
+    *   Global owner-damage rules are controlled by Alec's Tamework! `TwGlobalConfig` assets:
+        *   `<Alec's Tamework!>/Server/Tamework/Global/*.json` (default `TwGlobalConfig_Default.json`)
         *   Invulnerability from owner
         *   Invulnerability from players
         *   Invulnerability from all sources
+
+## Spawner Config
+Cat spawner behavior is configured in Alec's Cats!/Server/Tamework/Items/Spawners/AlecsCats_Spawner_Cat.json (TwSpawnerConfig).
 
 ## <a id="spawns">Spawns</a>
 They are fairly uncommon, but not exceedingly rare. You are meant to have to look for one, but they're not meant to be super hard to find. If you search a biome thoroughly, you should usually find one ~60% of the time. They will usually spawn alone, but can spawn in groups of up to 3.
@@ -85,3 +88,5 @@ If you've run into a bug or any kind of issue, please [submit a new issue](https
 *   Wake and Laydown animations are bad
     *   They are placeholders, made hastily to replace the even worse animations I was previously using from the Fox model.
     *   I will replace these after I finish getting core functionality done.
+
+
