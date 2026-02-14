@@ -1,3 +1,7 @@
+## Unreleased - 2026-02-14
+- Moved Soul Lantern visual/audio assets into Alec's Tamework! assets pack.
+- Removed legacy Tamework_Settings.json and Tamework_Items_Config.json (use TwGlobalConfig and TwSpawnerConfig).
+
 # Changelog
 
 All notable changes to **Alec's Cats!** will be documented in this file.
