@@ -2,7 +2,7 @@
 
 ## 1.4.2 - Tamework Asset/Spawner Updates - 2026-02-15
 ### Added
-- Tamework interaction config assets for cat interactions and testing.
+- Tamework interaction config assets for cat interactions.
 - TwSpawnerConfig asset for cat spawner items.
 
 ### Changed
