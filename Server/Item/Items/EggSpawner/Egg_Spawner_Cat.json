@@ -20,7 +20,7 @@
   },
   "Model": "Items/Tamework/Lantern/Tamework_Soul_Lantern.blockymodel",
   "Texture": "Items/Tamework/Lantern/Tamework_Soul_Lantern_Texture.png",
-  "Icon": "Icons/ItemsGenerated/Egg_Spawner_Cat.png",
+  "Icon": "Icons/ItemsGenerated/Tamework_Soul_Lantern_Filled",
   "IconProperties": {
     "Scale": 0.3,
     "Rotation": [
@@ -35,7 +35,6 @@
   },
   "MaxStack": 1,
   "Scale": 1,
-  "Animation": "NPC/Pets/Cat/Animations/Idles/Sit.blockyanim",
   "Particles": [
     {
       "SystemId": "Tamework_Soul_Lantern",
