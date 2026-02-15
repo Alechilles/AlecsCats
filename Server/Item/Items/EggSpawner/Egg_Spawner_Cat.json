@@ -18,8 +18,8 @@
       ]
     }
   },
-  "Model": "Items/Pet Spawners/Lantern/AlecsCats_Soul_Lantern.blockymodel",
-  "Texture": "Items/Pet Spawners/Lantern/AlecsCats_Soul_Lantern_Texture.png",
+  "Model": "Items/Tamework/Lantern/Tamework_Soul_Lantern.blockymodel",
+  "Texture": "Items/Tamework/Lantern/Tamework_Soul_Lantern_Texture.png",
   "Icon": "Icons/ItemsGenerated/Egg_Spawner_Cat.png",
   "IconProperties": {
     "Scale": 0.3,
@@ -38,7 +38,7 @@
   "Animation": "NPC/Pets/Cat/Animations/Idles/Sit.blockyanim",
   "Particles": [
     {
-      "SystemId": "AlecsCats_Soul_Lantern",
+      "SystemId": "Tamework_Soul_Lantern",
       "Color": "#00f3f3",
       "PositionOffset": {
         "Y": 0.17
@@ -50,5 +50,6 @@
     "Color": "#045",
     "Radius": 0
   },
-  "SoundEventId": "SFX_AlecsCats_Soul_Lantern_Loop"
+  "SoundEventId": "SFX_Tamework_Soul_Lantern_Loop"
 }
+

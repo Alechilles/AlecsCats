@@ -1,0 +1,78 @@
+{
+  "Enabled": true,
+  "RoleIds": [
+    "Cat",
+    "Cat_Pet"
+  ],
+  "Interactions": [
+    {
+      "Type": "Tame",
+      "UseLovedItems": true
+    },
+    {
+      "Type": "Feed",
+      "UseLovedItems": false,
+      "ItemsInHand": [
+        {
+          "Item": "Food_Fish_Raw",
+          "Heal": 15
+        },
+        {
+          "Item": "Food_Fish_Raw_Uncommon",
+          "Heal": 20
+        },
+        {
+          "Item": "Food_Fish_Raw_Rare",
+          "Heal": 25
+        },
+        {
+          "Item": "Food_Fish_Raw_Epic",
+          "Heal": 30
+        },
+        {
+          "Item": "Food_Fish_Raw_Legendary",
+          "Heal": 35
+        }
+      ],
+      "Effects": {
+        "PlaySound": {
+          "SoundEvent": "SFX_Fen_Stalker_Eat",
+          "Volume": 0.3,
+          "Pitch": 2
+        },
+        "SpawnParticles": {
+          "ParticleSystem": "Pet_Heal",
+          "Offset": [
+            0,
+            0.6,
+            0
+          ],
+          "Color": "#fe6969"
+        }
+      }
+    },
+    {
+      "Type": "ModeCycle",
+      "Cycle": [
+        {
+          "State": "Idle",
+          "Message": "Following"
+        },
+        {
+          "State": "Defend",
+          "Message": "Defending"
+        },
+        {
+          "State": "Hold",
+          "Message": "Staying"
+        }
+      ],
+      "Effects": {
+        "PlaySound": {
+          "SoundEvent": "SFX_AlecsCats_Cat_Trill"
+        }
+      },
+      "ShowFloatingText": true
+    }
+  ]
+}
