@@ -1,6 +1,18 @@
-## Unreleased - 2026-02-14
-- Moved Soul Lantern visual/audio assets into Alec's Tamework! assets pack.
-- Removed legacy Tamework_Settings.json and Tamework_Items_Config.json (use TwGlobalConfig and TwSpawnerConfig).
+## Unreleased
+
+## 1.4.2 - Tamework Asset/Spawner Updates - 2026-02-15
+### Added
+- Tamework interaction config assets for cat interactions and testing.
+- TwSpawnerConfig asset for cat spawner items.
+
+### Changed
+- Updated cat spawner items to use the new Tamework spawner config flow.
+- Updated to the latest Tamework asset system (items/particles/sounds resolved from Tamework assets pack).
+- Small Lulu texture tweak.
+
+### Removed
+- Legacy Tamework_Settings.json and Tamework_Items_Config.json (use TwGlobalConfig and TwSpawnerConfig).
+- Soul Lantern visual/audio assets from Alec's Cats (now sourced from Alec's Tamework assets pack).
 
 # Changelog
 
