@@ -1,5 +1,3 @@
-## Unreleased
-
 ## 1.4.2 - Tamework Asset/Spawner Updates - 2026-02-15
 ### Added
 - Tamework interaction config assets for cat interactions.
@@ -14,9 +12,6 @@
 - Legacy Tamework_Settings.json and Tamework_Items_Config.json (use TwGlobalConfig and TwSpawnerConfig).
 - Soul Lantern visual/audio assets from Alec's Cats (now sourced from Alec's Tamework assets pack).
 
-# Changelog
-
-All notable changes to **Alec's Cats!** will be documented in this file.
 
 ## 1.4.1 - Tamework Integration and Capture Flow - 2026-02-07
 ### Changed
