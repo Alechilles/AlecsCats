@@ -20,7 +20,7 @@
   },
   "Model": "Items/Tamework/Lantern/Tamework_Soul_Lantern.blockymodel",
   "Texture": "Items/Tamework/Lantern/Tamework_Soul_Lantern_Texture.png",
-  "Icon": "Icons/ItemsGenerated/Tamework_Soul_Lantern_Filled",
+  "Icon": "Icons/ItemsGenerated/Tamework_Soul_Lantern_Filled.png",
   "IconProperties": {
     "Scale": 0.3,
     "Rotation": [
@@ -51,4 +51,5 @@
   },
   "SoundEventId": "SFX_Tamework_Soul_Lantern_Loop"
 }
+
 
