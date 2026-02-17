@@ -73,7 +73,7 @@
       "Egg_Spawner_Cat_Empty"
     ],
     "SpawnerItemID": "Egg_Spawner_Cat",
-    "FoodItemIDs": [
+    "LovedItems": [
       "Food_Fish_Raw"
     ],
     "TimidDuringDay": true,

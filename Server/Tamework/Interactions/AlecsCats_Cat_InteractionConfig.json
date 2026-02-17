@@ -7,7 +7,24 @@
   "Interactions": [
     {
       "Type": "Tame",
-      "UseLovedItems": true
+      "UseLovedItems": true,
+      "Role": "Cat_Pet",
+      "Effects": {
+        "SpawnParticles": {
+          "ParticleSystem": "Hearts",
+          "Offset": [
+            0,
+            0.6,
+            0
+          ]
+        },
+        "SetState": {
+          "State": "Idle"
+        },
+        "PlaySound": {
+          "SoundEvent": "SFX_AlecsCats_Cat_Trill"
+        }
+      }
     },
     {
       "Type": "Feed",
