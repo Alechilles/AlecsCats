@@ -1,3 +1,7 @@
+## ## 1.4.3 - Hytale Update 3 Compatability - 2026-02-17
+### Fixed
+- Updated manifest for Hytale Update 3
+
 ## 1.4.2 - Tamework Asset/Spawner Updates - 2026-02-15
 ### Added
 - Tamework interaction config assets for cat interactions.
