@@ -601,7 +601,7 @@
       ]
     },
     {
-      "$Comment": "Despawn if in the Despawn state. (Triggered by interacting with empty spawner)",
+      "$Comment": "",
       "Instructions": [
         {
           "$Comment": "Bridge command-item move hooks into NPC movement.",
