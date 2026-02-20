@@ -14,8 +14,7 @@
   "Website": "",
   "ServerVersion": "2026.02.18-f3b8fff95",
   "Dependencies": {
-    "Alechilles:Alec's Tamework!": "*",
-    "Alechilles:Alec's Tamework! (Assets)": "*"
+    "Alechilles:Alec's Tamework!": "*"
   },
   "OptionalDependencies": {},
   "LoadBefore": {},
