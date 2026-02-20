@@ -847,7 +847,7 @@
         "Actions": [
           {
             "Type": "LockOnInteractionTarget",
-            "TargetSlot": "MasterTargetSlot"
+            "TargetSlot": "MasterTarget"
           },
           {
             "Type": "TameworkInteract"
