@@ -1,7 +1,7 @@
 {
   "Enabled": true,
   "RoleIds": [
-    "Cat_Pet"
+    "Cat"
   ],
   "Interactions": [
     {
@@ -64,6 +64,9 @@
             0
           ],
           "Color": "#fe6969"
+        },
+        "SetRole": {
+          "Role": "Cat_Pet"
         }
       }
     },
@@ -86,6 +89,9 @@
       "Effects": {
         "PlaySound": {
           "SoundEvent": "SFX_AlecsCats_Cat_Trill"
+        },
+        "SetRole": {
+          "Role": "Cat_Pet"
         }
       },
       "ShowFloatingText": true
