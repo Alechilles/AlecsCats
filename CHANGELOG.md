@@ -1,6 +1,24 @@
-## ## 1.4.3 - Hytale Update 3 Compatability - 2026-02-17
+# Changelog
+
+All notable changes to **Alec's Cats!** will be documented in this file.
+
+## 1.5.0 - Command Item System + Update 3.1 Compatibility - 2026-02-19
+### Added
+- New `AlecsCats_Command_Item` (Cat Treat Bag) command tool using Tamework's command system.
+- `TwCommandItemConfig` for cats with commands: `Follow`, `Hold`, `Recall`, `Move To Ping`, `Set Home`, `Return Home`, and `Attack Target`.
+- Command-item localization keys (`items.AlecsCats_Command_Item.*`) across all supported locales.
+
+### Changed
+- `Template_Cat_Pet` now includes `Component_Tamework_Instruction_Command_Move` so command move/home hooks can drive movement behavior.
+- Cat command flow now uses Tamework command selection/dispatch pipeline (including radial menu selection and linked-NPC command routing).
+
 ### Fixed
-- Updated manifest for Hytale Update 3
+- Added missing non-English command-item language lines in locale `server.lang` files.
+- Updated manifest `ServerVersion` to `2026.02.19-1A311A592` for latest server compatibility.
+
+## 1.4.3 - Hytale Update 3 Compatibility - 2026-02-17
+### Fixed
+- Updated manifest for Hytale Update 3.
 
 ## 1.4.2 - Tamework Asset/Spawner Updates - 2026-02-15
 ### Added
@@ -16,29 +34,28 @@
 - Legacy Tamework_Settings.json and Tamework_Items_Config.json (use TwGlobalConfig and TwSpawnerConfig).
 - Soul Lantern visual/audio assets from Alec's Cats (now sourced from Alec's Tamework assets pack).
 
-
 ## 1.4.1 - Tamework Integration and Capture Flow - 2026-02-07
 ### Changed
-- Small tweaks for compatability with new Tamework follow components
-- Slight progress on Lulu texture
+- Small tweaks for compatibility with new Tamework follow components.
+- Slight progress on Lulu texture.
 
 ## 1.4.0 - Tamework Integration and Capture Flow - 2026-02-02
 ### Added
 - Ownership and tamed state stored on NPCs via new Tamework components.
 - Attachment preservation when capturing/spawning cats (coat variants persist).
 - Damage configuration options (invulnerable to owner (default), all players, or all sources).
-- Inventory icons for captured Cats change dynamically to match the stored Cat's appearance.
+- Inventory icons for captured cats change dynamically to match the stored cat's appearance.
 
 ### Changed
 - Taming flow now uses the new Tamework capture system.
 - Interaction logic aligned with Tamework owner/tamed rules (owner-only interaction and capture).
-- Merged Cat_Pet logic into Cat logic, using the new IsTamed flag from Tamework, allowing for one Cat to handle both the wild and tamed behaviors in one.
+- Merged Cat_Pet logic into Cat logic, using the new IsTamed flag from Tamework, allowing one Cat role to handle both wild and tamed behavior.
 - Interaction particles/icons now come from **Alec's Tamework!** assets (client must load the Tamework assets pack).
 - Per-world item config overrides load from:
   `<UserData>/Saves/<World>/mods/Alec's Cats!/Tamework_Items_Config.json` (auto-created empty; leave empty to inherit defaults).
 
 ### Notes
-- Tamework settings control owner damage protection and related rules in `Alec's Cats!/Server/Tamework/`
+- Tamework settings control owner damage protection and related rules in `Alec's Cats!/Server/Tamework/`.
 
 ## 1.3.0 - Massive Refactor and Sounds - 2026-01-29
 ### Added
@@ -58,7 +75,7 @@
 - Hold/follow toggling edge cases (sleep/wake flapping, animation sticking).
 - Back-off behavior and chase gating to avoid jitter.
 - Missing wake/stand transitions causing sliding/idle lockups.
-- Pet Cat item being held in an odd way.
+- Pet cat item being held in an odd way.
 
 ## 1.2.2 - Taming Fixes - 2026-01-27
 - Defend combat behavior improvements and fixes.
@@ -72,7 +89,7 @@
 ### Changed
 - Sleep animation slightly improved.
 - Wake and Laydown animations replaced.
-- Memories configured (replaced placeholders with real Cat memory).
+- Memories configured (replaced placeholders with real cat memory).
 
 ## 1.2.0 - Taming System Additions - 2026-01-25
 ### Added
@@ -125,7 +142,7 @@ Cats were appearing slightly more rarely than intended, so weights were adjusted
 - Use the Cat Collar on the cat to pick it up and tame it permanently.
 
 ### Tamed behavior
-- Click with the Cat in your hand to place it in the world.
+- Click with the cat in your hand to place it in the world.
 - You get the collar back and can use it on the cat again to pick it back up.
 - On placement it stays still (default behavior so it doesn't chase you down if you left it somewhere and reloaded your game).
 - Interact with the cat without fish or a collar in your hand to tell it to follow.
@@ -150,8 +167,8 @@ Cats were appearing slightly more rarely than intended, so weights were adjusted
 
 ## 1.0.0 - Initial Release - 2026-01-16
 ### Added
-- Unused Cat model, texture, and animations added to the game.
-- Behaviors ported from Foxes to new Cat behaviors.
+- Unused cat model, texture, and animations added to the game.
+- Behaviors ported from Foxes to new cat behaviors.
 - Behaviors slightly changed.
-- Second Cat texture variant added.
+- Second cat texture variant added.
 - Spawns added to Plains, Forests, Autumn, and Azure.
