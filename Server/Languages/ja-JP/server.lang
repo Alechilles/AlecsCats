@@ -4,3 +4,5 @@ items.Egg_Spawner_Cat_Empty.name=猫の首輪
 items.Egg_Spawner_Cat_Empty.description=最高級のネコにぴったり！生魚を与えれば、これを付けさせてくれるかもしれない。
 items.Egg_Spawner_Cat.name=飼い猫
 items.Egg_Spawner_Cat.description=あなたの飼い猫！生魚とインタラクトすると回復し、猫の首輪で拾い上げ、その他のもの/何もしないでフォロー/待機を切り替え。
+items.AlecsCats_Command_Item.name=猫のおやつバッグ
+items.AlecsCats_Command_Item.description=**これはベータ機能です**\n - 猫を左クリックして、おやつバッグにリンクします。\n - 右クリックでコマンドメニューを開きます。\n - 左クリックでコマンドを実行します。\nほとんどの機能は安全なはずですが、未読み込みチャンクからの呼び戻しや、未読み込みチャンクのホームへ送る場合は注意してください。現在は安定して動いていると思いますが、さらにテストが必要です。

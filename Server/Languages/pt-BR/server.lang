@@ -4,3 +4,5 @@ items.Egg_Spawner_Cat_Empty.name=Coleira para gato
 items.Egg_Spawner_Cat_Empty.description=Feita para os felinos mais exigentes! Se você der peixe cru para um gato, talvez ele deixe você colocar isto nele!
 items.Egg_Spawner_Cat.name=Gato de estimação
 items.Egg_Spawner_Cat.description=Seu gato de estimação! Interaja com peixe cru para curá-lo, com uma coleira para gato para recolhê-lo, e com qualquer outra coisa ou nada para alternar entre Seguir e Ficar.
+items.AlecsCats_Command_Item.name=Bolsa de petiscos para gato
+items.AlecsCats_Command_Item.description=**ISTO É UM RECURSO BETA**\n - Clique com o botão esquerdo em um gato para vinculá-lo à bolsa de petiscos.\n - Clique com o botão direito para abrir o menu de comandos.\n - Clique com o botão esquerdo para emitir o comando.\nA maioria dos recursos deve ser segura, mas tenha cuidado ao chamar de chunks não carregados ou enviar para casa em chunks não carregados. Acho que agora está funcionando de forma consistente, mas ainda precisa de mais testes.

@@ -4,3 +4,5 @@ items.Egg_Spawner_Cat_Empty.name=Collier pour chat
 items.Egg_Spawner_Cat_Empty.description=Parfait pour les félins les plus exigeants ! Si tu donnes du poisson cru à un chat, il te laissera peut-être lui mettre ça !
 items.Egg_Spawner_Cat.name=Chat de compagnie
 items.Egg_Spawner_Cat.description=Ton chat de compagnie ! Interagis avec du poisson cru pour le soigner, avec un collier pour chat pour le ramasser, et avec n'importe quoi d'autre/rien pour basculer entre Suivre/Rester.
+items.AlecsCats_Command_Item.name=Sac de friandises pour chat
+items.AlecsCats_Command_Item.description=**CETTE FONCTION EST EN BÊTA**\n - Clic gauche sur un chat pour le lier au sac de friandises.\n - Clic droit pour ouvrir le menu de commandes.\n - Clic gauche pour exécuter la commande.\nLa plupart des fonctionnalités devraient être sûres, mais fais attention en rappelant un chat depuis des chunks non chargés ou en l'envoyant à la maison vers des chunks non chargés. Je pense que c'est désormais stable, mais cela nécessite encore des tests.

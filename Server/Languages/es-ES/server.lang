@@ -4,3 +4,5 @@ items.Egg_Spawner_Cat_Empty.name=Collar para gato
 items.Egg_Spawner_Cat_Empty.description=¡Ideal para los felinos más exquisitos! Si alimentas a un gato con pescado crudo, quizá te deje ponérselo.
 items.Egg_Spawner_Cat.name=Gato mascota
 items.Egg_Spawner_Cat.description=¡Tu gato mascota! Interactúa con Pescado Crudo para curarlo, con un collar para gato para recogerlo, y con cualquier otra cosa/nada para alternar Seguir/Permanecer.
+items.AlecsCats_Command_Item.name=Bolsa de golosinas para gato
+items.AlecsCats_Command_Item.description=**ESTA ES UNA FUNCIÓN BETA**\n - Haz clic izquierdo sobre un gato para vincularlo a la bolsa de golosinas.\n - Haz clic derecho para abrir el menú de comandos.\n - Haz clic izquierdo para emitir el comando.\nLa mayoría de funciones deberían ser seguras, pero ten cuidado al llamar gatos desde chunks no cargados o enviarlos a casa en chunks no cargados. Creo que ahora funciona de forma consistente, pero necesita más pruebas.

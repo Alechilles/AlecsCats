@@ -4,3 +4,5 @@ items.Egg_Spawner_Cat_Empty.name=Katzenhalsband
 items.Egg_Spawner_Cat_Empty.description=Perfekt für die feinsten Stubentiger! Wenn du einer Katze rohen Fisch gibst, lässt sie dich das vielleicht anlegen!
 items.Egg_Spawner_Cat.name=Hauskatze
 items.Egg_Spawner_Cat.description=Deine Hauskatze! Mit rohem Fisch interagieren, um zu heilen; mit einem Katzenhalsband, um sie aufzunehmen; und mit allem anderen/gar nichts, um Folgen/Bleiben umzuschalten.
+items.AlecsCats_Command_Item.name=Katzen-Leckerlibeutel
+items.AlecsCats_Command_Item.description=**DIES IST EINE BETA-FUNKTION**\n - Linksklicke auf eine Katze, um sie mit dem Leckerlibeutel zu verknüpfen.\n - Rechtsklicke, um das Befehlsmenü zu öffnen.\n - Linksklicke, um den Befehl auszuführen.\nDie meisten Funktionen sollten sicher sein, aber sei vorsichtig beim Herbeirufen aus nicht geladenen Chunks oder beim Nach-Hause-Schicken in nicht geladene Chunks. Ich denke, es funktioniert jetzt zuverlässig, braucht aber noch mehr Tests.
