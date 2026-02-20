@@ -1,0 +1,41 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.AlecsCats_Command_Item.name",
+    "Description": "server.items.AlecsCats_Command_Item.description"
+  },
+  "Quality": "Tool",
+  "PlayerAnimationsId": "Item",
+  "Interactions": {
+    "Primary": {
+      "Interactions": [
+        {
+          "Type": "TameworkCommand"
+        }
+      ]
+    },
+    "Secondary": {
+      "Interactions": [
+        {
+          "Type": "TameworkCommand",
+          "CommandId": "OpenSelectionMenu"
+        }
+      ]
+    }
+  },
+  "Model": "Items/Tools/Feedbag/Feedbag.blockymodel",
+  "Texture": "Items/Tools/Feedbag/Seedbag_Texture.png",
+  "Icon": "Icons/ItemsGenerated/Utility_Bag_Seed.png",
+  "IconProperties": {
+    "Scale": 0.76,
+    "Translation": [
+      -1,
+      5
+    ],
+    "Rotation": [
+      135,
+      135,
+      0
+    ]
+  },
+  "MaxStack": 1
+}

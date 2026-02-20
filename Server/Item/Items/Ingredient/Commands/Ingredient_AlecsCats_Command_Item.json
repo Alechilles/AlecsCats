@@ -1,0 +1,41 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.AlecsCats_Command_Item.name",
+    "Description": "server.items.AlecsCats_Command_Item.description"
+  },
+  "Variant": true,
+  "Icon": "Icons/ItemsGenerated/Utility_Bag_Seed.png",
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Ingredient_Leather_Light",
+        "Quantity": 3
+      },
+      {
+        "ItemId": "Ingredient_Bar_Gold",
+        "Quantity": 1
+      }
+    ],
+    "Output": [
+      {
+        "ItemId": "Egg_Spawner_Cat_Empty",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Workbench",
+        "RequiredTierLevel": 2,
+        "Categories": [
+          "Workbench_Tinkering"
+        ]
+      }
+    ],
+    "OutputQuantity": 1,
+    "TimeSeconds": 3
+  },
+  "MaxStack": 1,
+  "Model": "Items/Pet Spawners/Collar/Collar.blockymodel",
+  "Texture": "Items/Pet Spawners/Collar/Collar_Texture.png"
+}

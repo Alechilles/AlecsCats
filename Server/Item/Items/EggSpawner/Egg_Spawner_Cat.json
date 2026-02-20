@@ -2,7 +2,7 @@
   "TranslationProperties": {
     "Name": "server.items.Egg_Spawner_Cat.name"
   },
-  "Quality": "Rare",
+  "Quality": "Tool",
   "PlayerAnimationsId": "Item",
   "Interactions": {
     "Primary": {
@@ -51,5 +51,3 @@
   },
   "SoundEventId": "SFX_Tamework_Soul_Lantern_Loop"
 }
-
-
