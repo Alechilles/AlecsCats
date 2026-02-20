@@ -2,7 +2,7 @@
 
 All notable changes to **Alec's Cats!** will be documented in this file.
 
-## 1.5.1 - Command Item System + Update 3.1 Compatibility - 2026-02-19
+## 1.5.1 - Cat Treat Bag Crafting Fix - 2026-02-19
 ### Fixed
 - Cat Treat Bag can now be crafted from Tier 2 Workbench
 
