@@ -2,7 +2,7 @@
 [![Discord](https://img.shields.io/discord/1468261809739005996?style=for-the-badge&logo=discord&logoColor=white&label=Join%20Discord&color=rgb(88,101,242))](https://discord.gg/E8n8RgTTdq)
 [![GitHub Repo stars](https://img.shields.io/github/stars/Alechilles/AlecsCats?style=for-the-badge&logo=github&label=GitHub)](https://github.com/Alechilles/AlecsCats)
 
-Alec's Cats! adds tamable companion cats to Hytale, powered by **Alec's Tamework!**.
+Alec's Cats! adds tamable companion cats to Hytale, powered by **[Alec's Tamework!](https://www.curseforge.com/hytale/mods/alecs-tamework)**.
 
 ## Summary
 This mod started as a simple cat conversion from unused base-game assets and has grown into a full pet system with:
