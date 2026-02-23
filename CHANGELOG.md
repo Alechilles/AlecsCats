@@ -7,6 +7,7 @@ All notable changes to **Alec's Cats!** will be documented in this file.
 - `Template_Cat_Pet` now uses `Component_Tamework_Instruction_Wander` in `Idle` state, causing pet cats to wander within the template's `WanderRadius`.
 - Follow behavior is restored as an explicit `Follow` state using `Component_Tamework_Instruction_Follow_Advanced`; interaction mode cycling, taming state assignment, and command-item `Follow`/`Recall` flows now route to `Follow` instead of `Idle`.
 - `Template_Cat_Pet` now maps Hold posture/flavor/sleep parameters into Wander settle behavior, allowing cats to occasionally sit, play flavor idles, and sleep while in wander mode.
+- `Template_Cat_Pet` now maps a Wander settle-exit transition (`StandUp` with delay) to avoid cats sliding while still in sit posture when resuming movement.
 
 ## 1.5.1 - Cat Treat Bag Crafting Fix - 2026-02-19
 ### Fixed

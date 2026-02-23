@@ -134,6 +134,17 @@
       ],
       "Description": "How long to remain in the hold posture when no flavor animation is selected."
     },
+    "WanderSettleExitAnimation": {
+      "Value": "StandUp",
+      "Description": "Optional animation to play when leaving Wander settle posture."
+    },
+    "WanderSettleExitDelayRange": {
+      "Value": [
+        0.83,
+        0.83
+      ],
+      "Description": "How long to wait after Wander settle-exit animation before movement resumes."
+    },
     "NightFlavorAnimation": {
       "Value": "Idle",
       "Description": "A flavor animation to play at night. Ignored if null or empty."
@@ -689,6 +700,12 @@
                 },
                 "StillDurationRange": {
                   "Compute": "HoldStillDurationRange"
+                },
+                "SettleExitAnimation": {
+                  "Compute": "WanderSettleExitAnimation"
+                },
+                "SettleExitDelayRange": {
+                  "Compute": "WanderSettleExitDelayRange"
                 },
                 "DayFlavorAnimation": {
                   "Compute": "DayFlavorAnimation"
