@@ -18,7 +18,7 @@
           ]
         },
         "SetState": {
-          "State": "Idle"
+          "State": "Follow"
         },
         "PlaySound": {
           "SoundEvent": "SFX_AlecsCats_Cat_Trill"
@@ -71,7 +71,7 @@
       "Type": "ModeCycle",
       "Cycle": [
         {
-          "State": "Idle",
+          "State": "Follow",
           "Message": "Following"
         },
         {
@@ -81,6 +81,10 @@
         {
           "State": "Hold",
           "Message": "Staying"
+        },
+        {
+          "State": "Idle",
+          "Message": "Wandering"
         }
       ],
       "Effects": {

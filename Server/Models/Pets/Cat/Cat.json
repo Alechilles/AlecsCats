@@ -20,16 +20,22 @@
         {
           "Animation": "NPC/Pets/Cat/Animations/Idle.blockyanim",
           "Weight": 1
-        },
+        }
+      ]
+    },
+    "HoldFlavor": {
+      "Animations": [
         {
           "Animation": "NPC/Pets/Cat/Animations/Idles/Lick.blockyanim",
-          "Weight": 0.2,
-          "BlendingDuration": 0.6
+          "Weight": 1,
+          "BlendingDuration": 0.6,
+          "Looping": false
         },
         {
           "Animation": "NPC/Pets/Cat/Animations/Idles/Stretch.blockyanim",
-          "Weight": 0.2,
-          "Speed": 0.5
+          "Weight": 1,
+          "Speed": 0.5,
+          "Looping": false
         }
       ]
     },

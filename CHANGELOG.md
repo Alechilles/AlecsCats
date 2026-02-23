@@ -2,6 +2,11 @@
 
 All notable changes to **Alec's Cats!** will be documented in this file.
 
+## Unreleased
+### Changed
+- `Template_Cat_Pet` now uses `Component_Tamework_Instruction_Wander` in `Idle` state, causing pet cats to wander within the template's `WanderRadius`.
+- Follow behavior is restored as an explicit `Follow` state using `Component_Tamework_Instruction_Follow_Advanced`; interaction mode cycling, taming state assignment, and command-item `Follow`/`Recall` flows now route to `Follow` instead of `Idle`.
+
 ## 1.5.1 - Cat Treat Bag Crafting Fix - 2026-02-19
 ### Fixed
 - Cat Treat Bag can now be crafted from Tier 2 Workbench

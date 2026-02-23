@@ -105,6 +105,35 @@
       "Value": true,
       "Description": "Whether this NPC always sleeps through the whole night."
     },
+    "HoldBaseAnimation": {
+      "Value": "Idle",
+      "Description": "Persistent Hold posture animation used between transient flavor animations."
+    },
+    "SleepDelayAfterHoldEnterRange": {
+      "Value": [
+        10,
+        10
+      ],
+      "Description": "Minimum delay before Hold can transition to sleep after entering Hold."
+    },
+    "SleepDelayAfterLastSleepRange": {
+      "Value": [
+        15,
+        15
+      ],
+      "Description": "Minimum delay before Hold can transition to sleep after waking from sleep."
+    },
+    "HoldStillWeight": {
+      "Value": 3,
+      "Description": "Weight for choosing to remain in the hold posture without playing a flavor animation."
+    },
+    "HoldStillDurationRange": {
+      "Value": [
+        2,
+        5
+      ],
+      "Description": "How long to remain in the hold posture when no flavor animation is selected."
+    },
     "NightFlavorAnimation": {
       "Value": "Idle",
       "Description": "A flavor animation to play at night. Ignored if null or empty."
@@ -130,8 +159,8 @@
     },
     "DayFlavorAnimationLength": {
       "Value": [
-        15,
-        30
+        2,
+        4
       ],
       "Description": "How long to play the daytime flavor animation."
     },
@@ -509,6 +538,7 @@
         {
           "From": [
             "Idle",
+            "Follow",
             "Hold"
           ],
           "To": [
@@ -528,6 +558,7 @@
           ],
           "To": [
             "Idle",
+            "Follow",
             "Hold",
             "Defend",
             "CommandMove"
@@ -546,6 +577,7 @@
           ],
           "To": [
             "Idle",
+            "Follow",
             "Defend",
             "CommandMove"
           ]
@@ -585,6 +617,10 @@
         {
           "Type": "State",
           "State": "Hold"
+        },
+        {
+          "Type": "State",
+          "State": "Follow"
         },
         {
           "Type": "State",
@@ -630,10 +666,27 @@
           }
         },
         {
-          "$Comment": "Default Idle State: Cat will follow player and try to stay within sight, teleporting if necessary.",
+          "$Comment": "Default Idle State: Cat wanders randomly around its configured radius.",
           "Sensor": {
             "Type": "State",
             "State": "Idle"
+          },
+          "Instructions": [
+            {
+              "Reference": "Component_Tamework_Instruction_Wander",
+              "Modify": {
+                "WanderRadius": {
+                  "Compute": "WanderRadius"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "$Comment": "Follow State: Cat follows the owner while staying nearby.",
+          "Sensor": {
+            "Type": "State",
+            "State": "Follow"
           },
           "Instructions": [
             {
@@ -737,7 +790,7 @@
           ]
         },
         {
-          "$Comment": "Hold State: Cat will sit still and sometimes sleep.",
+          "$Comment": "Hold State: Cat stays in a hold posture and can play flavor/sleep behaviors.",
           "Sensor": {
             "Type": "State",
             "State": "Hold"
@@ -749,6 +802,21 @@
                 "_ExportStates": [
                   "Sleep"
                 ],
+                "HoldBaseAnimation": {
+                  "Compute": "HoldBaseAnimation"
+                },
+                "SleepDelayAfterHoldEnterRange": {
+                  "Compute": "SleepDelayAfterHoldEnterRange"
+                },
+                "SleepDelayAfterLastSleepRange": {
+                  "Compute": "SleepDelayAfterLastSleepRange"
+                },
+                "HoldStillWeight": {
+                  "Compute": "HoldStillWeight"
+                },
+                "HoldStillDurationRange": {
+                  "Compute": "HoldStillDurationRange"
+                },
                 "DayFlavorAnimation": {
                   "Compute": "DayFlavorAnimation"
                 },

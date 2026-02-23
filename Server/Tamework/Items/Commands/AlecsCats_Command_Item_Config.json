@@ -35,7 +35,7 @@
         },
         {
           "Type": "SetState",
-          "State": "Idle"
+          "State": "Follow"
         },
         {
           "Type": "SetTarget",
@@ -74,7 +74,7 @@
       "Steps": [
         {
           "Type": "ClearCombat",
-          "State": "Idle",
+          "State": "Follow",
           "TargetSlots": [
             "LockedTarget"
           ],
