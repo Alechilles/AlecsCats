@@ -150,6 +150,25 @@
           "State": "Defend"
         }
       ]
+    },
+    {
+      "Id": "Wander",
+      "DisplayName": "Wander",
+      "Feedback": {
+        "HudMessage": "Wander: {count}",
+        "SoundEvent": "SFX_Creative_Play_Selection_Widget",
+        "ParticleSystem": "Graze"
+      },
+      "Steps": [
+        {
+          "Type": "ClearTarget",
+          "TargetSlot": "LockedTarget"
+        },
+        {
+          "Type": "SetState",
+          "State": "Idle"
+        }
+      ]
     }
   ]
 }
