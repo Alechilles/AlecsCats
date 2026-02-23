@@ -111,26 +111,26 @@
     },
     "SleepDelayAfterHoldEnterRange": {
       "Value": [
-        10,
-        10
+        8,
+        15
       ],
       "Description": "Minimum delay before Hold can transition to sleep after entering Hold."
     },
     "SleepDelayAfterLastSleepRange": {
       "Value": [
         15,
-        15
+        20
       ],
       "Description": "Minimum delay before Hold can transition to sleep after waking from sleep."
     },
     "HoldStillWeight": {
-      "Value": 3,
+      "Value": 4,
       "Description": "Weight for choosing to remain in the hold posture without playing a flavor animation."
     },
     "HoldStillDurationRange": {
       "Value": [
         2,
-        5
+        15
       ],
       "Description": "How long to remain in the hold posture when no flavor animation is selected."
     },
