@@ -675,8 +675,59 @@
             {
               "Reference": "Component_Tamework_Instruction_Wander",
               "Modify": {
+                "_ExportStates": [
+                  "Sleep"
+                ],
                 "WanderRadius": {
                   "Compute": "WanderRadius"
+                },
+                "BasePostureAnimation": {
+                  "Compute": "HoldBaseAnimation"
+                },
+                "StillWeight": {
+                  "Compute": "HoldStillWeight"
+                },
+                "StillDurationRange": {
+                  "Compute": "HoldStillDurationRange"
+                },
+                "DayFlavorAnimation": {
+                  "Compute": "DayFlavorAnimation"
+                },
+                "DayFlavorAnimationAfter": {
+                  "Compute": "DayFlavorAnimationAfter"
+                },
+                "DayFlavorAnimationLength": {
+                  "Compute": "DayFlavorAnimationLength"
+                },
+                "DayTimePeriod": {
+                  "Compute": "DayTimePeriod"
+                },
+                "NightFlavorAnimation": {
+                  "Compute": "NightFlavorAnimation"
+                },
+                "NightFlavorAnimationAfter": {
+                  "Compute": "NightFlavorAnimationAfter"
+                },
+                "NightFlavorAnimationLength": {
+                  "Compute": "NightFlavorAnimationLength"
+                },
+                "DayTimeNapWeight": {
+                  "Compute": "DayTimeNapWeight"
+                },
+                "HearingRange": {
+                  "Compute": "HearingRange"
+                },
+                "Attitudes": [
+                  "Hostile"
+                ],
+                "AlwaysSleepAtNight": {
+                  "Compute": "AlwaysSleepAtNight"
+                },
+                "SleepDelayAfterEntryRange": {
+                  "Compute": "SleepDelayAfterHoldEnterRange"
+                },
+                "SleepDelayAfterLastSleepRange": {
+                  "Compute": "SleepDelayAfterLastSleepRange"
                 }
               }
             }
