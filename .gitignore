@@ -7,3 +7,6 @@ Server/NPC/Roles/_Core/Test_Set_State_From_Component.json
 Server/NPC/Roles/_Core/Test_Component_Set_State.json
 Server/NPC/Roles/_Core/Components/Selectors/Component_Instruction_Wild_Sleep_State.json
 AGENTS.md
+
+# Release pipeline
+artifacts/
