@@ -16,15 +16,16 @@
   "curseforge": {
     "projectId": "1432112",
     "releaseType": "release",
-    "gameVersions": []
+    "gameVersionTypeIds": [65437]
   },
   "modtale": {
     "projectId": "1e32a0cf-5da9-456f-a175-cce0b6ed5090",
     "releaseChannel": "stable",
-    "gameVersions": ["2026.02.19-1A311A592"],
+    "gameVersions": ["2026.02.19-1a311a592"],
     "versionFieldName": "versionNumber",
     "changelogFieldName": "changelog",
     "channelFieldName": "channel",
     "gameVersionFieldName": "gameVersions"
   }
 }
+
