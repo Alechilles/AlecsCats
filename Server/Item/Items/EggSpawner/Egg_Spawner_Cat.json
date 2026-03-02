@@ -16,6 +16,18 @@
           ]
         }
       ]
+    },
+    "Secondary": {
+      "Interactions": [
+        {
+          "Type": "Serial",
+          "Interactions": [
+            {
+              "Type": "TameworkSpawn"
+            }
+          ]
+        }
+      ]
     }
   },
   "Model": "Items/Tamework/Lantern/Tamework_Soul_Lantern.blockymodel",

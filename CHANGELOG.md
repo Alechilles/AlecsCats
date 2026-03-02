@@ -2,6 +2,13 @@
 
 All notable changes to **Alec's Cats!** will be documented in this file.
 
+## 1.5.3 - Spawner Left/Right Click - 2026-03-02
+### Changed
+- Cats can now be captured and spawned with both left and right click
+
+### Fixed
+- `ServerVersion` format in `manifest.json` (Must be lower case)
+
 ## 1.5.2 - Cat Wander + Ambient Behavior Polish - 2026-02-23
 ### Changed
 - `Template_Cat_Pet` now uses `Component_Tamework_Instruction_Wander` in `Idle` state, causing pet cats to wander within the template's `WanderRadius`.

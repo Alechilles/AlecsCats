@@ -16,6 +16,18 @@
           "CancelOnItemChange": false
         }
       ]
+    },
+    "Secondary": {
+      "Interactions": [
+        {
+          "Type": "TameworkSpawn",
+          "Failed": {
+            "Type": "Simple",
+            "RunTime": 0.05
+          },
+          "CancelOnItemChange": false
+        }
+      ]
     }
   },
   "Model": "Items/Pet Spawners/Collar/Collar.blockymodel",
