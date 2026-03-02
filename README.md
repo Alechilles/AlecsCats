@@ -12,6 +12,7 @@ This mod started as a simple cat conversion from unused base-game assets and has
 - Command-item controls (Follow, Hold, Recall, Move To Ping, Set Home, Return Home, Attack Target)
 - Tamework happiness/needs simulation with resource seeking
 - Passive companion breeding
+- Trait generation and inheritance for bred companion cats
 - Multi-language localization
 
 ## What's New in 1.5.0
@@ -97,6 +98,8 @@ They usually spawn solo, but can spawn in small groups.
   - Server/Tamework/Needs/TwNeedsConfig_AlecsCats_Cat_Pet.json
 - Cat breeding config:
   - Server/Tamework/Breeding/TwBreedingConfig_AlecsCats_Cat_Pet.json
+- Cat trait config:
+  - Server/Tamework/Traits/TwTraitConfig_AlecsCats_Cat_Pet.json
 
 After editing item configs, run:
 - /tw reloadconfig

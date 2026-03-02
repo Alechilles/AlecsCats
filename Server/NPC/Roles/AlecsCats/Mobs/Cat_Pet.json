@@ -3,6 +3,9 @@
   "Reference": "Template_Cat_Pet",
   "Modify": {
     "Appearance": "Cat",
+    "FlockArray": [
+      "Cat_Pet"
+    ],
     "DropList": "Drop_Cat",
     "MaxHealth": 50,
     "MaxSpeed": 8,

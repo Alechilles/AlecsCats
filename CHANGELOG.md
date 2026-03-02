@@ -8,11 +8,14 @@ All notable changes to **Alec's Cats!** will be documented in this file.
   - `Server/Tamework/Happiness/TwHappinessConfig_AlecsCats_Cat_Pet.json`
   - `Server/Tamework/Needs/TwNeedsConfig_AlecsCats_Cat_Pet.json`
   - `Server/Tamework/Breeding/TwBreedingConfig_AlecsCats_Cat_Pet.json`
+- New cats-scoped trait config:
+  - `Server/Tamework/Traits/TwTraitConfig_AlecsCats_Cat_Pet.json`
 
 ### Changed
 - Cats can now be captured and spawned with both left and right click
 - `Template_Cat_Pet` now integrates Tamework needs-seek sensor/action behavior (`NeedsSeekWater`, `NeedsSeekFood`) and breeding pair movement (`BreedPair`) states.
 - Added state-transition cleanup so status animations are cleared when moving between hold/sleep/needs and locomotion states.
+- `Cat_Pet` now defines flock compatibility (`FlockArray: ["Cat_Pet"]`) so breeding family flocks can form for companion cats.
 
 ### Fixed
 - `ServerVersion` format in `manifest.json` (Must be lower case)
