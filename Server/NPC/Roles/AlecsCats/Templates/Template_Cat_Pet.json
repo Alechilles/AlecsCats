@@ -597,6 +597,52 @@
       "Actions": {
         "Reference": "Component_ActionList_StandUp"
       }
+    },
+    {
+      "$Comment": "Clear looping status animation when leaving hold/sleep/needs states so locomotion can play.",
+      "States": [
+        {
+          "From": [
+            "Hold",
+            "Sleep",
+            "NeedsSeekWater",
+            "NeedsSeekFood"
+          ],
+          "To": [
+            "Idle",
+            "Follow",
+            "Defend",
+            "CommandMove"
+          ]
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "PlayAnimation",
+          "Slot": "Status"
+        }
+      ]
+    },
+    {
+      "$Comment": "Clear looping status animation when entering needs seek from hold/sleep.",
+      "States": [
+        {
+          "From": [
+            "Hold",
+            "Sleep"
+          ],
+          "To": [
+            "NeedsSeekWater",
+            "NeedsSeekFood"
+          ]
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "PlayAnimation",
+          "Slot": "Status"
+        }
+      ]
     }
   ],
   "InteractionVars": {
@@ -639,6 +685,18 @@
         },
         {
           "Type": "State",
+          "State": "NeedsSeekWater"
+        },
+        {
+          "Type": "State",
+          "State": "NeedsSeekFood"
+        },
+        {
+          "Type": "State",
+          "State": "BreedPair"
+        },
+        {
+          "Type": "State",
           "State": "Defend"
         },
         {
@@ -674,6 +732,111 @@
           "Sensor": {
             "Type": "State",
             "State": "CommandMove"
+          }
+        },
+        {
+          "$Comment": "Bridge needs-seek sensor pass while in Idle state.",
+          "Continue": true,
+          "Sensor": {
+            "Type": "State",
+            "State": "Idle"
+          },
+          "Instructions": [
+            {
+              "Reference": "Component_Tamework_Instruction_Needs_Seek_Resource_Sensor",
+              "Modify": {
+                "NeedsSeekFoodItemIds": {
+                  "Compute": "LovedItems"
+                },
+                "_ExportStates": [
+                  "NeedsSeekWater",
+                  "NeedsSeekFood"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "$Comment": "Needs-seek water movement runtime while in NeedsSeekWater state.",
+          "Continue": true,
+          "Sensor": {
+            "Type": "State",
+            "State": "NeedsSeekWater"
+          },
+          "Instructions": [
+            {
+              "Reference": "Component_Tamework_Instruction_Needs_Seek_Resource",
+              "Modify": {
+                "NeedsSeekResourceType": "Water",
+                "_ExportStates": [
+                  "Idle"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "$Comment": "Needs-seek food movement runtime while in NeedsSeekFood state.",
+          "Continue": true,
+          "Sensor": {
+            "Type": "State",
+            "State": "NeedsSeekFood"
+          },
+          "Instructions": [
+            {
+              "Reference": "Component_Tamework_Instruction_Needs_Seek_Resource",
+              "Modify": {
+                "NeedsSeekResourceType": "FoodContainer",
+                "NeedsSeekFoodItemIDs": {
+                  "Compute": "LovedItems"
+                },
+                "_ExportStates": [
+                  "Idle"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "$Comment": "No-op branch to pair the NeedsSeekWater state with a state sensor.",
+          "Continue": true,
+          "Sensor": {
+            "Type": "State",
+            "State": "NeedsSeekWater"
+          }
+        },
+        {
+          "$Comment": "No-op branch to pair the NeedsSeekFood state with a state sensor.",
+          "Continue": true,
+          "Sensor": {
+            "Type": "State",
+            "State": "NeedsSeekFood"
+          }
+        },
+        {
+          "$Comment": "Bridge breeding pair hooks into dedicated pair movement.",
+          "Continue": true,
+          "Sensor": {
+            "Type": "Any"
+          },
+          "Instructions": [
+            {
+              "Reference": "Component_Tamework_Instruction_Breeding_Pair",
+              "Modify": {
+                "_ExportStates": [
+                  "BreedPair",
+                  "Idle"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "$Comment": "No-op branch to pair the BreedPair state with a state sensor.",
+          "Continue": true,
+          "Sensor": {
+            "Type": "State",
+            "State": "BreedPair"
           }
         },
         {

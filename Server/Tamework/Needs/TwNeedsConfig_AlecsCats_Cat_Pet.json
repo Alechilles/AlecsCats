@@ -1,0 +1,53 @@
+{
+  "Enabled": true,
+  "Priority": 50,
+  "RoleIds": [
+    "Cat_Pet"
+  ],
+  "Values": {
+    "HungerDefault": 100.0,
+    "HungerMin": 0.0,
+    "HungerMax": 100.0,
+    "ThirstDefault": 100.0,
+    "ThirstMin": 0.0,
+    "ThirstMax": 100.0
+  },
+  "Decay": {
+    "HungerPerMinute": 1.2,
+    "ThirstPerMinute": 1.8
+  },
+  "HappinessImpact": {
+    "HungerPenaltyAtMin": 20.0,
+    "ThirstPenaltyAtMin": 30.0,
+    "PenaltyCurvePower": 1.15
+  },
+  "PassiveRefill": {
+    "SweepIntervalSeconds": 15,
+    "NearbyContainerFeedEnabled": true,
+    "ContainerSearchRadius": 7.0,
+    "ContainerConsumeRadius": 1.5,
+    "ContainerFoodItemIds": [
+      "Food_Fish_Raw",
+      "Food_Fish_Raw_Uncommon",
+      "Food_Fish_Raw_Rare",
+      "Food_Fish_Raw_Epic",
+      "Food_Fish_Raw_Legendary"
+    ],
+    "HungerGainPerConsumedItem": 25.0,
+    "MaxContainerItemsConsumedPerSweep": 1,
+    "NearbyWaterDrinkEnabled": true,
+    "WaterSearchRadius": 5.0,
+    "WaterConsumeRadius": 1.5,
+    "ThirstGainPerSweepNearWater": 20.0
+  },
+  "ManualRefill": {
+    "HungerGainOnFeedInteraction": 25.0,
+    "ThirstGainOnWaterBucket": 30.0,
+    "WaterBucketItemIds": [
+      "Container_Bucket"
+    ]
+  },
+  "Timing": {
+    "Basis": "REAL_TIME"
+  }
+}

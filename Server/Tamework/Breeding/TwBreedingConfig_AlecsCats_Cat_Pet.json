@@ -1,0 +1,50 @@
+{
+  "Enabled": true,
+  "Priority": 50,
+  "RoleIds": [
+    "Cat_Pet"
+  ],
+  "Happiness": {
+    "Threshold": 70.0
+  },
+  "Eligibility": {
+    "RequireTamed": true,
+    "RequireAdult": true,
+    "RequireNotInCombat": true,
+    "RequireNotSleeping": true
+  },
+  "Pairing": {
+    "BreedRadius": 12.0,
+    "RequireWanderMode": false,
+    "RequireSameOwner": true,
+    "MaxNearbySameType": 6,
+    "RequireSameRoleId": true
+  },
+  "Cooldowns": {
+    "BaseCooldownSeconds": 1800,
+    "MinDelaySeconds": 30,
+    "MaxDelaySeconds": 180
+  },
+  "PassiveBreeding": {
+    "Enabled": true,
+    "SweepIntervalSeconds": 30,
+    "Basis": "REAL_TIME"
+  },
+  "Timing": {
+    "Basis": "REAL_TIME"
+  },
+  "Inheritance": {
+    "InheritOwner": true,
+    "InheritTamed": true,
+    "InheritAttachments": true,
+    "InheritTraits": true,
+    "AttachmentInheritance": {
+      "ParentWeight": 1.0,
+      "RandomWeight": 0.0,
+      "MutationChance": 0.05
+    }
+  },
+  "OffspringLifecycle": {
+    "Enabled": false
+  }
+}
