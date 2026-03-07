@@ -1,5 +1,5 @@
 {
-  "StartState": "Hold",
+  "StartState": "Idle",
   "DefaultSubState": "Default",
   "Type": "Abstract",
   "Invulnerable": false,
@@ -7,6 +7,14 @@
     "Appearance": {
       "Value": "Cat",
       "Description": "Model to be used."
+    },
+    "ParticleOffset": {
+      "Value": [
+        0,
+        0.6,
+        0
+      ],
+      "Description": "The offset of any spawned particle systems."
     },
     "WanderRadius": {
       "Value": 8,
@@ -408,6 +416,15 @@
     "LeashRelativeSpeed": {
       "Value": 0.6,
       "Description": "The relative speed at which the NPC will return to its leash position"
+    },
+    "FlockFollowerWanderRadius": { 
+      "Value": 7
+    },
+    "FlockFollowerRelativeSpeed": {
+      "Value": 0.3
+    },
+    "FlockFollowerStopDistance": {
+      "Value": 2
     },
     "ConfusedTimeRange": {
       "Value": [
@@ -846,6 +863,24 @@
             "State": "Idle"
           },
           "Instructions": [
+            {
+              "$Comment": "Keep flock followers near their leader before regular idle wander.",
+              "Reference": "Component_Tamework_Instruction_Flock_Follow_Wander",
+              "Modify": {
+                "LeashEnabled": {
+                  "Compute": "!isEmptyStringArray(FlockArray)"
+                },
+                "FlockFollowerWanderRadius": {
+                  "Compute": "FlockFollowerWanderRadius"
+                },
+                "FlockFollowerRelativeSpeed": {
+                  "Compute": "FlockFollowerRelativeSpeed"
+                },
+                "FlockFollowerStopDistance": {
+                  "Compute": "FlockFollowerStopDistance"
+                }
+              }
+            },
             {
               "Reference": "Component_Tamework_Instruction_Wander",
               "Modify": {
