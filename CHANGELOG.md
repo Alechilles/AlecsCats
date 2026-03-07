@@ -2,6 +2,14 @@
 
 All notable changes to **Alec's Cats!** will be documented in this file.
 
+## 1.5.4 - Tamework 2.2 Release Alignment - 2026-03-07
+### Changed
+- Updated `manifest.json` version to `1.5.4`.
+- Updated required Tamework dependency to `Alechilles:Alec's Tamework! = 2.2.x`.
+
+### Fixed
+- Ensured `manifest.json` `ServerVersion` remains lowercase format for compatibility.
+
 ## 1.5.3 - Spawner Left/Right Click - 2026-03-02
 ### Added
 - New cats-scoped Tamework configs for happiness, needs, and breeding:

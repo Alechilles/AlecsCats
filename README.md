@@ -15,12 +15,11 @@ This mod started as a simple cat conversion from unused base-game assets and has
 - Trait generation and inheritance for bred companion cats
 - Multi-language localization
 
-## What's New in 1.5.0
-- Added the **Cat Treat Bag** command item (AlecsCats_Command_Item).
-- Added command wheel + left-click command execution via Tamework command items.
-- Added command config for cats with move/home/recall/attack support.
-- Added command-item localization keys in all supported locales.
-- Updated for latest server compatibility (ServerVersion: 2026.02.19-1A311A592).
+## What's New in 1.5.4
+- Updated release alignment for the Tamework `2.2.x` line.
+- Manifest metadata now targets `Version: 1.5.4`.
+- Dependency now requires `Alechilles:Alec's Tamework! = 2.2.x`.
+- Server compatibility string is kept in lowercase format (`ServerVersion`).
 
 ## Requirements
 - **Alec's Tamework!** dependency is required (Alechilles:Alec's Tamework!).
