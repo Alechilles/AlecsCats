@@ -1,6 +1,6 @@
 {
   "Enabled": true,
-  "Priority": 50,
+  "Priority": 1,
   "RoleIds": [
     "Cat_Pet"
   ],
