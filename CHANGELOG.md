@@ -2,6 +2,10 @@
 
 All notable changes to **Alec's Cats!** will be documented in this file.
 
+## 1.5.5 - Release Prep Patch - 2026-03-08
+### Changed
+- Updated `manifest.json` version to `1.5.5`.
+
 ## 1.5.4 - Tamework 2.2 Release Alignment - 2026-03-07
 ### Changed
 - Updated `manifest.json` version to `1.5.4`.
