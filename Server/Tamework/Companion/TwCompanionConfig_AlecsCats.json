@@ -1,0 +1,14 @@
+{
+    "Enabled": true,
+    "Parent": "TwCompanionConfig_Default",
+    "Priority": 1,
+    "RoleIds": [
+        "Cat_Pet"
+    ],
+    "OwnershipProtection": {
+        "BlockOwnerDamage": true
+    },
+    "Command": {
+        "DeadRespawnCooldownMins": 20
+    }
+}
