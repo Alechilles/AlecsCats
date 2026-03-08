@@ -25,7 +25,8 @@ if (-not (Test-Path -Path $ChangelogPath)) {
 
 $config = Get-Content -Path $ConfigPath -Raw | ConvertFrom-Json
 $normalizedVersion = (($Version.Trim()) -replace "^v", "")
-$projectId = $config.modtale.projectId
+$modtaleConfig = $config.modtale
+$projectId = $modtaleConfig.projectId
 
 $effectiveApiKey = $ApiKey
 if ([string]::IsNullOrWhiteSpace($effectiveApiKey)) {
@@ -39,7 +40,7 @@ $endpoint = if ([string]::IsNullOrWhiteSpace($projectId)) {
     "https://api.modtale.net/api/v1/projects/$projectId/versions"
 }
 $changelog = Get-Content -Path $ChangelogPath -Raw
-$rawChannel = $config.modtale.releaseChannel
+$rawChannel = $modtaleConfig.releaseChannel
 if ([string]::IsNullOrWhiteSpace($rawChannel)) {
     $rawChannel = "stable"
 }
@@ -52,16 +53,23 @@ $channel = switch ($channelKey) {
     default { $rawChannel.Trim().ToUpperInvariant() }
 }
 
-$versionFieldName = if ([string]::IsNullOrWhiteSpace($config.modtale.versionFieldName)) { "versionNumber" } else { $config.modtale.versionFieldName }
-$changelogFieldName = if ([string]::IsNullOrWhiteSpace($config.modtale.changelogFieldName)) { "changelog" } else { $config.modtale.changelogFieldName }
-$channelFieldName = if ([string]::IsNullOrWhiteSpace($config.modtale.channelFieldName)) { "channel" } else { $config.modtale.channelFieldName }
-$gameVersionFieldName = if ([string]::IsNullOrWhiteSpace($config.modtale.gameVersionFieldName)) { "gameVersions" } else { $config.modtale.gameVersionFieldName }
+$versionFieldName = if ([string]::IsNullOrWhiteSpace($modtaleConfig.versionFieldName)) { "versionNumber" } else { $modtaleConfig.versionFieldName }
+$changelogFieldName = if ([string]::IsNullOrWhiteSpace($modtaleConfig.changelogFieldName)) { "changelog" } else { $modtaleConfig.changelogFieldName }
+$channelFieldName = if ([string]::IsNullOrWhiteSpace($modtaleConfig.channelFieldName)) { "channel" } else { $modtaleConfig.channelFieldName }
+$gameVersionFieldName = if ([string]::IsNullOrWhiteSpace($modtaleConfig.gameVersionFieldName)) { "gameVersions" } else { $modtaleConfig.gameVersionFieldName }
+$requiredModIdsProperty = $modtaleConfig.PSObject.Properties["requiredModIds"]
+$requiredModIds = if ($null -eq $requiredModIdsProperty) { @() } else { @($requiredModIdsProperty.Value) }
+$modIdsFieldNameProperty = $modtaleConfig.PSObject.Properties["modIdsFieldName"]
+$modIdsFieldName = if ($null -eq $modIdsFieldNameProperty -or [string]::IsNullOrWhiteSpace("$($modIdsFieldNameProperty.Value)")) { "modIds" } else { "$($modIdsFieldNameProperty.Value)" }
 
 if ($DryRun) {
     Write-Host "Dry-run: would publish '$ArtifactPath' to Modtale project '$projectId'."
     Write-Host "Endpoint: $endpoint"
     Write-Host "Version: $normalizedVersion"
     Write-Host "Channel: $channel"
+    if ($requiredModIds.Count -gt 0) {
+        Write-Host "Required dependency mod IDs: $($requiredModIds -join ', ')"
+    }
     if ([string]::IsNullOrWhiteSpace($projectId)) {
         Write-Host "Note: modtale.projectId is empty in $ConfigPath."
     }
@@ -86,8 +94,15 @@ $curlArgs = @(
     "-F", "$channelFieldName=$channel"
 )
 
-foreach ($gameVersion in @($config.modtale.gameVersions)) {
+foreach ($gameVersion in @($modtaleConfig.gameVersions)) {
     $curlArgs += @("-F", "$gameVersionFieldName=$gameVersion")
+}
+
+foreach ($requiredModId in $requiredModIds) {
+    $trimmedRequiredModId = "$requiredModId".Trim()
+    if (-not [string]::IsNullOrWhiteSpace($trimmedRequiredModId)) {
+        $curlArgs += @("-F", "$modIdsFieldName=$trimmedRequiredModId")
+    }
 }
 
 $curlArgs += @("-F", "file=@$ArtifactPath")

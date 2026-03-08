@@ -24,8 +24,11 @@ if (-not (Test-Path -Path $ChangelogPath)) {
 
 $config = Get-Content -Path $ConfigPath -Raw | ConvertFrom-Json
 $normalizedVersion = (($Version.Trim()) -replace "^v", "")
-$projectId = $config.curseforge.projectId
-$gameVersionTypeIds = @($config.curseforge.gameVersionTypeIds)
+$curseforgeConfig = $config.curseforge
+$projectId = $curseforgeConfig.projectId
+$gameVersionTypeIds = @($curseforgeConfig.gameVersionTypeIds)
+$requiredProjectIdsProperty = $curseforgeConfig.PSObject.Properties["requiredProjectIds"]
+$requiredProjectIds = if ($null -eq $requiredProjectIdsProperty) { @() } else { @($requiredProjectIdsProperty.Value) }
 
 $apiBaseUrl = "https://www.curseforge.com/api"
 $endpoint = if ([string]::IsNullOrWhiteSpace($projectId)) {
@@ -40,10 +43,29 @@ $metadataObject = @{
     changelog = $changelog
     changelogType = "markdown"
     displayName = $displayName
-    releaseType = $config.curseforge.releaseType
+    releaseType = $curseforgeConfig.releaseType
     gameVersionTypeIds = $gameVersionTypeIds
 }
+
+$relationsProjects = @()
+foreach ($dependencyProjectId in $requiredProjectIds) {
+    $projectIdInt = 0
+    if (-not [int]::TryParse("$dependencyProjectId", [ref]$projectIdInt)) {
+        throw "curseforge.requiredProjectIds entry '$dependencyProjectId' is not a valid project ID."
+    }
+    $relationsProjects += @{
+        id = $projectIdInt
+        type = "requiredDependency"
+    }
+}
+if ($relationsProjects.Count -gt 0) {
+    $metadataObject.relations = @{
+        projects = $relationsProjects
+    }
+}
 $metadataJson = $metadataObject | ConvertTo-Json -Depth 16 -Compress
+$metadataTempFile = New-TemporaryFile
+Set-Content -Path $metadataTempFile -Value $metadataJson -NoNewline -Encoding utf8
 
 if ($DryRun) {
     Write-Host "Dry-run: would publish '$ArtifactPath' to CurseForge project '$projectId'."
@@ -55,6 +77,10 @@ if ($DryRun) {
     if ($gameVersionTypeIds.Count -eq 0) {
         Write-Host "Note: curseforge.gameVersionTypeIds is empty in $ConfigPath."
     }
+    if ($requiredProjectIds.Count -gt 0) {
+        Write-Host "Required dependency project IDs: $($requiredProjectIds -join ', ')"
+    }
+    Remove-Item -Path $metadataTempFile -Force -ErrorAction SilentlyContinue
     exit 0
 }
 
@@ -77,14 +103,16 @@ $statusCode = & curl.exe `
     -X POST `
     $endpoint `
     -H "X-Api-Token: $ApiToken" `
-    -F "metadata=$metadataJson" `
+    -F "metadata=<$metadataTempFile;type=application/json" `
     -F "file=@$ArtifactPath"
 $statusCode = $statusCode.Trim()
 
 if ($LASTEXITCODE -ne 0) {
+    Remove-Item -Path $metadataTempFile -Force -ErrorAction SilentlyContinue
     Remove-Item -Path $responseTempFile -Force -ErrorAction SilentlyContinue
     throw "CurseForge upload failed with exit code $LASTEXITCODE."
 }
+Remove-Item -Path $metadataTempFile -Force -ErrorAction SilentlyContinue
 
 $response = ""
 if (Test-Path -Path $responseTempFile) {
