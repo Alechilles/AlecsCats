@@ -17,7 +17,10 @@
     "projectId": "1432112",
     "releaseType": "release",
     "gameVersionTypeIds": [65437],
-    "requiredProjectIds": [1447962, 1464844]
+    "requiredProjects": [
+      { "id": 1447962, "slug": "alecs-tamework", "type": "requiredDependency" },
+      { "id": 1464844, "slug": "alecs-nametags", "type": "requiredDependency" }
+    ]
   },
   "modtale": {
     "projectId": "1e32a0cf-5da9-456f-a175-cce0b6ed5090",
