@@ -12,6 +12,65 @@ param(
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
+function Resolve-CurseForgeProjectSlug {
+    param(
+        [string]$ApiBaseUrl,
+        [int]$DependencyProjectId,
+        [string]$ApiToken
+    )
+
+    $endpoint = "$ApiBaseUrl/projects/$DependencyProjectId"
+    $responseTempFile = New-TemporaryFile
+    $statusCode = & curl.exe `
+        -sS `
+        -o $responseTempFile `
+        -w "%{http_code}" `
+        -X GET `
+        $endpoint `
+        -H "X-Api-Token: $ApiToken"
+    $statusCode = $statusCode.Trim()
+
+    if ($LASTEXITCODE -ne 0) {
+        Remove-Item -Path $responseTempFile -Force -ErrorAction SilentlyContinue
+        throw "Failed to resolve CurseForge dependency slug for project '$DependencyProjectId' (curl exit code $LASTEXITCODE)."
+    }
+
+    $responseBody = ""
+    if (Test-Path -Path $responseTempFile) {
+        $responseBody = Get-Content -Path $responseTempFile -Raw
+        Remove-Item -Path $responseTempFile -Force -ErrorAction SilentlyContinue
+    }
+
+    $statusCodeInt = 0
+    if (-not [int]::TryParse($statusCode, [ref]$statusCodeInt)) {
+        throw "Invalid HTTP status '$statusCode' while resolving CurseForge dependency project '$DependencyProjectId'."
+    }
+    if ($statusCodeInt -lt 200 -or $statusCodeInt -ge 300) {
+        $summary = if ([string]::IsNullOrWhiteSpace($responseBody)) { "<empty>" } else { $responseBody }
+        throw "Failed to resolve CurseForge dependency project '$DependencyProjectId' (HTTP $statusCode). Response: $summary"
+    }
+
+    $payload = $null
+    try {
+        $payload = $responseBody | ConvertFrom-Json
+    } catch {
+        throw "Failed to parse CurseForge dependency project '$DependencyProjectId' response JSON."
+    }
+
+    $slug = $null
+    if ($null -ne $payload -and $payload.PSObject.Properties["slug"]) {
+        $slug = [string]$payload.slug
+    } elseif ($null -ne $payload -and $payload.PSObject.Properties["data"] -and $null -ne $payload.data -and $payload.data.PSObject.Properties["slug"]) {
+        $slug = [string]$payload.data.slug
+    }
+
+    if ([string]::IsNullOrWhiteSpace($slug)) {
+        throw "CurseForge dependency project '$DependencyProjectId' did not include a slug in the API response."
+    }
+
+    return $slug.Trim()
+}
+
 if (-not (Test-Path -Path $ConfigPath)) {
     throw "Release config '$ConfigPath' was not found."
 }
@@ -53,16 +112,28 @@ foreach ($dependencyProjectId in $requiredProjectIds) {
     if (-not [int]::TryParse("$dependencyProjectId", [ref]$projectIdInt)) {
         throw "curseforge.requiredProjectIds entry '$dependencyProjectId' is not a valid project ID."
     }
-    $relationsProjects += @{
+
+    $relationProject = @{
         id = $projectIdInt
         type = "requiredDependency"
     }
+
+    if (-not $DryRun) {
+        if ([string]::IsNullOrWhiteSpace($ApiToken)) {
+            throw "CURSEFORGE_API_TOKEN is required to resolve dependency slugs for requiredProjectIds."
+        }
+        $relationProject.slug = Resolve-CurseForgeProjectSlug -ApiBaseUrl $apiBaseUrl -DependencyProjectId $projectIdInt -ApiToken $ApiToken
+    }
+
+    $relationsProjects += $relationProject
 }
+
 if ($relationsProjects.Count -gt 0) {
     $metadataObject.relations = @{
         projects = $relationsProjects
     }
 }
+
 $metadataJson = $metadataObject | ConvertTo-Json -Depth 16 -Compress
 $metadataTempFile = New-TemporaryFile
 Set-Content -Path $metadataTempFile -Value $metadataJson -NoNewline -Encoding utf8
