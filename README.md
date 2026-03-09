@@ -5,7 +5,8 @@
 
 [![Discord](https://img.shields.io/discord/1468261809739005996?style=for-the-badge&logo=discord&logoColor=white&label=Join%20Discord&color=rgb(88,101,242))](https://discord.gg/E8n8RgTTdq) [![GitHub Repo stars](https://img.shields.io/github/stars/Alechilles/AlecsCats?style=for-the-badge&logo=github&label=GitHub)](https://github.com/Alechilles/AlecsCats)
 
-Alec's Cats! adds tamable companion cats to Hytale, powered by **[Alec's Tamework!](https://www.curseforge.com/hytale/mods/alecs-tamework)**.
+## Attention Artists
+If you are an artist and would be interested in contributing to Alec's Cats, please [contact me on discord](https://discord.gg/E8n8RgTTdq)! I am not a very skilled artist, and with all the complex systems I've been working on I haven't been able to spend as much time on making things like new cat textures for Alec's Cats. I would love to partner with a capable artist to get more cat variants into people's hands!
 
 ## Summary
 This mod started as a simple cat conversion from unused base-game assets and has grown into a full pet system with:
@@ -18,29 +19,22 @@ This mod started as a simple cat conversion from unused base-game assets and has
 - Trait generation and inheritance for bred companion cats
 - Multi-language localization
 
-## What's New in 1.5.4
-- Updated release alignment for the Tamework `2.2.x` line.
-- Manifest metadata now targets `Version: 1.5.4`.
-- Dependency now requires `Alechilles:Alec's Tamework! = 2.2.x`.
-- Server compatibility string is kept in lowercase format (`ServerVersion`).
-
 ## Requirements
 - **Alec's Tamework!** dependency is required (Alechilles:Alec's Tamework!).
-- No separate legacy Tamework assets pack is needed.
 
 ## Craftable Items
-### Cat Collar
+### Cat Collar (Capture/Spawn Item)
 - 3x Light Leather
 - 1x Gold Bar
 - Bench: Workbench Tier 2 (Tinkering)
 
-### Cat Treat Bag
+### Cat Treat Bag (Command Item)
 - 2x Light Leather
 - 5x Raw Fish
 - 5x Raw Meat
 - Bench: Workbench Tier 2 (Tinkering)
 
-## Quick Use
+## Quick Start
 1. Find a wild cat.
 2. Feed raw fish to make it friendly.
 3. Use a **Cat Collar** to capture/tame it.
@@ -65,17 +59,29 @@ Default commands:
 
 Notes:
 - Commands require ownership + tamed cats by default.
-- Commands are configured in:
-  - Server/Tamework/Items/Commands/AlecsCats_Command_Item_Config.json
 
 ## Taming and Ownership
 - Taming assigns ownership.
 - Only the owner can interact with/store the cat by default.
 - When stored in an item, ownership can be cleared until re-spawn (trading-friendly flow).
-- Owner damage/invulnerability behavior is controlled by Tamework global config:
-  - <Alec's Tamework!>/Server/Tamework/Global/*.json
+- Owner damage/invulnerability behavior is controlled by Tamework companion config:
+  - Alec's Cats!\Server\Tamework\Companion\TwCompanionConfig_AlecsCats.json
 
-  ## Spawns
+## Happiness and Needs
+- Happiness fluctuates based on if the Cat's needs are being met
+- Cats will automatically eat raw fish from storage containers nearby
+- Cats will automatically drink water from water sources nearby
+- Cats prefer to have at least one cat friend nearby, but don't like to be overcrowded
+- Cats like when their owner is nearby
+
+## Breeding and Traits
+- Cats can automatically breed if they are happy and have a suitable partner
+- Cats can spawn with 0-4 traits
+- Traits can alter anything from size, to strength, to fertility and more
+- Traits can be inherited from parents, and breeding cats with the same traits together can result in higher trait values (or lower!)
+- Fur color is also inherited from parents
+
+## Spawns
 Cats are uncommon but not extremely rare.
 - Zone 1: Plains, Forests
 - Zone 3: Forests
@@ -88,25 +94,32 @@ They usually spawn solo, but can spawn in small groups.
 - Nyxie (light gray with white markings)
 
 ## Config Files
-- Cat interaction config:
+- Companion Config:
+  - Server/Tamework/Companion/TwCompanionConfig_AlecsCats.json
+- Interaction Config:
   - Server/Tamework/Interactions/AlecsCats_Cat_InteractionConfig.json
-- Cat spawner config:
+- Spawner Config:
   - Server/Tamework/Items/Spawners/AlecsCats_Spawner_Cat.json
-- Cat command-item config:
+- Command-item Config:
   - Server/Tamework/Items/Commands/AlecsCats_Command_Item_Config.json
-- Cat happiness config:
+- Happiness Config:
   - Server/Tamework/Happiness/TwHappinessConfig_AlecsCats_Cat_Pet.json
-- Cat needs config:
+- Needs Config:
   - Server/Tamework/Needs/TwNeedsConfig_AlecsCats_Cat_Pet.json
-- Cat breeding config:
+- Breeding Config:
   - Server/Tamework/Breeding/TwBreedingConfig_AlecsCats_Cat_Pet.json
-- Cat trait config:
+- Trait Config:
   - Server/Tamework/Traits/TwTraitConfig_AlecsCats_Cat_Pet.json
 
-After editing item configs, run:
-- /tw reloadconfig
 
+## Want More?
+If you're interested in bringing the same mechanics to vanilla mobs in Hytale, check out my new mod:
 
+  [![Animal Husbandry](https://img.shields.io/curseforge/dt/1480275?label=Alec%27s%20Animal%20Husbandry&style=for-the-badge&logo=curseforge&color=rgb(241%2C100%2C54))](https://legacy.curseforge.com/hytale/mods/alecs-animal-husbandry)
+
+If you're a modder interested in adding these mechanics to **your** NPCs, check out my comprehensive taming framework built specifically for modders to integrate my systems with their mods. By referencing Tamework, you can add complex systems to your NPCs **without writing any Java code** at all:
+
+  [![Tamework](https://img.shields.io/curseforge/dt/1447962?label=Alec%27s%20Tamework&style=for-the-badge&logo=curseforge&color=rgb(241%2C100%2C54))](https://www.curseforge.com/hytale/mods/alecs-tamework)
 
 ## Known Issues
 - Some wake/laydown animation transitions are still placeholder quality and will be improved.
