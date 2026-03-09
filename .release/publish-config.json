@@ -25,12 +25,7 @@
   "modtale": {
     "projectId": "1e32a0cf-5da9-456f-a175-cce0b6ed5090",
     "releaseChannel": "stable",
-    "gameVersions": ["2026.02.19-1a311a592"],
-    "requiredModIds": [
-      "3145c0f3-a890-49b3-bc87-0648b8bd736c",
-      "81a4e526-3444-42ac-9117-aa735702efb7"
-    ],
-    "versionFieldName": "versionNumber",
+    "gameVersions": ["2026.02.19-1a311a592"],    "versionFieldName": "versionNumber",
     "changelogFieldName": "changelog",
     "channelFieldName": "channel",
     "gameVersionFieldName": "gameVersions"
