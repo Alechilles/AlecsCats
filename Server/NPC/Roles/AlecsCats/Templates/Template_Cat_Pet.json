@@ -579,12 +579,54 @@
       }
     },
     {
+      "$Comment": "Record sleep origin when entering sleep from Hold so wake can return to Hold.",
+      "States": [
+        {
+          "From": [
+            "Hold"
+          ],
+          "To": [
+            "Sleep"
+          ]
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "SetFlag",
+          "Name": "Sleep_ReturnToHold",
+          "SetTo": true
+        }
+      ]
+    },
+    {
+      "$Comment": "Record sleep origin when entering sleep from Idle/Follow so wake returns to Idle.",
+      "States": [
+        {
+          "From": [
+            "Idle",
+            "Follow"
+          ],
+          "To": [
+            "Sleep"
+          ]
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "SetFlag",
+          "Name": "Sleep_ReturnToHold",
+          "SetTo": false
+        }
+      ]
+    },
+    {
       "States": [
         {
           "From": [
             "Sleep"
           ],
           "To": [
+            "SleepWakeResolve",
             "Idle",
             "Follow",
             "Hold",
@@ -622,6 +664,7 @@
           "From": [
             "Hold",
             "Sleep",
+            "SleepWakeResolve",
             "NeedsSeekWater",
             "NeedsSeekFood"
           ],
@@ -719,6 +762,10 @@
         {
           "Type": "State",
           "State": "Sleep"
+        },
+        {
+          "Type": "State",
+          "State": "SleepWakeResolve"
         }
       ]
     },
@@ -1133,7 +1180,7 @@
                   "Defend",
                   "Defend",
                   "Hold",
-                  "Hold",
+                  "SleepWakeResolve",
                   "Hold"
                 ],
                 "DayTimePeriod": {
@@ -1155,6 +1202,50 @@
                   "Compute": "FlockArray"
                 }
               }
+            }
+          ]
+        },
+        {
+          "$Comment": "Resolve wake destination based on the state that initiated sleep.",
+          "Sensor": {
+            "Type": "State",
+            "State": "SleepWakeResolve"
+          },
+          "Instructions": [
+            {
+              "Sensor": {
+                "Type": "Flag",
+                "Name": "Sleep_ReturnToHold"
+              },
+              "Actions": [
+                {
+                  "Type": "SetFlag",
+                  "Name": "Sleep_ReturnToHold",
+                  "SetTo": false
+                },
+                {
+                  "Type": "State",
+                  "State": "Hold"
+                }
+              ]
+            },
+            {
+              "Sensor": {
+                "Type": "Flag",
+                "Name": "Sleep_ReturnToHold",
+                "Set": false
+              },
+              "Actions": [
+                {
+                  "Type": "SetFlag",
+                  "Name": "Sleep_ReturnToHold",
+                  "SetTo": false
+                },
+                {
+                  "Type": "State",
+                  "State": "Idle"
+                }
+              ]
             }
           ]
         }

@@ -585,12 +585,53 @@
       }
     },
     {
+      "$Comment": "Record PetSleep origin when entering from Hold so wake can return to Hold.",
+      "States": [
+        {
+          "From": [
+            "Hold"
+          ],
+          "To": [
+            "PetSleep"
+          ]
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "SetFlag",
+          "Name": "PetSleep_ReturnToHold",
+          "SetTo": true
+        }
+      ]
+    },
+    {
+      "$Comment": "Record PetSleep origin when entering from Pet so wake returns to Pet.",
+      "States": [
+        {
+          "From": [
+            "Pet"
+          ],
+          "To": [
+            "PetSleep"
+          ]
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "SetFlag",
+          "Name": "PetSleep_ReturnToHold",
+          "SetTo": false
+        }
+      ]
+    },
+    {
       "States": [
         {
           "From": [
             "PetSleep"
           ],
           "To": [
+            "PetSleepWakeResolve",
             "Pet",
             "Hold"
           ]
@@ -714,6 +755,10 @@
         {
           "Type": "State",
           "State": "Sleep"
+        },
+        {
+          "Type": "State",
+          "State": "PetSleepWakeResolve"
         }
       ]
     },
@@ -1498,7 +1543,7 @@
                   "Pet",
                   "Pet",
                   "Hold",
-                  "Hold",
+                  "PetSleepWakeResolve",
                   "Pet"
                 ],
                 "DayTimePeriod": {
@@ -1521,6 +1566,50 @@
                   "Compute": "FlockArray"
                 }
               }
+            }
+          ]
+        },
+        {
+          "$Comment": "Resolve PetSleep wake destination based on the state that initiated sleep.",
+          "Sensor": {
+            "Type": "State",
+            "State": "PetSleepWakeResolve"
+          },
+          "Instructions": [
+            {
+              "Sensor": {
+                "Type": "Flag",
+                "Name": "PetSleep_ReturnToHold"
+              },
+              "Actions": [
+                {
+                  "Type": "SetFlag",
+                  "Name": "PetSleep_ReturnToHold",
+                  "SetTo": false
+                },
+                {
+                  "Type": "State",
+                  "State": "Hold"
+                }
+              ]
+            },
+            {
+              "Sensor": {
+                "Type": "Flag",
+                "Name": "PetSleep_ReturnToHold",
+                "Set": false
+              },
+              "Actions": [
+                {
+                  "Type": "SetFlag",
+                  "Name": "PetSleep_ReturnToHold",
+                  "SetTo": false
+                },
+                {
+                  "Type": "State",
+                  "State": "Pet"
+                }
+              ]
             }
           ]
         },
