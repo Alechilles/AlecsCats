@@ -2,6 +2,16 @@
 
 All notable changes to **Alec's Cats!** will be documented in this file.
 
+## Unreleased
+
+## 1.5.6 - UpdateChecker + Docs Polish - 2026-03-11
+### Added
+- Added CurseForge update-check metadata in `manifest.json` (`UpdateChecker.CurseForge = 1432112`) so supported clients can detect newer versions.
+
+### Changed
+- Updated `manifest.json` version to `1.5.6`.
+- Improved README content clarity and refreshed project shields/badges.
+
 ## 1.5.5 - Release Prep Patch - 2026-03-08
 ### Changed
 - Updated `manifest.json` version to `1.5.5`.
@@ -214,3 +224,4 @@ Cats were appearing slightly more rarely than intended, so weights were adjusted
 - Behaviors slightly changed.
 - Second cat texture variant added.
 - Spawns added to Plains, Forests, Autumn, and Azure.
+
