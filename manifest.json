@@ -13,7 +13,7 @@
   "Website": "",
   "ServerVersion": "2026.02.19-1a311a592",
   "Dependencies": {
-    "Alechilles:Alec's Tamework!": "2.3.x"
+    "Alechilles:Alec's Tamework!": "2.4.x"
   },
   "OptionalDependencies": {},
   "LoadBefore": {},
