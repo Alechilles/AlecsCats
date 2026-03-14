@@ -3,6 +3,8 @@
 All notable changes to **Alec's Cats!** will be documented in this file.
 
 ## Unreleased
+
+## 1.5.7 - Sleep Wake Origin + Breeding Cooldown Format - 2026-03-14
 ### Changed
 - `Template_Cat_Pet` sleep wake routing now preserves sleep origin: waking returns to `Idle` when sleep started from idle/follow, and returns to `Hold` when sleep started from hold.
 - `TwBreedingConfig_AlecsCats_Cat_Pet` now uses `Cooldowns.BaseCooldownMinutes` (instead of seconds) for clearer cooldown tuning, matching the newer Tamework breeding config format.
