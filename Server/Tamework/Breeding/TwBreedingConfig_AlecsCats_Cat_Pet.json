@@ -21,7 +21,7 @@
     "RequireSameRoleId": true
   },
   "Cooldowns": {
-    "BaseCooldownSeconds": 1800,
+    "BaseCooldownMinutes": 30,
     "MinDelaySeconds": 30,
     "MaxDelaySeconds": 180
   },
@@ -46,5 +46,7 @@
   },
   "OffspringLifecycle": {
     "Enabled": false
-  }
+  },
+  "RoleOverrides": {}
 }
+
