@@ -186,6 +186,10 @@
         "Model": "NPC/Pets/Cat/Models/Nyxie/Model.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Nyxie/Texture.png",
         "Weight": 1
+      },
+      "SilverTabby": {
+        "Model": "NPC/Pets/Cat/Models/Cat/Model.blockymodel",
+        "Texture": "NPC/Pets/Cat/Models/SilverTabby/Silver_Tabby_Texture.png"
       }
     }
   }
