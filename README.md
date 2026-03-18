@@ -1,9 +1,11 @@
 [![Cats](https://img.shields.io/curseforge/dt/1432112?label=Cats&style=for-the-badge&logo=curseforge&color=rgb(241%2C100%2C54))](https://www.curseforge.com/hytale/mods/alecs-cats)
 [![Tamework](https://img.shields.io/curseforge/dt/1447962?label=Tamework&style=for-the-badge&logo=curseforge&color=rgb(241%2C100%2C54))](https://www.curseforge.com/hytale/mods/alecs-tamework)
 [![Nametags](https://img.shields.io/curseforge/dt/1464844?label=Nametags&style=for-the-badge&logo=curseforge&color=rgb(241%2C100%2C54))](https://www.curseforge.com/hytale/mods/alecs-nametags)
-[![Animal Husbandry](https://img.shields.io/curseforge/dt/1480275?label=Animal%20Husbandry&style=for-the-badge&logo=curseforge&color=rgb(241%2C100%2C54))](https://legacy.curseforge.com/hytale/mods/alecs-animal-husbandry)
+[![Animal Husbandry](https://img.shields.io/curseforge/dt/1480275?label=Animal%20Husbandry&style=for-the-badge&logo=curseforge&color=rgb(241%2C100%2C54))](https://www.curseforge.com/hytale/mods/alecs-animal-husbandry)
 
 [![Discord](https://img.shields.io/discord/1468261809739005996?style=for-the-badge&logo=discord&logoColor=white&label=Join%20Discord&color=rgb(88,101,242))](https://discord.gg/E8n8RgTTdq) [![GitHub Repo stars](https://img.shields.io/github/stars/Alechilles/AlecsCats?style=for-the-badge&logo=github&label=GitHub)](https://github.com/Alechilles/AlecsCats)
+
+[![Featured in Hytale Magazine](https://hytalemagazine.com/badges/featured-in-hytale-magazine.png)](https://hytalemagazine.com/issues/issue-001)
 
 ## Attention Artists
 If you are an artist and would be interested in contributing to Alec's Cats, please [contact me on discord](https://discord.gg/E8n8RgTTdq)! I am not a very skilled artist, and with all the complex systems I've been working on I haven't been able to spend as much time on making things like new cat textures for Alec's Cats. I would love to partner with a capable artist to get more cat variants into people's hands!
