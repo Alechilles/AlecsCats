@@ -10,3 +10,7 @@ AGENTS.md
 
 # Release pipeline
 artifacts/
+
+# IDE
+.idea/
+*.iml
