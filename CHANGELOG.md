@@ -7,6 +7,7 @@ All notable changes to **Alec's Cats!** will be documented in this file.
 ## 1.6.1 - Multi-Texture Variant Pack - 2026-03-18
 ### Added
 - Added three new cat appearance variants: Orange Tabby, Brown Tabby, and White.
+- Added per-variant cat spawner item icons for both `Cat` and `Cat_Pet` coats (Empty, Missy, Nyxie, SilverTabby, OrangeTabby, BrownTabby, White).
 
 ### Changed
 - Replaced the previous Silver Tabby texture source with a new artist-provided Silver Tabby texture.
