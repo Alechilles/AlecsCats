@@ -30,57 +30,91 @@
   "IconOverridesByRole": {
     "Cat_Pet": [
       {
-        "Icon": "Icons/ItemsGenerated/Egg_Spawner_Cat_Lulu.png",
+        "Icon": "Icons/ItemsGenerated/Cat_Cat_Pet_Empty.png",
         "Attachments": {
-          "Coat": "Lulu"
+          "Coat": "Empty"
         }
       },
       {
-        "Icon": "Icons/ItemsGenerated/Egg_Spawner_Cat_Missy.png",
+        "Icon": "Icons/ItemsGenerated/Cat_Cat_Pet_Missy.png",
         "Attachments": {
           "Coat": "Missy"
         }
       },
       {
-        "Icon": "Icons/ItemsGenerated/Egg_Spawner_Cat_Nyxie.png",
+        "Icon": "Icons/ItemsGenerated/Cat_Cat_Pet_Nyxie.png",
         "Attachments": {
           "Coat": "Nyxie"
         }
       },
       {
-        "Icon": "Icons/ItemsGenerated/Egg_Spawner_Cat.png",
+        "Icon": "Icons/ItemsGenerated/Cat_Cat_Pet_SilverTabby.png",
         "Attachments": {
-          "Coat": "Empty"
+          "Coat": "SilverTabby"
+        }
+      },
+      {
+        "Icon": "Icons/ItemsGenerated/Cat_Cat_Pet_OrangeTabby.png",
+        "Attachments": {
+          "Coat": "OrangeTabby"
+        }
+      },
+      {
+        "Icon": "Icons/ItemsGenerated/Cat_Cat_Pet_BrownTabby.png",
+        "Attachments": {
+          "Coat": "BrownTabby"
+        }
+      },
+      {
+        "Icon": "Icons/ItemsGenerated/Cat_Cat_Pet_White.png",
+        "Attachments": {
+          "Coat": "White"
         }
       }
     ],
     "Cat": [
       {
-        "Icon": "Icons/ItemsGenerated/Egg_Spawner_Cat_Lulu.png",
+        "Icon": "Icons/ItemsGenerated/Cat_Cat_Empty.png",
         "Attachments": {
-          "Coat": "Lulu"
+          "Coat": "Empty"
         }
       },
       {
-        "Icon": "Icons/ItemsGenerated/Egg_Spawner_Cat_Missy.png",
+        "Icon": "Icons/ItemsGenerated/Cat_Cat_Missy.png",
         "Attachments": {
           "Coat": "Missy"
         }
       },
       {
-        "Icon": "Icons/ItemsGenerated/Egg_Spawner_Cat_Nyxie.png",
+        "Icon": "Icons/ItemsGenerated/Cat_Cat_Nyxie.png",
         "Attachments": {
           "Coat": "Nyxie"
         }
       },
       {
-        "Icon": "Icons/ItemsGenerated/Egg_Spawner_Cat.png",
+        "Icon": "Icons/ItemsGenerated/Cat_Cat_SilverTabby.png",
         "Attachments": {
-          "Coat": "Empty"
+          "Coat": "SilverTabby"
+        }
+      },
+      {
+        "Icon": "Icons/ItemsGenerated/Cat_Cat_OrangeTabby.png",
+        "Attachments": {
+          "Coat": "OrangeTabby"
+        }
+      },
+      {
+        "Icon": "Icons/ItemsGenerated/Cat_Cat_BrownTabby.png",
+        "Attachments": {
+          "Coat": "BrownTabby"
+        }
+      },
+      {
+        "Icon": "Icons/ItemsGenerated/Cat_Cat_White.png",
+        "Attachments": {
+          "Coat": "White"
         }
       }
     ]
   }
 }
-
-
