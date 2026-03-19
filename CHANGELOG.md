@@ -4,6 +4,23 @@ All notable changes to **Alec's Cats!** will be documented in this file.
 
 ## Unreleased
 
+## 1.6.1 - Multi-Texture Variant Pack - 2026-03-18
+### Added
+- Added three new cat appearance variants: Orange Tabby, Brown Tabby, and White.
+
+### Changed
+- Replaced the previous Silver Tabby texture source with a new artist-provided Silver Tabby texture.
+- Updated `Cat` model variant texture mappings to load all new variant textures from `Common/NPC/Pets/Cat/Models/Celly(Excel_Lynt)/`.
+
+### Fixes
+- None.
+
+### Breaking Changes
+- None.
+
+### Known Issues
+- None.
+
 ## 1.6.0 - Silver Tabby - 2026-03-18
 ### Added
 - New Silver Tabby Cat skin created by Excel Lynt has been added

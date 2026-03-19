@@ -1,7 +1,7 @@
 {
   "Group": "Alechilles",
   "Name": "Alec's Cats!",
-  "Version": "1.6.0",
+  "Version": "1.6.1",
   "Description": "Adds tamable cats to Hytale!",
   "Authors": [
     {
@@ -24,4 +24,3 @@
     "CurseForge": "1432112"
   }
 }
-
