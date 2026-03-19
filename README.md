@@ -94,6 +94,12 @@ They usually spawn solo, but can spawn in small groups.
 - Default black/white
 - Missy (dark gray)
 - Nyxie (light gray with white markings)
+- Silver Tabby (updated texture)
+- Orange Tabby
+- Brown Tabby
+- White
+
+Additional variant textures in recent releases are provided by artist Excel Lynt.
 
 ## Config Files
 - Companion Config:

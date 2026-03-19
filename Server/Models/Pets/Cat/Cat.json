@@ -189,7 +189,19 @@
       },
       "SilverTabby": {
         "Model": "NPC/Pets/Cat/Models/Cat/Model.blockymodel",
-        "Texture": "NPC/Pets/Cat/Models/SilverTabby/Silver_Tabby_Texture.png"
+        "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/SilverTabby_Texture.png"
+      },
+      "OrangeTabby": {
+        "Model": "NPC/Pets/Cat/Models/Cat/Model.blockymodel",
+        "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/OrangeTabby_Texture.png"
+      },
+      "BrownTabby": {
+        "Model": "NPC/Pets/Cat/Models/Cat/Model.blockymodel",
+        "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/BrownTabby_Texture.png"
+      },
+      "White": {
+        "Model": "NPC/Pets/Cat/Models/Cat/Model.blockymodel",
+        "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/White_Texture.png"
       }
     }
   }
