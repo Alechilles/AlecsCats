@@ -31,23 +31,15 @@
       "ItemsInHand": [
         {
           "Item": "Food_Fish_Raw",
-          "Heal": 15
-        },
-        {
-          "Item": "Food_Fish_Raw_Uncommon",
-          "Heal": 20
-        },
-        {
-          "Item": "Food_Fish_Raw_Rare",
           "Heal": 25
         },
         {
-          "Item": "Food_Fish_Raw_Epic",
-          "Heal": 30
+          "Item": "Food_Wildmeat_Raw",
+          "Heal": 20
         },
         {
-          "Item": "Food_Fish_Raw_Legendary",
-          "Heal": 35
+          "Item": "Food_Chicken_Raw",
+          "Heal": 25
         }
       ],
       "Effects": {
@@ -66,6 +58,35 @@
           "Color": "#fe6969"
         }
       }
+    },
+    {
+      "Type": "Custom",
+      "CooldownSeconds": 1,
+      "Requires": {
+        "All": {
+          "AlarmState": [
+            {
+              "Name": "Pet_Ready",
+              "State": "unset"
+            }
+          ],
+          "PlayerHandEmpty": true,
+          "Parameter": [
+            {
+              "Name": "IsPettable",
+              "Value": "true",
+              "Operator": "Equals"
+            }
+          ]
+        }
+      },
+      "Effects": {
+        "TriggerNpcHook": {
+          "HookId": "TwHook_Pet",
+          "Consume": true
+        }
+      },
+      "PromptHint": "server.interactionHints.pet"
     },
     {
       "Type": "ModeCycle",

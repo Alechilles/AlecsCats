@@ -59,6 +59,7 @@ $channelFieldName = if ([string]::IsNullOrWhiteSpace($modtaleConfig.channelField
 $gameVersionFieldName = if ([string]::IsNullOrWhiteSpace($modtaleConfig.gameVersionFieldName)) { "gameVersions" } else { $modtaleConfig.gameVersionFieldName }
 $requiredModIdsProperty = $modtaleConfig.PSObject.Properties["requiredModIds"]
 $requiredModIds = if ($null -eq $requiredModIdsProperty) { @() } else { @($requiredModIdsProperty.Value) }
+$requiredModIds = @($requiredModIds)
 $modIdsFieldNameProperty = $modtaleConfig.PSObject.Properties["modIdsFieldName"]
 $modIdsFieldName = if ($null -eq $modIdsFieldNameProperty -or [string]::IsNullOrWhiteSpace("$($modIdsFieldNameProperty.Value)")) { "modIds" } else { "$($modIdsFieldNameProperty.Value)" }
 
@@ -67,7 +68,7 @@ if ($DryRun) {
     Write-Host "Endpoint: $endpoint"
     Write-Host "Version: $normalizedVersion"
     Write-Host "Channel: $channel"
-    if ($requiredModIds.Count -gt 0) {
+    if (@($requiredModIds).Count -gt 0) {
         Write-Host "Required dependency mod IDs: $($requiredModIds -join ', ')"
     }
     if ([string]::IsNullOrWhiteSpace($projectId)) {
@@ -98,7 +99,7 @@ foreach ($gameVersion in @($modtaleConfig.gameVersions)) {
     $curlArgs += @("-F", "$gameVersionFieldName=$gameVersion")
 }
 
-foreach ($requiredModId in $requiredModIds) {
+foreach ($requiredModId in @($requiredModIds)) {
     $trimmedRequiredModId = "$requiredModId".Trim()
     if (-not [string]::IsNullOrWhiteSpace($trimmedRequiredModId)) {
         $curlArgs += @("-F", "$modIdsFieldName=$trimmedRequiredModId")

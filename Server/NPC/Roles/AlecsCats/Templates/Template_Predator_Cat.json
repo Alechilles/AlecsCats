@@ -190,7 +190,7 @@
       "Value": "Egg_Spawner_Cat",
       "Description": "Filled spawner item ID granted when picking up the pet."
     },
-    "LovedItems": {
+    "AttractiveItemSet": {
       "Value": [
         "Food_Fish_Raw"
       ],

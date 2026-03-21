@@ -23,7 +23,8 @@
         "PlaySound": {
           "SoundEvent": "SFX_AlecsCats_Cat_Trill"
         }
-      }
+      },
+      "ItemsParam": "AttractiveItemSet"
     },
     {
       "Type": "Feed",

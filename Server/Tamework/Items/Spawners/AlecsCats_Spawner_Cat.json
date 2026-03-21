@@ -2,6 +2,7 @@
   "EmptyItemId": "Egg_Spawner_Cat_Empty",
   "FilledItemId": "Egg_Spawner_Cat",
   "IconDefault": "Icons/ItemsGenerated/Egg_Spawner_Cat.png",
+  "TooltipMode": "Additive",
   "AllowedRoles": {
     "Mode": "Allowlist",
     "Allowlist": [

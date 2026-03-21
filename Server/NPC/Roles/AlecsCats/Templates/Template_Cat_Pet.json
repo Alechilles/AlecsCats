@@ -203,12 +203,34 @@
       "Value": "Egg_Spawner_Cat",
       "Description": "Filled spawner item ID granted when picking up the pet."
     },
-    "LovedItems": {
+    "AttractiveItemSet": {
       "Value": [
-        "Food_Fish_Raw"
+        "Food_Fish_Raw", "Food_Wildmeat_Raw"
       ],
       "TypeHint": "String",
       "Description": "Food item IDs accepted for feeding."
+    },
+    "IsPettable": {
+      "Value": true,
+      "Description": "Whether players can pet the NPC."
+    },
+    "PetAnimation": {
+      "Value": "Alerted",
+      "Description": "The animation the NPC will play when petted."
+    },
+    "PetRequiredAttitudes": {
+      "Value": [
+        "Friendly",
+        "Revered"
+      ],
+      "Description": "The attitude groups of players that can pet the NPC."
+    },
+    "PetTimeout": {
+      "Value": [
+        "PT15M",
+        "PT15M"
+      ],
+      "Description": "The timeout between consecutive pets."
     },
     "InteractSoundHold": {
       "Value": "SFX_Torch_Swing_Right_Local",
@@ -770,6 +792,62 @@
       ]
     },
     {
+      "$Comment": "Apply pet effects when a pet interaction emits TwHook_Pet.",
+      "Enabled": {
+        "Compute": "IsPettable"
+      },
+      "Continue": true,
+      "Sensor": {
+        "Type": "TameworkHook",
+        "HookId": "TwHook_Pet",
+        "Consume": true
+      },
+      "Actions": [
+        {
+          "Type": "SpawnParticles",
+          "ParticleSystem": "Hearts_Subtle",
+          "Offset": {
+            "Compute": "ParticleOffset"
+          },
+          "TargetNodeName": "Head"
+        },
+        {
+          "Type": "PlaySound",
+          "SoundEventId": "SFX_AlecsCats_Cat_Trill"
+        },
+        {
+          "Type": "SetAlarm",
+          "Name": "Pet_Ready",
+          "DurationRange": {
+            "Compute": "PetTimeout"
+          }
+        }
+      ]
+    },
+    {
+      "Continue": true,
+      "Instructions": [
+        {
+          "$Comment": "Clear the pet alarm when it finishes",
+          "Enabled": {
+            "Compute": "IsPettable"
+          },
+          "Continue": true,
+          "Sensor": {
+            "Type": "Alarm",
+            "Name": "Pet_Ready",
+            "State": "Passed",
+            "Clear": true
+          },
+          "Actions": [
+            {
+              "Type": "Nothing"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "$Comment": "",
       "Instructions": [
         {
@@ -810,7 +888,7 @@
               "Reference": "Component_Tamework_Instruction_Needs_Seek_Resource_Sensor",
               "Modify": {
                 "NeedsSeekFoodItemIds": {
-                  "Compute": "LovedItems"
+                  "Compute": "AttractiveItemSet"
                 },
                 "_ExportStates": [
                   "NeedsSeekWater",
@@ -852,7 +930,7 @@
               "Modify": {
                 "NeedsSeekResourceType": "FoodContainer",
                 "NeedsSeekFoodItemIDs": {
-                  "Compute": "LovedItems"
+                  "Compute": "AttractiveItemSet"
                 },
                 "_ExportStates": [
                   "Idle"

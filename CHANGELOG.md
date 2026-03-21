@@ -4,6 +4,21 @@ All notable changes to **Alec's Cats!** will be documented in this file.
 
 ## Unreleased
 
+## 1.6.2 - Pet Interaction + Attraction Param Alignment - 2026-03-20
+### Added
+- Added a dedicated pet interaction for `Cat_Pet` when the player has an empty hand and the pet cooldown alarm is unset.
+- Added `TwHook_Pet` handling in `Template_Cat_Pet` to trigger pet feedback and set `Pet_Ready`.
+
+### Changed
+- Standardized cat food parameter naming from `LovedItems` to `AttractiveItemSet` across cat templates/mobs and interaction references.
+- Updated cat feed item tuning in `AlecsCats_Cat_InteractionConfig` (raw fish, wildmeat, chicken with adjusted heal values).
+- Added `CooldownSeconds: 1` to the pet custom interaction to reduce rapid repeat triggering.
+- Added `TooltipMode: "Additive"` to `AlecsCats_Spawner_Cat`.
+- Updated temp cat conversion tame config to read `ItemsParam: "AttractiveItemSet"`.
+
+### Fixed
+- Petting no longer leaves cats stuck in looping `Alerted` status animation.
+
 ## 1.6.1 - Multi-Texture Variant Pack By Celly(@Excel_Lynt) - 2026-03-18
 ### Added
 - Added four new cat appearance variants created by Celly(@Excel_Lynt): Silver Tabby, Orange Tabby, Brown Tabby, and White.
