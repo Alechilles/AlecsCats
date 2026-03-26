@@ -4,7 +4,7 @@ All notable changes to **Alec's Cats!** will be documented in this file.
 
 ## Unreleased
 
-## 1.6.3 - Breed Interaction Pass + Compatibility Refresh - 2026-03-26
+## 1.6.3 - Manual Breed Interaction + Update 4 Compatibility - 2026-03-26
 ### Added
 - Added a dedicated crouch + attractive-item breeding interaction to `AlecsCats_Cat_InteractionConfig`, including item consumption and `Hearts_Subtle` feedback.
 
