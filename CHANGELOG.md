@@ -4,6 +4,14 @@ All notable changes to **Alec's Cats!** will be documented in this file.
 
 ## Unreleased
 
+## 1.6.3 - Breed Interaction Pass + Compatibility Refresh - 2026-03-26
+### Added
+- Added a dedicated crouch + attractive-item breeding interaction to `AlecsCats_Cat_InteractionConfig`, including item consumption and `Hearts_Subtle` feedback.
+
+### Changed
+- Updated `manifest.json` version to `1.6.3`.
+- Updated release compatibility metadata to `ServerVersion`/`gameVersions` `2026.03.26-89796e57b`.
+
 ## 1.6.2 - Pet Interaction + Attraction Param Alignment - 2026-03-20
 ### Added
 - Added a dedicated pet interaction for `Cat_Pet` when the player has an empty hand and the pet cooldown alarm is unset.
