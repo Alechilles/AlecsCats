@@ -26,6 +26,37 @@
       }
     },
     {
+      "Type": "Breed",
+      "MinHappiness": 70,
+      "UseLovedItems": false,
+      "Requires": {
+        "All": {
+          "ItemsInHand": [
+            {
+              "ItemsParam": "AttractiveItemSet"
+            }
+          ],
+          "PlayerMovementState": [
+            {
+              "State": "Crouching"
+            }
+          ]
+        }
+      },
+      "Effects": {
+        "RemoveItemsHand": {
+          "Quantity": 1,
+          "ItemsParam": "AttractiveItemSet"
+        },
+        "SpawnParticles": {
+          "ParticleSystem": "Hearts_Subtle",
+          "OffsetParam": "ParticleOffset",
+          "AttachTarget": "Node",
+          "AttachNode": "Head"
+        }
+      }
+    },
+    {
       "Type": "Feed",
       "UseLovedItems": false,
       "ItemsInHand": [
