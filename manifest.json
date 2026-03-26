@@ -11,7 +11,7 @@
     }
   ],
   "Website": "",
-  "ServerVersion": "2026.02.19-1a311a592",
+  "ServerVersion": "2026.03.26-89796e57b",
   "Dependencies": {
     "Alechilles:Alec's Tamework!": "2.4.x"
   },
@@ -24,3 +24,4 @@
     "CurseForge": "1432112"
   }
 }
+
