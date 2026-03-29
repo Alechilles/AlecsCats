@@ -4,6 +4,13 @@ All notable changes to **Alec's Cats!** will be documented in this file.
 
 ## Unreleased
 
+## 1.7.0 - Celly Variant Pack II - 2026-03-28
+### Added
+- Added five new cat appearance variants created by Celly(@Excel_Lynt): Cream, Cream Tuxedo, Gray Tuxedo, Brown Tuxedo, and Light Orange Tabby Tuxedo.
+
+### Changed
+- Updated `manifest.json` version to `1.7.0`.
+
 ## 1.6.3 - Manual Breed Interaction + Update 4 Compatibility - 2026-03-26
 ### Added
 - Added a dedicated crouch + attractive-item breeding interaction to `AlecsCats_Cat_InteractionConfig`, including item consumption and `Hearts_Subtle` feedback.

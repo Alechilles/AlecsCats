@@ -202,6 +202,26 @@
       "White": {
         "Model": "NPC/Pets/Cat/Models/Cat/Model.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/White_Texture.png"
+      },
+      "Cream": {
+        "Model": "NPC/Pets/Cat/Models/Cat/Model.blockymodel",
+        "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Cream_Flat_Texture.png"
+      },
+      "Cream Tuxedo": {
+        "Model": "NPC/Pets/Cat/Models/Cat/Model.blockymodel",
+        "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Cream_Tuxedo_Texture.png"
+      },
+      "Gray Tuxedo": {
+        "Model": "NPC/Pets/Cat/Models/Cat/Model.blockymodel",
+        "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Gray_Tuxedo_Texture.png"
+      },
+      "Brown Tuxedo": {
+        "Model": "NPC/Pets/Cat/Models/Cat/Model.blockymodel",
+        "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Brown_Tuxedo_Texture.png"
+      },
+      "Light Orange Tabby Tuxedo": {
+        "Model": "NPC/Pets/Cat/Models/Cat/Model.blockymodel",
+        "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Light_Orange_Tuxedo_Texture.png"
       }
     }
   }

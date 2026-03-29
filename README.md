@@ -98,6 +98,11 @@ They usually spawn solo, but can spawn in small groups.
 - *Orange Tabby
 - *Brown Tabby
 - *White
+- *Cream
+- *Cream Tuxedo
+- *Gray Tuxedo
+- *Brown Tuxedo
+- *Light Orange Tabby Tuxedo
 
 #### * Additional variant textures in recent releases are provided by the infinitely more talented [Celly (@Excel Lynt)](https://www.curseforge.com/members/excel_lynt/).
 
