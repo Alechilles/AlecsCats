@@ -4,6 +4,13 @@ All notable changes to **Alec's Cats!** will be documented in this file.
 
 ## Unreleased
 
+## 1.7.1 - Celly Variant Pack III - 2026-03-29
+### Added
+- Added new Black cat, updated Gray Tuxedo, and refreshed Nyxie and Missy appearance variants contributed by Celly(@Excel_Lynt)
+
+### Changed
+- Updated `manifest.json` version to `1.7.1`.
+
 ## 1.7.0 - Celly Variant Pack II - 2026-03-28
 ### Added
 - Added five new cat appearance variants created by Celly(@Excel_Lynt): Cream, Cream Tuxedo, Gray Tuxedo, Brown Tuxedo, and Light Orange Tabby Tuxedo.

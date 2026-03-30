@@ -91,20 +91,21 @@ Cats are uncommon but not extremely rare.
 They usually spawn solo, but can spawn in small groups.
 
 ## Color Variants
-- Default black/white
-- Missy (dark gray)
-- Nyxie (light gray with white markings)
-- *Silver Tabby (updated texture)
-- *Orange Tabby
-- *Brown Tabby
-- *White
-- *Cream
-- *Cream Tuxedo
-- *Gray Tuxedo
-- *Brown Tuxedo
-- *Light Orange Tabby Tuxedo
+#### _All cat textures are now made by an artist far more skilled than me, [Celly (@Excel Lynt)](https://www.curseforge.com/members/excel_lynt/)._
 
-#### * Additional variant textures in recent releases are provided by the infinitely more talented [Celly (@Excel Lynt)](https://www.curseforge.com/members/excel_lynt/).
+- Default black/white
+- Missy (Darker Dust Kitty)
+- Nyxie (Lighter Dust Kitty with a few white spots)
+- Silver Tabby
+- Orange Tabby
+- Brown Tabby
+- White
+- Cream
+- Cream Tuxedo
+- Gray Tuxedo
+- Brown Tuxedo
+- Light Orange Tabby Tuxedo
+- Black
 
 ## Config Files
 - Companion Config:
