@@ -179,12 +179,12 @@
       },
       "Missy": {
         "Model": "NPC/Pets/Cat/Models/Missy/Model.blockymodel",
-        "Texture": "NPC/Pets/Cat/Models/Missy/Texture.png",
+        "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Missy_Texture.png",
         "Weight": 1
       },
       "Nyxie": {
         "Model": "NPC/Pets/Cat/Models/Nyxie/Model.blockymodel",
-        "Texture": "NPC/Pets/Cat/Models/Nyxie/Texture.png",
+        "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Nyxie_Texture.png",
         "Weight": 1
       },
       "SilverTabby": {
@@ -222,6 +222,10 @@
       "Light Orange Tabby Tuxedo": {
         "Model": "NPC/Pets/Cat/Models/Cat/Model.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Light_Orange_Tuxedo_Texture.png"
+      },
+      "Black": {
+        "Model": "NPC/Pets/Cat/Models/Cat/Model.blockymodel",
+        "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Black_Texture.png"
       }
     }
   }
