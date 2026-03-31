@@ -31,89 +31,161 @@
   "IconOverridesByRole": {
     "Cat_Pet": [
       {
-        "Icon": "Icons/ItemsGenerated/Cat_Cat_Pet_Empty.png",
+        "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-empty.png",
         "Attachments": {
           "Coat": "Empty"
         }
       },
       {
-        "Icon": "Icons/ItemsGenerated/Cat_Cat_Pet_Missy.png",
+        "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-missy.png",
         "Attachments": {
           "Coat": "Missy"
         }
       },
       {
-        "Icon": "Icons/ItemsGenerated/Cat_Cat_Pet_Nyxie.png",
+        "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-nyxie.png",
         "Attachments": {
           "Coat": "Nyxie"
         }
       },
       {
-        "Icon": "Icons/ItemsGenerated/Cat_Cat_Pet_SilverTabby.png",
+        "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-silvertabby.png",
         "Attachments": {
           "Coat": "SilverTabby"
         }
       },
       {
-        "Icon": "Icons/ItemsGenerated/Cat_Cat_Pet_OrangeTabby.png",
+        "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-orangetabby.png",
         "Attachments": {
           "Coat": "OrangeTabby"
         }
       },
       {
-        "Icon": "Icons/ItemsGenerated/Cat_Cat_Pet_BrownTabby.png",
+        "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-browntabby.png",
         "Attachments": {
           "Coat": "BrownTabby"
         }
       },
       {
-        "Icon": "Icons/ItemsGenerated/Cat_Cat_Pet_White.png",
+        "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-white.png",
         "Attachments": {
           "Coat": "White"
+        }
+      },
+      {
+        "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-cream.png",
+        "Attachments": {
+          "Coat": "Cream"
+        }
+      },
+      {
+        "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-cream-tuxedo.png",
+        "Attachments": {
+          "Coat": "Cream Tuxedo"
+        }
+      },
+      {
+        "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-gray-tuxedo.png",
+        "Attachments": {
+          "Coat": "Gray Tuxedo"
+        }
+      },
+      {
+        "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-brown-tuxedo.png",
+        "Attachments": {
+          "Coat": "Brown Tuxedo"
+        }
+      },
+      {
+        "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-light-orange-tabby-tuxedo.png",
+        "Attachments": {
+          "Coat": "Light Orange Tabby Tuxedo"
+        }
+      },
+      {
+        "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-black.png",
+        "Attachments": {
+          "Coat": "Black"
         }
       }
     ],
     "Cat": [
       {
-        "Icon": "Icons/ItemsGenerated/Cat_Cat_Empty.png",
+        "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-empty.png",
         "Attachments": {
           "Coat": "Empty"
         }
       },
       {
-        "Icon": "Icons/ItemsGenerated/Cat_Cat_Missy.png",
+        "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-missy.png",
         "Attachments": {
           "Coat": "Missy"
         }
       },
       {
-        "Icon": "Icons/ItemsGenerated/Cat_Cat_Nyxie.png",
+        "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-nyxie.png",
         "Attachments": {
           "Coat": "Nyxie"
         }
       },
       {
-        "Icon": "Icons/ItemsGenerated/Cat_Cat_SilverTabby.png",
+        "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-silvertabby.png",
         "Attachments": {
           "Coat": "SilverTabby"
         }
       },
       {
-        "Icon": "Icons/ItemsGenerated/Cat_Cat_OrangeTabby.png",
+        "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-orangetabby.png",
         "Attachments": {
           "Coat": "OrangeTabby"
         }
       },
       {
-        "Icon": "Icons/ItemsGenerated/Cat_Cat_BrownTabby.png",
+        "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-browntabby.png",
         "Attachments": {
           "Coat": "BrownTabby"
         }
       },
       {
-        "Icon": "Icons/ItemsGenerated/Cat_Cat_White.png",
+        "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-white.png",
         "Attachments": {
           "Coat": "White"
+        }
+      },
+      {
+        "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-cream.png",
+        "Attachments": {
+          "Coat": "Cream"
+        }
+      },
+      {
+        "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-cream-tuxedo.png",
+        "Attachments": {
+          "Coat": "Cream Tuxedo"
+        }
+      },
+      {
+        "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-gray-tuxedo.png",
+        "Attachments": {
+          "Coat": "Gray Tuxedo"
+        }
+      },
+      {
+        "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-brown-tuxedo.png",
+        "Attachments": {
+          "Coat": "Brown Tuxedo"
+        }
+      },
+      {
+        "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-light-orange-tabby-tuxedo.png",
+        "Attachments": {
+          "Coat": "Light Orange Tabby Tuxedo"
+        }
+      },
+      {
+        "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-black.png",
+        "Attachments": {
+          "Coat": "Black"
         }
       }
     ]
