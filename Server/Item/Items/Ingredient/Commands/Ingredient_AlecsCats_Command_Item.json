@@ -4,7 +4,7 @@
     "Description": "server.items.AlecsCats_Command_Item.description"
   },
   "Variant": true,
-  "Icon": "Icons/ItemsGenerated/Utility_Bag_Seed.png",
+  "Icon": "Icons/ItemsGenerated/AlecsCats_Command_Item.png",
   "Recipe": {
     "Input": [
       {
@@ -41,5 +41,5 @@
   },
   "MaxStack": 1,
   "Model": "Items/Tools/Feedbag/Feedbag.blockymodel",
-  "Texture": "Items/Tools/Feedbag/Seedbag_Texture.png"
+  "Texture": "Items/Catfood_Texture.png"
 }
