@@ -23,18 +23,18 @@
     }
   },
   "Model": "Items/Tools/Feedbag/Feedbag.blockymodel",
-  "Texture": "Items/Tools/Feedbag/Seedbag_Texture.png",
-  "Icon": "Icons/ItemsGenerated/Utility_Bag_Seed.png",
+  "Texture": "Items/Catfood_Texture.png",
+  "Icon": "Icons/ItemsGenerated/AlecsCats_Command_Item.png",
   "IconProperties": {
-    "Scale": 0.76,
-    "Translation": [
-      -1,
-      5
-    ],
+    "Scale": 0.57,
     "Rotation": [
-      135,
-      135,
-      0
+      159,
+      224,
+      201
+    ],
+    "Translation": [
+      1,
+      -16
     ]
   },
   "MaxStack": 1
