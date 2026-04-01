@@ -3,7 +3,7 @@
     "Name": "server.items.AlecsCats_Command_Item.name",
     "Description": "server.items.AlecsCats_Command_Item.description"
   },
-  "Quality": "Tool",
+  "Quality": "Uncommon",
   "PlayerAnimationsId": "Item",
   "Interactions": {
     "Primary": {
