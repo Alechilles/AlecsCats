@@ -2,7 +2,7 @@
   "TranslationProperties": {
     "Name": "server.items.Egg_Spawner_Cat.name"
   },
-  "Quality": "Tool",
+  "Quality": "Rare",
   "PlayerAnimationsId": "Item",
   "Interactions": {
     "Primary": {
