@@ -4,6 +4,17 @@ All notable changes to **Alec's Cats!** will be documented in this file.
 
 ## Unreleased
 
+## 1.7.2 - Catfood Art + Config ID Refactor - 2026-04-02
+### Added
+- Added `Common/Items/Catfood_Texture.png` and a dedicated generated icon (`Icons/ItemsGenerated/AlecsCats_Command_Item.png`) for the Cat Treat Bag.
+
+### Changed
+- Renamed cats Tamework config assets from legacy `Tw*`/`AlecsCats_*` names to `AC*` filenames (`ACInt*`, `ACNeeds*`, `ACHapp*`, `ACTraits*`, `ACBreed*`, `ACComp*`, `ACComm*`).
+- Renamed the cat spawner config asset from `AlecsCats_Spawner_Cat` to `ACSpawnCat`, keeping the coat-override spawner mapping for both `Cat` and `Cat_Pet`.
+- Updated cat spawner and command item assets to use the new generated coat icon set and removed superseded legacy cat/spawner icon files.
+- Tuned item quality and item descriptions for the Cat Treat Bag and Cat Soul Lantern items across localized language packs.
+- Updated `manifest.json` version to `1.7.2`.
+
 ## 1.7.1 - Celly Variant Pack III - 2026-03-29
 ### Added
 - Added new Black cat, updated Gray Tuxedo, and refreshed Nyxie and Missy appearance variants contributed by Celly(@Excel_Lynt)
