@@ -14,9 +14,8 @@
 This mod started as a simple cat conversion from unused base-game assets and has grown into a full pet system with:
 - Taming + ownership
 - Capture/spawn with persistent appearance variants
-- Follow / Defend / Stay behaviors
-- Command-item controls (Follow, Hold, Recall, Move To Ping, Set Home, Return Home, Attack Target)
-- Tamework happiness/needs simulation with resource seeking
+- Command controls (Follow, Hold, Recall, Move To Ping, Set Home, Return Home, Attack Target)
+- Happiness/needs simulation with resource seeking
 - Passive companion breeding
 - Trait generation and inheritance for bred companion cats
 - Multi-language localization
