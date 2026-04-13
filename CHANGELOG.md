@@ -4,6 +4,13 @@ All notable changes to **Alec's Cats!** will be documented in this file.
 
 ## Unreleased
 
+## 1.8.1 - Spawner Icon Correction - 2026-04-13
+### Fixed
+- Replaced the four newly added coat override spawner icons with proper generated icon assets for Snowshoe, Cream Semi-Tabby, Dark Gray Tabby, and Siamese.
+
+### Changed
+- Updated `manifest.json` version to `1.8.1`.
+
 ## 1.8.0 - Additional Coat Variants - 2026-04-12
 ### Added
 - Added four new cat appearance variants: Snowshoe, Cream Semi-Tabby, Dark Gray Tabby, and Siamese.
