@@ -105,6 +105,10 @@ They usually spawn solo, but can spawn in small groups.
 - Brown Tuxedo
 - Light Orange Tabby Tuxedo
 - Black
+- Snowshoe
+- Cream Semi-Tabby
+- Dark Gray Tabby
+- Siamese
 
 ## Config Files
 - Companion Config:

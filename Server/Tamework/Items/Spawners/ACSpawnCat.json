@@ -107,6 +107,30 @@
         "Attachments": {
           "Coat": "Black"
         }
+      },
+      {
+        "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-snowshoe.png",
+        "Attachments": {
+          "Coat": "Snowshoe"
+        }
+      },
+      {
+        "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-cream-semi-tabby.png",
+        "Attachments": {
+          "Coat": "Cream Semi-Tabby"
+        }
+      },
+      {
+        "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-dark-gray-tabby.png",
+        "Attachments": {
+          "Coat": "Dark Gray Tabby"
+        }
+      },
+      {
+        "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-siamese.png",
+        "Attachments": {
+          "Coat": "Siamese"
+        }
       }
     ],
     "Cat": [
@@ -186,6 +210,30 @@
         "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-black.png",
         "Attachments": {
           "Coat": "Black"
+        }
+      },
+      {
+        "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-snowshoe.png",
+        "Attachments": {
+          "Coat": "Snowshoe"
+        }
+      },
+      {
+        "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-cream-semi-tabby.png",
+        "Attachments": {
+          "Coat": "Cream Semi-Tabby"
+        }
+      },
+      {
+        "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-dark-gray-tabby.png",
+        "Attachments": {
+          "Coat": "Dark Gray Tabby"
+        }
+      },
+      {
+        "Icon": "Icons/ItemsGenerated/Generated/Cat_coat-siamese.png",
+        "Attachments": {
+          "Coat": "Siamese"
         }
       }
     ]

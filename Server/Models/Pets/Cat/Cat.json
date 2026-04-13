@@ -226,6 +226,22 @@
       "Black": {
         "Model": "NPC/Pets/Cat/Models/Cat/Model.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Black_Texture.png"
+      },
+      "Snowshoe": {
+        "Model": "NPC/Pets/Cat/Models/Cat/Model.blockymodel",
+        "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Snowshoe_Texture.png"
+      },
+      "Cream Semi-Tabby": {
+        "Model": "NPC/Pets/Cat/Models/Cat/Model.blockymodel",
+        "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Cream_Semi-Tabby_Texture.png"
+      },
+      "Dark Gray Tabby": {
+        "Model": "NPC/Pets/Cat/Models/Cat/Model.blockymodel",
+        "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/DarkgrayTabby_Texture.png"
+      },
+      "Siamese": {
+        "Model": "NPC/Pets/Cat/Models/Cat/Model.blockymodel",
+        "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Siamese_Texture.png"
       }
     }
   }

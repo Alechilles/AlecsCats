@@ -4,6 +4,15 @@ All notable changes to **Alec's Cats!** will be documented in this file.
 
 ## Unreleased
 
+## 1.8.0 - Additional Coat Variants - 2026-04-12
+### Added
+- Added four new cat appearance variants: Snowshoe, Cream Semi-Tabby, Dark Gray Tabby, and Siamese.
+- Added generated coat icons for the new variants so captured/spawned cats keep distinct item visuals.
+
+### Changed
+- Updated `Server/Models/Pets/Cat/Cat.json` and `Server/Tamework/Items/Spawners/ACSpawnCat.json` to include the new coat mappings.
+- Updated `manifest.json` version to `1.8.0`.
+
 ## 1.7.2 - Catfood Art + Config ID Refactor - 2026-04-02
 ### Added
 - Added `Common/Items/Catfood_Texture.png` and a dedicated generated icon (`Icons/ItemsGenerated/AlecsCats_Command_Item.png`) for the Cat Treat Bag.
