@@ -31,7 +31,8 @@
       "Food_Fish_Raw_Uncommon",
       "Food_Fish_Raw_Rare",
       "Food_Fish_Raw_Epic",
-      "Food_Fish_Raw_Legendary"
+      "Food_Fish_Raw_Legendary",
+      "Tw_Feed_Carnivore"
     ],
     "HungerGainPerConsumedItem": 25.0,
     "MaxContainerItemsConsumedPerSweep": 1,

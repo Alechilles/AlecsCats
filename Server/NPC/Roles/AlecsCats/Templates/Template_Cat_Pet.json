@@ -662,6 +662,27 @@
       }
     },
     {
+      "$Comment": "Clear wander settle status posture when command movement interrupts idle so cats do not slide while sitting.",
+      "States": [
+        {
+          "From": [
+            "Idle"
+          ],
+          "To": [
+            "Follow",
+            "Defend",
+            "CommandMove"
+          ]
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "PlayAnimation",
+          "Slot": "Status"
+        }
+      ]
+    },
+    {
       "States": [
         {
           "From": [

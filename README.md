@@ -21,7 +21,7 @@ This mod started as a simple cat conversion from unused base-game assets and has
 - Multi-language localization
 
 ## Requirements
-- **Alec's Tamework!** dependency is required (Alechilles:Alec's Tamework!).
+- **Alec's Tamework!** `2.8.x` dependency is required (Alechilles:Alec's Tamework!).
 
 ## Craftable Items
 ### Cat Collar (Capture/Spawn Item)
@@ -70,7 +70,8 @@ Notes:
 
 ## Happiness and Needs
 - Happiness fluctuates based on if the Cat's needs are being met
-- Cats will automatically eat raw fish from storage containers nearby
+- Cats will automatically eat raw fish or Tamework Carnivore Kibble from storage containers nearby
+- Tamework Carnivore Kibble can also be used as backup hand-feed, but it is less satisfying than their preferred food
 - Cats will automatically drink water from water sources nearby
 - Cats prefer to have at least one cat friend nearby, but don't like to be overcrowded
 - Cats like when their owner is nearby

@@ -4,6 +4,16 @@ All notable changes to **Alec's Cats!** will be documented in this file.
 
 ## Unreleased
 
+## 1.8.2 - Carnivore Kibble + Sit Transition Cleanup - 2026-04-20
+
+### Changed
+- Pet cats now accept Tamework Carnivore Kibble for hand-feeding and nearby-container hunger refills, with the same generic-feed happiness penalty used for Animal Husbandry predators.
+- Updated the required Alec's Tamework dependency to `2.8.x` to match Carnivore Kibble support.
+- Updated `manifest.json` version to `1.8.2`.
+
+### Fixed
+- Pet cats now clear their wander sit posture before command-driven follow/defend/move transitions so interrupted idle sits no longer slide across the ground.
+
 ## 1.8.1 - Spawner Icon Correction - 2026-04-13
 ### Fixed
 - Replaced the four newly added coat override spawner icons with proper generated icon assets for Snowshoe, Cream Semi-Tabby, Dark Gray Tabby, and Siamese.

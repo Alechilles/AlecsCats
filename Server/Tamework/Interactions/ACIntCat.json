@@ -71,6 +71,10 @@
         {
           "Item": "Food_Chicken_Raw",
           "Heal": 25
+        },
+        {
+          "Item": "Tw_Feed_Carnivore",
+          "Heal": 25
         }
       ],
       "Effects": {
