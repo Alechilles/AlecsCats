@@ -1,79 +1,79 @@
 {
   "Parent": "Cat_Base",
-  "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
+  "Model": "NPC/Pets/Cat/Models/Model_Shorthair.blockymodel",
   "Texture": "NPC/Pets/Cat/Models/Cat/Empty.png",
 
   "RandomAttachmentSets": {
     "Coat": {
       "Empty": {
-        "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
+        "Model": "NPC/Pets/Cat/Models/Model_Shorthair.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Cat/Texture.png",
         "Weight": 1
       },
       "Missy": {
-        "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
+        "Model": "NPC/Pets/Cat/Models/Model_Shorthair.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Missy_Texture.png",
         "Weight": 1
       },
       "Nyxie": {
-        "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
+        "Model": "NPC/Pets/Cat/Models/Model_Shorthair.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Nyxie_Texture.png",
         "Weight": 1
       },
       "SilverTabby": {
-        "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
+        "Model": "NPC/Pets/Cat/Models/Model_Shorthair.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/SilverTabby_Texture.png"
       },
       "OrangeTabby": {
-        "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
+        "Model": "NPC/Pets/Cat/Models/Model_Shorthair.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/OrangeTabby_Texture.png"
       },
       "BrownTabby": {
-        "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
+        "Model": "NPC/Pets/Cat/Models/Model_Shorthair.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/BrownTabby_Texture.png"
       },
       "White": {
-        "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
+        "Model": "NPC/Pets/Cat/Models/Model_Shorthair.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/White_Texture.png"
       },
       "Cream": {
-        "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
+        "Model": "NPC/Pets/Cat/Models/Model_Shorthair.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Cream_Flat_Texture.png"
       },
       "Cream Tuxedo": {
-        "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
+        "Model": "NPC/Pets/Cat/Models/Model_Shorthair.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Cream_Tuxedo_Texture.png"
       },
       "Gray Tuxedo": {
-        "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
+        "Model": "NPC/Pets/Cat/Models/Model_Shorthair.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Gray_Tuxedo_Texture.png"
       },
       "Brown Tuxedo": {
-        "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
+        "Model": "NPC/Pets/Cat/Models/Model_Shorthair.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Brown_Tuxedo_Texture.png"
       },
       "Light Orange Tabby Tuxedo": {
-        "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
+        "Model": "NPC/Pets/Cat/Models/Model_Shorthair.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Light_Orange_Tuxedo_Texture.png"
       },
       "Black": {
-        "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
+        "Model": "NPC/Pets/Cat/Models/Model_Shorthair.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Black_Texture.png"
       },
       "Snowshoe": {
-        "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
+        "Model": "NPC/Pets/Cat/Models/Model_Shorthair.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Snowshoe_Texture.png"
       },
       "Cream Semi-Tabby": {
-        "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
+        "Model": "NPC/Pets/Cat/Models/Model_Shorthair.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Cream_Semi-Tabby_Texture.png"
       },
       "Dark Gray Tabby": {
-        "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
+        "Model": "NPC/Pets/Cat/Models/Model_Shorthair.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/DarkgrayTabby_Texture.png"
       },
       "Siamese": {
-        "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
+        "Model": "NPC/Pets/Cat/Models/Model_Shorthair.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Siamese_Texture.png"
       }
     }
