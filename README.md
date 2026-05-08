@@ -1,3 +1,7 @@
+## Alec's Cats! is a finalist in the Hytale New Worlds Modding Contest in the NPCs category!
+### If you've enjoyed my mod, I would be thankful for your vote! [Vote Here](https://overwolfdevs.typeform.com/to/uVlmdC1I)
+But be sure to check out all the [other finalists](https://www.curseforge.com/community-picks/hytale/curseforge-may26-npcs)! There's a lot of cool stuff in here that I'm sure you haven't seen yet!
+
 [![Cats](https://img.shields.io/curseforge/dt/1432112?label=Cats&style=for-the-badge&logo=curseforge&color=rgb(241%2C100%2C54))](https://www.curseforge.com/hytale/mods/alecs-cats)
 [![Tamework](https://img.shields.io/curseforge/dt/1447962?label=Tamework&style=for-the-badge&logo=curseforge&color=rgb(241%2C100%2C54))](https://www.curseforge.com/hytale/mods/alecs-tamework)
 [![Nametags](https://img.shields.io/curseforge/dt/1464844?label=Nametags&style=for-the-badge&logo=curseforge&color=rgb(241%2C100%2C54))](https://www.curseforge.com/hytale/mods/alecs-nametags)
