@@ -2,7 +2,7 @@
   "Type": "Variant",
   "Reference": "Template_Cat_Pet",
   "Modify": {
-    "Appearance": "Cat",
+    "Appearance": "Cat_Bobtail",
     "FlockArray": [
       "Cat_Pet",
       "Cat_Longhair_Pet",

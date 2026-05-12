@@ -1,86 +1,59 @@
 {
   "Type": "Variant",
-  "Reference": "Template_Cat_Pet",
+  "Reference": "Template_Predator_Cat",
   "Modify": {
-    "Appearance": "Cat",
+    "Appearance": "Cat_Longhair",
     "FlockArray": [
-      "Cat_Pet",
-      "Cat_Longhair_Pet",
-      "Cat_Shorthair_Pet",
-      "Cat_Bobtail_Pet"
+      "Cat",
+      "Cat_Longhair",
+      "Cat_Shorthair",
+      "Cat_Bobtail"
     ],
+    "ChanceToBeAlertedWhenFlockAlerted": 70,
     "DropList": "Drop_Cat",
-    "MaxHealth": 50,
+    "MaxHealth": 38,
     "MaxSpeed": 8,
     "WanderRadius": 10,
     "ViewRange": 12,
     "HearingRange": 8,
     "AbsoluteDetectionRange": 2,
-    "ThreatenDelayRange": [
-      2,
-      2
-    ],
-    "ThreatenAnimation": "",
+    "AlertedRange": 18,
+    "AlertedTime": [2, 4],
+    "MaintainDistanceWhileAlerted": false,
+    "ThreatenDelayRange": [2, 2],
+    "ThreatenAnimation": "Threaten",
+    "FleeIfNotThreatened": true,
     "FleeRange": 15,
-    "HardLeashDistance": 30,
-    "LeashDistance": 20,
+    "HardLeashDistance": 60,
+    "LeashDistance": 30,
     "LeashMinPlayerDistance": 7,
-    "LeashTimer": [
-      4,
-      5
-    ],
+    "LeashTimer": [4, 5],
     "Attack": "Root_NPC_Cat_Attack",
     "AttackDistance": 2.5,
     "CombatBehaviorDistance": 6,
     "CombatDirectWeight": 0,
     "CombatStrafeWeight": 10,
     "CombatBackOffAfterAttack": true,
-    "CombatBackOffDistanceRange": [
-      3,
-      5
-    ],
+    "CombatBackOffDistanceRange": [3, 5],
     "ChaseRelativeSpeed": 1,
     "CombatMovingRelativeSpeed": 0.6,
     "AlwaysSleepAtNight": false,
-    "HoldBaseAnimation": "Sit",
-    "SleepDelayAfterHoldEnterRange": [
-      10,
-      10
-    ],
-    "SleepDelayAfterLastSleepRange": [
-      15,
-      15
-    ],
-    "NightFlavorAnimation": "HoldFlavor",
+    "NightFlavorAnimation": "",
     "NightFlavorAnimationAfter": "",
-    "DayFlavorAnimation": "HoldFlavor",
+    "DayFlavorAnimation": "",
     "DayFlavorAnimationAfter": "",
-    "DayFlavorAnimationLength": [
-      2,
-      4
-    ],
-    "NightFlavorAnimationLength": [
-      2,
-      4
-    ],
+    "DayFlavorAnimationLength": [15, 30],
+    "NightFlavorAnimationLength": [15, 30],
     "InteractSoundHold": "SFX_AlecsCats_Cat_Trill",
     "InteractSoundFollow": "SFX_AlecsCats_Cat_Trill",
     "InteractSoundDefend": "SFX_AlecsCats_Cat_Trill",
     "InteractSoundFeed": "SFX_AlecsCats_Cat_Trill",
     "InteractSoundPickUp": "SFX_Tamework_Poof",
-    "DayTimeNapWeight": 1,
-    "DayTimeNapTimeRange": [
-      20,
-      60
-    ],
-    "SpawnerEmptyItemID": [
-      "Egg_Spawner_Cat_Empty"
-    ],
+    "DayTimeNapWeight": 6,
+    "DayTimeNapTimeRange": [10, 12],
+    "SpawnerEmptyItemID": ["Egg_Spawner_Cat_Empty"],
     "SpawnerItemID": "Egg_Spawner_Cat",
-    "AttractiveItemSet": [
-      "Food_Fish_Raw",
-      "Food_Wildmeat_Raw"
-    ],
+    "AttractiveItemSet": ["Food_Fish_Raw"],
     "TimidDuringDay": true,
     "IsMemory": true,
     "MemoriesCategory": "Predator",
@@ -125,7 +98,7 @@
   },
   "Parameters": {
     "NameTranslationKey": {
-      "Value": "server.npcRoles.Cat_Pet.name",
+      "Value": "server.npcRoles.Cat.name",
       "Description": "Translation key for NPC name display"
     }
   }

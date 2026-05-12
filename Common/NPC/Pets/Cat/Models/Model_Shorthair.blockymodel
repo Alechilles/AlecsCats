@@ -20,7 +20,7 @@
             "angle": 0
           },
           "right": {
-            "offset": {"x": 47, "y": 78},
+            "offset": {"x": 51, "y": 78},
             "mirror": {"x": true, "y": false},
             "angle": 0
           },
@@ -30,7 +30,7 @@
             "angle": 0
           },
           "left": {
-            "offset": {"x": 31, "y": 78},
+            "offset": {"x": 35, "y": 78},
             "mirror": {"x": false, "y": false},
             "angle": 0
           },
@@ -40,7 +40,7 @@
             "angle": 0
           },
           "bottom": {
-            "offset": {"x": 29, "y": 56},
+            "offset": {"x": 29, "y": 60},
             "mirror": {"x": false, "y": false},
             "angle": 0
           }
@@ -173,7 +173,7 @@
                         "angle": 0
                       },
                       "right": {
-                        "offset": {"x": 91, "y": 69},
+                        "offset": {"x": 92, "y": 69},
                         "mirror": {"x": false, "y": false},
                         "angle": 0
                       },
@@ -183,7 +183,7 @@
                         "angle": 0
                       },
                       "left": {
-                        "offset": {"x": 106, "y": 72},
+                        "offset": {"x": 107, "y": 72},
                         "mirror": {"x": true, "y": false},
                         "angle": 0
                       },
@@ -219,11 +219,11 @@
             "stretch": {"x": 1, "y": 1, "z": 1},
             "settings": {
               "isPiece": false,
-              "size": {"x": 25, "y": 21, "z": 23}
+              "size": {"x": 23, "y": 21, "z": 23}
             },
             "textureLayout": {
               "back": {
-                "offset": {"x": 2, "y": 56},
+                "offset": {"x": 3, "y": 56},
                 "mirror": {"x": false, "y": false},
                 "angle": 0
               },
@@ -233,7 +233,7 @@
                 "angle": 0
               },
               "front": {
-                "offset": {"x": 2, "y": 78},
+                "offset": {"x": 3, "y": 78},
                 "mirror": {"x": false, "y": false},
                 "angle": 0
               },
@@ -243,12 +243,12 @@
                 "angle": 0
               },
               "top": {
-                "offset": {"x": 2, "y": 54},
+                "offset": {"x": 3, "y": 54},
                 "mirror": {"x": false, "y": false},
                 "angle": 0
               },
               "bottom": {
-                "offset": {"x": 27, "y": 54},
+                "offset": {"x": 28, "y": 54},
                 "mirror": {"x": false, "y": false},
                 "angle": 0
               }
@@ -580,15 +580,15 @@
               "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
               "shape": {
                 "type": "box",
-                "offset": {"x": 0, "y": 7, "z": 9},
+                "offset": {"x": 0, "y": 6.5, "z": 9},
                 "stretch": {"x": 1, "y": 0.94171, "z": 1},
                 "settings": {
                   "isPiece": false,
-                  "size": {"x": 30, "y": 26, "z": 26}
+                  "size": {"x": 28, "y": 25, "z": 26}
                 },
                 "textureLayout": {
                   "back": {
-                    "offset": {"x": 58, "y": 28},
+                    "offset": {"x": 59, "y": 29},
                     "mirror": {"x": false, "y": false},
                     "angle": 0
                   },
@@ -598,7 +598,7 @@
                     "angle": 0
                   },
                   "front": {
-                    "offset": {"x": 0, "y": 28},
+                    "offset": {"x": 1, "y": 28},
                     "mirror": {"x": false, "y": false},
                     "angle": 0
                   },
@@ -608,12 +608,12 @@
                     "angle": 0
                   },
                   "top": {
-                    "offset": {"x": 0, "y": 2},
+                    "offset": {"x": 1, "y": 2},
                     "mirror": {"x": false, "y": false},
                     "angle": 0
                   },
                   "bottom": {
-                    "offset": {"x": 30, "y": 0},
+                    "offset": {"x": 31, "y": 0},
                     "mirror": {"x": false, "y": false},
                     "angle": 0
                   }
@@ -627,7 +627,7 @@
                 {
                   "id": "13",
                   "name": "Noose",
-                  "position": {"x": 0.28812, "y": -4.99441, "z": 14.6028},
+                  "position": {"x": 0.28812, "y": -4.49441, "z": 14.6028},
                   "orientation": {"x": 0.08254, "y": 0, "z": 0, "w": 0.99659},
                   "shape": {
                     "type": "box",
@@ -635,7 +635,7 @@
                     "stretch": {"x": 1, "y": 1, "z": 1},
                     "settings": {
                       "isPiece": false,
-                      "size": {"x": 14, "y": 8, "z": 5}
+                      "size": {"x": 12, "y": 8, "z": 5}
                     },
                     "textureLayout": {
                       "right": {
@@ -644,7 +644,7 @@
                         "angle": 0
                       },
                       "front": {
-                        "offset": {"x": 107, "y": 49},
+                        "offset": {"x": 108, "y": 49},
                         "mirror": {"x": false, "y": false},
                         "angle": 0
                       },
@@ -654,12 +654,12 @@
                         "angle": 0
                       },
                       "top": {
-                        "offset": {"x": 107, "y": 44},
+                        "offset": {"x": 108, "y": 44},
                         "mirror": {"x": false, "y": false},
                         "angle": 0
                       },
                       "bottom": {
-                        "offset": {"x": 107, "y": 56},
+                        "offset": {"x": 108, "y": 56},
                         "mirror": {"x": false, "y": false},
                         "angle": 0
                       }
@@ -702,11 +702,11 @@
                 {
                   "id": "15",
                   "name": "R-Eye",
-                  "position": {"x": -9, "y": 3, "z": 13.31604},
+                  "position": {"x": -9, "y": 3.5, "z": 13.31604},
                   "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
                   "shape": {
                     "type": "quad",
-                    "offset": {"x": 0, "y": 0, "z": 0},
+                    "offset": {"x": 1, "y": 0, "z": 0},
                     "stretch": {"x": 1, "y": 0.80747, "z": 1},
                     "settings": {
                       "isPiece": false,
@@ -729,11 +729,11 @@
                 {
                   "id": "16",
                   "name": "L-Eye",
-                  "position": {"x": 9, "y": 3, "z": 13.16388},
+                  "position": {"x": 9, "y": 3.5, "z": 13.16388},
                   "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
                   "shape": {
                     "type": "quad",
-                    "offset": {"x": 0, "y": 0, "z": 0},
+                    "offset": {"x": -1, "y": 0, "z": 0},
                     "stretch": {"x": 1, "y": 0.81954, "z": 1},
                     "settings": {
                       "isPiece": false,
@@ -756,11 +756,11 @@
                 {
                   "id": "17",
                   "name": "R-Ear",
-                  "position": {"x": -10, "y": 5, "z": -2},
+                  "position": {"x": -10, "y": 5.5, "z": -2},
                   "orientation": {"x": 0.0827, "y": 0.20182, "z": 0.03112, "w": 0.97543},
                   "shape": {
                     "type": "box",
-                    "offset": {"x": -1.81182, "y": 11.96877, "z": -0.29756},
+                    "offset": {"x": -1.81182, "y": 10.96877, "z": -0.29756},
                     "stretch": {"x": 1, "y": 1, "z": 0.12752},
                     "settings": {
                       "isPiece": false,
@@ -787,7 +787,7 @@
                 {
                   "id": "18",
                   "name": "Hairs",
-                  "position": {"x": 11.03259, "y": -3.55795, "z": 12.97624},
+                  "position": {"x": 11.03259, "y": -3.05795, "z": 12.97624},
                   "orientation": {"x": -0.00079, "y": -0.01063, "z": -0.07387, "w": 0.99721},
                   "shape": {
                     "type": "quad",
@@ -814,7 +814,7 @@
                 {
                   "id": "19",
                   "name": "Hairs",
-                  "position": {"x": -12.02285, "y": -3.69854, "z": 13},
+                  "position": {"x": -12.02285, "y": -3.19854, "z": 13},
                   "orientation": {"x": -0.00107, "y": 0.01417, "z": 0.07557, "w": 0.99704},
                   "shape": {
                     "type": "quad",
@@ -841,11 +841,11 @@
                 {
                   "id": "20",
                   "name": "L-Ear",
-                  "position": {"x": 10, "y": 5, "z": -2},
+                  "position": {"x": 10, "y": 5.5, "z": -2},
                   "orientation": {"x": 0.11552, "y": -0.20276, "z": -0.0243, "w": 0.97209},
                   "shape": {
                     "type": "box",
-                    "offset": {"x": 1.81182, "y": 11.94426, "z": -0.42946},
+                    "offset": {"x": 1.81182, "y": 10.94426, "z": -0.42946},
                     "stretch": {"x": -1, "y": 1, "z": 0.12752},
                     "settings": {
                       "isPiece": false,
@@ -872,7 +872,7 @@
                 {
                   "id": "21",
                   "name": "Hairs",
-                  "position": {"x": 0, "y": 16, "z": 0},
+                  "position": {"x": 0, "y": 16.5, "z": 0},
                   "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
                   "shape": {
                     "type": "none",
@@ -891,7 +891,7 @@
                 {
                   "id": "22",
                   "name": "Hairs",
-                  "position": {"x": 0, "y": 16, "z": 5},
+                  "position": {"x": 0, "y": 16.5, "z": 5},
                   "orientation": {"x": 0, "y": 0.70452, "z": 0, "w": 0.70968},
                   "shape": {
                     "type": "none",
