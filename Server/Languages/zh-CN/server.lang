@@ -1,5 +1,13 @@
 npcRoles.Cat.name=猫
 npcRoles.Cat_Pet.name=驯服的猫
+npcRoles.Cat_Mediumhair.name=中毛猫
+npcRoles.Cat_Mediumhair_Pet.name=中毛猫
+npcRoles.Cat_Longhair.name=长毛猫
+npcRoles.Cat_Longhair_Pet.name=长毛猫
+npcRoles.Cat_Shorthair.name=短毛猫
+npcRoles.Cat_Shorthair_Pet.name=短毛猫
+npcRoles.Cat_Bobtail.name=短尾猫
+npcRoles.Cat_Bobtail_Pet.name=短尾猫
 items.Egg_Spawner_Cat_Empty.name=猫项圈
 items.Egg_Spawner_Cat_Empty.description=为最挑剔的猫咪准备！如果你给猫喂点生鱼，它可能会让你给它戴上这个！
 items.Egg_Spawner_Cat.name=宠物猫

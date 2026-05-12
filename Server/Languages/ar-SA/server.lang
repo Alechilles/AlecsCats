@@ -1,5 +1,13 @@
 npcRoles.Cat.name=قطة
 npcRoles.Cat_Pet.name=قطة مروّضة
+npcRoles.Cat_Mediumhair.name=قطة متوسطة الشعر
+npcRoles.Cat_Mediumhair_Pet.name=قطة متوسطة الشعر
+npcRoles.Cat_Longhair.name=قطة طويلة الشعر
+npcRoles.Cat_Longhair_Pet.name=قطة طويلة الشعر
+npcRoles.Cat_Shorthair.name=قطة قصيرة الشعر
+npcRoles.Cat_Shorthair_Pet.name=قطة قصيرة الشعر
+npcRoles.Cat_Bobtail.name=قطة قصيرة الذيل
+npcRoles.Cat_Bobtail_Pet.name=قطة قصيرة الذيل
 items.Egg_Spawner_Cat_Empty.name=طوق قطة
 items.Egg_Spawner_Cat_Empty.description=مناسب لأرقى القطط! إذا أطعمت قطة بعض السمك النيء، فقد تسمح لك أن تضعه لها!
 items.Egg_Spawner_Cat.name=قطة أليفة

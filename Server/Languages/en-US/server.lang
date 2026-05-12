@@ -1,5 +1,13 @@
 npcRoles.Cat.name=Cat
 npcRoles.Cat_Pet.name=Cat
+npcRoles.Cat_Mediumhair.name=Mediumhair Cat
+npcRoles.Cat_Mediumhair_Pet.name=Mediumhair Cat
+npcRoles.Cat_Longhair.name=Longhair Cat
+npcRoles.Cat_Longhair_Pet.name=Longhair Cat
+npcRoles.Cat_Shorthair.name=Shorthair Cat
+npcRoles.Cat_Shorthair_Pet.name=Shorthair Cat
+npcRoles.Cat_Bobtail.name=Bobtail Cat
+npcRoles.Cat_Bobtail_Pet.name=Bobtail Cat
 items.Egg_Spawner_Cat_Empty.name=Cat Collar
 items.Egg_Spawner_Cat_Empty.description=Fit for the finest felines! If you feed a cat some raw fish, it might let you put this on!
 items.Egg_Spawner_Cat.name=Soul Lantern

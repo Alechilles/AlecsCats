@@ -117,7 +117,7 @@ They usually spawn solo, but can spawn in small groups.
 - Siamese
 
 ## Body Types
-- Standard
+- Mediumhair
 - Longhair
 - Shorthair
 - Bobtail

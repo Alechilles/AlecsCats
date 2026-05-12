@@ -84,7 +84,7 @@
     "TimidDuringDay": true,
     "IsMemory": true,
     "MemoriesCategory": "Predator",
-    "MemoriesNameOverride": "Cat",
+    "MemoriesNameOverride": "Cat_Shorthair_Pet",
     "_InteractionVars": {
       "Melee_Start": {
         "Interactions": [
@@ -129,7 +129,7 @@
       "Description": "Pet role assigned when this cat is tamed"
     },
     "NameTranslationKey": {
-      "Value": "server.npcRoles.Cat_Pet.name",
+      "Value": "server.npcRoles.Cat_Shorthair_Pet.name",
       "Description": "Translation key for NPC name display"
     }
   }

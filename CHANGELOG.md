@@ -5,7 +5,7 @@ All notable changes to **Alec's Cats!** will be documented in this file.
 ## Unreleased
 
 ### Added
-- Wired standard, longhair, shorthair, and bobtail cat body roles into Tamework companion, interaction, command, spawner, needs, happiness, trait, and breeding configs.
+- Wired mediumhair, longhair, shorthair, and bobtail cat body roles into Tamework companion, interaction, command, spawner, needs, happiness, trait, and breeding configs.
 - Cat breeding now uses Tamework parent-line role inheritance so offspring can inherit either parent's body role, with a rare body-role mutation chance.
 
 ### Changed

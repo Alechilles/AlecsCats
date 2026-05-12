@@ -1,5 +1,13 @@
 npcRoles.Cat.name=বিড়াল
 npcRoles.Cat_Pet.name=পোষ মানানো বিড়াল
+npcRoles.Cat_Mediumhair.name=মাঝারি লোমের বিড়াল
+npcRoles.Cat_Mediumhair_Pet.name=মাঝারি লোমের বিড়াল
+npcRoles.Cat_Longhair.name=লম্বা লোমের বিড়াল
+npcRoles.Cat_Longhair_Pet.name=লম্বা লোমের বিড়াল
+npcRoles.Cat_Shorthair.name=ছোট লোমের বিড়াল
+npcRoles.Cat_Shorthair_Pet.name=ছোট লোমের বিড়াল
+npcRoles.Cat_Bobtail.name=ছোট লেজের বিড়াল
+npcRoles.Cat_Bobtail_Pet.name=ছোট লেজের বিড়াল
 items.Egg_Spawner_Cat_Empty.name=বিড়ালের কলার
 items.Egg_Spawner_Cat_Empty.description=সেরা সব বিড়ালের জন্য মানানসই! আপনি যদি কোনো বিড়ালকে কাঁচা মাছ খাওয়ান, তাহলে হয়তো সে আপনাকে এটা পরাতে দেবে!
 items.Egg_Spawner_Cat.name=পোষা বিড়াল

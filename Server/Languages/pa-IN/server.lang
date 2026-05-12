@@ -1,5 +1,13 @@
 npcRoles.Cat.name=ਬਿੱਲੀ
 npcRoles.Cat_Pet.name=ਵਸ਼ ਕੀਤੀ ਬਿੱਲੀ
+npcRoles.Cat_Mediumhair.name=ਦਰਮਿਆਨੇ ਵਾਲਾਂ ਵਾਲੀ ਬਿੱਲੀ
+npcRoles.Cat_Mediumhair_Pet.name=ਦਰਮਿਆਨੇ ਵਾਲਾਂ ਵਾਲੀ ਬਿੱਲੀ
+npcRoles.Cat_Longhair.name=ਲੰਮੇ ਵਾਲਾਂ ਵਾਲੀ ਬਿੱਲੀ
+npcRoles.Cat_Longhair_Pet.name=ਲੰਮੇ ਵਾਲਾਂ ਵਾਲੀ ਬਿੱਲੀ
+npcRoles.Cat_Shorthair.name=ਛੋਟੇ ਵਾਲਾਂ ਵਾਲੀ ਬਿੱਲੀ
+npcRoles.Cat_Shorthair_Pet.name=ਛੋਟੇ ਵਾਲਾਂ ਵਾਲੀ ਬਿੱਲੀ
+npcRoles.Cat_Bobtail.name=ਛੋਟੀ ਪੂੰਛ ਵਾਲੀ ਬਿੱਲੀ
+npcRoles.Cat_Bobtail_Pet.name=ਛੋਟੀ ਪੂੰਛ ਵਾਲੀ ਬਿੱਲੀ
 items.Egg_Spawner_Cat_Empty.name=ਬਿੱਲੀ ਦਾ ਕਾਲਰ
 items.Egg_Spawner_Cat_Empty.description=ਸਭ ਤੋਂ ਨਖਰੇਲੀ ਬਿੱਲੀਆਂ ਲਈ ਮੌਜ਼ੂਂ! ਜੇ ਤੁਸੀਂ ਕਿਸੇ ਬਿੱਲੀ ਨੂੰ ਕੱਚੀ ਮੱਛੀ ਖਵਾਓ, ਤਾਂ ਉਹ ਸ਼ਾਇਦ ਤੁਹਾਨੂੰ ਇਹ ਪਾ ਦੇਵੇ!
 items.Egg_Spawner_Cat.name=ਪਾਲਤੂ ਬਿੱਲੀ
