@@ -3,7 +3,12 @@
   "Reference": "Template_Predator_Cat",
   "Modify": {
     "Appearance": "Cat",
-    "FlockArray": ["Cat"],
+    "FlockArray": [
+      "Cat",
+      "Cat_Longhair",
+      "Cat_Shorthair",
+      "Cat_Bobtail"
+    ],
     "ChanceToBeAlertedWhenFlockAlerted": 70,
     "DropList": "Drop_Cat",
     "MaxHealth": 38,
