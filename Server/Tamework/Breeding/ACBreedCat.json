@@ -2,7 +2,10 @@
   "Enabled": true,
   "Priority": 50,
   "RoleIds": [
-    "Cat_Pet"
+    "Cat_Pet",
+    "Cat_Longhair_Pet",
+    "Cat_Shorthair_Pet",
+    "Cat_Bobtail_Pet"
   ],
   "Happiness": {
     "Threshold": 70.0
@@ -18,7 +21,8 @@
     "RequireWanderMode": false,
     "RequireSameOwner": true,
     "MaxNearbySameType": 6,
-    "RequireSameRoleId": true
+    "RequireSameRoleId": false,
+    "RoleCompatibility": "SameLifecycleFamily"
   },
   "Cooldowns": {
     "BaseCooldownMinutes": 30,
@@ -45,7 +49,36 @@
     }
   },
   "OffspringLifecycle": {
-    "Enabled": false
+    "Enabled": true,
+    "RoleInheritance": {
+      "Mode": "ParentLine",
+      "ParentWeight": 1.0,
+      "RandomWeight": 0.0,
+      "MutationChance": 0.05
+    },
+    "Families": [
+      {
+        "Id": "Cat",
+        "Lines": [
+          {
+            "Id": "Standard",
+            "AdultRoleId": "Cat_Pet"
+          },
+          {
+            "Id": "Longhair",
+            "AdultRoleId": "Cat_Longhair_Pet"
+          },
+          {
+            "Id": "Shorthair",
+            "AdultRoleId": "Cat_Shorthair_Pet"
+          },
+          {
+            "Id": "Bobtail",
+            "AdultRoleId": "Cat_Bobtail_Pet"
+          }
+        ]
+      }
+    ]
   },
   "RoleOverrides": {}
 }

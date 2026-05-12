@@ -1,13 +1,17 @@
 {
   "Enabled": true,
   "RoleIds": [
-    "Cat_Pet"
+    "Cat_Pet",
+    "Cat_Longhair_Pet",
+    "Cat_Shorthair_Pet",
+    "Cat_Bobtail_Pet"
   ],
   "Interactions": [
     {
       "Type": "Tame",
       "UseLovedItems": true,
       "Role": "Cat_Pet",
+      "RoleParam": "TamedRoleId",
       "Effects": {
         "SpawnParticles": {
           "ParticleSystem": "Hearts",

@@ -1,13 +1,17 @@
 {
   "Enabled": true,
   "RoleIds": [
-    "Cat"
+    "Cat",
+    "Cat_Longhair",
+    "Cat_Shorthair",
+    "Cat_Bobtail"
   ],
   "Interactions": [
     {
       "Type": "Tame",
       "UseLovedItems": true,
       "Role": "Cat_Pet",
+      "RoleParam": "TamedRoleId",
       "Effects": {
         "SpawnParticles": {
           "ParticleSystem": "Hearts",
@@ -67,7 +71,8 @@
           "Color": "#fe6969"
         },
         "SetRole": {
-          "Role": "Cat_Pet"
+          "Role": "Cat_Pet",
+          "RoleParam": "TamedRoleId"
         }
       }
     },
@@ -92,7 +97,8 @@
           "SoundEvent": "SFX_AlecsCats_Cat_Trill"
         },
         "SetRole": {
-          "Role": "Cat_Pet"
+          "Role": "Cat_Pet",
+          "RoleParam": "TamedRoleId"
         }
       },
       "ShowFloatingText": true

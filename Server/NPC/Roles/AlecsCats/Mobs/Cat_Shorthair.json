@@ -97,6 +97,10 @@
     }
   },
   "Parameters": {
+    "TamedRoleId": {
+      "Value": "Cat_Shorthair_Pet",
+      "Description": "Pet role assigned when this wild cat is tamed"
+    },
     "NameTranslationKey": {
       "Value": "server.npcRoles.Cat.name",
       "Description": "Translation key for NPC name display"

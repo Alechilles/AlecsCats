@@ -3,7 +3,10 @@
     "Parent": "TwCompanionConfig_Default",
     "Priority": 1,
     "RoleIds": [
-        "Cat_Pet"
+        "Cat_Pet",
+        "Cat_Longhair_Pet",
+        "Cat_Shorthair_Pet",
+        "Cat_Bobtail_Pet"
     ],
     "OwnershipProtection": {
         "BlockOwnerDamage": true
