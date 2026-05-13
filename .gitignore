@@ -15,6 +15,7 @@ artifacts/
 # IDE
 .idea/
 *.iml
+*.DS_Store
 Server/NPC/Spawn/World/.DS_Store
 Server/NPC/Spawn/World/.DS_Store
 Server/NPC/Spawn/World/Zone2/.DS_Store

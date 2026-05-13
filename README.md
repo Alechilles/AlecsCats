@@ -21,7 +21,7 @@ This mod started as a simple cat conversion from unused base-game assets and has
 - Multi-language localization
 
 ## Requirements
-- **Alec's Tamework!** `2.9.x` dependency is required (Alechilles:Alec's Tamework!) for parent-line breeding role inheritance.
+- **Alec's Tamework!** `2.10.x` dependency is required (Alechilles:Alec's Tamework!) for parent-line breeding role inheritance and pre-1.9.0 eye attachment migration.
 
 ## Craftable Items
 ### Cat Collar (Capture/Spawn Item)
@@ -81,7 +81,7 @@ Notes:
 - Cats can spawn with 0-4 traits
 - Traits can alter anything from size, to strength, to fertility and more
 - Traits can be inherited from parents, and breeding cats with the same traits together can result in higher trait values (or lower!)
-- Fur color is also inherited from parents
+- Fur and eye color are also inherited from parents
 - Body type roles can be inherited from either parent, with a small chance of a different body type appearing as a mutation
 
 ## Spawns
@@ -93,6 +93,8 @@ They usually spawn solo, but can spawn in small groups.
 
 ## Color Variants
 #### _All cat textures are now made by an artist far more skilled than me, [Celly (@Excel Lynt)](https://www.curseforge.com/members/excel_lynt/)._
+
+Eye colors are separate randomized attachments, so cats can inherit eyes independently from coat color.
 
 - Default black/white
 - Missy (Darker Dust Kitty)
@@ -136,6 +138,8 @@ They usually spawn solo, but can spawn in small groups.
   - Server/Tamework/Breeding/ACBreedCat.json
 - Trait Config:
   - Server/Tamework/Traits/ACTraitsCat.json
+- Attachment Migration Config:
+  - Server/Tamework/AttachmentMigrations/ACAttachmentMigrationCatEyesPre190.json
 
 
 ## Want More?

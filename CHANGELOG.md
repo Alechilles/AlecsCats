@@ -2,14 +2,18 @@
 
 All notable changes to **Alec's Cats!** will be documented in this file.
 
-## Unreleased
+## 1.9.0 - Body Types + Eye Variants - 2026-05-13
 
 ### Added
 - Wired mediumhair, longhair, shorthair, and bobtail cat body roles into Tamework companion, interaction, command, spawner, needs, happiness, trait, and breeding configs.
 - Cat breeding now uses Tamework parent-line role inheritance so offspring can inherit either parent's body role, with a rare body-role mutation chance.
+- Added separate randomized eye attachments for cat appearances.
+- Added a Tamework attachment migration config that maps pre-1.9.0 coat selections to matching original eyes for existing cats.
 
 ### Changed
-- Updated the required Alec's Tamework dependency to `2.9.x` for parent-line breeding role inheritance.
+- Updated the required Alec's Tamework dependency to `2.10.x` for parent-line breeding role inheritance and attachment migration support.
+- Cat breeding can now inherit eye selections from parents independently from coat selections.
+- Updated `manifest.json` version to `1.9.0`.
 
 ## 1.8.2 - Carnivore Kibble + Sit Transition Cleanup - 2026-04-20
 
