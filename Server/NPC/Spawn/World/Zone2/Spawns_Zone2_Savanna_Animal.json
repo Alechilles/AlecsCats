@@ -1,0 +1,29 @@
+{
+  "Environments": [
+    "Env_Zone2_Savanna"
+  ],
+  "NPCs": [
+    {
+      "Weight": 25,
+      "SpawnBlockSet": "Soil",
+      "Id": "Antelope",
+      "Flock": "Group_Medium"
+    },
+    {
+      "Weight": 15,
+      "SpawnBlockSet": "Soil",
+      "Id": "Warthog",
+      "Flock": "Group_Small"
+    },
+    {
+      "Weight": 4,
+      "SpawnBlockSet": "Soil",
+      "Id": "Cat_Shorthair",
+      "Flock": "Group_Tiny"
+    }
+  ],
+  "DayTimeRange": [
+    6,
+    18
+  ]
+}

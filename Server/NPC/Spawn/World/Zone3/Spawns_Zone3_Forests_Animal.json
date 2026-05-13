@@ -28,9 +28,9 @@
       "Flock": "Group_Small"
     },
     {
-      "Weight": 5,
+      "Weight": 1,
       "SpawnBlockSet": "Soil",
-      "Id": "Cat",
+      "Id": "Cat_Longhair",
       "Flock": "Group_Tiny"
     }
   ],

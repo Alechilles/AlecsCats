@@ -4,9 +4,6 @@
   "Modify": {
     "Appearance": "Cat_Bobtail",
     "FlockArray": [
-      "Cat",
-      "Cat_Longhair",
-      "Cat_Shorthair",
       "Cat_Bobtail"
     ],
     "ChanceToBeAlertedWhenFlockAlerted": 70,
