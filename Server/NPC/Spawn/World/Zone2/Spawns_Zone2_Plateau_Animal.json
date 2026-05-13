@@ -1,0 +1,45 @@
+{
+  "Environments": [
+    "Env_Zone2_Plateaus"
+  ],
+  "NPCs": [
+    {
+      "Weight": 5,
+      "SpawnBlockSet": "Soil",
+      "Id": "Flamingo"
+    },
+    {
+      "Weight": 5,
+      "SpawnBlockSet": "Soil",
+      "Id": "Tortoise"
+    },
+    {
+      "Weight": 10,
+      "SpawnBlockSet": "Soil",
+      "Id": "Chicken_Desert",
+      "Flock": "Group_Small"
+    },
+    {
+      "Weight": 10,
+      "SpawnBlockSet": "Soil",
+      "Id": "Ram",
+      "Flock": "Group_Small"
+    },
+    {
+      "Weight": 3,
+      "SpawnBlockSet": "Soil",
+      "Id": "Cat_Shorthair",
+      "Flock": "Group_Tiny"
+    },
+    {
+      "Weight": 1,
+      "SpawnBlockSet": "Soil",
+      "Id": "Cat_Bobtail",
+      "Flock": "Group_Tiny"
+    }
+  ],
+  "DayTimeRange": [
+    6,
+    18
+  ]
+}

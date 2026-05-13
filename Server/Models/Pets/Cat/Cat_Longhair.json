@@ -1,7 +1,7 @@
 {
   "Parent": "Cat_Base",
   "Model": "NPC/Pets/Cat/Models/Model_Longhair.blockymodel",
-  "Texture": "NPC/Pets/Cat/Models/Cat/Empty.png",
+  "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Eyes_YellowDefault.png",
 
   "RandomAttachmentSets": {
     "Coat": {
@@ -94,6 +94,98 @@
         "Model": "NPC/Pets/Cat/Models/Model_Longhair.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Siamese_Texture.png",
         "Weight": 0
+      }
+    },
+    "Eyes": {
+      "BrightOrange": {
+        "Model": "NPC/Pets/Cat/Models/Model_Longhair.blockymodel",
+        "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Eyes_BrightOrange.png",
+        "Weight": 1
+
+      },
+      "BrightYellow": {
+        "Model": "NPC/Pets/Cat/Models/Model_Bobtail.blockymodel",
+        "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Eyes_BrightYellow.png",
+        "Weight": 1
+
+      },
+      "DarkOrange": {
+        "Model": "NPC/Pets/Cat/Models/Model_Longhair.blockymodel",
+        "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Eyes_DarkOrange.png",
+        "Weight": 0
+
+      },
+      "ForestGreen": {
+        "Model": "NPC/Pets/Cat/Models/Model_Longhair.blockymodel",
+        "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Eyes_ForestGreen.png",
+        "Weight": 1
+
+      },
+      "Green": {
+        "Model": "NPC/Pets/Cat/Models/Model_Longhair.blockymodel",
+        "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Eyes_Green.png",
+        "Weight": 0
+
+      },
+      "Hazel": {
+        "Model": "NPC/Pets/Cat/Models/Model_Longhair.blockymodel",
+        "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Eyes_Hazel.png",
+        "Weight": 0
+
+      },
+      "IceBlue": {
+        "Model": "NPC/Pets/Cat/Models/Model_Longhair.blockymodel",
+        "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Eyes_IceBlue.png",
+        "Weight": 1
+
+      },
+      "LightBlue": {
+        "Model": "NPC/Pets/Cat/Models/Model_Longhair.blockymodel",
+        "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Eyes_LightBlue.png",
+        "Weight": 0
+
+      },
+      "Odd_Blue-GreenYellow": {
+        "Model": "NPC/Pets/Cat/Models/Model_Longhair.blockymodel",
+        "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Eyes_Odd_Blue-GreenYellow.png",
+        "Weight": 1
+
+      },
+      "Odd_Blue-Green": {
+        "Model": "NPC/Pets/Cat/Models/Model_Longhair.blockymodel",
+        "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Eyes_Odd_Blue-Green.png",
+        "Weight": 0
+
+      },
+      "Odd_Yellow-Green": {
+        "Model": "NPC/Pets/Cat/Models/Model_Longhair.blockymodel",
+        "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Eyes_Odd_Yellow-Green.png",
+        "Weight": 1
+
+      },
+      "PumpkinOrange": {
+        "Model": "NPC/Pets/Cat/Models/Model_Longhair.blockymodel",
+        "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Eyes_PumpkinOrange.png",
+        "Weight": 0
+
+      },
+      "Teal": {
+        "Model": "NPC/Pets/Cat/Models/Model_Longhair.blockymodel",
+        "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Eyes_Teal.png",
+        "Weight": 0
+
+      },
+      "Yellow-Lime": {
+        "Model": "NPC/Pets/Cat/Models/Model_Longhair.blockymodel",
+        "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Eyes_Yellow-Lime.png",
+        "Weight": 0
+
+      },
+      "YellowDefault": {
+        "Model": "NPC/Pets/Cat/Models/Model_Longhair.blockymodel",
+        "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Eyes_YellowDefault.png",
+        "Weight": 0
+
       }
     }
   }
