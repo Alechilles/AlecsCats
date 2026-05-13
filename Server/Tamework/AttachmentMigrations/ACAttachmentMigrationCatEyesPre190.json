@@ -1,0 +1,40 @@
+{
+  "Enabled": true,
+  "Priority": 50,
+  "RoleIds": [
+    "Cat_Pet",
+    "Cat_Longhair_Pet",
+    "Cat_Shorthair_Pet",
+    "Cat_Bobtail_Pet",
+    "Cat",
+    "Cat_Longhair",
+    "Cat_Shorthair",
+    "Cat_Bobtail"
+  ],
+  "Rules": [
+    {
+      "SourceSlot": "Coat",
+      "TargetSlot": "Eyes",
+      "SourceToTarget": {
+        "Black": "BrightOrange",
+        "Black_Tuxedo": "Odd_Yellow-Green",
+        "Brown Tuxedo": "Green",
+        "BrownTabby": "ForestGreen",
+        "Cream": "Odd_Blue-Green",
+        "Cream Tuxedo": "LightBlue",
+        "Cream Semi-Tabby": "PumpkinOrange",
+        "Dark Gray Tabby": "Teal",
+        "Empty": "YellowDefault",
+        "Gray Tuxedo": "Teal",
+        "Light Orange Tabby Tuxedo": "DarkOrange",
+        "Missy": "Hazel",
+        "Nyxie": "Hazel",
+        "OrangeTabby": "Yellow-Lime",
+        "Siamese": "LightBlue",
+        "SilverTabby": "LightBlue",
+        "Snowshoe": "IceBlue",
+        "White": "Odd_Blue-GreenYellow"
+      }
+    }
+  ]
+}
