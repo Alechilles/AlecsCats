@@ -86,8 +86,9 @@ Notes:
 
 ## Spawns
 Cats are uncommon but not extremely rare.
-- Zone 1: Plains, Forests
-- Zone 3: Forests
+- Mediumhair: Zone 1 Plains and Forests
+- Shorthair: Zone 2 Oasis, Plateau, and Savanna
+- Bobtail: Zone 1 Mountains, Zone 2 Plateau, and Zone 3 Mountains
 
 They usually spawn solo, but can spawn in small groups.
 
@@ -95,6 +96,8 @@ They usually spawn solo, but can spawn in small groups.
 #### _All cat textures are now made by an artist far more skilled than me, [Celly (@Excel Lynt)](https://www.curseforge.com/members/excel_lynt/)._
 
 Eye colors are separate randomized attachments, so cats can inherit eyes independently from coat color.
+
+Eye variants include standard colors plus rare odd-eye combinations, including orange-yellow.
 
 - Default black/white
 - Missy (Darker Dust Kitty)
