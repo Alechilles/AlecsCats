@@ -1,44 +1,44 @@
 {
   "Parent": "Cat_Base",
   "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
-  "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Eyes_YellowDefault.png",
+  "Texture": "NPC/Pets/Cat/Models/Empty.png",
 
   "RandomAttachmentSets": {
     "Coat": {
       "Empty": {
         "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Cat/Texture.png",
-        "Weight": 1
+        "Weight": 10
       },
       "Missy": {
         "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Missy_Texture.png",
-        "Weight": 1
+        "Weight": 10
       },
       "Nyxie": {
         "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Nyxie_Texture.png",
-        "Weight": 1
+        "Weight": 10
       },
       "SilverTabby": {
         "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/SilverTabby_Texture.png",
-        "Weight": 1
+        "Weight": 10
       },
       "OrangeTabby": {
         "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/OrangeTabby_Texture.png",
-        "Weight": 1
+        "Weight": 10
       },
       "BrownTabby": {
         "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/BrownTabby_Texture.png",
-        "Weight": 1
+        "Weight": 10
       },
       "White": {
         "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/White_Texture.png",
-        "Weight": 1
+        "Weight": 10
       },
       "Cream": {
         "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
@@ -48,37 +48,37 @@
       "Cream Tuxedo": {
         "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Cream_Tuxedo_Texture.png",
-        "Weight": 1
+        "Weight": 0
       },
       "Gray Tuxedo": {
         "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Gray_Tuxedo_Texture.png",
-        "Weight": 1
+        "Weight": 10
       },
       "Brown Tuxedo": {
         "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Brown_Tuxedo_Texture.png",
-        "Weight": 1
+        "Weight": 10
       },
       "Light Orange Tabby Tuxedo": {
         "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Light_Orange_Tuxedo_Texture.png",
-        "Weight": 1
+        "Weight": 10
       },
       "Black_Tuxedo": {
         "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Black_Tuxedo_Texture.png",
-        "Weight": 1
+        "Weight": 0
       },
       "Black": {
         "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Black_Texture.png",
-        "Weight": 1
+        "Weight": 10
       },
       "Snowshoe": {
         "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Snowshoe_Texture.png",
-        "Weight": 1
+        "Weight": 10
       },
       "Cream Semi-Tabby": {
         "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
@@ -88,7 +88,7 @@
       "Dark Gray Tabby": {
         "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/DarkgrayTabby_Texture.png",
-        "Weight": 1
+        "Weight": 0
       },
       "Siamese": {
         "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
@@ -100,43 +100,43 @@
       "BrightOrange": {
         "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Eyes_BrightOrange.png",
-        "Weight": 1
+        "Weight": 10
 
       },
       "BrightYellow": {
         "Model": "NPC/Pets/Cat/Models/Model_Bobtail.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Eyes_BrightYellow.png",
-        "Weight": 1
+        "Weight": 0
 
       },
       "DarkOrange": {
         "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Eyes_DarkOrange.png",
-        "Weight": 0
+        "Weight": 10
 
       },
       "ForestGreen": {
         "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Eyes_ForestGreen.png",
-        "Weight": 1
+        "Weight": 10
 
       },
       "Green": {
         "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Eyes_Green.png",
-        "Weight": 0
+        "Weight": 10
 
       },
       "Hazel": {
         "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Eyes_Hazel.png",
-        "Weight": 1
+        "Weight": 10
 
       },
       "IceBlue": {
         "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Eyes_IceBlue.png",
-        "Weight": 0
+        "Weight": 10
 
       },
       "LightBlue": {
@@ -148,13 +148,19 @@
       "Odd_Blue-GreenYellow": {
         "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Eyes_Odd_Blue-GreenYellow.png",
-        "Weight": 1
+        "Weight": 2
 
       },
       "Odd_Blue-Green": {
         "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Eyes_Odd_Blue-Green.png",
-        "Weight": 1
+        "Weight": 0
+
+      },
+      "Odd_Orange-Yellow": {
+        "Model": "NPC/Pets/Cat/Models/Model_Bobtail.blockymodel",
+        "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Eyes_Odd_Orange-Yellow.png",
+        "Weight": 0
 
       },
       "Odd_Yellow-Green": {
@@ -172,7 +178,7 @@
       "Teal": {
         "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Eyes_Teal.png",
-        "Weight": 0
+        "Weight": 10
 
       },
       "Yellow-Lime": {
@@ -184,7 +190,7 @@
       "YellowDefault": {
         "Model": "NPC/Pets/Cat/Models/Model.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Eyes_YellowDefault.png",
-        "Weight": 0
+        "Weight": 10
 
       }
     }
