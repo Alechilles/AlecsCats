@@ -20,12 +20,6 @@
       "SpawnBlockSet": "Soil",
       "Id": "Pig_Wild",
       "Flock": "Group_Small"
-    },
-    {
-      "Weight": 1,
-      "SpawnBlockSet": "Soil",
-      "Id": "Cat_Longhair",
-      "Flock": "Group_Tiny"
     }
   ],
   "DayTimeRange": [
