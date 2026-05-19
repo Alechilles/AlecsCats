@@ -2,7 +2,10 @@
   "Enabled": true,
   "Priority": 1,
   "RoleIds": [
-    "Cat_Pet"
+    "Cat_Pet",
+    "Cat_Longhair_Pet",
+    "Cat_Shorthair_Pet",
+    "Cat_Bobtail_Pet"
   ],
   "Values": {
     "CurrentDefault": 55.0,

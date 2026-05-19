@@ -1,0 +1,23 @@
+{
+  "Environments": [
+    "Env_Zone3_Mountains"
+  ],
+  "NPCs": [
+    {
+      "Weight": 15,
+      "SpawnBlockSet": "IceAndSnow",
+      "Id": "Mouflon",
+      "Flock": "Group_Small"
+    },
+    {
+      "Weight": 4,
+      "SpawnBlockSet": "Soil",
+      "Id": "Cat_Bobtail",
+      "Flock": "Group_Tiny"
+    }
+  ],
+  "DayTimeRange": [
+    6,
+    18
+  ]
+}

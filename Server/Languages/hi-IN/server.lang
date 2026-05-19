@@ -1,5 +1,13 @@
 npcRoles.Cat.name=बिल्ली
 npcRoles.Cat_Pet.name=वश की गई बिल्ली
+npcRoles.Cat_Mediumhair.name=मध्यम बालों वाली बिल्ली
+npcRoles.Cat_Mediumhair_Pet.name=मध्यम बालों वाली बिल्ली
+npcRoles.Cat_Longhair.name=लंबे बालों वाली बिल्ली
+npcRoles.Cat_Longhair_Pet.name=लंबे बालों वाली बिल्ली
+npcRoles.Cat_Shorthair.name=छोटे बालों वाली बिल्ली
+npcRoles.Cat_Shorthair_Pet.name=छोटे बालों वाली बिल्ली
+npcRoles.Cat_Bobtail.name=छोटी पूंछ वाली बिल्ली
+npcRoles.Cat_Bobtail_Pet.name=छोटी पूंछ वाली बिल्ली
 items.Egg_Spawner_Cat_Empty.name=बिल्ली का कॉलर
 items.Egg_Spawner_Cat_Empty.description=सबसे नखरेली बिल्लियों के लिए उपयुक्त! अगर आप किसी बिल्ली को कच्ची मछली खिलाएँ, तो शायद वह आपको यह पहनाने दे!
 items.Egg_Spawner_Cat.name=पालतू बिल्ली

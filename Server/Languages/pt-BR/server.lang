@@ -1,5 +1,13 @@
 npcRoles.Cat.name=Gato
 npcRoles.Cat_Pet.name=Gato domesticado
+npcRoles.Cat_Mediumhair.name=Gato de pelo médio
+npcRoles.Cat_Mediumhair_Pet.name=Gato de pelo médio
+npcRoles.Cat_Longhair.name=Gato de pelo longo
+npcRoles.Cat_Longhair_Pet.name=Gato de pelo longo
+npcRoles.Cat_Shorthair.name=Gato de pelo curto
+npcRoles.Cat_Shorthair_Pet.name=Gato de pelo curto
+npcRoles.Cat_Bobtail.name=Gato bobtail
+npcRoles.Cat_Bobtail_Pet.name=Gato bobtail
 items.Egg_Spawner_Cat_Empty.name=Coleira para gato
 items.Egg_Spawner_Cat_Empty.description=Feita para os felinos mais exigentes! Se você der peixe cru para um gato, talvez ele deixe você colocar isto nele!
 items.Egg_Spawner_Cat.name=Gato de estimação

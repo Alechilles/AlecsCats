@@ -1,5 +1,13 @@
 npcRoles.Cat.name=Кот
 npcRoles.Cat_Pet.name=Приручённый кот
+npcRoles.Cat_Mediumhair.name=Кот со средней шерстью
+npcRoles.Cat_Mediumhair_Pet.name=Кот со средней шерстью
+npcRoles.Cat_Longhair.name=Длинношёрстный кот
+npcRoles.Cat_Longhair_Pet.name=Длинношёрстный кот
+npcRoles.Cat_Shorthair.name=Короткошёрстный кот
+npcRoles.Cat_Shorthair_Pet.name=Короткошёрстный кот
+npcRoles.Cat_Bobtail.name=Кот-бобтейл
+npcRoles.Cat_Bobtail_Pet.name=Кот-бобтейл
 items.Egg_Spawner_Cat_Empty.name=Ошейник для кота
 items.Egg_Spawner_Cat_Empty.description=Подходит для самых утончённых кошек! Если накормить кота сырой рыбой, возможно, он позволит надеть это!
 items.Egg_Spawner_Cat.name=Домашний кот

@@ -1,0 +1,23 @@
+{
+  "Environments": [
+    "Env_Zone1_Mountains"
+  ],
+  "NPCs": [
+    {
+      "Weight": 20,
+      "SpawnBlockSet": "StoneAndSoil",
+      "Id": "Goat",
+      "Flock": "Group_Small"
+    },
+    {
+      "Weight": 4,
+      "SpawnBlockSet": "Soil",
+      "Id": "Cat_Bobtail",
+      "Flock": "Group_Tiny"
+    }
+  ],
+  "DayTimeRange": [
+    6,
+    18
+  ]
+}

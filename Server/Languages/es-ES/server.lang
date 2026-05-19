@@ -1,5 +1,13 @@
 npcRoles.Cat.name=Gato
 npcRoles.Cat_Pet.name=Gato domesticado
+npcRoles.Cat_Mediumhair.name=Gato de pelo medio
+npcRoles.Cat_Mediumhair_Pet.name=Gato de pelo medio
+npcRoles.Cat_Longhair.name=Gato de pelo largo
+npcRoles.Cat_Longhair_Pet.name=Gato de pelo largo
+npcRoles.Cat_Shorthair.name=Gato de pelo corto
+npcRoles.Cat_Shorthair_Pet.name=Gato de pelo corto
+npcRoles.Cat_Bobtail.name=Gato bobtail
+npcRoles.Cat_Bobtail_Pet.name=Gato bobtail
 items.Egg_Spawner_Cat_Empty.name=Collar para gato
 items.Egg_Spawner_Cat_Empty.description=¡Ideal para los felinos más exquisitos! Si alimentas a un gato con pescado crudo, quizá te deje ponérselo.
 items.Egg_Spawner_Cat.name=Gato mascota

@@ -1,3 +1,7 @@
+## Alec's Cats! is a finalist in the Hytale New Worlds Modding Contest in the NPCs category!
+### If you've enjoyed my mod, I would be thankful for your vote! [Vote Here](https://overwolfdevs.typeform.com/to/uVlmdC1I)
+But be sure to check out all the [other finalists](https://www.curseforge.com/community-picks/hytale/curseforge-may26-npcs)! There's a lot of cool stuff in here that I'm sure you haven't seen yet!
+
 [![Cats](https://img.shields.io/curseforge/dt/1432112?label=Cats&style=for-the-badge&logo=curseforge&color=rgb(241%2C100%2C54))](https://www.curseforge.com/hytale/mods/alecs-cats)
 [![Tamework](https://img.shields.io/curseforge/dt/1447962?label=Tamework&style=for-the-badge&logo=curseforge&color=rgb(241%2C100%2C54))](https://www.curseforge.com/hytale/mods/alecs-tamework)
 [![Nametags](https://img.shields.io/curseforge/dt/1464844?label=Nametags&style=for-the-badge&logo=curseforge&color=rgb(241%2C100%2C54))](https://www.curseforge.com/hytale/mods/alecs-nametags)
@@ -21,7 +25,7 @@ This mod started as a simple cat conversion from unused base-game assets and has
 - Multi-language localization
 
 ## Requirements
-- **Alec's Tamework!** `2.8.x` dependency is required (Alechilles:Alec's Tamework!).
+- **Alec's Tamework!** `2.9.x` dependency is required (Alechilles:Alec's Tamework!) for parent-line breeding role inheritance.
 
 ## Craftable Items
 ### Cat Collar (Capture/Spawn Item)
@@ -66,7 +70,7 @@ Notes:
 - Only the owner can interact with/store the cat by default.
 - When stored in an item, ownership can be cleared until re-spawn (trading-friendly flow).
 - Owner damage/invulnerability behavior is controlled by Tamework companion config:
-  - Alec's Cats!\Server\Tamework\Companion\TwCompanionConfig_AlecsCats.json
+  - Alec's Cats!\Server\Tamework\Companion\ACCompCat.json
 
 ## Happiness and Needs
 - Happiness fluctuates based on if the Cat's needs are being met
@@ -82,6 +86,7 @@ Notes:
 - Traits can alter anything from size, to strength, to fertility and more
 - Traits can be inherited from parents, and breeding cats with the same traits together can result in higher trait values (or lower!)
 - Fur color is also inherited from parents
+- Body type roles can be inherited from either parent, with a small chance of a different body type appearing as a mutation
 
 ## Spawns
 Cats are uncommon but not extremely rare.
@@ -111,23 +116,30 @@ They usually spawn solo, but can spawn in small groups.
 - Dark Gray Tabby
 - Siamese
 
+## Body Types
+- Mediumhair
+- Longhair
+- Shorthair
+- Bobtail
+
 ## Config Files
 - Companion Config:
-  - Server/Tamework/Companion/TwCompanionConfig_AlecsCats.json
+  - Server/Tamework/Companion/ACCompCat.json
 - Interaction Config:
-  - Server/Tamework/Interactions/AlecsCats_Cat_InteractionConfig.json
+  - Server/Tamework/Interactions/ACIntCat.json
+  - Server/Tamework/Interactions/ACIntCatTemp.json
 - Spawner Config:
-  - Server/Tamework/Items/Spawners/AlecsCats_Spawner_Cat.json
+  - Server/Tamework/Items/Spawners/ACSpawnCat.json
 - Command-item Config:
-  - Server/Tamework/Items/Commands/AlecsCats_Command_Item_Config.json
+  - Server/Tamework/Items/Commands/ACCommCat.json
 - Happiness Config:
-  - Server/Tamework/Happiness/TwHappinessConfig_AlecsCats_Cat_Pet.json
+  - Server/Tamework/Happiness/ACHappCat.json
 - Needs Config:
-  - Server/Tamework/Needs/TwNeedsConfig_AlecsCats_Cat_Pet.json
+  - Server/Tamework/Needs/ACNeedsCat.json
 - Breeding Config:
-  - Server/Tamework/Breeding/TwBreedingConfig_AlecsCats_Cat_Pet.json
+  - Server/Tamework/Breeding/ACBreedCat.json
 - Trait Config:
-  - Server/Tamework/Traits/TwTraitConfig_AlecsCats_Cat_Pet.json
+  - Server/Tamework/Traits/ACTraitsCat.json
 
 
 ## Want More?

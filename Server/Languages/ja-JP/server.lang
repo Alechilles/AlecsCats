@@ -1,5 +1,13 @@
 npcRoles.Cat.name=猫
 npcRoles.Cat_Pet.name=飼いならした猫
+npcRoles.Cat_Mediumhair.name=中毛の猫
+npcRoles.Cat_Mediumhair_Pet.name=中毛の猫
+npcRoles.Cat_Longhair.name=長毛の猫
+npcRoles.Cat_Longhair_Pet.name=長毛の猫
+npcRoles.Cat_Shorthair.name=短毛の猫
+npcRoles.Cat_Shorthair_Pet.name=短毛の猫
+npcRoles.Cat_Bobtail.name=短尾の猫
+npcRoles.Cat_Bobtail_Pet.name=短尾の猫
 items.Egg_Spawner_Cat_Empty.name=猫の首輪
 items.Egg_Spawner_Cat_Empty.description=最高級のネコにぴったり！生魚を与えれば、これを付けさせてくれるかもしれない。
 items.Egg_Spawner_Cat.name=飼い猫

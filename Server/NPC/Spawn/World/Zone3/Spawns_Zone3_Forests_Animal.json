@@ -26,12 +26,6 @@
       "SpawnBlockSet": "Rock",
       "Id": "Mouflon",
       "Flock": "Group_Small"
-    },
-    {
-      "Weight": 5,
-      "SpawnBlockSet": "Soil",
-      "Id": "Cat",
-      "Flock": "Group_Tiny"
     }
   ],
   "DayTimeRange": [

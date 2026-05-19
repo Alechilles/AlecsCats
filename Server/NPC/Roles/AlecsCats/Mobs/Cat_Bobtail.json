@@ -4,9 +4,6 @@
   "Modify": {
     "Appearance": "Cat_Bobtail",
     "FlockArray": [
-      "Cat",
-      "Cat_Longhair",
-      "Cat_Shorthair",
       "Cat_Bobtail"
     ],
     "ChanceToBeAlertedWhenFlockAlerted": 70,
@@ -57,7 +54,7 @@
     "TimidDuringDay": true,
     "IsMemory": true,
     "MemoriesCategory": "Predator",
-    "MemoriesNameOverride": "Cat",
+    "MemoriesNameOverride": "Cat_Bobtail",
     "_InteractionVars": {
       "Melee_Start": {
         "Interactions": [
@@ -97,8 +94,12 @@
     }
   },
   "Parameters": {
+    "TamedRoleId": {
+      "Value": "Cat_Bobtail_Pet",
+      "Description": "Pet role assigned when this wild cat is tamed"
+    },
     "NameTranslationKey": {
-      "Value": "server.npcRoles.Cat.name",
+      "Value": "server.npcRoles.Cat_Bobtail.name",
       "Description": "Translation key for NPC name display"
     }
   }

@@ -4,10 +4,7 @@
   "Modify": {
     "Appearance": "Cat_Shorthair",
     "FlockArray": [
-      "Cat",
-      "Cat_Longhair",
-      "Cat_Shorthair",
-      "Cat_Bobtail"
+      "Cat_Shorthair"
     ],
     "ChanceToBeAlertedWhenFlockAlerted": 70,
     "DropList": "Drop_Cat",
@@ -57,7 +54,7 @@
     "TimidDuringDay": true,
     "IsMemory": true,
     "MemoriesCategory": "Predator",
-    "MemoriesNameOverride": "Cat",
+    "MemoriesNameOverride": "Cat_Shorthair",
     "_InteractionVars": {
       "Melee_Start": {
         "Interactions": [
@@ -97,8 +94,12 @@
     }
   },
   "Parameters": {
+    "TamedRoleId": {
+      "Value": "Cat_Shorthair_Pet",
+      "Description": "Pet role assigned when this wild cat is tamed"
+    },
     "NameTranslationKey": {
-      "Value": "server.npcRoles.Cat.name",
+      "Value": "server.npcRoles.Cat_Shorthair.name",
       "Description": "Translation key for NPC name display"
     }
   }
