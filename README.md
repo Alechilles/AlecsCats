@@ -89,6 +89,7 @@ Cats are uncommon but not extremely rare.
 - Mediumhair: Zone 1 Plains and Forests
 - Shorthair: Zone 2 Oasis, Plateau, and Savanna
 - Bobtail: Zone 1 Mountains, Zone 2 Plateau, and Zone 3 Mountains
+- Longhair: Zone 3 Forests and Tundra
 
 They usually spawn solo, but can spawn in small groups.
 
@@ -111,6 +112,7 @@ Eye variants include standard colors plus rare odd-eye combinations, including o
 - Gray Tuxedo
 - Brown Tuxedo
 - Light Orange Tabby Tuxedo
+- Black Tuxedo
 - Black
 - Snowshoe
 - Cream Semi-Tabby

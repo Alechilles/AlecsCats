@@ -16,6 +16,7 @@
   "curseforge": {
     "projectId": "1432112",
     "releaseType": "release",
+    "changelogType": "html",
     "gameVersionTypeIds": [65437],
     "requiredProjects": [
       { "id": 1447962, "slug": "alecs-tamework", "type": "requiredDependency" },

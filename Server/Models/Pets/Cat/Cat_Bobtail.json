@@ -88,7 +88,7 @@
       "Dark Gray Tabby": {
         "Model": "NPC/Pets/Cat/Models/Model_Bobtail.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/DarkgrayTabby_Texture.png",
-        "Weight": 19
+        "Weight": 10
       },
       "Siamese": {
         "Model": "NPC/Pets/Cat/Models/Model_Bobtail.blockymodel",

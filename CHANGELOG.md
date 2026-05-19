@@ -2,6 +2,16 @@
 
 All notable changes to **Alec's Cats!** will be documented in this file.
 
+## 1.10.0 - Longhair Polish + Texture Refresh - 2026-05-19
+
+### Added
+- longhair cats
+- Added wild longhair cat spawns to Zone 3 forests and tundra.
+
+### Changed
+- Refreshed cat model geometry and attachment layouts across mediumhair, longhair, shorthair, and bobtail cats.
+- Corrected the bobtail Dark Gray Tabby coat attachment weight.
+
 ## 1.9.0 - Body Types + Eye Variants - 2026-05-13
 
 ### Added
