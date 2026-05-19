@@ -5,16 +5,12 @@ All notable changes to **Alec's Cats!** will be documented in this file.
 ## 1.10.0 - Longhair Polish + Texture Refresh - 2026-05-19
 
 ### Added
+- longhair cats
 - Added wild longhair cat spawns to Zone 3 forests and tundra.
-- Packaged Celly's new Blue Birman texture asset alongside the refreshed cat texture set.
 
 ### Changed
 - Refreshed cat model geometry and attachment layouts across mediumhair, longhair, shorthair, and bobtail cats.
-- Refreshed Celly coat textures and eye textures across the cat appearance set.
-- Tuned longhair coat and eye attachment weights so longhair cats prefer a more curated appearance pool.
 - Corrected the bobtail Dark Gray Tabby coat attachment weight.
-- Cleaned release package inputs by removing tracked macOS metadata files.
-- Updated `manifest.json` version to `1.10.0`.
 
 ## 1.9.0 - Body Types + Eye Variants - 2026-05-13
 
