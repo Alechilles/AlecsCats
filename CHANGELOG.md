@@ -7,11 +7,15 @@ All notable changes to **Alec's Cats!** will be documented in this file.
 ### Added
 - Enabled Tamework gender-aware breeding for cats, requiring different-gender pairs when breeding gender support is enabled.
 
+### Changed
+- Prepared Cat Collar icon overrides to use grouped role-and-coat icons with one representative rendered eye overlay instead of separate eye-variant icons.
+
 ## 1.10.0 - Longhair Polish + Texture Refresh - 2026-05-19
 
 ### Added
 - longhair cats
 - Added wild longhair cat spawns to Zone 3 forests and tundra.
+- Bobtail face floofs
 
 ### Changed
 - Refreshed cat model geometry and attachment layouts across mediumhair, longhair, shorthair, and bobtail cats.

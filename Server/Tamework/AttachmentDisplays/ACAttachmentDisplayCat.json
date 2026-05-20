@@ -27,9 +27,9 @@
         "Coat": {
           "Label": "Coat",
           "Values": {
-            "Empty": "Default Black/White",
-            "Missy": "Missy",
-            "Nyxie": "Nyxie",
+            "Empty": "Black and White",
+            "Missy": "Gray",
+            "Nyxie": "Light Gray",
             "SilverTabby": "Silver Tabby",
             "OrangeTabby": "Orange Tabby",
             "BrownTabby": "Brown Tabby",
@@ -58,14 +58,14 @@
             "Hazel": "Hazel",
             "IceBlue": "Ice Blue",
             "LightBlue": "Light Blue",
-            "Odd_Blue-GreenYellow": "Odd Blue and Green-Yellow",
-            "Odd_Blue-Green": "Odd Blue and Green",
-            "Odd_Orange-Yellow": "Odd Orange and Yellow",
-            "Odd_Yellow-Green": "Odd Yellow and Green",
+            "Odd_Blue-GreenYellow": "Blue and Green-Yellow",
+            "Odd_Blue-Green": "Blue and Green",
+            "Odd_Orange-Yellow": "Orange and Yellow",
+            "Odd_Yellow-Green": "Yellow and Green",
             "PumpkinOrange": "Pumpkin Orange",
             "Teal": "Teal",
             "Yellow-Lime": "Yellow-Lime",
-            "YellowDefault": "Default Yellow"
+            "YellowDefault": "Yellow"
           }
         }
       }
