@@ -21,7 +21,7 @@ This mod started as a simple cat conversion from unused base-game assets and has
 - Multi-language localization
 
 ## Requirements
-- **Alec's Tamework!** `2.10.x` dependency is required (Alechilles:Alec's Tamework!) for parent-line breeding role inheritance and pre-1.9.0 eye attachment migration.
+- **Alec's Tamework!** `2.10.x` dependency is required (Alechilles:Alec's Tamework!) for parent-line breeding role inheritance, pre-1.9.0 eye attachment migration, and attachment display labels.
 
 ## Craftable Items
 ### Cat Collar (Capture/Spawn Item)
@@ -145,6 +145,8 @@ Eye variants include standard colors plus rare odd-eye combinations, including o
   - Server/Tamework/Traits/ACTraitsCat.json
 - Attachment Migration Config:
   - Server/Tamework/AttachmentMigrations/ACAttachmentMigrationCatEyesPre190.json
+- Attachment Display Config:
+  - Server/Tamework/AttachmentDisplays/ACAttachmentDisplayCat.json
 
 
 ## Want More?
