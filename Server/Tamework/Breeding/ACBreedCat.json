@@ -24,6 +24,12 @@
     "RequireSameRoleId": false,
     "RoleCompatibility": "SameLifecycleFamily"
   },
+  "Gender": {
+    "Enabled": true,
+    "RequireDifferentGender": true,
+    "MaleWeight": 1.0,
+    "FemaleWeight": 1.0
+  },
   "Cooldowns": {
     "BaseCooldownMinutes": 30,
     "MinDelaySeconds": 30,

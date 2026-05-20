@@ -83,6 +83,7 @@ Notes:
 - Traits can be inherited from parents, and breeding cats with the same traits together can result in higher trait values (or lower!)
 - Fur and eye color are also inherited from parents
 - Body type roles can be inherited from either parent, with a small chance of a different body type appearing as a mutation
+- Cat breeding uses Tamework gender support, so compatible breeding pairs must be different genders when that Tamework setting is enabled
 
 ## Spawns
 Cats are uncommon but not extremely rare.

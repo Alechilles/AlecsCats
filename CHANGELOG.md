@@ -2,6 +2,11 @@
 
 All notable changes to **Alec's Cats!** will be documented in this file.
 
+## Unreleased
+
+### Added
+- Enabled Tamework gender-aware breeding for cats, requiring different-gender pairs when breeding gender support is enabled.
+
 ## 1.10.0 - Longhair Polish + Texture Refresh - 2026-05-19
 
 ### Added
