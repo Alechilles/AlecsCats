@@ -94,6 +94,11 @@
         "Model": "NPC/Pets/Cat/Models/Model_Shorthair.blockymodel",
         "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/Siamese_Texture.png",
         "Weight": 10
+      },
+      "Blue Birman": {
+        "Model": "NPC/Pets/Cat/Models/Model_Shorthair.blockymodel",
+        "Texture": "NPC/Pets/Cat/Models/Celly(Excel_Lynt)/BlueBirman_Texture.png",
+        "Weight": 10
       }
     },
     "Eyes": {
