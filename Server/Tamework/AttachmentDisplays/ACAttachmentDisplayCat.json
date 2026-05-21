@@ -1,0 +1,74 @@
+{
+  "Type": "TwAttachmentDisplayConfig",
+  "Enabled": true,
+  "Priority": 0,
+  "Entries": [
+    {
+      "Id": "alecs-cats-cat-attachments",
+      "AppliesTo": {
+        "RoleIds": [
+          "Cat",
+          "Cat_Pet",
+          "Cat_Longhair",
+          "Cat_Longhair_Pet",
+          "Cat_Shorthair",
+          "Cat_Shorthair_Pet",
+          "Cat_Bobtail",
+          "Cat_Bobtail_Pet"
+        ],
+        "ModelIds": [
+          "Cat",
+          "Cat_Longhair",
+          "Cat_Shorthair",
+          "Cat_Bobtail"
+        ]
+      },
+      "Sets": {
+        "Coat": {
+          "Label": "Coat",
+          "Values": {
+            "Empty": "Black and White",
+            "Missy": "Gray",
+            "Nyxie": "Light Gray",
+            "SilverTabby": "Silver Tabby",
+            "OrangeTabby": "Orange Tabby",
+            "BrownTabby": "Brown Tabby",
+            "White": "White",
+            "Cream": "Cream",
+            "Cream Tuxedo": "Cream Tuxedo",
+            "Gray Tuxedo": "Gray Tuxedo",
+            "Brown Tuxedo": "Brown Tuxedo",
+            "Light Orange Tabby Tuxedo": "Light Orange Tabby Tuxedo",
+            "Black_Tuxedo": "Black Tuxedo",
+            "Black": "Black",
+            "Snowshoe": "Snowshoe",
+            "Cream Semi-Tabby": "Cream Semi-Tabby",
+            "Dark Gray Tabby": "Dark Gray Tabby",
+            "Siamese": "Siamese"
+          }
+        },
+        "Eyes": {
+          "Label": "Eyes",
+          "Values": {
+            "BrightOrange": "Bright Orange",
+            "BrightYellow": "Bright Yellow",
+            "DarkOrange": "Dark Orange",
+            "ForestGreen": "Forest Green",
+            "Green": "Green",
+            "Hazel": "Hazel",
+            "IceBlue": "Ice Blue",
+            "LightBlue": "Light Blue",
+            "Odd_Blue-GreenYellow": "Blue and Green-Yellow",
+            "Odd_Blue-Green": "Blue and Green",
+            "Odd_Orange-Yellow": "Orange and Yellow",
+            "Odd_Yellow-Green": "Yellow and Green",
+            "PumpkinOrange": "Pumpkin Orange",
+            "Teal": "Teal",
+            "Yellow-Lime": "Yellow-Lime",
+            "YellowDefault": "Yellow"
+          }
+        }
+      }
+    }
+  ]
+}

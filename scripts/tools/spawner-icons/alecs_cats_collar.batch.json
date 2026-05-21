@@ -1,0 +1,62 @@
+{
+  "defaults": {
+    "rendererName": "Alec's Cats collar role and coat icons",
+    "iconSize": 64,
+    "cameraScale": 1.0,
+    "cameraRotation": [22.5, 45, 22.5],
+    "cameraTranslation": [0, 0],
+    "iconOverrideMode": "group",
+    "maxCombos": 1000
+  },
+  "notes": [
+    "Generate collar icons only from the cat body role and Coat attachment set.",
+    "Eyes are intentionally omitted from override matching because they are not readable as distinct variants at item-icon size and would greatly increase icon count.",
+    "After generating jobs, run add_collar_render_eye_overlay.py to add one representative render-only eye texture so icons do not appear eyeless.",
+    "Each entry uses grouped overrides so untamed and tamed role pairs share one generated icon set.",
+    "Set ALECS_CATS_ASSET_ROOT to a path without an exclamation mark before running the Tamework generator; this repo name contains !, which the generator reserves for zip-entry paths."
+  ],
+  "sources": {
+    "alecsCats": {
+      "modelsRoot": "${ALECS_CATS_ASSET_ROOT}/Server/Models",
+      "commonRoot": "${ALECS_CATS_ASSET_ROOT}/Common"
+    }
+  },
+  "entries": [
+    {
+      "id": "cat_mediumhair",
+      "source": "alecsCats",
+      "model": "Pets/Cat/Cat.json",
+      "roles": ["Cat", "Cat_Pet"],
+      "iconRole": "Cat",
+      "keepAttachmentSets": ["Coat"],
+      "iconTemplate": "Icons/ItemsGenerated/AlecsCats/Collar/Cat/{combo_slug}.png"
+    },
+    {
+      "id": "cat_longhair",
+      "source": "alecsCats",
+      "model": "Pets/Cat/Cat_Longhair.json",
+      "roles": ["Cat_Longhair", "Cat_Longhair_Pet"],
+      "iconRole": "Cat_Longhair",
+      "keepAttachmentSets": ["Coat"],
+      "iconTemplate": "Icons/ItemsGenerated/AlecsCats/Collar/Cat_Longhair/{combo_slug}.png"
+    },
+    {
+      "id": "cat_shorthair",
+      "source": "alecsCats",
+      "model": "Pets/Cat/Cat_Shorthair.json",
+      "roles": ["Cat_Shorthair", "Cat_Shorthair_Pet"],
+      "iconRole": "Cat_Shorthair",
+      "keepAttachmentSets": ["Coat"],
+      "iconTemplate": "Icons/ItemsGenerated/AlecsCats/Collar/Cat_Shorthair/{combo_slug}.png"
+    },
+    {
+      "id": "cat_bobtail",
+      "source": "alecsCats",
+      "model": "Pets/Cat/Cat_Bobtail.json",
+      "roles": ["Cat_Bobtail", "Cat_Bobtail_Pet"],
+      "iconRole": "Cat_Bobtail",
+      "keepAttachmentSets": ["Coat"],
+      "iconTemplate": "Icons/ItemsGenerated/AlecsCats/Collar/Cat_Bobtail/{combo_slug}.png"
+    }
+  ]
+}

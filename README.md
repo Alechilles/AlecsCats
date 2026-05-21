@@ -21,7 +21,7 @@ This mod started as a simple cat conversion from unused base-game assets and has
 - Multi-language localization
 
 ## Requirements
-- **Alec's Tamework!** `2.10.x` dependency is required (Alechilles:Alec's Tamework!) for parent-line breeding role inheritance and pre-1.9.0 eye attachment migration.
+- **Alec's Tamework!** `2.10.x` dependency is required (Alechilles:Alec's Tamework!) for parent-line breeding role inheritance, pre-1.9.0 eye attachment migration, and attachment display labels.
 
 ## Craftable Items
 ### Cat Collar (Capture/Spawn Item)
@@ -83,6 +83,7 @@ Notes:
 - Traits can be inherited from parents, and breeding cats with the same traits together can result in higher trait values (or lower!)
 - Fur and eye color are also inherited from parents
 - Body type roles can be inherited from either parent, with a small chance of a different body type appearing as a mutation
+- Cat breeding uses Tamework gender support, so compatible breeding pairs must be different genders when that Tamework setting is enabled
 
 ## Spawns
 Cats are uncommon but not extremely rare.
@@ -145,6 +146,8 @@ Eye variants include standard colors plus rare odd-eye combinations, including o
   - Server/Tamework/Traits/ACTraitsCat.json
 - Attachment Migration Config:
   - Server/Tamework/AttachmentMigrations/ACAttachmentMigrationCatEyesPre190.json
+- Attachment Display Config:
+  - Server/Tamework/AttachmentDisplays/ACAttachmentDisplayCat.json
 
 
 ## Want More?
