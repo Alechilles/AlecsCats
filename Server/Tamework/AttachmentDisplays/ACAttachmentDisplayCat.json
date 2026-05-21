@@ -42,9 +42,10 @@
             "Black_Tuxedo": "Black Tuxedo",
             "Black": "Black",
             "Snowshoe": "Snowshoe",
-            "Cream Semi-Tabby": "Cream Semi-Tabby",
+            "Cream Semi-Tabby": "Sand Tabby",
             "Dark Gray Tabby": "Dark Gray Tabby",
-            "Siamese": "Siamese"
+            "Siamese": "Chocolate Point",
+            "Blue Birman": "Blue Point"
           }
         },
         "Eyes": {
@@ -58,10 +59,10 @@
             "Hazel": "Hazel",
             "IceBlue": "Ice Blue",
             "LightBlue": "Light Blue",
-            "Odd_Blue-GreenYellow": "Blue and Green-Yellow",
-            "Odd_Blue-Green": "Blue and Green",
-            "Odd_Orange-Yellow": "Orange and Yellow",
-            "Odd_Yellow-Green": "Yellow and Green",
+            "Odd_Blue-GreenYellow": "Blue and Green-Yellow    (Rare!)",
+            "Odd_Blue-Green": "Blue and Green    (Rare!)",
+            "Odd_Orange-Yellow": "Orange and Yellow    (Rare!)",
+            "Odd_Yellow-Green": "Yellow and Green    (Rare!)",
             "PumpkinOrange": "Pumpkin Orange",
             "Teal": "Teal",
             "Yellow-Lime": "Yellow-Lime",
