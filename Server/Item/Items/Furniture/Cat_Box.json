@@ -55,6 +55,7 @@
         "Open": {
           "InteractionHint": "Close Box",
           "CustomModelAnimation": "Blocks/Animations/CatBox/Flaps_Open.blockyanim",
+          "HitboxType": "Cat_Box_Open",
           "Gathering": {
             "Soft": {
               "DropList": {}

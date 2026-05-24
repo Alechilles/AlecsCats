@@ -155,30 +155,30 @@
     },
     "CatBoxBlockSet": {
       "Value": "AlecsCats_Cat_Box",
-      "Description": "Block type list used by idle cats when looking for cardboard boxes to perch on."
+      "Description": "Block set used by idle cats when looking for open cardboard boxes to sit in."
     },
     "CatBoxSearchRange": {
       "Value": 10,
-      "Description": "How far an idle cat can search for a cardboard box perch."
+      "Description": "How far an idle cat can search for an open cardboard box."
     },
-    "CatBoxTopOffset": {
+    "CatBoxTargetOffset": {
       "Value": [
         0,
-        1,
+        0,
         0
       ],
-      "Description": "Offset from the detected box block to the perch position on top of it."
+      "Description": "Offset from the detected open box block to the interior sit target."
     },
     "CatBoxApproachRelativeSpeed": {
       "Value": 0.55,
-      "Description": "Relative movement speed used when walking to a cardboard box perch."
+      "Description": "Relative movement speed used when walking to an open cardboard box."
     },
     "CatBoxSitDurationRange": {
       "Value": [
         12,
         24
       ],
-      "Description": "How long a cat remains in the sit posture after reaching a cardboard box perch."
+      "Description": "How long a cat remains in the sit posture after reaching an open cardboard box."
     },
     "NightFlavorAnimation": {
       "Value": "Idle",
@@ -1055,14 +1055,14 @@
               }
             },
             {
-              "$Comment": "When a cardboard box is nearby, idle cats can climb onto the top and sit.",
+              "$Comment": "When an open cardboard box is nearby, idle cats can move into it and sit.",
               "Enabled": {
                 "Compute": "!isEmpty(CatBoxBlockSet) && CatBoxSearchRange > 0"
               },
               "Sensor": {
                 "Type": "AdjustPosition",
                 "Offset": {
-                  "Compute": "CatBoxTopOffset"
+                  "Compute": "CatBoxTargetOffset"
                 },
                 "Sensor": {
                   "Type": "Block",
@@ -1079,15 +1079,15 @@
               },
               "Instructions": [
                 {
-                  "$Comment": "If already at the top target, sit for a while and then release the block sensor reservation.",
+                  "$Comment": "If already inside the open box target, sit for a while and then release the block sensor reservation.",
                   "Sensor": {
                     "Type": "AdjustPosition",
                     "Offset": {
-                      "Compute": "CatBoxTopOffset"
+                      "Compute": "CatBoxTargetOffset"
                     },
                     "Sensor": {
                       "Type": "Block",
-                      "Range": 0.75,
+                      "Range": 0.35,
                       "MaxHeight": 3,
                       "Blocks": {
                         "Compute": "CatBoxBlockSet"
@@ -1120,11 +1120,11 @@
                   ]
                 },
                 {
-                  "$Comment": "Seek the adjusted top-center point so the walk controller climbs or jumps up onto the box.",
+                  "$Comment": "Seek the adjusted center point inside the open box.",
                   "Sensor": {
                     "Type": "AdjustPosition",
                     "Offset": {
-                      "Compute": "CatBoxTopOffset"
+                      "Compute": "CatBoxTargetOffset"
                     },
                     "Sensor": {
                       "Type": "Block",
@@ -1144,7 +1144,7 @@
                       "Compute": "CatBoxApproachRelativeSpeed"
                     },
                     "SlowDownDistance": 2,
-                    "StopDistance": 0.25,
+                    "StopDistance": 0.15,
                     "RelaxedMoveConstraints": false
                   },
                   "HeadMotion": {

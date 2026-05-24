@@ -1,5 +1,5 @@
 {
-  "IncludeBlockTypes": [
-    "Cat_Box"
+  "IncludeHitboxTypes": [
+    "Cat_Box_Open"
   ]
 }

@@ -5,7 +5,7 @@ All notable changes to **Alec's Cats!** will be documented in this file.
 ## Unreleased
 
 ### Added
-- Pet cats now seek nearby Cat Cardboard Boxes while idle, climb onto the top, and sit.
+- Open Cat Cardboard Boxes now use a wall-and-floor hitbox so the interior is open, and idle pet cats seek open boxes to sit inside.
 
 ## 1.11.0 - Collar Icons + Blue Point Cats + Attachment tooltips - 2026-05-21
 
