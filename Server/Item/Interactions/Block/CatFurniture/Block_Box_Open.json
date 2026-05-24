@@ -8,18 +8,33 @@
     }
   ],
   "Next": {
-    "Type": "Serial",
-    "Interactions": [
+    "Type": "ChangeState",
+    "Changes": {
+      "default": "Closed"
+    }
+  },
+  "Failed": {
+    "Type": "BlockCondition",
+    "Matchers": [
       {
-        "Type": "ChangeState",
-        "Changes": {
-          "default": "Open"
+        "Block": {
+          "State": "Closed"
         }
       }
-    ]
+    ],
+    "Next": {
+      "Type": "ChangeState",
+      "Changes": {
+        "Closed": "default"
+      }
+    },
+    "Effects": {
+      "ItemPlayerAnimationsId": "",
+      "ItemAnimationId": "Box_Open"
+    }
   },
   "Effects": {
     "ItemPlayerAnimationsId": "",
-    "ItemAnimationId": "Box_Open"
+    "ItemAnimationId": "Box_Close"
   }
 }

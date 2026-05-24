@@ -25,6 +25,7 @@
     "BlockSoundSetId": "Cloth",
     "CustomModel": "Blocks/CatFurniture/CatBox/Moving_Box_1x1.blockymodel",
     "CustomModelScale": 1,
+    "CustomModelAnimation": "Blocks/Animations/CatBox/Flaps_Open.blockyanim",
     "CustomModelTexture": [
       {
         "Texture": "Blocks/CatFurniture/CatBox/Moving_Box_1x1_Texture.png",
@@ -38,19 +39,19 @@
         "DropList": "Container_Coffins"
       }
     },
-    "InteractionHint": "server.interactionHints.open",
+    "InteractionHint": "Close Box",
     "Interactions": {
       "Use": {
         "Interactions": [
-          "Open_Cat_Box"
+          "Block_Box_Open"
         ]
       }
     },
     "State": {
       "Definitions": {
-        "Open": {
+        "Closed": {
           "InteractionHint": "Open Box",
-          "CustomModelAnimation": "Blocks/Animations/CatBox/Flaps_Open.blockyanim",
+          "CustomModelAnimation": "Blocks/Animations/CatBox/Box_Close.blockyanim",
           "Gathering": {
             "Soft": {
               "DropList": {}
