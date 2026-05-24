@@ -14,3 +14,8 @@ items.Egg_Spawner_Cat.name=Soul Lantern
 items.Egg_Spawner_Cat.description=Your pet cat! Interact with Raw Fish to heal, a Cat Collar to pick up, and anything else/nothing to toggle Follow/Defend/Stay.\nLink with a Cat Treat Bag for more advanced controls.
 items.AlecsCats_Command_Item.name=Cat Treat Bag
 items.AlecsCats_Command_Item.description=- Left click on a cat to link to the treat bag.\n- Right click to open the command menu.\n- Left click to issue the command.
+
+server.items.Cat_Box.name=Cat Cardboard Box
+server.items.Cat_Box.description=A perfectly ordinary cardboard box.
+server.items.CatBox.name=Cat Cardboard Box
+server.items.CatBox.description=A perfectly ordinary cardboard box.

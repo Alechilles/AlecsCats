@@ -1,0 +1,25 @@
+{
+  "Type": "BlockCondition",
+  "Matchers": [
+    {
+      "Block": {
+        "State": "default"
+      }
+    }
+  ],
+  "Next": {
+    "Type": "Serial",
+    "Interactions": [
+      {
+        "Type": "ChangeState",
+        "Changes": {
+          "default": "Open"
+        }
+      }
+    ]
+  },
+  "Effects": {
+    "ItemPlayerAnimationsId": "",
+    "ItemAnimationId": "Box_Open"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Cat_Box.name",
+    "Description": "server.items.Cat_Box.description"
+  },
+  "ItemLevel": 15,
+  "Quality": "Uncommon",
+  "MaxStack": 100,
+  "Icon": "Icons/ItemsGenerated/Deco_Moving_Box.png",
+  "Categories": [
+    "Blocks.Deco"
+  ],
+  "PlayerAnimationsId": "Block",
+  "ResourceTypes": [
+    {
+      "Id": "Wood_Planks"
+    },
+    {
+      "Id": "Fuel"
+    },
+    {
+      "Id": "Charcoal"
+    },
+    {
+      "Id": "Wood_All"
+    }
+  ],
+  "Tags": {
+    "Type": [
+      "Wood"
+    ],
+    "Family": [
+      "Blackwood"
+    ]
+  },
+  "IconProperties": {
+    "Scale": 0.58823,
+    "Rotation": [
+      22.5,
+      45.0,
+      22.5
+    ],
+    "Translation": [
+      0.0,
+      -13.5
+    ]
+  },
+  "BlockType": {
+    "Material": "Solid",
+    "DrawType": "Model",
+    "Group": "Wood",
+    "Flags": {},
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "SoftWoods"
+      }
+    },
+    "BlockSoundSetId": "Cloth",
+    "CustomModel": "Blocks/CatFurniture/CatBox/Moving_Box_1x1.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Blocks/Hypixel/Hyspace/Moving_Boxes/Moving_Box_1x1_Texture.png"
+      }
+    ],
+    "RandomRotation": "YawStep90",
+    "Opacity": "Solid",
+    "Interactions": {
+      "Use": ""
+    }
+  },
+  "RenderDeployablePreview": false,
+  "ClipsGeometry": false,
+  "Interactions": {
+    "Use": ""
+  },
+  "State": {
+    "Open": "CatBox"
+  }
+}

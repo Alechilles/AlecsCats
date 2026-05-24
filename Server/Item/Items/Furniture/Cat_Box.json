@@ -1,0 +1,99 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Cat_Box.name"
+  },
+  "PlayerAnimationsId": "Block",
+  "Categories": [
+    "Furniture.Containers"
+  ],
+  "Set": "Cats",
+  "Icon": "Icons/ItemsGenerated/Cat_Box.png",
+  "IconProperties": {
+    "Scale": 0.4,
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Translation": [
+      -12,
+      -20
+    ]
+  },
+  "BlockType": {
+    "BlockParticleSetId": "Wood",
+    "BlockSoundSetId": "Cloth",
+    "CustomModel": "Blocks/CatFurniture/CatBox/Moving_Box_1x1.blockymodel",
+    "CustomModelScale": 1,
+    "CustomModelTexture": [
+      {
+        "Texture": "Blocks/CatFurniture/CatBox/Moving_Box_1x1_Texture.png",
+        "Weight": 1
+      }
+    ],
+    "DrawType": "Model",
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "Woods",
+        "DropList": "Container_Coffins"
+      }
+    },
+    "InteractionHint": "server.interactionHints.open",
+    "Interactions": {
+      "Use": {
+        "Interactions": [
+          "Open_Cat_Box"
+        ]
+      }
+    },
+    "State": {
+      "Definitions": {
+        "Open": {
+          "InteractionHint": "Open Box",
+          "CustomModelAnimation": "Blocks/Animations/CatBox/Flaps_Open.blockyanim",
+          "Gathering": {
+            "Soft": {
+              "DropList": {}
+            }
+          }
+        }
+      }
+    },
+    "HitboxType": "Chest_Small",
+    "Material": "Solid",
+    "Opacity": "Solid",
+    "Support": {
+      "Down": [
+        {
+          "FaceType": "Full"
+        }
+      ]
+    },
+    "VariantRotation": "Wall",
+    "ParticleColor": "#4e462c",
+    "Flags": {
+      "IsUsable": true
+    }
+  },
+  "ResourceTypes": [
+    {
+      "Id": "Fuel"
+    },
+    {
+      "Id": "Charcoal"
+    }
+  ],
+  "Tags": {
+    "Type": [
+      "Furniture"
+    ],
+    "Family": [
+      "Ancient"
+    ]
+  },
+  "ItemSoundSetId": "ISS_Items_Cloth",
+  "ItemLevel": 3,
+  "MaxStack": 1,
+  "Model": "Blocks/CatFurniture/CatBox/Moving_Box_1x1.blockymodel",
+  "Texture": "Blocks/CatFurniture/CatBox/Moving_Box_1x1_Texture.png"
+}
