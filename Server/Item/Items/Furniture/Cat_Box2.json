@@ -11,23 +11,23 @@
     "Furniture.Containers"
   ],
   "Set": "Cats",
-  "Icon": "Icons/ItemsGenerated/Cat_Box.png",
+  "Icon": "Icons/ItemsGenerated/Cat_Box2.png",
   "IconProperties": {
-    "Scale": 0.58823,
+    "Scale": 0.4,
     "Rotation": [
       22.5,
       45,
       22.5
     ],
     "Translation": [
-      0,
-      -13.5
+      -11,
+      -7
     ]
   },
   "BlockType": {
     "BlockParticleSetId": "Wood",
     "BlockSoundSetId": "Cloth",
-    "CustomModel": "Blocks/CatFurniture/CatBox/Moving_Box_1x1.blockymodel",
+    "CustomModel": "Blocks/CatFurniture/CatBox/Moving_Box_1x2.blockymodel",
     "CustomModelScale": 1,
     "CustomModelTexture": [
       {
@@ -54,7 +54,7 @@
       "Definitions": {
         "Open": {
           "InteractionHint": "Close Box",
-          "CustomModelAnimation": "Blocks/Animations/CatBox/Flaps_Open.blockyanim",
+          "CustomModelAnimation": "Blocks/Animations/CatBox/Box_Open.blockyanim",
           "Gathering": {
             "Soft": {
               "DropList": {}
@@ -72,7 +72,7 @@
         }
       }
     },
-    "HitboxType": "Chest_Small",
+    "HitboxType": "Chest_Large",
     "Material": "Solid",
     "Opacity": "Solid",
     "Support": {
@@ -107,6 +107,6 @@
   "ItemSoundSetId": "ISS_Items_Cloth",
   "ItemLevel": 3,
   "MaxStack": 1,
-  "Model": "Blocks/CatFurniture/CatBox/Moving_Box_1x1.blockymodel",
+  "Model": "Blocks/CatFurniture/CatBox/Moving_Box_1x2.blockymodel",
   "Texture": "Blocks/CatFurniture/CatBox/Catbox_Basic.png"
 }
