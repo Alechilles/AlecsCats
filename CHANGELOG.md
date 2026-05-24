@@ -2,6 +2,11 @@
 
 All notable changes to **Alec's Cats!** will be documented in this file.
 
+## Unreleased
+
+### Added
+- Pet cats now seek nearby Cat Cardboard Boxes while idle, climb onto the top, and sit.
+
 ## 1.11.0 - Collar Icons + Blue Point Cats + Attachment tooltips - 2026-05-21
 
 ### Added

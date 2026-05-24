@@ -153,6 +153,33 @@
       ],
       "Description": "How long to wait after Wander settle-exit animation before movement resumes."
     },
+    "CatBoxBlockSet": {
+      "Value": "AlecsCats_Cat_Box",
+      "Description": "Block type list used by idle cats when looking for cardboard boxes to perch on."
+    },
+    "CatBoxSearchRange": {
+      "Value": 10,
+      "Description": "How far an idle cat can search for a cardboard box perch."
+    },
+    "CatBoxTopOffset": {
+      "Value": [
+        0,
+        1,
+        0
+      ],
+      "Description": "Offset from the detected box block to the perch position on top of it."
+    },
+    "CatBoxApproachRelativeSpeed": {
+      "Value": 0.55,
+      "Description": "Relative movement speed used when walking to a cardboard box perch."
+    },
+    "CatBoxSitDurationRange": {
+      "Value": [
+        12,
+        24
+      ],
+      "Description": "How long a cat remains in the sit posture after reaching a cardboard box perch."
+    },
     "NightFlavorAnimation": {
       "Value": "Idle",
       "Description": "A flavor animation to play at night. Ignored if null or empty."
@@ -1026,6 +1053,105 @@
                   "Compute": "FlockFollowerStopDistance"
                 }
               }
+            },
+            {
+              "$Comment": "When a cardboard box is nearby, idle cats can climb onto the top and sit.",
+              "Enabled": {
+                "Compute": "!isEmpty(CatBoxBlockSet) && CatBoxSearchRange > 0"
+              },
+              "Sensor": {
+                "Type": "AdjustPosition",
+                "Offset": {
+                  "Compute": "CatBoxTopOffset"
+                },
+                "Sensor": {
+                  "Type": "Block",
+                  "Range": {
+                    "Compute": "CatBoxSearchRange"
+                  },
+                  "MaxHeight": 3,
+                  "Blocks": {
+                    "Compute": "CatBoxBlockSet"
+                  },
+                  "Random": true,
+                  "Reserve": true
+                }
+              },
+              "Instructions": [
+                {
+                  "$Comment": "If already at the top target, sit for a while and then release the block sensor reservation.",
+                  "Sensor": {
+                    "Type": "AdjustPosition",
+                    "Offset": {
+                      "Compute": "CatBoxTopOffset"
+                    },
+                    "Sensor": {
+                      "Type": "Block",
+                      "Range": 0.75,
+                      "MaxHeight": 3,
+                      "Blocks": {
+                        "Compute": "CatBoxBlockSet"
+                      },
+                      "Random": true
+                    }
+                  },
+                  "BodyMotion": {
+                    "Type": "MatchLook"
+                  },
+                  "HeadMotion": {
+                    "Type": "Watch"
+                  },
+                  "ActionsBlocking": true,
+                  "Actions": [
+                    {
+                      "Type": "PlayAnimation",
+                      "Slot": "Status",
+                      "Animation": "Sit"
+                    },
+                    {
+                      "Type": "Timeout",
+                      "Delay": {
+                        "Compute": "CatBoxSitDurationRange"
+                      }
+                    },
+                    {
+                      "Type": "ResetBlockSensors"
+                    }
+                  ]
+                },
+                {
+                  "$Comment": "Seek the adjusted top-center point so the walk controller climbs or jumps up onto the box.",
+                  "Sensor": {
+                    "Type": "AdjustPosition",
+                    "Offset": {
+                      "Compute": "CatBoxTopOffset"
+                    },
+                    "Sensor": {
+                      "Type": "Block",
+                      "Range": {
+                        "Compute": "CatBoxSearchRange"
+                      },
+                      "MaxHeight": 3,
+                      "Blocks": {
+                        "Compute": "CatBoxBlockSet"
+                      },
+                      "Random": true
+                    }
+                  },
+                  "BodyMotion": {
+                    "Type": "Seek",
+                    "RelativeSpeed": {
+                      "Compute": "CatBoxApproachRelativeSpeed"
+                    },
+                    "SlowDownDistance": 2,
+                    "StopDistance": 0.25,
+                    "RelaxedMoveConstraints": false
+                  },
+                  "HeadMotion": {
+                    "Type": "Watch"
+                  }
+                }
+              ]
             },
             {
               "Reference": "Component_Tamework_Instruction_Wander",
