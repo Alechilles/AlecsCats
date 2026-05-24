@@ -65,6 +65,7 @@
         "Closed": {
           "InteractionHint": "Open Box",
           "CustomModelAnimation": "Blocks/Animations/CatBox/Box_Close.blockyanim",
+          "HitboxType": "Chest_Small",
           "Gathering": {
             "Soft": {
               "DropList": {}
@@ -73,7 +74,6 @@
         }
       }
     },
-    "HitboxType": "Chest_Small",
     "Material": "Solid",
     "Opacity": "Solid",
     "Support": {
