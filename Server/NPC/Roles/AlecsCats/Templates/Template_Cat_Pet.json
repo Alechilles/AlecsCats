@@ -1103,11 +1103,20 @@
                       "Animation": "Sit"
                     },
                     {
+                      "Type": "SpawnParticles",
+                      "ParticleSystem": "Hearts",
+                      "Offset": {
+                        "Compute": "ParticleOffset"
+                      },
+                      "TargetNodeName": "Head"
+                    },
+                    {
                       "Type": "Timeout",
                       "Delay": {
                         "Compute": "CatBoxSitDurationRange"
                       }
                     },
+
                     {
                       "Type": "ResetBlockSensors"
                     }
@@ -1138,7 +1147,7 @@
                       "Compute": "CatBoxApproachRelativeSpeed"
                     },
                     "SlowDownDistance": 2,
-                    "StopDistance": 0.15,
+                    "StopDistance": 0.10,
                     "RelaxedMoveConstraints": false
                   },
                   "HeadMotion": {
