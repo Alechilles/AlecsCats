@@ -1095,6 +1095,9 @@
                       "Random": true
                     }
                   },
+                  "BodyMotion": {
+                    "Type": "Nothing"
+                  },
                   "ActionsBlocking": true,
                   "Actions": [
                     {
@@ -1147,7 +1150,7 @@
                       "Compute": "CatBoxApproachRelativeSpeed"
                     },
                     "SlowDownDistance": 2,
-                    "StopDistance": 0.10,
+                    "StopDistance": 0.15,
                     "RelaxedMoveConstraints": false
                   },
                   "HeadMotion": {
