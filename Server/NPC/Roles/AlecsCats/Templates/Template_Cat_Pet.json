@@ -1125,11 +1125,6 @@
                       "Message": "[CatBoxDebug] sit branch active"
                     },
                     {
-                      "Type": "PlayAnimation",
-                      "Slot": "Status",
-                      "Animation": "Sit"
-                    },
-                    {
                       "Type": "SpawnParticles",
                       "ParticleSystem": "Hearts",
                       "Offset": {
@@ -1141,7 +1136,17 @@
                       "Type": "Timeout",
                       "Delay": {
                         "Compute": "CatBoxSitDurationRange"
+                      },
+                      "DelayAfter": true,
+                      "Action": {
+                        "Type": "PlayAnimation",
+                        "Slot": "Status",
+                        "Animation": "Sit"
                       }
+                    },
+                    {
+                      "Type": "TameworkDebugMessage",
+                      "Message": "[CatBoxDebug] sit duration finished"
                     },
                     {
                       "Type": "PlayAnimation",
@@ -1175,6 +1180,10 @@
                     },
                     {
                       "Type": "ResetBlockSensors"
+                    },
+                    {
+                      "Type": "TameworkDebugMessage",
+                      "Message": "[CatBoxDebug] sit cleanup complete"
                     }
                   ]
                 },
@@ -1207,7 +1216,7 @@
                     "RelaxedMoveConstraints": false
                   },
                   "HeadMotion": {
-                    "Type": "Watch"
+                    "Type": "Nothing"
                   },
                   "Actions": [
                     {
