@@ -10,6 +10,7 @@ All notable changes to **Alec's Cats!** will be documented in this file.
 ### Changed
 - Cats sitting in open cardboard boxes now keep a neutral head pose instead of watching the floor-position box target.
 - Cats sitting in open cardboard boxes now explicitly stop moving instead of sliding while the sit animation plays.
+- Cats sitting in open cardboard boxes now explicitly clear stale head tracking from the box approach.
 
 ## 1.11.0 - Collar Icons + Blue Point Cats + Attachment tooltips - 2026-05-21
 

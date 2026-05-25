@@ -1098,6 +1098,9 @@
                   "BodyMotion": {
                     "Type": "Nothing"
                   },
+                  "HeadMotion": {
+                    "Type": "Nothing"
+                  },
                   "ActionsBlocking": true,
                   "Actions": [
                     {
