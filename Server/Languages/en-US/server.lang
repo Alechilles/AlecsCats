@@ -15,7 +15,10 @@ items.Egg_Spawner_Cat.description=Your pet cat! Interact with Raw Fish to heal, 
 items.AlecsCats_Command_Item.name=Cat Treat Bag
 items.AlecsCats_Command_Item.description=- Left click on a cat to link to the treat bag.\n- Right click to open the command menu.\n- Left click to issue the command.
 
-server.items.Cat_Box.name=Cat Cardboard Box
-server.items.Cat_Box.description=A perfectly ordinary cardboard box.
-server.items.CatBox.name=Cat Cardboard Box
-server.items.CatBox.description=A perfectly ordinary cardboard box.
+items.Cat_Box.name=Cat Cardboard Box
+items.Cat_Box.description=A perfectly ordinary cardboard box.
+items.Cat_Box2.name=Large Cat Cardboard Box
+items.Cat_Box2.description=A perfectly ordinary large cardboard box.
+items.Plant_Flower_Catnip.name=Catnip Plant
+items.Plant_Catnip_Stage_0.name=Catnip Seeds
+items.Plant_Seeds_Catnip.name=Catnip Seed Bag

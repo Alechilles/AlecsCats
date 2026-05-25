@@ -27,7 +27,7 @@
   "BlockType": {
     "BlockParticleSetId": "Wood",
     "BlockSoundSetId": "Cloth",
-    "CustomModel": "Blocks/CatFurniture/CatBox/Moving_Box_1x1.blockymodel",
+    "CustomModel": "Blocks/CatFurniture/CatBox/Cardboard_Flaps_Box_1x1.blockymodel",
     "CustomModelScale": 1,
     "CustomModelTexture": [
       {
@@ -107,6 +107,6 @@
   "ItemSoundSetId": "ISS_Items_Cloth",
   "ItemLevel": 3,
   "MaxStack": 1,
-  "Model": "Blocks/CatFurniture/CatBox/Moving_Box_1x1.blockymodel",
+  "Model": "Blocks/CatFurniture/CatBox/Cardboard_Flaps_Box_1x1.blockymodel",
   "Texture": "Blocks/CatFurniture/CatBox/Catbox_Basic.png"
 }

@@ -221,6 +221,152 @@
               }
             }
           ]
+        },
+        {
+          "id": "6",
+          "name": "BoxTop3",
+          "position": {"x": 0, "y": 15, "z": -31.5},
+          "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+          "shape": {
+            "type": "none",
+            "offset": {"x": 0, "y": 0, "z": 0},
+            "stretch": {"x": 1, "y": 1, "z": 1},
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "unwrapMode": "custom",
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat"
+          },
+          "children": [
+            {
+              "id": "7",
+              "name": "BoxTop--C1",
+              "position": {"x": 0, "y": 0, "z": 7.5},
+              "orientation": {"x": 0, "y": -0.70711, "z": 0, "w": 0.70711},
+              "shape": {
+                "type": "box",
+                "offset": {"x": 0, "y": 0, "z": 0},
+                "stretch": {"x": 0.999, "y": 0.999, "z": 0.999},
+                "settings": {
+                  "isPiece": false,
+                  "size": {"x": 16, "y": 1, "z": 32},
+                  "isStaticBox": true
+                },
+                "textureLayout": {
+                  "back": {
+                    "offset": {"x": 112, "y": 64},
+                    "mirror": {"x": false, "y": false},
+                    "angle": 180
+                  },
+                  "right": {
+                    "offset": {"x": 32, "y": 112},
+                    "mirror": {"x": false, "y": false},
+                    "angle": 270
+                  },
+                  "front": {
+                    "offset": {"x": 128, "y": 64},
+                    "mirror": {"x": false, "y": false},
+                    "angle": 180
+                  },
+                  "left": {
+                    "offset": {"x": 32, "y": 112},
+                    "mirror": {"x": false, "y": false},
+                    "angle": 270
+                  },
+                  "top": {
+                    "offset": {"x": 0, "y": 80},
+                    "mirror": {"x": false, "y": false},
+                    "angle": 0
+                  },
+                  "bottom": {
+                    "offset": {"x": 63, "y": 80},
+                    "mirror": {"x": false, "y": false},
+                    "angle": 0
+                  }
+                },
+                "unwrapMode": "custom",
+                "visible": true,
+                "doubleSided": true,
+                "shadingMode": "standard"
+              }
+            }
+          ]
+        },
+        {
+          "id": "8",
+          "name": "BoxTop4",
+          "position": {"x": 0, "y": 15, "z": 31.5},
+          "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+          "shape": {
+            "type": "none",
+            "offset": {"x": 0, "y": 0, "z": 0},
+            "stretch": {"x": 1, "y": 1, "z": 1},
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "unwrapMode": "custom",
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat"
+          },
+          "children": [
+            {
+              "id": "9",
+              "name": "BoxTop--C1",
+              "position": {"x": 0, "y": 0, "z": 0.5},
+              "orientation": {"x": 0, "y": -0.70711, "z": 0, "w": 0.70711},
+              "shape": {
+                "type": "box",
+                "offset": {"x": -8, "y": 0, "z": 0},
+                "stretch": {"x": 0.999, "y": 0.999, "z": 0.999},
+                "settings": {
+                  "isPiece": false,
+                  "size": {"x": 16, "y": 1, "z": 32},
+                  "isStaticBox": true
+                },
+                "textureLayout": {
+                  "back": {
+                    "offset": {"x": 128, "y": 64},
+                    "mirror": {"x": false, "y": false},
+                    "angle": 180
+                  },
+                  "right": {
+                    "offset": {"x": 32, "y": 112},
+                    "mirror": {"x": false, "y": false},
+                    "angle": 270
+                  },
+                  "front": {
+                    "offset": {"x": 112, "y": 64},
+                    "mirror": {"x": false, "y": false},
+                    "angle": 180
+                  },
+                  "left": {
+                    "offset": {"x": 32, "y": 112},
+                    "mirror": {"x": false, "y": false},
+                    "angle": 270
+                  },
+                  "top": {
+                    "offset": {"x": 16, "y": 80},
+                    "mirror": {"x": false, "y": false},
+                    "angle": 0
+                  },
+                  "bottom": {
+                    "offset": {"x": 81, "y": 80},
+                    "mirror": {"x": false, "y": false},
+                    "angle": 0
+                  }
+                },
+                "unwrapMode": "custom",
+                "visible": true,
+                "doubleSided": true,
+                "shadingMode": "standard"
+              }
+            }
+          ]
         }
       ]
     }

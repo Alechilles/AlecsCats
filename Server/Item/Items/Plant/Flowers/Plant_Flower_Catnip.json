@@ -11,10 +11,6 @@
       {
         "Texture": "Blocks/Foliage/Plants/Dense_Tall_Textures/Catnip.png",
         "Weight": 7
-      },
-      {
-        "Texture": "Blocks/Foliage/Plants/Dense_Tall_Textures/Larkspur_02.png",
-        "Weight": 3
       }
     ],
     "Gathering": {

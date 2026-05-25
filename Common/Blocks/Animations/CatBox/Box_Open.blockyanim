@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "duration": 45,
+  "duration": 48,
   "holdLastKeyframe": true,
   "nodeAnimations": {
     "BoxTop2": {
@@ -42,6 +42,67 @@
         {
           "time": 45,
           "delta": {"x": 0, "y": 0, "z": -0.9763, "w": 0.21644},
+          "interpolationType": "smooth"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "BoxTop3": {
+      "position": [],
+      "orientation": [
+        {
+          "time": 9,
+          "delta": {"x": 0, "y": 0, "z": 0, "w": 1},
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 33,
+          "delta": {"x": -0.21644, "y": 0, "z": 0, "w": 0.9763},
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 40,
+          "delta": {"x": -0.52131, "y": 0, "z": 0, "w": 0.85337},
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 48,
+          "delta": {"x": -0.98776, "y": 0, "z": 0, "w": -0.156},
+          "interpolationType": "smooth"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "BoxTop4": {
+      "position": [],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {"x": 0, "y": 0, "z": 0, "w": 1},
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 9,
+          "delta": {"x": 0, "y": 0, "z": 0, "w": 1},
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 33,
+          "delta": {"x": 0.21644, "y": 0, "z": 0, "w": 0.9763},
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 40,
+          "delta": {"x": 0.52747, "y": 0, "z": 0, "w": 0.84957},
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 48,
+          "delta": {"x": 0.97559, "y": 0, "z": 0, "w": -0.21961},
           "interpolationType": "smooth"
         }
       ],
