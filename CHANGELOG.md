@@ -9,6 +9,7 @@ All notable changes to **Alec's Cats!** will be documented in this file.
 
 ### Changed
 - Large Cat Cardboard Boxes now place as the large open box variant and use a matching open-top hitbox for cat box behavior.
+- Large Cat Cardboard Boxes now use a 1x2 closed hitbox aligned with their model footprint.
 - Cats sitting in open cardboard boxes now keep a neutral head pose instead of watching the floor-position box target.
 - Cats sitting in open cardboard boxes now explicitly stop moving instead of sliding while the sit animation plays.
 - Cats sitting in open cardboard boxes now explicitly clear stale head tracking from the box approach.

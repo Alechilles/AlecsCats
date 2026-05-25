@@ -73,7 +73,7 @@
         }
       }
     },
-    "HitboxType": "Chest_Large",
+    "HitboxType": "Cat_Box2_Closed",
     "Material": "Solid",
     "Opacity": "Solid",
     "Support": {
