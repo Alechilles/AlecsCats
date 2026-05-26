@@ -21,7 +21,7 @@ This mod started as a simple cat conversion from unused base-game assets and has
 - Multi-language localization
 
 ## Requirements
-- **Alec's Tamework!** `2.10.x` dependency is required (Alechilles:Alec's Tamework!) for parent-line breeding role inheritance, pre-1.9.0 eye attachment migration, and attachment display labels.
+- **Alec's Tamework!** `2.11.x` dependency is required (Alechilles:Alec's Tamework!) for parent-line breeding role inheritance, pre-1.9.0 eye attachment migration, attachment display labels, and current Hytale compatibility.
 
 ## Craftable Items
 ### Cat Collar (Capture/Spawn Item)
