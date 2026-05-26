@@ -4,21 +4,9 @@ All notable changes to **Alec's Cats!** will be documented in this file.
 
 ## Unreleased
 
-## 1.11.1 - Cat Boxes + Catnip + Update 5 Compatibility - 2026-05-26
-
-### Added
-- Added Cat Cardboard Box and Large Cat Cardboard Box furniture with generated icons, custom models, open/close animations, placement interactions, and block-state wiring.
-- Open Cat Cardboard Boxes now use a roomier wall-and-floor hitbox so the interior is open, and idle pet cats seek open boxes to sit inside.
-- Added Catnip Plant crop, seed, drop, item, model, texture, and localization assets.
-- Added Cat Box Cart vehicle/item definitions with a generated icon, model assets, hitbox, and mount interaction.
+## 1.11.1 - Update 5 Compatibility - 2026-05-26
 
 ### Changed
-- Large Cat Cardboard Boxes now place as the large open box variant and use a matching open-top hitbox for cat box behavior.
-- Large Cat Cardboard Boxes now use a 1x2 closed hitbox aligned with their model footprint.
-- Cat box use feedback now uses subtle heart particles.
-- Cats sitting in open cardboard boxes now keep a neutral head pose instead of watching the floor-position box target.
-- Cats sitting in open cardboard boxes now explicitly stop moving instead of sliding while the sit animation plays.
-- Cats sitting in open cardboard boxes now explicitly clear stale head tracking from the box approach.
 - Updated release metadata for Hytale server `0.5.0`, Alec's Tamework `2.11.x`, and manifest version `1.11.1`.
 
 ## 1.11.0 - Collar Icons + Blue Point Cats + Attachment tooltips - 2026-05-21
