@@ -1,0 +1,57 @@
+{
+  "Type": "BlockCondition",
+  "Matchers": [
+    {
+      "Block": {
+        "State": "default"
+      }
+    }
+  ],
+  "Next": {
+    "Type": "ChangeState",
+    "Changes": {
+      "default": "Open"
+    }
+  },
+  "Failed": {
+    "Type": "BlockCondition",
+    "Matchers": [
+      {
+        "Block": {
+          "State": "Closed"
+        }
+      }
+    ],
+    "Next": {
+      "Type": "ChangeState",
+      "Changes": {
+        "Closed": "Open"
+      }
+    },
+    "Effects": {
+      "ItemAnimationId": "Interact"
+    },
+    "Failed": {
+      "Type": "BlockCondition",
+      "Matchers": [
+        {
+          "Block": {
+            "State": "Open"
+          }
+        }
+      ],
+      "Next": {
+        "Type": "ChangeState",
+        "Changes": {
+          "Open": "Closed"
+        }
+      },
+      "Effects": {
+        "ItemAnimationId": "Interact"
+      }
+    }
+  },
+  "Effects": {
+    "ItemAnimationId": "Interact"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "Type": "UseBlock",
+  "Failed": {
+    "Type": "PlaceBlock",
+    "BlockTypeToPlace": "*Cat_Box_State_Definitions_Open",
+    "RunTime": 0.125,
+    "Effects": {
+      "WaitForAnimationToFinish": false,
+      "ItemAnimationId": "Build"
+    }
+  }
+}

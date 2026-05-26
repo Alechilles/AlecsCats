@@ -1,0 +1,6 @@
+{
+  "IncludeHitboxTypes": [
+    "Cat_Box_Open",
+    "Cat_Box2_Open"
+  ]
+}

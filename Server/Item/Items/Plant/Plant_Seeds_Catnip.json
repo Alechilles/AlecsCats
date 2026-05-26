@@ -1,0 +1,59 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Plant_Seeds_Catnip.name"
+  },
+  "Parent": "Plant_Seeds_Oak",
+  "Quality": "Junk",
+  "Interactions": {
+    "Secondary": "Seed_Condition"
+  },
+  "InteractionVars": {
+    "SeedId": {
+      "Interactions": [
+        {
+          "Parent": "Seed_Place",
+          "BlockTypeToPlace": "Plant_Catnip_Stage_0"
+        }
+      ]
+    }
+  },
+  "Recipe": {
+    "TimeSeconds": 0,
+    "Input": [
+      {
+        "ItemId": "Ingredient_Life_Essence",
+        "Quantity": 5
+      }
+    ],
+    "Output": [
+      {
+        "ItemId": "Plant_Seeds_Catnip",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Farmingbench",
+        "Categories": [
+          "Seeds"
+        ]
+      }
+    ],
+    "OutputQuantity": 1
+  },
+  "Texture": "Resources/Plants/SeedBag_Textures/Sunflower.png",
+  "Icon": "Icons/ItemsGenerated/Plant_Seeds_Lavender.png",
+  "IconProperties": {
+    "Scale": 1.1,
+    "Translation": [
+      2.5,
+      -11
+    ],
+    "Rotation": [
+      0,
+      30,
+      15
+    ]
+  }
+}

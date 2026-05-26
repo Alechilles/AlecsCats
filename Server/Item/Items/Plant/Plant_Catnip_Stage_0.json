@@ -1,0 +1,88 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Plant_Catnip_Stage_0.name"
+  },
+  "Interactions": {
+    "Primary": "Block_Primary",
+    "Secondary": "Block_Secondary"
+  },
+  "BlockType": {
+    "DrawType": "Model",
+    "Opacity": "Transparent",
+    "CustomModel": "Resources/Plants/Seeds.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Resources/Plants/Seeds_Textures/SmallBlack.png",
+        "Weight": 1
+      }
+    ],
+    "BlockSoundSetId": "Plant",
+    "Flags": {
+      "IsStackable": false
+    },
+    "RandomRotation": "YawStep90",
+    "BlockEntity": {
+      "Components": {
+        "FarmingBlock": {}
+      }
+    },
+    "Farming": {
+      "Stages": {
+        "Default": [
+          {
+            "Block": "Plant_Catnip_Stage_0",
+            "Duration": {
+              "Min": 20700,
+              "Max": 41400
+            },
+            "Type": "BlockType"
+          },
+          {
+            "Block": "Plant_Flower_Catnip",
+            "Type": "BlockType"
+          }
+        ]
+      },
+      "StartingStageSet": "Default"
+    },
+    "Gathering": {
+      "Soft": {
+        "ItemId": "Plant_Seeds_Catnip"
+      }
+    },
+    "Support": {
+      "Down": [
+        {
+          "TagId": "Type=Soil"
+        }
+      ]
+    },
+    "Material": "Empty",
+    "HitboxType": "Plant_Seed",
+    "BlockParticleSetId": "Dust",
+    "ParticleColor": "#544637"
+  },
+  "PlayerAnimationsId": "Item",
+  "Categories": [
+    "Blocks.Plants"
+  ],
+  "IconProperties": {
+    "Scale": 1.085,
+    "Translation": [
+      0,
+      -4.2
+    ],
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ]
+  },
+  "Icon": "Icons/ItemsGenerated/Plant_Carrot_Stage_0.png",
+  "Tags": {
+    "Type": [
+      "Plant"
+    ]
+  },
+  "ItemSoundSetId": "ISS_Items_Foliage"
+}

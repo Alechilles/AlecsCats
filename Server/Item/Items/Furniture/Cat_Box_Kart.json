@@ -1,0 +1,108 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Rail_Kart.name"
+  },
+  "Icon": "Icons/ItemsGenerated/Cat_Box_Kart.png",
+  "Categories": [
+    "Furniture.Benches"
+  ],
+  "Recipe": {
+    "TimeSeconds": 2,
+    "Input": [
+      {
+        "ItemId": "Ingredient_Bar_Iron",
+        "Quantity": 12
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Workbench",
+        "Type": "Crafting",
+        "Categories": [
+          "Workbench_Tinkering"
+        ]
+      }
+    ]
+  },
+  "Interactions": {
+    "Primary": "Block_Primary",
+    "Secondary": {
+      "Interactions": [
+        {
+          "Type": "SpawnMinecart",
+          "Model": "Cat_Box_Cart",
+          "Next": {
+            "Type": "ModifyInventory",
+            "RequiredGameMode": "Adventure",
+            "AdjustHeldItemQuantity": -1
+          },
+          "CartInteractions": {
+            "Use": {
+              "Interactions": [
+                {
+                  "Type": "Mount",
+                  "AttachmentOffset": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0.3
+                  },
+                  "Controller": "Minecart"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "Set": "Furniture_Jungle",
+  "BlockType": {
+    "DrawType": "Model",
+    "CustomModel": "Items/Vehicles/Cardboard_Flaps_Box_1x1.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Items/Vehicles/Catbox_Basic.png",
+        "Weight": 1
+      }
+    ],
+    "Material": "Solid",
+    "VariantRotation": "NESW",
+    "BlockParticleSetId": "Metal",
+    "Support": {
+      "Down": [
+        {
+          "FaceType": "Full"
+        }
+      ]
+    },
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "SoftBlocks"
+      }
+    },
+    "ParticleColor": "#5c646d",
+    "BlockSoundSetId": "Metal",
+    "HitboxType": "Cat_Box_Open"
+  },
+  "PlayerAnimationsId": "Item",
+  "Model": "Blocks/CatFurniture/CatBox/Cardboard_Flaps_Box_1x1.blockymodel",
+  "Texture": "Blocks/CatFurniture/CatBox/Catbox_Basic.png",
+  "IconProperties": {
+    "Scale": 0.58823,
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Translation": [
+      0,
+      -13.5
+    ]
+  },
+  "Tags": {
+    "Type": [
+      "Rail"
+    ]
+  },
+  "MaxStack": 1
+}
