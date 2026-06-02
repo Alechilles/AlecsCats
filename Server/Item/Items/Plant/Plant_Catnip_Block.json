@@ -12,7 +12,7 @@
     "CustomModel": "Resources/Plants/Seeds.blockymodel",
     "CustomModelTexture": [
       {
-        "Texture": "Resources/Plants/Seeds_Textures/SmallBlack.png",
+        "Texture": "Resources/Plants/Seeds_Textures/SmallBlack02.png",
         "Weight": 1
       }
     ],
@@ -71,17 +71,17 @@
   ],
   "IconProperties": {
     "Scale": 1.085,
-    "Translation": [
-      0,
-      -4.2
-    ],
     "Rotation": [
       22.5,
       45,
       22.5
+    ],
+    "Translation": [
+      0,
+      -4.2
     ]
   },
-  "Icon": "Icons/ItemsGenerated/Plant_Carrot_Stage_0.png",
+  "Icon": "Icons/ItemsGenerated/Plant_Catnip_Block.png",
   "Tags": {
     "Type": [
       "Plant"

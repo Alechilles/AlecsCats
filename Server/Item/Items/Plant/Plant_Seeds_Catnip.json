@@ -42,18 +42,18 @@
     ],
     "OutputQuantity": 1
   },
-  "Texture": "Resources/Plants/SeedBag_Textures/Sunflower.png",
-  "Icon": "Icons/ItemsGenerated/Plant_Seeds_Lavender.png",
+  "Texture": "Resources/Plants/SeedBag_Textures/Seedbag_Catnip.png",
+  "Icon": "Icons/ItemsGenerated/Plant_Seeds_Catnip.png",
   "IconProperties": {
     "Scale": 1.1,
-    "Translation": [
-      2.5,
-      -11
-    ],
     "Rotation": [
       0,
       30,
       15
+    ],
+    "Translation": [
+      2.5,
+      -11
     ]
   }
 }
