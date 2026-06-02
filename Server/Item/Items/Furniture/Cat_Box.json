@@ -36,12 +36,6 @@
       }
     ],
     "DrawType": "Model",
-    "Gathering": {
-      "Breaking": {
-        "GatherType": "Woods",
-        "DropList": "Container_Coffins"
-      }
-    },
     "InteractionHint": "Open Box",
     "Interactions": {
       "Use": {
@@ -57,8 +51,8 @@
           "CustomModelAnimation": "Blocks/Animations/CatBox/Flaps_Open.blockyanim",
           "HitboxType": "Cat_Box_Open",
           "Gathering": {
-            "Soft": {
-              "DropList": {}
+            "Breaking": {
+              "GatherType": "Benches"
             }
           }
         },
@@ -66,8 +60,8 @@
           "InteractionHint": "Open Box",
           "CustomModelAnimation": "Blocks/Animations/CatBox/Box_Close.blockyanim",
           "Gathering": {
-            "Soft": {
-              "DropList": {}
+            "Breaking": {
+              "GatherType": "Benches"
             }
           }
         }
@@ -86,6 +80,11 @@
     "ParticleColor": "#4e462c",
     "Flags": {
       "IsUsable": true
+    },
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "Benches"
+      }
     }
   },
   "ResourceTypes": [
