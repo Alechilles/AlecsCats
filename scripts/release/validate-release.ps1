@@ -87,6 +87,15 @@ function Assert-PackageInputs {
     }
 }
 
+function Assert-CatBoxHitboxes {
+    $scriptPath = "scripts/validation/validate-cat-box-hitboxes.ps1"
+    if (-not (Test-Path -Path $scriptPath)) {
+        throw "Cat box hitbox validation script '$scriptPath' was not found."
+    }
+
+    & $scriptPath
+}
+
 if (-not (Test-Path -Path $ConfigPath)) {
     throw "Release config '$ConfigPath' was not found."
 }
@@ -101,6 +110,7 @@ if ($sourceVersion -ne $normalizedVersion) {
 
 Assert-ChangelogHasVersion -ChangelogPath "CHANGELOG.md" -NormalizedVersion $normalizedVersion
 Assert-PackageInputs -Config $config
+Assert-CatBoxHitboxes
 
 if ($config.requiresTameworkDependency) {
     if ($config.versionSource -ne "manifest") {
