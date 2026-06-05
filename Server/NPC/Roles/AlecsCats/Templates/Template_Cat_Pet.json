@@ -1184,7 +1184,7 @@
                         },
                         "Sensor": {
                           "Type": "Block",
-                          "Range": 0.35,
+                          "Range": 0.15,
                           "MaxHeight": 3,
                           "Blocks": {
                             "Compute": "CatBoxBlockSet"
@@ -1293,7 +1293,7 @@
                       "Compute": "CatBoxApproachRelativeSpeed"
                     },
                     "SlowDownDistance": 2,
-                    "StopDistance": 0.15,
+                    "StopDistance": 0.05,
                     "RelaxedMoveConstraints": false
                   },
                   "HeadMotion": {
