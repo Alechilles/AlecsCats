@@ -1,6 +1,6 @@
 {
-  "IncludeHitboxTypes": [
-    "Cat_Box_Open",
-    "Cat_Box2_Open"
+  "IncludeBlockTypes": [
+    "*Cat_Box_State_Definitions_Open",
+    "*Cat_Box2_State_Definitions_Open"
   ]
 }
