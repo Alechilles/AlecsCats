@@ -36,6 +36,16 @@ This mod started as a simple cat conversion from unused base-game assets and has
 - 5x Raw Meat
 - Bench: Workbench Tier 2 (Tinkering)
 
+### Cat Cardboard Box
+- 10x Plant Fiber
+- 5x Catnip Plant
+- Bench: Workbench Tier 2 (Tinkering)
+
+### Large Cat Cardboard Box
+- 20x Plant Fiber
+- 10x Catnip Plant
+- Bench: Workbench Tier 2 (Tinkering)
+
 ## Quick Start
 1. Find a wild cat.
 2. Feed raw fish to make it friendly.

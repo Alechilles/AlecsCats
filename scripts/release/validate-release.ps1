@@ -114,6 +114,15 @@ function Assert-CatBoxOpenStateTargeting {
     & $scriptPath
 }
 
+function Assert-CatBoxRecipes {
+    $scriptPath = "scripts/validation/validate-cat-box-recipes.ps1"
+    if (-not (Test-Path -Path $scriptPath)) {
+        throw "Cat box recipe validation script '$scriptPath' was not found."
+    }
+
+    & $scriptPath
+}
+
 if (-not (Test-Path -Path $ConfigPath)) {
     throw "Release config '$ConfigPath' was not found."
 }
@@ -131,6 +140,7 @@ Assert-PackageInputs -Config $config
 Assert-CatBoxHitboxes
 Assert-CatBoxPrecision
 Assert-CatBoxOpenStateTargeting
+Assert-CatBoxRecipes
 
 if ($config.requiresTameworkDependency) {
     if ($config.versionSource -ne "manifest") {

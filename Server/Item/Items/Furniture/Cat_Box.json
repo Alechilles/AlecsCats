@@ -24,6 +24,36 @@
       -13.5
     ]
   },
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Ingredient_Fibre",
+        "Quantity": 10
+      },
+      {
+        "ItemId": "Plant_Flower_Catnip",
+        "Quantity": 5
+      }
+    ],
+    "Output": [
+      {
+        "ItemId": "Cat_Box",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Workbench",
+        "RequiredTierLevel": 2,
+        "Categories": [
+          "Workbench_Tinkering"
+        ]
+      }
+    ],
+    "OutputQuantity": 1,
+    "TimeSeconds": 3
+  },
   "BlockType": {
     "BlockParticleSetId": "Wood",
     "BlockSoundSetId": "Cloth",
