@@ -1,0 +1,34 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Cat_Teaser_Toy.name"
+  },
+  "Model": "Items/CatToys/Cat_Teaser_Wand_Feather.blockymodel",
+  "Texture": "Items/CatToys/Cat_Teaser_Toy.png",
+  "Icon": "Icons/ItemsGenerated/Cat_Teaser_Toy.png",
+  "PlayerAnimationsId": "Block",
+  "Categories": [
+    "Tool"
+  ],
+  "Tags": {
+    "Type": [
+      "Tool"
+    ]
+  },
+  "ItemSoundSetId": "ISS_Weapons_Wood",
+  "Tool": {},
+  "IconProperties": {
+    "Scale": 0.4,
+    "Rotation": [
+      45,
+      221,
+      352
+    ],
+    "Translation": [
+      37,
+      -32
+    ]
+  },
+  "Interactions": {
+    "Use": {}
+  }
+}

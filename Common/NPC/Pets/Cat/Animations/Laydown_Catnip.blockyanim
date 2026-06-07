@@ -507,11 +507,6 @@
           "interpolationType": "smooth"
         },
         {
-          "time": 83,
-          "delta": {"x": -0.09831, "y": 0.04733, "z": 0.01333, "w": 0.99394},
-          "interpolationType": "smooth"
-        },
-        {
           "time": 96,
           "delta": {"x": -0.05959, "y": 0.09126, "z": 0.01402, "w": 0.99394},
           "interpolationType": "smooth"

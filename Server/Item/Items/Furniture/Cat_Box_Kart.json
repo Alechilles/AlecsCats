@@ -1,29 +1,11 @@
 {
   "TranslationProperties": {
-    "Name": "server.items.Rail_Kart.name"
+    "Name": "server.items.Cat_Box_Kart.name"
   },
   "Icon": "Icons/ItemsGenerated/Cat_Box_Kart.png",
   "Categories": [
     "Furniture.Benches"
   ],
-  "Recipe": {
-    "TimeSeconds": 2,
-    "Input": [
-      {
-        "ItemId": "Ingredient_Bar_Iron",
-        "Quantity": 12
-      }
-    ],
-    "BenchRequirement": [
-      {
-        "Id": "Workbench",
-        "Type": "Crafting",
-        "Categories": [
-          "Workbench_Tinkering"
-        ]
-      }
-    ]
-  },
   "Interactions": {
     "Primary": "Block_Primary",
     "Secondary": {
@@ -80,8 +62,8 @@
         "GatherType": "SoftBlocks"
       }
     },
-    "ParticleColor": "#5c646d",
-    "BlockSoundSetId": "Metal",
+    "ParticleColor": "#a48155",
+    "BlockSoundSetId": "Cloth",
     "HitboxType": "Cat_Box_Open"
   },
   "PlayerAnimationsId": "Item",
