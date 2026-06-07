@@ -3,7 +3,7 @@ $ErrorActionPreference = "Stop"
 
 $templatePath = "Server/NPC/Roles/AlecsCats/Templates/Template_Cat_Pet.json"
 $maxSitStartRange = 0.15
-$maxSeekStopDistance = 0.05
+$maxSeekStopDistance = 0.01
 
 function Get-JsonProperty {
     param(
@@ -95,6 +95,10 @@ if ((Get-JsonProperty -Node $bodyMotion -Name 'Type') -ne "Seek") {
 }
 
 $seekStopDistance = [double](Get-JsonProperty -Node $bodyMotion -Name 'StopDistance')
+if ($seekStopDistance -le 0) {
+    throw "Cat box seek StopDistance $seekStopDistance must be greater than 0."
+}
+
 if ($seekStopDistance -gt $maxSeekStopDistance) {
     throw "Cat box seek StopDistance $seekStopDistance must be <= $maxSeekStopDistance."
 }

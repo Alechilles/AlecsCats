@@ -1293,7 +1293,7 @@
                       "Compute": "CatBoxApproachRelativeSpeed"
                     },
                     "SlowDownDistance": 2,
-                    "StopDistance": 0.05,
+                    "StopDistance": 0.01,
                     "RelaxedMoveConstraints": false
                   },
                   "HeadMotion": {

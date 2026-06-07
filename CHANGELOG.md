@@ -18,7 +18,7 @@ All notable changes to **Alec's Cats!** will be documented in this file.
 - Cats sitting in open cardboard boxes now keep a neutral head pose instead of watching the floor-position box target.
 - Cats sitting in open cardboard boxes now explicitly stop moving instead of sliding while the sit animation plays.
 - Cats sitting in open cardboard boxes now explicitly clear stale head tracking from the box approach.
-- Cats now use tighter box-entry and seek tolerances so they approach the cardboard box center more precisely before sitting.
+- Cats now use tighter box-entry and near-zero seek tolerances so they approach the cardboard box center more precisely before sitting.
 
 ## 1.11.1 - Update 5 Compatibility - 2026-05-26
 
