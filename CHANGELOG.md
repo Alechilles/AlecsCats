@@ -5,6 +5,7 @@ All notable changes to **Alec's Cats!** will be documented in this file.
 ## Unreleased
 
 ### Added
+- Added a 256x256 in-game icon for the Cats asset pack.
 - Added Cat Cardboard Box and Large Cat Cardboard Box furniture with generated icons, custom models, open/close animations, placement interactions, and block-state wiring.
 - Open Cat Cardboard Boxes now use a roomier wall-and-floor hitbox so the interior is open, and idle pet cats seek open boxes to sit inside.
 - Added Catnip Plant crop, seed, drop, item, model, texture, and localization assets.
