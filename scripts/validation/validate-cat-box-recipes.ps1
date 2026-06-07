@@ -39,17 +39,17 @@ foreach ($expected in $expectedRecipes) {
         throw "Expected $($expected.Catnip)x Plant_Flower_Catnip in '$($expected.Path)', found $($inputs["Plant_Flower_Catnip"])."
     }
 
-    $output = @($asset.Recipe.Output) | Where-Object { $_.ItemId -eq $expected.Output }
+    $output = @(@($asset.Recipe.Output) | Where-Object { $_.ItemId -eq $expected.Output })
     if ($output.Count -ne 1 -or [int]$output[0].Quantity -ne 1 -or [int]$asset.Recipe.OutputQuantity -ne 1) {
         throw "Expected '$($expected.Path)' to output exactly one $($expected.Output)."
     }
 
-    $bench = @($asset.Recipe.BenchRequirement) | Where-Object {
+    $bench = @(@($asset.Recipe.BenchRequirement) | Where-Object {
         $_.Type -eq "Crafting" -and
         $_.Id -eq "Workbench" -and
         [int]$_.RequiredTierLevel -eq 2 -and
         @($_.Categories) -contains "Workbench_Tinkering"
-    }
+    })
 
     if ($bench.Count -ne 1) {
         throw "Expected '$($expected.Path)' to require Tier 2 Workbench Tinkering."
