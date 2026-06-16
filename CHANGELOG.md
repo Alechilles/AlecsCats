@@ -2,6 +2,12 @@
 
 All notable changes to **Alec's Cats!** will be documented in this file.
 
+## Unreleased
+
+### Changed
+- Updated pet cat needs seeking to use Tamework's current preflighted resource seek system, with cat-sized trough spacing and repeated food/water consumption before returning to idle.
+- Updated the required Alec's Tamework dependency to `2.14.x` for the current needs seek behavior.
+
 ## 1.12.0 - Cat Furniture + Catnip Crafting - 2026-06-07
 
 ### Added

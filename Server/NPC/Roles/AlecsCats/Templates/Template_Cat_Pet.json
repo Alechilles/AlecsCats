@@ -244,6 +244,22 @@
       "TypeHint": "String",
       "Description": "Food item IDs accepted for feeding."
     },
+    "NeedsSeekConsumeAnimation": {
+      "Value": "",
+      "Description": "Optional animation played when consuming a needs resource. Cats leave this blank because their model does not expose a dedicated eat animation."
+    },
+    "NeedsSeekConsumeStartDistance": {
+      "Value": 1.65,
+      "Description": "Distance from trough/source where this cat can begin needs consumption."
+    },
+    "NeedsSeekConsumeMaintainMaxDistance": {
+      "Value": 1.4,
+      "Description": "Maximum distance from trough/source this cat should maintain while consuming."
+    },
+    "NeedsSeekConsumeMaintainDistanceRange": {
+      "Value": [ 1, 1.4 ],
+      "Description": "Distance band this cat should maintain while waiting to consume."
+    },
     "IsPettable": {
       "Value": true,
       "Description": "Whether players can pet the NPC."
@@ -932,11 +948,28 @@
           }
         },
         {
-          "$Comment": "Bridge needs-seek sensor pass while in Idle state.",
+          "$Comment": "Bridge needs-seek sensor pass while in passive companion states.",
           "Continue": true,
           "Sensor": {
-            "Type": "State",
-            "State": "Idle"
+            "Type": "Or",
+            "Sensors": [
+              {
+                "Type": "State",
+                "State": "Idle"
+              },
+              {
+                "Type": "State",
+                "State": "Hold"
+              },
+              {
+                "Type": "State",
+                "State": "Follow"
+              },
+              {
+                "Type": "State",
+                "State": "Sleep"
+              }
+            ]
           },
           "Instructions": [
             {
@@ -965,6 +998,20 @@
               "Reference": "Component_Tamework_Instruction_Needs_Seek_Resource",
               "Modify": {
                 "NeedsSeekResourceType": "Water",
+                "NeedsSeekConsumeStartDistance": {
+                  "Compute": "NeedsSeekConsumeStartDistance"
+                },
+                "NeedsSeekConsumeMaintainMinDistance": 1,
+                "NeedsSeekConsumeMaintainMaxDistance": {
+                  "Compute": "NeedsSeekConsumeMaintainMaxDistance"
+                },
+                "NeedsSeekConsumeMaintainDistanceRange": {
+                  "Compute": "NeedsSeekConsumeMaintainDistanceRange"
+                },
+                "NeedsSeekConsumeAnimation": {
+                  "Compute": "NeedsSeekConsumeAnimation"
+                },
+                "NeedsSeekFailedCooldownRange": [1.8,1.8],
                 "_ExportStates": [
                   "Idle"
                 ]
@@ -984,6 +1031,20 @@
               "Reference": "Component_Tamework_Instruction_Needs_Seek_Resource",
               "Modify": {
                 "NeedsSeekResourceType": "FoodContainer",
+                "NeedsSeekConsumeStartDistance": {
+                  "Compute": "NeedsSeekConsumeStartDistance"
+                },
+                "NeedsSeekConsumeMaintainMinDistance": 1,
+                "NeedsSeekConsumeMaintainMaxDistance": {
+                  "Compute": "NeedsSeekConsumeMaintainMaxDistance"
+                },
+                "NeedsSeekConsumeMaintainDistanceRange": {
+                  "Compute": "NeedsSeekConsumeMaintainDistanceRange"
+                },
+                "NeedsSeekConsumeAnimation": {
+                  "Compute": "NeedsSeekConsumeAnimation"
+                },
+                "NeedsSeekFailedCooldownRange": [1.8,1.8],
                 "NeedsSeekFoodItemIDs": {
                   "Compute": "AttractiveItemSet"
                 },
