@@ -11,6 +11,9 @@
     <a href="https://twitter.com/intent/user?screen_name=Alechilles" target="_blank" rel="noopener noreferrer"><img alt="Follow Alec on X" src="https://img.shields.io/badge/Follow-%40Alec-White?style=for-the-badge&amp;logo=x&amp;logoColor=rgb(255%2C255%2C255)&amp;logoSize=auto&amp;label=Follow&amp;labelColor=rgb(85%2C85%2C85)&amp;color=rgb(147%2C147%2C147)" /></a>
   </p>
   <p>
+    <a href="https://bisecthosting.com/Alec" target="_blank"><img alt="25% Off BisectHosting Servers With Code: Alec" src="https://www.bisecthosting.com/partners/custom-banners/249bd432-0996-4ccb-8184-65cd3791a3d2.webp" /></a>
+  </p>
+  <p>
     <a href="https://hytalemodding.dev/en/grants" target="_blank" rel="noopener noreferrer"><img alt="Sponsored by HytaleModding Grant Program" src="https://github.com/user-attachments/assets/a03709e3-445a-4e58-8ec5-591688490c5d" /></a>
   </p>
 
@@ -157,7 +160,7 @@ Total combinations: 4 body types x 19 coats x 16 eye variants = 1,216 appearance
 
 
 ## Want More?
-If you're interested in bringing the same mechanics to vanilla mobs in Hytale, check out my new mod:
+If you're interested in bringing the same mechanics to vanilla mobs in Hytale, check out:
 
   [![Animal Husbandry](https://img.shields.io/curseforge/dt/1480275?label=Alec%27s%20Animal%20Husbandry&style=for-the-badge&logo=curseforge&color=rgb(241%2C100%2C54))](https://legacy.curseforge.com/hytale/mods/alecs-animal-husbandry)
 
@@ -172,3 +175,9 @@ If you're a modder interested in adding these mechanics to **your** NPCs, check 
 If you run into issues, please report them here:
 - https://github.com/Alechilles/AlecsCats/issues/new
 
+<H2>Telemetry</H2>
+<p><a href="https://www.curseforge.com/hytale/mods/alecs-tamework">Alec's Tamework</a>, and thus Alec's Cats, utilizes <a href="https://www.curseforge.com/hytale/mods/alecs-telemetry">Alec's Telemetry</a> to report crash, error, performance, and usage telemetry data to the developer.</p>
+<p>This data is anonymous and does <strong>not</strong> contain any personally identifiable information, and is exclusively used to diagnose issues in the mod to provide a better user experience.</p>
+<p>You may disable this feature at any time in the `/tw settings` menu in the Telemetry section.</p>
+<p>Alec's Tamework also reports anonymized active user numbers to <a href="https://hstats.dev/">HStats</a> to track active user count summaries.</p>
+<br />

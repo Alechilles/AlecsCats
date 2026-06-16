@@ -16,11 +16,13 @@
     }
   ],
   "Website": "",
-  "ServerVersion": "0.5.0",
+  "ServerVersion": "0.5.x",
   "Dependencies": {
     "Alechilles:Alec's Tamework!": "2.14.x"
   },
-  "OptionalDependencies": {},
+  "OptionalDependencies": {
+    "Alechilles:Alec's Nametags!": "*"
+  },
   "LoadBefore": {},
   "DisabledByDefault": false,
   "IncludesAssetPack": true,
