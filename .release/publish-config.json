@@ -8,6 +8,7 @@
   "requiresTameworkDependency": true,
   "zipIncludes": [
     "manifest.json",
+    "telemetry",
     "icon-256.png",
     "Common",
     "Server",

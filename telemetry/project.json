@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "projectId": "alecs-cats",
+  "displayName": "Alec's Cats!",
+  "runtimeMode": "dependency",
+  "capture": {
+    "uncaughtExceptions": false,
+    "setupFailures": false,
+    "startFailures": false,
+    "exceptionalWorldRemovals": false
+  },
+  "events": {
+    "errors": { "enabled": false },
+    "lifecycle": { "enabled": false },
+    "breadcrumbs": { "enabled": false, "automatic": false }
+  },
+  "performance": { "enabled": false },
+  "usage": { "enabled": false },
+  "stats": { "enabled": true },
+  "reports": { "enabled": false },
+  "defaults": {
+    "enabled": true,
+    "destinationMode": "hosted"
+  },
+  "hosted": {
+    "projectKey": "proj_gBtJfKQBnrOlFX0DSrA3pldC"
+  }
+}
