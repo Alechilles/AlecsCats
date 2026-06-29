@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "projectId": "alecs-cats",
+  "displayName": "Alec's Cats!",
+  "telemetry": {
+    "stats": {
+      "supported": true
+    }
+  },
+  "ui": {
+    "iconTexturePath": "AlecsCats/Telemetry/ConsentIcon.png"
+  },
+  "defaults": {
+    "enabled": true,
+    "destinationMode": "hosted"
+  },
+  "hosted": {
+    "projectKey": "proj_gBtJfKQBnrOlFX0DSrA3pldC"
+  }
+}

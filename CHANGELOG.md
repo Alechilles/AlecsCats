@@ -4,6 +4,9 @@ All notable changes to **Alec's Cats!** will be documented in this file.
 
 ## Unreleased
 
+### Changed
+- Moved the telemetry descriptor to `Server/Telemetry/project.json`, updated it to the current stats descriptor schema, and removed dev endpoint overrides so Alec's Telemetry uses its default hosted endpoint.
+
 ## 1.12.2 - Taming RoleParam Precision Fix - 2026-06-19
 
 ### Fixed
