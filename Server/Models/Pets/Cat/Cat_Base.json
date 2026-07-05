@@ -133,7 +133,7 @@
     "Curious": {
       "Animations": [
         {
-          "Animation": "NPC/Pets/Cat/Animations/Search.blockyanim"
+          "Animation": "NPC/Pets/Cat/Animations/Curious.blockyanim"
         }
       ]
     },

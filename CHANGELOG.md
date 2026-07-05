@@ -6,6 +6,7 @@ All notable changes to **Alec's Cats!** will be documented in this file.
 
 ### Changed
 - Wild cats now keep fleeing when chased and only switch to combat after combat damage, while players holding raw fish can draw them in curiously.
+- Wild cat curiosity now uses a cat-specific sniffing animation instead of the search head-turn animation.
 - Moved the telemetry descriptor to `Server/Telemetry/project.json`, updated it to the current stats descriptor schema, and removed dev endpoint overrides so Alec's Telemetry uses its default hosted endpoint.
 
 ## 1.12.2 - Taming RoleParam Precision Fix - 2026-06-19

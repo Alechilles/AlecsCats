@@ -3,6 +3,7 @@ $ErrorActionPreference = "Stop"
 
 $templatePath = "Server/NPC/Roles/AlecsCats/Templates/Template_Predator_Cat.json"
 $modelPath = "Server/Models/Pets/Cat/Cat_Base.json"
+$curiousAnimationPath = "Common/NPC/Pets/Cat/Animations/Curious.blockyanim"
 if (-not (Test-Path -Path $templatePath)) {
     throw "Cat predator template '$templatePath' was not found."
 }
@@ -11,9 +12,14 @@ if (-not (Test-Path -Path $modelPath)) {
     throw "Cat base model '$modelPath' was not found."
 }
 
+if (-not (Test-Path -Path $curiousAnimationPath)) {
+    throw "Cat curious animation '$curiousAnimationPath' was not found."
+}
+
 $raw = Get-Content -Path $templatePath -Raw
 $template = $raw | ConvertFrom-Json
 $model = Get-Content -Path $modelPath -Raw | ConvertFrom-Json
+$curiousAnimation = Get-Content -Path $curiousAnimationPath -Raw | ConvertFrom-Json
 
 foreach ($requiredParameter in @("AttractiveItemSetParticles", "SmellingRange", "FollowItemPreDelay", "FollowItemDistance", "FollowItemAttitudes")) {
     if (-not $template.Parameters.PSObject.Properties.Name.Contains($requiredParameter)) {
@@ -31,6 +37,15 @@ if ($raw -notmatch '"Reference"\s*:\s*"Component_Tamework_Instruction_SeekFood_P
 
 if (-not $model.AnimationSets.PSObject.Properties.Name.Contains("Curious")) {
     throw "Cat_Base model must define the Curious animation used by Component_Tamework_Instruction_SeekFood_PlayerFollow."
+}
+
+$curiousAnimationReference = $model.AnimationSets.Curious.Animations[0].Animation
+if ($curiousAnimationReference -ne "NPC/Pets/Cat/Animations/Curious.blockyanim") {
+    throw "Cat_Base Curious animation must reference NPC/Pets/Cat/Animations/Curious.blockyanim, found '$curiousAnimationReference'."
+}
+
+if ($curiousAnimation.nodeAnimations.Head.orientation.delta.y -contains 0.362416) {
+    throw "Cat curious animation appears to reuse the old side-to-side search head turn."
 }
 
 if ($raw -notmatch '"Type"\s*:\s*"ItemInHand"[\s\S]*"Items"\s*:\s*\{\s*"Compute"\s*:\s*"AttractiveItemSet"\s*\}') {
