@@ -132,6 +132,15 @@ function Assert-CatTamedRoleWiring {
     & $scriptPath
 }
 
+function Assert-CatWildBehavior {
+    $scriptPath = "scripts/validation/validate-cat-wild-behavior.ps1"
+    if (-not (Test-Path -Path $scriptPath)) {
+        throw "Cat wild behavior validation script '$scriptPath' was not found."
+    }
+
+    & $scriptPath
+}
+
 if (-not (Test-Path -Path $ConfigPath)) {
     throw "Release config '$ConfigPath' was not found."
 }
@@ -151,6 +160,7 @@ Assert-CatBoxPrecision
 Assert-CatBoxOpenStateTargeting
 Assert-CatBoxRecipes
 Assert-CatTamedRoleWiring
+Assert-CatWildBehavior
 
 if ($config.requiresTameworkDependency) {
     if ($config.versionSource -ne "manifest") {

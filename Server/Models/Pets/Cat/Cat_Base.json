@@ -130,6 +130,13 @@
         }
       ]
     },
+    "Curious": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pets/Cat/Animations/Search.blockyanim"
+        }
+      ]
+    },
     "LeftSwipe": {
       "Animations": [
         {

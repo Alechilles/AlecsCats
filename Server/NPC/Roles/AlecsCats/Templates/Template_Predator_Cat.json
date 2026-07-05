@@ -197,6 +197,38 @@
       "TypeHint": "String",
       "Description": "Food item IDs accepted for feeding."
     },
+    "AttractiveItemSetParticles": {
+      "Value": "Want_Food_Fish_Raw",
+      "Description": "The particle system that spawns to indicate the cat wants food."
+    },
+    "SmellingRange": {
+      "Value": 8,
+      "Description": "The range from which the cat can notice a player holding an attractive item."
+    },
+    "FollowItemPreDelay": {
+      "Value": [
+        1,
+        2
+      ],
+      "Description": "The time delay before a cat starts following an attractive item."
+    },
+    "FollowItemDistance": {
+      "Value": [
+        2,
+        2.5
+      ],
+      "Description": "The distance the cat keeps from a target holding an attractive item."
+    },
+    "FollowItemAttitudes": {
+      "Value": [
+        "Neutral",
+        "Friendly",
+        "Revered",
+        "Ignore"
+      ],
+      "TypeHint": "String",
+      "Description": "Attitudes allowed for attractive-item follow behavior."
+    },
     "InteractSoundHold": {
       "Value": "SFX_AlecsCats_Cat_Trill",
       "Description": "Sound to play when switching to Hold."
@@ -713,6 +745,10 @@
         },
         {
           "Type": "State",
+          "State": "SeekFood"
+        },
+        {
+          "Type": "State",
           "State": "Sleep"
         }
       ]
@@ -887,6 +923,92 @@
                     {
                       "Type": "State",
                       "State": "Panic"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$Comment": "If a nearby player is holding fish, approach curiously instead of treating them as a threat.",
+              "Enabled": {
+                "Compute": "!isEmptyStringArray(AttractiveItemSet)"
+              },
+              "Continue": true,
+              "Sensor": {
+                "Reference": "Component_Sensor_Standard_Detection",
+                "Modify": {
+                  "ViewRange": {
+                    "Compute": "ViewRange"
+                  },
+                  "ViewSector": {
+                    "Compute": "ViewSector"
+                  },
+                  "HearingRange": {
+                    "Compute": "SmellingRange"
+                  },
+                  "AbsoluteDetectionRange": {
+                    "Compute": "AbsoluteDetectionRange"
+                  },
+                  "Attitudes": {
+                    "Compute": "FollowItemAttitudes"
+                  },
+                  "GetNPCs": false
+                }
+              },
+              "Instructions": [
+                {
+                  "Sensor": {
+                    "Type": "Target",
+                    "TargetSlot": "LockedTarget",
+                    "Filters": [
+                      {
+                        "Type": "ItemInHand",
+                        "Items": {
+                          "Compute": "AttractiveItemSet"
+                        }
+                      },
+                      {
+                        "Type": "Attitude",
+                        "Attitudes": {
+                          "Compute": "FollowItemAttitudes"
+                        }
+                      }
+                    ]
+                  },
+                  "HeadMotion": {
+                    "Type": "Watch"
+                  },
+                  "BodyMotion": {
+                    "Type": "MatchLook"
+                  },
+                  "ActionsBlocking": true,
+                  "Actions": [
+                    {
+                      "Type": "PlayAnimation",
+                      "Slot": "Status",
+                      "Animation": "Alerted"
+                    },
+                    {
+                      "Type": "SpawnParticles",
+                      "ParticleSystem": {
+                        "Compute": "AttractiveItemSetParticles"
+                      },
+                      "Offset": [
+                        0,
+                        0.8,
+                        0
+                      ],
+                      "TargetNodeName": "Head"
+                    },
+                    {
+                      "Type": "Timeout",
+                      "Delay": {
+                        "Compute": "FollowItemPreDelay"
+                      }
+                    },
+                    {
+                      "Type": "State",
+                      "State": "SeekFood"
                     }
                   ]
                 }
@@ -1603,6 +1725,55 @@
               ]
             },
             {
+              "$Comment": "If the alerted target offers fish, approach curiously instead of fleeing.",
+              "Enabled": {
+                "Compute": "!isEmptyStringArray(AttractiveItemSet)"
+              },
+              "Sensor": {
+                "Type": "Target",
+                "TargetSlot": "LockedTarget",
+                "Filters": [
+                  {
+                    "Type": "ItemInHand",
+                    "Items": {
+                      "Compute": "AttractiveItemSet"
+                    }
+                  },
+                  {
+                    "Type": "Attitude",
+                    "Attitudes": {
+                      "Compute": "FollowItemAttitudes"
+                    }
+                  }
+                ]
+              },
+              "ActionsBlocking": true,
+              "Actions": [
+                {
+                  "Type": "SpawnParticles",
+                  "ParticleSystem": {
+                    "Compute": "AttractiveItemSetParticles"
+                  },
+                  "Offset": [
+                    0,
+                    0.8,
+                    0
+                  ],
+                  "TargetNodeName": "Head"
+                },
+                {
+                  "Type": "Timeout",
+                  "Delay": {
+                    "Compute": "FollowItemPreDelay"
+                  }
+                },
+                {
+                  "Type": "State",
+                  "State": "SeekFood"
+                }
+              ]
+            },
+            {
               "Continue": true,
               "Sensor": {
                 "Type": "Target",
@@ -1901,6 +2072,47 @@
                   ]
                 }
               ]
+            }
+          ]
+        },
+        {
+          "Sensor": {
+            "Type": "State",
+            "State": "SeekFood"
+          },
+          "Instructions": [
+            {
+              "$Comment": "Switches to combat if attacked while approaching food.",
+              "Sensor": {
+                "Type": "Damage",
+                "Combat": true
+              },
+              "Actions": [
+                {
+                  "Type": "State",
+                  "State": "Combat.Message"
+                }
+              ]
+            },
+            {
+              "Reference": "Component_Tamework_Instruction_SeekFood_PlayerFollow",
+              "Modify": {
+                "_ExportStates": [
+                  "Idle"
+                ],
+                "AlertedRange": {
+                  "Compute": "AlertedRange"
+                },
+                "AttractiveItemSet": {
+                  "Compute": "AttractiveItemSet"
+                },
+                "FollowItemAttitudes": {
+                  "Compute": "FollowItemAttitudes"
+                },
+                "FollowItemDistance": {
+                  "Compute": "FollowItemDistance"
+                }
+              }
             }
           ]
         },
@@ -2874,6 +3086,55 @@
               ]
             },
             {
+              "$Comment": "If the chased player offers fish, approach curiously instead of escalating.",
+              "Enabled": {
+                "Compute": "!isEmptyStringArray(AttractiveItemSet)"
+              },
+              "Sensor": {
+                "Type": "Target",
+                "TargetSlot": "LockedTarget",
+                "Filters": [
+                  {
+                    "Type": "ItemInHand",
+                    "Items": {
+                      "Compute": "AttractiveItemSet"
+                    }
+                  },
+                  {
+                    "Type": "Attitude",
+                    "Attitudes": {
+                      "Compute": "FollowItemAttitudes"
+                    }
+                  }
+                ]
+              },
+              "ActionsBlocking": true,
+              "Actions": [
+                {
+                  "Type": "SpawnParticles",
+                  "ParticleSystem": {
+                    "Compute": "AttractiveItemSetParticles"
+                  },
+                  "Offset": [
+                    0,
+                    0.8,
+                    0
+                  ],
+                  "TargetNodeName": "Head"
+                },
+                {
+                  "Type": "Timeout",
+                  "Delay": {
+                    "Compute": "FollowItemPreDelay"
+                  }
+                },
+                {
+                  "Type": "State",
+                  "State": "SeekFood"
+                }
+              ]
+            },
+            {
               "$Comment": "If the target gets too close and the NPCs isn't shy, attack it",
               "Enabled": {
                 "Compute": "!FleeIfNotThreatened && AbsoluteDetectionRange > 0"
@@ -2888,29 +3149,6 @@
                 {
                   "Type": "State",
                   "State": "Combat.Message"
-                }
-              ]
-            },
-            {
-              "$Comment": "Start a timer to switch to combat if it can't flee from the target",
-              "Continue": true,
-              "Sensor": {
-                "Type": "Target",
-                "Range": {
-                  "Compute": "FleeRange"
-                }
-              },
-              "Actions": [
-                {
-                  "Type": "Timeout",
-                  "Delay": [
-                    8,
-                    8
-                  ],
-                  "Action": {
-                    "Type": "State",
-                    "State": "Combat.Message"
-                  }
                 }
               ]
             },
