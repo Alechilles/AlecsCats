@@ -5,7 +5,6 @@ All notable changes to **Alec's Cats!** will be documented in this file.
 ## Unreleased
 
 ### Changed
-- Wild cats now follow current base fox threat behavior more closely, fleeing from players sooner and using updated predator combat target handling instead of staying aggressive as easily.
 - Moved the telemetry descriptor to `Server/Telemetry/project.json`, updated it to the current stats descriptor schema, and removed dev endpoint overrides so Alec's Telemetry uses its default hosted endpoint.
 
 ## 1.12.2 - Taming RoleParam Precision Fix - 2026-06-19
