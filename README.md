@@ -65,7 +65,7 @@ This mod started as a simple cat conversion from unused base-game assets and has
 
 ## Quick Start
 1. Find a wild cat.
-2. Feed raw fish to make it friendly.
+2. Hold raw fish to draw it in curiously, then feed it to make it friendly.
 3. Use a **Cat Collar** to capture/tame it.
 4. Place your cat from the **Soul Lantern** item.
 5. Use one of these control methods:

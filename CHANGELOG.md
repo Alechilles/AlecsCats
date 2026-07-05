@@ -4,6 +4,8 @@ All notable changes to **Alec's Cats!** will be documented in this file.
 
 ## Unreleased
 
+## 1.12.3 - Wild Cat Curiosity Polish - 2026-07-05
+
 ### Changed
 - Wild cats now keep fleeing when chased and only switch to combat after combat damage, while players holding raw fish can draw them in curiously.
 - Wild cat curiosity now uses a cat-specific sniffing animation instead of the search head-turn animation.
