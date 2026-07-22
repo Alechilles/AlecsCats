@@ -32,6 +32,17 @@
     "changelogFieldName": "changelog",
     "channelFieldName": "channel",
     "gameVersionFieldName": "gameVersions"
+  },
+  "modifold": {
+    "projectSlug": "alecs-cats",
+    "releaseChannel": "release",
+    "versionPrefix": "v",
+    "gameVersions": ["0.5.7", "0.5.6", "0.5.5", "0.5.4", "0.5.3", "0.5.2", "0.5.1", "0.5.0"],
+    "loaders": ["Vanilla"],
+    "dependencies": [
+      { "slug": "alecs-tamework", "type": "required" },
+      { "slug": "alecs-nametags", "type": "optional" }
+    ]
   }
 }
 
