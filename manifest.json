@@ -18,7 +18,7 @@
   "Website": "",
   "ServerVersion": "0.5.x",
   "Dependencies": {
-    "Alechilles:Alec's Tamework!": "2.14.x"
+    "Alechilles:Alec's Tamework!": ">=3.0.0 <4.0.0"
   },
   "OptionalDependencies": {
     "Alechilles:Alec's Nametags!": "*"
