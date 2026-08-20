@@ -30,7 +30,7 @@ This mod started as a simple cat conversion from unused base-game assets and has
 --------------
 <H2>Required:</H2>
 <ul>
-<li><a href="https://www.curseforge.com/hytale/mods/alecs-tamework">Alec's Tamework!</a> 2.14.x</li>
+<li><a href="https://www.curseforge.com/hytale/mods/alecs-tamework">Alec's Tamework!</a> <code>&gt;=3.0.0 &lt;4.0.0</code></li>
 </ul>
 <H2>Recommended:</H2>
 <ul>
