@@ -2,7 +2,10 @@
 
 All notable changes to **Alec's Cats!** will be documented in this file.
 
-## Unreleased
+## 1.12.4 - Stable 0.6 Compatibility Hotfix - 2026-08-27
+
+### Changed
+- Expanded declared Hytale Server compatibility to `>=0.5.0 <0.7.0`.
 
 ## 1.12.3 - Wild Cat Curiosity Polish - 2026-07-05
 
