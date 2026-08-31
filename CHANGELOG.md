@@ -2,6 +2,11 @@
 
 All notable changes to **Alec's Cats!** will be documented in this file.
 
+## Unreleased
+
+### Fixed
+- Wild cats now hunt only NPCs in Hytale's `Critters` group without provocation. Harmless livestock, including tamed sheep, no longer triggers their threat response.
+
 ## 1.12.4 - Stable 0.6 Compatibility Hotfix - 2026-08-27
 
 ### Changed

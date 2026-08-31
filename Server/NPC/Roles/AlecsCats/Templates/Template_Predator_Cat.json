@@ -171,7 +171,7 @@
       "Description": "How long to play the daytime flavor animation."
     },
     "AttitudeGroup": {
-      "Value": "Predators",
+      "Value": "Cat_Wild",
       "Description": "This NPC's attitude group."
     },
     "FlockArray": {
@@ -224,7 +224,8 @@
         "Neutral",
         "Friendly",
         "Revered",
-        "Ignore"
+        "Ignore",
+        "Hostile"
       ],
       "TypeHint": "String",
       "Description": "Attitudes allowed for attractive-item follow behavior."
@@ -502,7 +503,7 @@
     "Compute": "DisableDamageGroups"
   },
   "DefaultNPCAttitude": "Ignore",
-  "DefaultPlayerAttitude": "Neutral",
+  "DefaultPlayerAttitude": "Hostile",
   "AttitudeGroup": {
     "Compute": "AttitudeGroup"
   },
@@ -1015,7 +1016,7 @@
               ]
             },
             {
-              "$Comment": "Check if there are any potential threats nearby",
+              "$Comment": "Hunt nearby critters directly, but use Alerted only for threats.",
               "Sensor": {
                 "Reference": "Component_Sensor_Standard_Detection",
                 "Modify": {
@@ -1037,10 +1038,48 @@
                   ]
                 }
               },
-              "Actions": [
+              "Instructions": [
                 {
-                  "Type": "State",
-                  "State": "Alerted"
+                  "$Comment": "Neutral targets are critters and can be hunted without the threat response.",
+                  "Sensor": {
+                    "Type": "Target",
+                    "TargetSlot": "LockedTarget",
+                    "Filters": [
+                      {
+                        "Type": "Attitude",
+                        "Attitudes": [
+                          "Neutral"
+                        ]
+                      }
+                    ]
+                  },
+                  "Actions": [
+                    {
+                      "Type": "State",
+                      "State": "Combat.Message"
+                    }
+                  ]
+                },
+                {
+                  "$Comment": "Players and hostile creatures enter the threat response.",
+                  "Sensor": {
+                    "Type": "Target",
+                    "TargetSlot": "LockedTarget",
+                    "Filters": [
+                      {
+                        "Type": "Attitude",
+                        "Attitudes": [
+                          "Hostile"
+                        ]
+                      }
+                    ]
+                  },
+                  "Actions": [
+                    {
+                      "Type": "State",
+                      "State": "Alerted"
+                    }
+                  ]
                 }
               ]
             },
@@ -1596,8 +1635,7 @@
                   "Compute": "HearingRange"
                 },
                 "Attitudes": [
-                  "Hostile",
-                  "Neutral"
+                  "Hostile"
                 ],
                 "FlockArray": {
                   "Compute": "FlockArray"
@@ -1636,8 +1674,7 @@
                   "Compute": "HearingRange"
                 },
                 "Attitudes": [
-                  "Hostile",
-                  "Neutral"
+                  "Hostile"
                 ],
                 "FlockArray": {
                   "Compute": "FlockArray"
@@ -2718,8 +2755,7 @@
                         "Compute": "AbsoluteDetectionRange"
                       },
                       "Attitudes": [
-                        "Hostile",
-                        "Neutral"
+                        "Hostile"
                       ]
                     }
                   },
@@ -2855,8 +2891,7 @@
                         "Compute": "AbsoluteDetectionRange"
                       },
                       "Attitudes": [
-                        "Hostile",
-                        "Neutral"
+                        "Hostile"
                       ]
                     }
                   },
@@ -2919,8 +2954,7 @@
                         "Compute": "AbsoluteDetectionRange"
                       },
                       "Attitudes": [
-                        "Hostile",
-                        "Neutral"
+                        "Hostile"
                       ]
                     }
                   },
@@ -3226,8 +3260,7 @@
                     "Compute": "AbsoluteDetectionRange"
                   },
                   "Attitudes": [
-                    "Hostile",
-                    "Neutral"
+                    "Hostile"
                   ]
                 }
               },
@@ -3345,8 +3378,7 @@
                   "Compute": "HearingRange"
                 },
                 "Attitudes": [
-                  "Hostile",
-                  "Neutral"
+                  "Hostile"
                 ],
                 "AlwaysSleepAtNight": false
               }

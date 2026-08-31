@@ -1,0 +1,16 @@
+{
+  "Groups": {
+    "Neutral": [
+      "Critters"
+    ],
+    "Hostile": [
+      "PredatorsBig",
+      "Vermin",
+      "Trork",
+      "Goblin",
+      "Void",
+      "Skeleton",
+      "Zombie"
+    ]
+  }
+}
