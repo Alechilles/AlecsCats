@@ -2,6 +2,10 @@
 
 All notable changes to **Alec's Cats!** will be documented in this file.
 
+## Unreleased development changes
+
+- Moved companion icon variants into shared dynamic icon assets used by capture items and both command panels. Requires the matching Tamework dynamic-icon development build.
+
 ## 1.12.5 - Wild Cat Targeting Hotfix - 2026-08-31
 
 ### Fixed

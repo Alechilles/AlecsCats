@@ -181,3 +181,5 @@ If you run into issues, please report them here:
 <p>You may disable this feature at any time in the `/tw settings` menu in the Telemetry section.</p>
 <p>Alec's Tamework also reports anonymized active user numbers to <a href="https://hstats.dev/">HStats</a> to track active user count summaries.</p>
 <br />
+
+Companion icon mappings live in `Server/Tamework/DynamicIcons/` and are shared by capture items and both command panels. These assets require the matching Tamework dynamic-icon development build; update both mods together.

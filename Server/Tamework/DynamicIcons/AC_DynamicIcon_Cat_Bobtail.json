@@ -1,0 +1,123 @@
+{
+  "RoleIds": [
+    "Cat_Bobtail",
+    "Cat_Bobtail_Pet"
+  ],
+  "Priority": 100,
+  "IconOverrides": [
+    {
+      "Icon": "Icons/ItemsGenerated/AlecsCats/Collar/Cat_Bobtail/coat-empty.png",
+      "Attachments": {
+        "Coat": "Empty"
+      }
+    },
+    {
+      "Icon": "Icons/ItemsGenerated/AlecsCats/Collar/Cat_Bobtail/coat-missy.png",
+      "Attachments": {
+        "Coat": "Missy"
+      }
+    },
+    {
+      "Icon": "Icons/ItemsGenerated/AlecsCats/Collar/Cat_Bobtail/coat-nyxie.png",
+      "Attachments": {
+        "Coat": "Nyxie"
+      }
+    },
+    {
+      "Icon": "Icons/ItemsGenerated/AlecsCats/Collar/Cat_Bobtail/coat-silvertabby.png",
+      "Attachments": {
+        "Coat": "SilverTabby"
+      }
+    },
+    {
+      "Icon": "Icons/ItemsGenerated/AlecsCats/Collar/Cat_Bobtail/coat-orangetabby.png",
+      "Attachments": {
+        "Coat": "OrangeTabby"
+      }
+    },
+    {
+      "Icon": "Icons/ItemsGenerated/AlecsCats/Collar/Cat_Bobtail/coat-browntabby.png",
+      "Attachments": {
+        "Coat": "BrownTabby"
+      }
+    },
+    {
+      "Icon": "Icons/ItemsGenerated/AlecsCats/Collar/Cat_Bobtail/coat-white.png",
+      "Attachments": {
+        "Coat": "White"
+      }
+    },
+    {
+      "Icon": "Icons/ItemsGenerated/AlecsCats/Collar/Cat_Bobtail/coat-cream.png",
+      "Attachments": {
+        "Coat": "Cream"
+      }
+    },
+    {
+      "Icon": "Icons/ItemsGenerated/AlecsCats/Collar/Cat_Bobtail/coat-cream-tuxedo.png",
+      "Attachments": {
+        "Coat": "Cream Tuxedo"
+      }
+    },
+    {
+      "Icon": "Icons/ItemsGenerated/AlecsCats/Collar/Cat_Bobtail/coat-gray-tuxedo.png",
+      "Attachments": {
+        "Coat": "Gray Tuxedo"
+      }
+    },
+    {
+      "Icon": "Icons/ItemsGenerated/AlecsCats/Collar/Cat_Bobtail/coat-brown-tuxedo.png",
+      "Attachments": {
+        "Coat": "Brown Tuxedo"
+      }
+    },
+    {
+      "Icon": "Icons/ItemsGenerated/AlecsCats/Collar/Cat_Bobtail/coat-light-orange-tabby-tuxedo.png",
+      "Attachments": {
+        "Coat": "Light Orange Tabby Tuxedo"
+      }
+    },
+    {
+      "Icon": "Icons/ItemsGenerated/AlecsCats/Collar/Cat_Bobtail/coat-black-tuxedo.png",
+      "Attachments": {
+        "Coat": "Black_Tuxedo"
+      }
+    },
+    {
+      "Icon": "Icons/ItemsGenerated/AlecsCats/Collar/Cat_Bobtail/coat-black.png",
+      "Attachments": {
+        "Coat": "Black"
+      }
+    },
+    {
+      "Icon": "Icons/ItemsGenerated/AlecsCats/Collar/Cat_Bobtail/coat-snowshoe.png",
+      "Attachments": {
+        "Coat": "Snowshoe"
+      }
+    },
+    {
+      "Icon": "Icons/ItemsGenerated/AlecsCats/Collar/Cat_Bobtail/coat-cream-semi-tabby.png",
+      "Attachments": {
+        "Coat": "Cream Semi-Tabby"
+      }
+    },
+    {
+      "Icon": "Icons/ItemsGenerated/AlecsCats/Collar/Cat_Bobtail/coat-dark-gray-tabby.png",
+      "Attachments": {
+        "Coat": "Dark Gray Tabby"
+      }
+    },
+    {
+      "Icon": "Icons/ItemsGenerated/AlecsCats/Collar/Cat_Bobtail/coat-siamese.png",
+      "Attachments": {
+        "Coat": "Siamese"
+      }
+    },
+    {
+      "Icon": "Icons/ItemsGenerated/AlecsCats/Collar/Cat_Bobtail/coat-blue-birman.png",
+      "Attachments": {
+        "Coat": "Blue Birman"
+      }
+    }
+  ]
+}
