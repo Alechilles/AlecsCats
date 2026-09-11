@@ -27,7 +27,7 @@
             ]
           },
           {
-            "Type": "State",
+            "Type": "ParentState",
             "State": "Complete"
           }
         ]
@@ -59,7 +59,7 @@
         },
         "Actions": [
           {
-            "Type": "State",
+            "Type": "ParentState",
             "State": "Complete"
           }
         ]
@@ -124,7 +124,7 @@
             "SetTo": true
           },
           {
-            "Type": "State",
+            "Type": "ParentState",
             "State": "Complete"
           }
         ]

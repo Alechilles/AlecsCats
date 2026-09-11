@@ -96,6 +96,8 @@ After you release Use, cats watch for another three to four seconds before retur
 
 This prototype is available from Creative inventory and has no crafting recipe yet. It requires the matching Tamework development build with `TameworkMaintainDistance` and `TameworkInteractionActive`; the declared `>=3.0.0 <4.0.0` dependency range alone does not identify that build. Front positioning follows the player's body facing direction and still needs in-game tuning around obstacles and moving players.
 
+When testing, replace older Tamework development JARs with the matching build and restart the world/server. Reloading Cats assets cannot add the Java builders to a running server.
+
 ## Taming and Ownership
 - Taming assigns ownership.
 - Only the owner can interact with/store the cat by default.
