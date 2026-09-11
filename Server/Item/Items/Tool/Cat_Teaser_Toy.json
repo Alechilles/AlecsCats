@@ -1,11 +1,12 @@
 {
   "TranslationProperties": {
-    "Name": "server.items.Cat_Teaser_Toy.name"
+    "Name": "server.items.Cat_Teaser_Toy.name",
+    "Description": "server.items.Cat_Teaser_Toy.description"
   },
   "Model": "Items/CatToys/Cat_Teaser_Wand_Feather.blockymodel",
   "Texture": "Items/CatToys/Cat_Teaser_Toy.png",
   "Icon": "Icons/ItemsGenerated/Cat_Teaser_Toy.png",
-  "PlayerAnimationsId": "Block",
+  "PlayerAnimationsId": "AlecsCats_Teaser",
   "Categories": [
     "Tool"
   ],
@@ -29,6 +30,7 @@
     ]
   },
   "Interactions": {
-    "Use": {}
-  }
+    "Use": "AlecsCats_Teaser_Use"
+  },
+  "MaxStack": 1
 }

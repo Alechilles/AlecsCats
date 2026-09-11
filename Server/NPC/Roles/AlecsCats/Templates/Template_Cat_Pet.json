@@ -519,7 +519,7 @@
       "Value": 0.6,
       "Description": "The relative speed at which the NPC will return to its leash position"
     },
-    "FlockFollowerWanderRadius": { 
+    "FlockFollowerWanderRadius": {
       "Value": 7
     },
     "FlockFollowerRelativeSpeed": {
@@ -826,6 +826,151 @@
           "Slot": "Status"
         }
       ]
+    },
+    {
+      "$Comment": "Prepare play without leaving an idle sit or a cardboard box reservation active.",
+      "States": [
+        {
+          "From": [
+            "Idle"
+          ],
+          "To": [
+            "CatToyPlay"
+          ]
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "PlayAnimation",
+          "Slot": "Status"
+        },
+        {
+          "Type": "PlayAnimation",
+          "Slot": "Action"
+        },
+        {
+          "Type": "ResetBlockSensors"
+        },
+        {
+          "Type": "SetFlag",
+          "Name": "CatBox_Sitting",
+          "SetTo": false
+        },
+        {
+          "Type": "PlayAnimation",
+          "Slot": "Status",
+          "Animation": "StandUp"
+        },
+        {
+          "Type": "SetFlag",
+          "Name": "CatToy_Standing",
+          "SetTo": true
+        },
+        {
+          "Type": "SetFlag",
+          "Name": "CatToy_Reacting",
+          "SetTo": false
+        },
+        {
+          "Type": "TimerStart",
+          "Name": "CatToy_Stand",
+          "StartValueRange": [
+            0.83,
+            0.83
+          ],
+          "RestartValueRange": [
+            0.83,
+            0.83
+          ]
+        },
+        {
+          "Type": "TimerRestart",
+          "Name": "CatToy_Stand"
+        },
+        {
+          "Type": "TimerStart",
+          "Name": "CatToy_Watch",
+          "StartValueRange": [
+            5,
+            7
+          ],
+          "RestartValueRange": [
+            5,
+            7
+          ]
+        },
+        {
+          "Type": "TimerRestart",
+          "Name": "CatToy_Watch"
+        },
+        {
+          "Type": "TimerStart",
+          "Name": "CatToy_Swat",
+          "StartValueRange": [
+            1.4,
+            2.8
+          ],
+          "RestartValueRange": [
+            1.4,
+            2.8
+          ]
+        },
+        {
+          "Type": "TimerRestart",
+          "Name": "CatToy_Swat"
+        },
+        {
+          "Type": "TimerStart",
+          "Name": "CatToy_Sound",
+          "StartValueRange": [
+            4,
+            8
+          ],
+          "RestartValueRange": [
+            4,
+            8
+          ]
+        },
+        {
+          "Type": "TimerRestart",
+          "Name": "CatToy_Sound"
+        }
+      ]
+    },
+    {
+      "$Comment": "Clear toy animations and the dedicated toy target on every supported exit, including commands and needs.",
+      "States": [
+        {
+          "From": [
+            "CatToyPlay"
+          ],
+          "To": [
+            "Idle",
+            "Follow",
+            "Hold",
+            "Defend",
+            "CommandMove",
+            "NeedsSeekWater",
+            "NeedsSeekFood",
+            "BreedPair",
+            "Sleep"
+          ]
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "PlayAnimation",
+          "Slot": "Status"
+        },
+        {
+          "Type": "PlayAnimation",
+          "Slot": "Action"
+        },
+        {
+          "Type": "ReleaseTarget",
+          "TargetSlot": "CatToyOwner"
+        }
+      ]
     }
   ],
   "InteractionVars": {
@@ -1126,6 +1271,10 @@
               {
                 "Type": "State",
                 "State": "Sleep"
+              },
+              {
+                "Type": "State",
+                "State": "CatToyPlay"
               }
             ]
           },
@@ -1254,6 +1403,174 @@
             "Type": "State",
             "State": "BreedPair"
           }
+        },
+        {
+          "$Comment": "Putting the wand away restores interest for the next play session.",
+          "Continue": true,
+          "Sensor": {
+            "Type": "And",
+            "Sensors": [
+              {
+                "Type": "State",
+                "State": "Idle"
+              },
+              {
+                "Type": "Flag",
+                "Name": "CatToy_Bored"
+              },
+              {
+                "Type": "Not",
+                "Sensor": {
+                  "Type": "Player",
+                  "Range": 6,
+                  "Filters": [
+                    {
+                      "Type": "TameworkIsOwner"
+                    },
+                    {
+                      "Type": "ItemInHand",
+                      "Hand": "Main",
+                      "Items": [
+                        "Cat_Teaser_Toy"
+                      ]
+                    },
+                    {
+                      "Type": "LineOfSight"
+                    }
+                  ],
+                  "LockOnTarget": false,
+                  "LockedTargetSlot": "CatToyOwner"
+                }
+              }
+            ]
+          },
+          "Actions": [
+            {
+              "Type": "SetFlag",
+              "Name": "CatToy_Bored",
+              "SetTo": false
+            }
+          ]
+        },
+        {
+          "$Comment": "Clear the interruption cooldown after it expires.",
+          "Continue": true,
+          "Sensor": {
+            "Type": "Alarm",
+            "Name": "CatToy_Interrupted",
+            "State": "Passed",
+            "Clear": true
+          },
+          "Actions": [
+            {
+              "Type": "Nothing"
+            }
+          ]
+        },
+        {
+          "$Comment": "Only awake, idle owned cats notice the teaser. Active Use can renew interest after a pause.",
+          "Sensor": {
+            "Type": "And",
+            "Sensors": [
+              {
+                "Type": "State",
+                "State": "Idle"
+              },
+              {
+                "Type": "Alarm",
+                "Name": "CatToy_Interrupted",
+                "State": "Unset"
+              },
+              {
+                "Type": "Or",
+                "Sensors": [
+                  {
+                    "Type": "And",
+                    "Sensors": [
+                      {
+                        "Type": "Flag",
+                        "Name": "CatToy_Bored",
+                        "Set": false
+                      },
+                      {
+                        "Type": "Player",
+                        "Range": 6,
+                        "Filters": [
+                          {
+                            "Type": "TameworkIsOwner"
+                          },
+                          {
+                            "Type": "ItemInHand",
+                            "Hand": "Main",
+                            "Items": [
+                              "Cat_Teaser_Toy"
+                            ]
+                          },
+                          {
+                            "Type": "LineOfSight"
+                          }
+                        ],
+                        "LockOnTarget": true,
+                        "LockedTargetSlot": "CatToyOwner"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Player",
+                    "Range": 6,
+                    "Filters": [
+                      {
+                        "Type": "TameworkIsOwner"
+                      },
+                      {
+                        "Type": "ItemInHand",
+                        "Hand": "Main",
+                        "Items": [
+                          "Cat_Teaser_Toy"
+                        ]
+                      },
+                      {
+                        "Type": "LineOfSight"
+                      },
+                      {
+                        "Type": "TameworkInteractionActive",
+                        "RootInteractionId": "AlecsCats_Teaser_Use"
+                      }
+                    ],
+                    "LockOnTarget": true,
+                    "LockedTargetSlot": "CatToyOwner"
+                  }
+                ]
+              }
+            ]
+          },
+          "Actions": [
+            {
+              "Type": "SetFlag",
+              "Name": "CatToy_Bored",
+              "SetTo": false
+            },
+            {
+              "Type": "State",
+              "State": "CatToyPlay"
+            }
+          ]
+        },
+        {
+          "Sensor": {
+            "Type": "State",
+            "State": "CatToyPlay"
+          },
+          "Instructions": [
+            {
+              "Reference": "Component_AlecsCats_Instruction_Teaser_Play",
+              "Modify": {
+                "_ExportStates": [
+                  "Idle"
+                ]
+              }
+            }
+          ]
         },
         {
           "$Comment": "Default Idle State: Cat wanders randomly around its configured radius.",

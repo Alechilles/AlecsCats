@@ -1,0 +1,11 @@
+{
+  "Parent": "Block",
+  "Animations": {
+    "Tease": {
+      "ThirdPerson": "Items/CatToys/Animations/Cat_Toy_Bounce.blockyanim",
+      "FirstPerson": "Items/CatToys/Animations/Cat_Toy_Bounce.blockyanim",
+      "Looping": true,
+      "Speed": 1
+    }
+  }
+}

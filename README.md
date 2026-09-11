@@ -89,6 +89,13 @@ Default commands:
 Notes:
 - Commands require ownership + tamed cats by default.
 
+## Cat Teaser Wand (Development)
+Hold the **Cat Teaser Wand** (`Cat_Teaser_Toy`) in your main hand to draw in your awake, idle cats within six blocks. Hold **Use** to bounce the feather while cats gather in front of you and play with harmless swats and jumps.
+
+After you release Use, cats watch for another three to four seconds before returning to idle. Use it again to renew their interest. Putting the wand away, moving out of range, losing line of sight, or taking damage ends play. Commands and urgent needs take priority. Play currently grants no happiness or XP.
+
+This prototype is available from Creative inventory and has no crafting recipe yet. It requires the matching Tamework development build with `TameworkMaintainDistance` and `TameworkInteractionActive`; the declared `>=3.0.0 <4.0.0` dependency range alone does not identify that build. Front positioning follows the player's body facing direction and still needs in-game tuning around obstacles and moving players.
+
 ## Taming and Ownership
 - Taming assigns ownership.
 - Only the owner can interact with/store the cat by default.

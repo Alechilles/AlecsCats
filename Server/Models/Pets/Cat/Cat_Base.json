@@ -175,6 +175,22 @@
           "Looping": false
         }
       ]
+    },
+    "ToyPlay": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pets/Cat/Animations/Attacks/Left_Swipe.blockyanim",
+          "Weight": 3,
+          "Looping": false,
+          "BlendingDuration": 0.1
+        },
+        {
+          "Animation": "NPC/Pets/Cat/Animations/Jump.blockyanim",
+          "Weight": 1,
+          "Looping": false,
+          "BlendingDuration": 0.1
+        }
+      ]
     }
   }
 }

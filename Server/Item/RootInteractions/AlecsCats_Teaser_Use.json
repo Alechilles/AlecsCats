@@ -1,0 +1,19 @@
+{
+  "RequireNewClick": true,
+  "Interactions": [
+    {
+      "Type": "Charging",
+      "AllowIndefiniteHold": true,
+      "DisplayProgress": false,
+      "Effects": {
+        "ItemAnimationId": "Tease",
+        "ClearAnimationOnFinish": true
+      },
+      "Next": {
+        "0": {
+          "Type": "Simple"
+        }
+      }
+    }
+  ]
+}
