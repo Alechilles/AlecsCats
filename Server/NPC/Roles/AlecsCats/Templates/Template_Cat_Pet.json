@@ -669,6 +669,7 @@
           "From": [
             "Idle",
             "Follow",
+            "FollowClose",
             "Hold"
           ],
           "To": [
@@ -706,7 +707,8 @@
         {
           "From": [
             "Idle",
-            "Follow"
+            "Follow",
+            "FollowClose"
           ],
           "To": [
             "Sleep"
@@ -731,6 +733,7 @@
             "SleepWakeResolve",
             "Idle",
             "Follow",
+            "FollowClose",
             "Hold",
             "Defend",
             "CommandMove"
@@ -750,6 +753,7 @@
           ],
           "To": [
             "Follow",
+            "FollowClose",
             "Defend",
             "CommandMove"
           ]
@@ -771,6 +775,7 @@
           "To": [
             "Idle",
             "Follow",
+            "FollowClose",
             "Defend",
             "CommandMove"
           ]
@@ -794,6 +799,7 @@
           "To": [
             "Idle",
             "Follow",
+            "FollowClose",
             "Defend",
             "CommandMove"
           ]
@@ -947,6 +953,7 @@
           "To": [
             "Idle",
             "Follow",
+            "FollowClose",
             "Hold",
             "Defend",
             "CommandMove",
@@ -1006,6 +1013,10 @@
         {
           "Type": "State",
           "State": "Follow"
+        },
+        {
+          "Type": "State",
+          "State": "FollowClose"
         },
         {
           "Type": "State",
@@ -1142,6 +1153,10 @@
                   {
                     "Type": "State",
                     "State": "Follow"
+                  },
+                  {
+                    "Type": "State",
+                    "State": "FollowClose"
                   }
                 ]
               },
@@ -1206,6 +1221,10 @@
                   {
                     "Type": "State",
                     "State": "Follow"
+                  },
+                  {
+                    "Type": "State",
+                    "State": "FollowClose"
                   }
                 ]
               },
@@ -1267,6 +1286,10 @@
               {
                 "Type": "State",
                 "State": "Follow"
+              },
+              {
+                "Type": "State",
+                "State": "FollowClose"
               },
               {
                 "Type": "State",
@@ -1890,8 +1913,17 @@
         {
           "$Comment": "Follow State: Cat follows the owner while staying nearby.",
           "Sensor": {
-            "Type": "State",
-            "State": "Follow"
+            "Type": "Or",
+            "Sensors": [
+              {
+                "Type": "State",
+                "State": "Follow"
+              },
+              {
+                "Type": "State",
+                "State": "FollowClose"
+              }
+            ]
           },
           "Instructions": [
             {

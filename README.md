@@ -79,6 +79,7 @@ This mod started as a simple cat conversion from unused base-game assets and has
 
 Default commands:
 - Follow
+- Follow Close (through the Animal Husbandry flute; requires the matching Tamework development build)
 - Hold
 - Recall
 - Move To Ping

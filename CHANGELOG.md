@@ -6,6 +6,7 @@ All notable changes to **Alec's Cats!** will be documented in this file.
 
 - Added a Cat Teaser Wand prototype: hold it to attract nearby idle owned cats, then hold Use for harmless swats and jumps in front of you. Cats lose interest shortly after Use ends, and commands or urgent needs interrupt play. Requires the matching Tamework teaser development build; available in Creative inventory without a crafting recipe.
 - Moved companion icon variants into shared dynamic icon assets used by capture items and both command panels. Requires the matching Tamework dynamic-icon development build.
+- Pet cats now accept the Animal Husbandry Follow Close state while reusing the existing follow behavior and passive-state handling.
 
 ## 1.12.5 - Wild Cat Targeting Hotfix - 2026-08-31
 
