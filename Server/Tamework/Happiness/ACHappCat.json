@@ -32,28 +32,28 @@
       "Bands": [
         {
           "Id": "well_fed",
-          "Label": "Well-fed",
+          "Label": "server.alecsCats.happiness.wellFed",
           "MinPercent": 80.0,
           "MaxPercent": 100.0,
           "Offset": 10.0
         },
         {
           "Id": "sated",
-          "Label": "Sated",
+          "Label": "server.alecsCats.happiness.sated",
           "MinPercent": 40.0,
           "MaxPercent": 80.0,
           "Offset": 0.0
         },
         {
           "Id": "hungry",
-          "Label": "Hungry",
+          "Label": "server.alecsCats.happiness.hungry",
           "MinPercent": 10.0,
           "MaxPercent": 40.0,
           "Offset": -15.0
         },
         {
           "Id": "starving",
-          "Label": "Starving",
+          "Label": "server.alecsCats.happiness.starving",
           "MinPercent": 0.0,
           "MaxPercent": 10.0,
           "Offset": -30.0
@@ -65,28 +65,28 @@
       "Bands": [
         {
           "Id": "quenched",
-          "Label": "Quenched",
+          "Label": "server.alecsCats.happiness.quenched",
           "MinPercent": 80.0,
           "MaxPercent": 100.0,
           "Offset": 8.0
         },
         {
           "Id": "hydrated",
-          "Label": "Hydrated",
+          "Label": "server.alecsCats.happiness.hydrated",
           "MinPercent": 40.0,
           "MaxPercent": 80.0,
           "Offset": 0.0
         },
         {
           "Id": "thirsty",
-          "Label": "Thirsty",
+          "Label": "server.alecsCats.happiness.thirsty",
           "MinPercent": 10.0,
           "MaxPercent": 40.0,
           "Offset": -18.0
         },
         {
           "Id": "dehydrated",
-          "Label": "Dehydrated",
+          "Label": "server.alecsCats.happiness.dehydrated",
           "MinPercent": 0.0,
           "MaxPercent": 10.0,
           "Offset": -35.0
@@ -99,21 +99,21 @@
       "Bands": [
         {
           "Id": "lonely",
-          "Label": "Lonely",
+          "Label": "server.alecsCats.happiness.lonely",
           "MinCount": 0,
           "MaxCount": 0,
           "Offset": -10.0
         },
         {
           "Id": "social",
-          "Label": "Social",
+          "Label": "server.alecsCats.happiness.social",
           "MinCount": 1,
           "MaxCount": 4,
           "Offset": 8.0
         },
         {
           "Id": "crowded",
-          "Label": "Crowded",
+          "Label": "server.alecsCats.happiness.crowded",
           "MinCount": 5,
           "MaxCount": -1,
           "Offset": -15.0

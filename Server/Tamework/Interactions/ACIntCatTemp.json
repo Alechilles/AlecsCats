@@ -81,15 +81,15 @@
       "Cycle": [
         {
           "State": "Follow",
-          "Message": "Following"
+          "Message": "server.alecsCats.interactions.following"
         },
         {
           "State": "Defend",
-          "Message": "Defending"
+          "Message": "server.alecsCats.interactions.defending"
         },
         {
           "State": "Hold",
-          "Message": "Staying"
+          "Message": "server.alecsCats.interactions.staying"
         }
       ],
       "Effects": {

@@ -24,10 +24,10 @@
   "CommandList": [
     {
       "Id": "Follow",
-      "DisplayName": "Follow",
+      "DisplayName": "server.alecsCats.commands.follow.name",
       "Default": true,
       "Feedback": {
-        "HudMessage": "Follow: {count}",
+        "HudMessage": "server.alecsCats.commands.follow.feedback",
         "SoundEvent": "SFX_Creative_Play_Selection_Widget",
         "ParticleSystem": "Follow"
       },
@@ -49,9 +49,9 @@
     },
     {
       "Id": "Hold",
-      "DisplayName": "Hold",
+      "DisplayName": "server.alecsCats.commands.hold.name",
       "Feedback": {
-        "HudMessage": "Hold: {count}",
+        "HudMessage": "server.alecsCats.commands.hold.feedback",
         "SoundEvent": "SFX_Creative_Play_Selection_Widget",
         "ParticleSystem": "Hold"
       },
@@ -68,9 +68,9 @@
     },
     {
       "Id": "Recall",
-      "DisplayName": "Recall",
+      "DisplayName": "server.alecsCats.commands.recall.name",
       "Feedback": {
-        "HudMessage": "Recall: {count}",
+        "HudMessage": "server.alecsCats.commands.recall.feedback",
         "SoundEvent": "SFX_Creative_Play_Selection_Widget",
         "ParticleSystem": "Poof_Small"
       },
@@ -87,9 +87,9 @@
     },
     {
       "Id": "MoveToPing",
-      "DisplayName": "Move To Ping",
+      "DisplayName": "server.alecsCats.commands.moveToPing.name",
       "Feedback": {
-        "HudMessage": "Move To Ping: {count}",
+        "HudMessage": "server.alecsCats.commands.moveToPing.feedback",
         "SoundEvent": "SFX_Creative_Play_Selection_Widget",
         "ParticleSystem": "Alerted"
       },
@@ -102,10 +102,10 @@
     },
     {
       "Id": "SetHome",
-      "DisplayName": "Set Home",
+      "DisplayName": "server.alecsCats.commands.setHome.name",
       "Feedback": {
-        "ChatMessage": "Home set for this command tool.",
-        "HudMessage": "Home Set",
+        "ChatMessage": "server.alecsCats.commands.setHome.chatFeedback",
+        "HudMessage": "server.alecsCats.commands.setHome.feedback",
         "SoundEvent": "SFX_Creative_Play_Selection_Widget",
         "ParticleSystem": "Poof_Small"
       },
@@ -119,9 +119,9 @@
     },
     {
       "Id": "ReturnHome",
-      "DisplayName": "Return Home",
+      "DisplayName": "server.alecsCats.commands.returnHome.name",
       "Feedback": {
-        "HudMessage": "Return Home: {count}",
+        "HudMessage": "server.alecsCats.commands.returnHome.feedback",
         "SoundEvent": "SFX_Creative_Play_Selection_Widget",
         "ParticleSystem": "Follow"
       },
@@ -135,9 +135,9 @@
     },
     {
       "Id": "AttackTarget",
-      "DisplayName": "Attack Target",
+      "DisplayName": "server.alecsCats.commands.attackTarget.name",
       "Feedback": {
-        "HudMessage": "Attack Target: {count}",
+        "HudMessage": "server.alecsCats.commands.attackTarget.feedback",
         "SoundEvent": "SFX_Creative_Play_Selection_Widget",
         "ParticleSystem": "Defend"
       },
@@ -156,9 +156,9 @@
     },
     {
       "Id": "Wander",
-      "DisplayName": "Wander",
+      "DisplayName": "server.alecsCats.commands.wander.name",
       "Feedback": {
-        "HudMessage": "Wander: {count}",
+        "HudMessage": "server.alecsCats.commands.wander.feedback",
         "SoundEvent": "SFX_Creative_Play_Selection_Widget",
         "ParticleSystem": "Graze"
       },
