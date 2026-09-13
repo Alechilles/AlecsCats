@@ -873,11 +873,6 @@
           "SetTo": true
         },
         {
-          "Type": "SetFlag",
-          "Name": "CatToy_Reacting",
-          "SetTo": false
-        },
-        {
           "Type": "TimerStart",
           "Name": "CatToy_Stand",
           "StartValueRange": [

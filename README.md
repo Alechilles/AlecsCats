@@ -91,7 +91,7 @@ Notes:
 - Commands require ownership + tamed cats by default.
 
 ## Cat Teaser Wand (Development)
-Hold the **Cat Teaser Wand** (`Cat_Teaser_Toy`) in your main hand to draw in your awake, idle cats within six blocks. Hold **Use** to bounce the feather while cats gather in front of you and play with harmless swats and jumps.
+Hold the **Cat Teaser Wand** (`Cat_Teaser_Toy`) in your main hand to draw in your awake, idle cats within six blocks. Hold **Use** to bounce the feather while cats gather in front of you and play with harmless swats and pounces. Swats are more common; before a pounce, the cat backs away to roughly three blocks, pauses briefly, then hops forward toward the feather. Releasing Use cancels the preparation, and a blocked retreat times out.
 
 After you release Use, cats watch for another three to four seconds before returning to idle. Use it again to renew their interest. Putting the wand away, moving out of range, losing line of sight, or taking damage ends play. Commands and urgent needs take priority. Play currently grants no happiness or XP.
 

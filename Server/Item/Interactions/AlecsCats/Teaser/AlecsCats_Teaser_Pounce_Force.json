@@ -1,0 +1,28 @@
+{
+  "Type": "ApplyForce",
+  "Forces": [
+    {
+      "Direction": {
+        "X": 0,
+        "Y": 1,
+        "Z": 0
+      },
+      "AdjustVertical": false,
+      "Force": 3.5
+    },
+    {
+      "Direction": {
+        "X": 0,
+        "Y": 0,
+        "Z": -1
+      },
+      "AdjustVertical": false,
+      "Force": 2
+    }
+  ],
+  "ChangeVelocityType": "Set",
+  "Duration": 0,
+  "WaitForGround": true,
+  "GroundCheckDelay": 0.1,
+  "RunTime": 1.2
+}

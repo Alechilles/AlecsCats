@@ -193,175 +193,16 @@
             "Type": "SetFlag",
             "Name": "CatToy_Standing",
             "SetTo": false
-          }
-        ]
-      },
-      {
-        "$Comment": "Keep each harmless reaction still and brief; commands and target loss are evaluated first.",
-        "Sensor": {
-          "Type": "And",
-          "Sensors": [
-            {
-              "Type": "Target",
-              "TargetSlot": "CatToyOwner",
-              "Range": 8,
-              "Filters": [
-                {
-                  "Type": "TameworkIsOwner"
-                },
-                {
-                  "Type": "ItemInHand",
-                  "Hand": "Main",
-                  "Items": [
-                    "Cat_Teaser_Toy"
-                  ]
-                },
-                {
-                  "Type": "LineOfSight"
-                }
-              ]
-            },
-            {
-              "Type": "Timer",
-              "Name": "CatToy_Reaction",
-              "State": "Running"
-            }
-          ]
-        },
-        "BodyMotion": {
-          "Type": "Nothing"
-        },
-        "HeadMotion": {
-          "Type": "Watch"
-        }
-      },
-      {
-        "Continue": true,
-        "Sensor": {
-          "Type": "And",
-          "Sensors": [
-            {
-              "Type": "Timer",
-              "Name": "CatToy_Reaction",
-              "State": "Stopped"
-            },
-            {
-              "Type": "Flag",
-              "Name": "CatToy_Reacting"
-            }
-          ]
-        },
-        "Actions": [
-          {
-            "Type": "PlayAnimation",
-            "Slot": "Action"
           },
           {
-            "Type": "SetFlag",
-            "Name": "CatToy_Reacting",
-            "SetTo": false
-          }
-        ]
-      },
-      {
-        "$Comment": "React only within reach and in front of the player. Individual timers stagger nearby cats.",
-        "Sensor": {
-          "Type": "And",
-          "Sensors": [
-            {
-              "Type": "Target",
-              "TargetSlot": "CatToyOwner",
-              "Range": 2.5,
-              "Filters": [
-                {
-                  "Type": "TameworkIsOwner"
-                },
-                {
-                  "Type": "ItemInHand",
-                  "Hand": "Main",
-                  "Items": [
-                    "Cat_Teaser_Toy"
-                  ]
-                },
-                {
-                  "Type": "LineOfSight"
-                },
-                {
-                  "Type": "TameworkInteractionActive",
-                  "RootInteractionId": "AlecsCats_Teaser_Use"
-                }
-              ]
-            },
-            {
-              "Type": "Timer",
-              "Name": "CatToy_Swat",
-              "State": "Stopped"
-            }
-          ]
-        },
-        "Instructions": [
-          {
-            "Sensor": {
-              "Type": "Target",
-              "TargetSlot": "CatToyOwner",
-              "Filters": [
-                {
-                  "Type": "SpotsMe",
-                  "ViewAngle": 100,
-                  "TestLineOfSight": true
-                }
-              ]
-            },
-            "BodyMotion": {
-              "Type": "Nothing"
-            },
-            "HeadMotion": {
-              "Type": "Watch"
-            },
-            "Actions": [
-              {
-                "Type": "PlayAnimation",
-                "Slot": "Action",
-                "Animation": "ToyPlay"
-              },
-              {
-                "Type": "SetFlag",
-                "Name": "CatToy_Reacting",
-                "SetTo": true
-              },
-              {
-                "Type": "TimerStart",
-                "Name": "CatToy_Reaction",
-                "StartValueRange": [
-                  1,
-                  1
-                ],
-                "RestartValueRange": [
-                  1,
-                  1
-                ]
-              },
-              {
-                "Type": "TimerRestart",
-                "Name": "CatToy_Reaction"
-              },
-              {
-                "Type": "TimerStart",
-                "Name": "CatToy_Swat",
-                "StartValueRange": [
-                  1.4,
-                  2.8
-                ],
-                "RestartValueRange": [
-                  1.4,
-                  2.8
-                ]
-              },
-              {
-                "Type": "TimerRestart",
-                "Name": "CatToy_Swat"
-              }
+            "Type": "ResetInstructions",
+            "Instructions": [
+              "CatToy_ChooseReaction"
             ]
+          },
+          {
+            "Type": "State",
+            "State": ".Ready"
           }
         ]
       },
@@ -426,89 +267,726 @@
         ]
       },
       {
-        "$Comment": "Use normal pathfinding to approach from farther away.",
         "Sensor": {
-          "Type": "And",
-          "Sensors": [
-            {
+          "Type": "State",
+          "State": ".Swipe"
+        },
+        "Instructions": [
+          {
+            "Sensor": {
+              "Type": "Timer",
+              "Name": "CatToy_Reaction",
+              "State": "Stopped"
+            },
+            "Actions": [
+              {
+                "Type": "PlayAnimation",
+                "Slot": "Action"
+              },
+              {
+                "Type": "TimerStart",
+                "Name": "CatToy_Swat",
+                "StartValueRange": [
+                  1.4,
+                  2.8
+                ],
+                "RestartValueRange": [
+                  1.4,
+                  2.8
+                ]
+              },
+              {
+                "Type": "TimerRestart",
+                "Name": "CatToy_Swat"
+              },
+              {
+                "Type": "ResetInstructions",
+                "Instructions": [
+                  "CatToy_ChooseReaction"
+                ]
+              },
+              {
+                "Type": "State",
+                "State": ".Ready"
+              }
+            ]
+          },
+          {
+            "Sensor": {
               "Type": "Target",
               "TargetSlot": "CatToyOwner",
-              "Range": 8,
-              "Filters": [
+              "Range": 8
+            },
+            "BodyMotion": {
+              "Type": "Nothing"
+            },
+            "HeadMotion": {
+              "Type": "Watch"
+            }
+          }
+        ]
+      },
+      {
+        "Sensor": {
+          "Type": "State",
+          "State": ".Retreat"
+        },
+        "Instructions": [
+          {
+            "$Comment": "Releasing Use or taking too long abandons the wind-up.",
+            "Sensor": {
+              "Type": "Or",
+              "Sensors": [
                 {
-                  "Type": "TameworkIsOwner"
+                  "Type": "Not",
+                  "Sensor": {
+                    "Type": "Target",
+                    "TargetSlot": "CatToyOwner",
+                    "Range": 8,
+                    "Filters": [
+                      {
+                        "Type": "TameworkInteractionActive",
+                        "RootInteractionId": "AlecsCats_Teaser_Use"
+                      }
+                    ]
+                  }
                 },
                 {
-                  "Type": "ItemInHand",
-                  "Hand": "Main",
-                  "Items": [
-                    "Cat_Teaser_Toy"
-                  ]
-                },
-                {
-                  "Type": "LineOfSight"
+                  "Type": "Timer",
+                  "Name": "CatToy_Retreat",
+                  "State": "Stopped"
                 }
               ]
             },
-            {
-              "Type": "Not",
-              "Sensor": {
-                "Type": "Target",
-                "TargetSlot": "CatToyOwner",
-                "Range": 3
+            "Actions": [
+              {
+                "Type": "PlayAnimation",
+                "Slot": "Action"
+              },
+              {
+                "Type": "TimerStart",
+                "Name": "CatToy_Swat",
+                "StartValueRange": [
+                  1.4,
+                  2.8
+                ],
+                "RestartValueRange": [
+                  1.4,
+                  2.8
+                ]
+              },
+              {
+                "Type": "TimerRestart",
+                "Name": "CatToy_Swat"
+              },
+              {
+                "Type": "ResetInstructions",
+                "Instructions": [
+                  "CatToy_ChooseReaction"
+                ]
+              },
+              {
+                "Type": "State",
+                "State": ".Ready"
               }
-            }
-          ]
-        },
-        "BodyMotion": {
-          "Type": "Seek",
-          "RelativeSpeed": 0.45,
-          "SlowDownDistance": 3,
-          "StopDistance": 2.2,
-          "RelaxedConstraints": []
-        },
-        "HeadMotion": {
-          "Type": "Watch"
-        }
-      },
-      {
-        "$Comment": "Stay near the wand in front of the player using native MaintainDistance steering. 180 degrees faces the player head-on.",
-        "Sensor": {
-          "Type": "Target",
-          "TargetSlot": "CatToyOwner",
-          "Range": 8,
-          "Filters": [
-            {
-              "Type": "TameworkIsOwner"
-            },
-            {
-              "Type": "ItemInHand",
-              "Hand": "Main",
-              "Items": [
-                "Cat_Teaser_Toy"
+            ]
+          },
+          {
+            "Sensor": {
+              "Type": "And",
+              "Sensors": [
+                {
+                  "Type": "Target",
+                  "TargetSlot": "CatToyOwner",
+                  "Range": 3.1,
+                  "Filters": [
+                    {
+                      "Type": "TameworkInteractionActive",
+                      "RootInteractionId": "AlecsCats_Teaser_Use"
+                    },
+                    {
+                      "Type": "SpotsMe",
+                      "ViewAngle": 100,
+                      "TestLineOfSight": true
+                    }
+                  ]
+                },
+                {
+                  "Type": "Not",
+                  "Sensor": {
+                    "Type": "Target",
+                    "TargetSlot": "CatToyOwner",
+                    "Range": 2.6
+                  }
+                },
+                {
+                  "Type": "Not",
+                  "Sensor": {
+                    "Type": "InAir"
+                  }
+                }
               ]
             },
-            {
-              "Type": "LineOfSight"
+            "BodyMotion": {
+              "Type": "Nothing"
+            },
+            "HeadMotion": {
+              "Type": "Watch"
+            },
+            "Actions": [
+              {
+                "Type": "TimerStart",
+                "Name": "CatToy_Windup",
+                "StartValueRange": [
+                  0.2,
+                  0.2
+                ],
+                "RestartValueRange": [
+                  0.2,
+                  0.2
+                ]
+              },
+              {
+                "Type": "TimerRestart",
+                "Name": "CatToy_Windup"
+              },
+              {
+                "Type": "State",
+                "State": ".Windup"
+              }
+            ]
+          },
+          {
+            "$Comment": "Back away while facing the feather; normal collision and ground constraints still apply.",
+            "Sensor": {
+              "Type": "Target",
+              "TargetSlot": "CatToyOwner",
+              "Range": 8
+            },
+            "BodyMotion": {
+              "Type": "TameworkMaintainDistance",
+              "DesiredDistanceRange": [
+                2.7,
+                2.9
+              ],
+              "PositioningAngle": 180,
+              "MoveThreshold": 0.2,
+              "RelativeForwardsSpeed": 0.25,
+              "RelativeBackwardsSpeed": 0.25,
+              "MoveTowardsSlowdownThreshold": 1
+            },
+            "HeadMotion": {
+              "Type": "Watch"
             }
-          ]
+          }
+        ]
+      },
+      {
+        "Sensor": {
+          "Type": "State",
+          "State": ".Windup"
         },
-        "BodyMotion": {
-          "Type": "TameworkMaintainDistance",
-          "DesiredDistanceRange": [
-            1.3,
-            1.8
-          ],
-          "PositioningAngle": 180,
-          "MoveThreshold": 0.2,
-          "RelativeForwardsSpeed": 0.35,
-          "RelativeBackwardsSpeed": 0.25,
-          "MoveTowardsSlowdownThreshold": 1
+        "Instructions": [
+          {
+            "$Comment": "Releasing Use or taking too long abandons the wind-up.",
+            "Sensor": {
+              "Type": "Or",
+              "Sensors": [
+                {
+                  "Type": "Not",
+                  "Sensor": {
+                    "Type": "Target",
+                    "TargetSlot": "CatToyOwner",
+                    "Range": 8,
+                    "Filters": [
+                      {
+                        "Type": "TameworkInteractionActive",
+                        "RootInteractionId": "AlecsCats_Teaser_Use"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "Type": "Timer",
+                  "Name": "CatToy_Retreat",
+                  "State": "Stopped"
+                }
+              ]
+            },
+            "Actions": [
+              {
+                "Type": "PlayAnimation",
+                "Slot": "Action"
+              },
+              {
+                "Type": "TimerStart",
+                "Name": "CatToy_Swat",
+                "StartValueRange": [
+                  1.4,
+                  2.8
+                ],
+                "RestartValueRange": [
+                  1.4,
+                  2.8
+                ]
+              },
+              {
+                "Type": "TimerRestart",
+                "Name": "CatToy_Swat"
+              },
+              {
+                "Type": "ResetInstructions",
+                "Instructions": [
+                  "CatToy_ChooseReaction"
+                ]
+              },
+              {
+                "Type": "State",
+                "State": ".Ready"
+              }
+            ]
+          },
+          {
+            "Sensor": {
+              "Type": "Not",
+              "Sensor": {
+                "Type": "And",
+                "Sensors": [
+                  {
+                    "Type": "Target",
+                    "TargetSlot": "CatToyOwner",
+                    "Range": 3.3,
+                    "Filters": [
+                      {
+                        "Type": "TameworkInteractionActive",
+                        "RootInteractionId": "AlecsCats_Teaser_Use"
+                      },
+                      {
+                        "Type": "SpotsMe",
+                        "ViewAngle": 100,
+                        "TestLineOfSight": true
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Not",
+                    "Sensor": {
+                      "Type": "Target",
+                      "TargetSlot": "CatToyOwner",
+                      "Range": 2.3
+                    }
+                  },
+                  {
+                    "Type": "Not",
+                    "Sensor": {
+                      "Type": "InAir"
+                    }
+                  }
+                ]
+              }
+            },
+            "Actions": [
+              {
+                "Type": "PlayAnimation",
+                "Slot": "Action"
+              },
+              {
+                "Type": "TimerStart",
+                "Name": "CatToy_Swat",
+                "StartValueRange": [
+                  1.4,
+                  2.8
+                ],
+                "RestartValueRange": [
+                  1.4,
+                  2.8
+                ]
+              },
+              {
+                "Type": "TimerRestart",
+                "Name": "CatToy_Swat"
+              },
+              {
+                "Type": "ResetInstructions",
+                "Instructions": [
+                  "CatToy_ChooseReaction"
+                ]
+              },
+              {
+                "Type": "State",
+                "State": ".Ready"
+              }
+            ]
+          },
+          {
+            "Sensor": {
+              "Type": "And",
+              "Sensors": [
+                {
+                  "Type": "Timer",
+                  "Name": "CatToy_Windup",
+                  "State": "Stopped"
+                },
+                {
+                  "Type": "And",
+                  "Sensors": [
+                    {
+                      "Type": "Target",
+                      "TargetSlot": "CatToyOwner",
+                      "Range": 3.3,
+                      "Filters": [
+                        {
+                          "Type": "TameworkInteractionActive",
+                          "RootInteractionId": "AlecsCats_Teaser_Use"
+                        },
+                        {
+                          "Type": "SpotsMe",
+                          "ViewAngle": 100,
+                          "TestLineOfSight": true
+                        }
+                      ]
+                    },
+                    {
+                      "Type": "Not",
+                      "Sensor": {
+                        "Type": "Target",
+                        "TargetSlot": "CatToyOwner",
+                        "Range": 2.3
+                      }
+                    },
+                    {
+                      "Type": "Not",
+                      "Sensor": {
+                        "Type": "InAir"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "BodyMotion": {
+              "Type": "Nothing"
+            },
+            "HeadMotion": {
+              "Type": "Watch"
+            },
+            "Actions": [
+              {
+                "Type": "Attack",
+                "Attack": "AlecsCats_Teaser_Pounce",
+                "SkipAiming": true,
+                "AvoidFriendlyFire": false
+              },
+              {
+                "Type": "PlayAnimation",
+                "Slot": "Action",
+                "Animation": "ToyPounce"
+              },
+              {
+                "Type": "TimerStart",
+                "Name": "CatToy_AirborneMinimum",
+                "StartValueRange": [
+                  0.25,
+                  0.25
+                ],
+                "RestartValueRange": [
+                  0.25,
+                  0.25
+                ]
+              },
+              {
+                "Type": "TimerRestart",
+                "Name": "CatToy_AirborneMinimum"
+              },
+              {
+                "Type": "TimerStart",
+                "Name": "CatToy_Landing",
+                "StartValueRange": [
+                  1.2,
+                  1.2
+                ],
+                "RestartValueRange": [
+                  1.2,
+                  1.2
+                ]
+              },
+              {
+                "Type": "TimerRestart",
+                "Name": "CatToy_Landing"
+              },
+              {
+                "Type": "State",
+                "State": ".Pounce"
+              }
+            ],
+            "ActionsBlocking": true,
+            "$Comment": "The named interaction applies one physical impulse and contains no damage actions."
+          },
+          {
+            "Sensor": {
+              "Type": "Target",
+              "TargetSlot": "CatToyOwner",
+              "Range": 8
+            },
+            "BodyMotion": {
+              "Type": "Nothing"
+            },
+            "HeadMotion": {
+              "Type": "Watch"
+            }
+          }
+        ]
+      },
+      {
+        "Sensor": {
+          "Type": "State",
+          "State": ".Pounce"
         },
-        "HeadMotion": {
-          "Type": "Watch"
-        }
+        "Instructions": [
+          {
+            "$Comment": "Let the impulse finish before returning to steering; use a bounded fallback when landing cannot be observed.",
+            "Sensor": {
+              "Type": "Or",
+              "Sensors": [
+                {
+                  "Type": "Timer",
+                  "Name": "CatToy_Landing",
+                  "State": "Stopped"
+                },
+                {
+                  "Type": "And",
+                  "Sensors": [
+                    {
+                      "Type": "Timer",
+                      "Name": "CatToy_AirborneMinimum",
+                      "State": "Stopped"
+                    },
+                    {
+                      "Type": "Not",
+                      "Sensor": {
+                        "Type": "InAir"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "Actions": [
+              {
+                "Type": "PlayAnimation",
+                "Slot": "Action"
+              },
+              {
+                "Type": "TimerStart",
+                "Name": "CatToy_Swat",
+                "StartValueRange": [
+                  1.4,
+                  2.8
+                ],
+                "RestartValueRange": [
+                  1.4,
+                  2.8
+                ]
+              },
+              {
+                "Type": "TimerRestart",
+                "Name": "CatToy_Swat"
+              },
+              {
+                "Type": "ResetInstructions",
+                "Instructions": [
+                  "CatToy_ChooseReaction"
+                ]
+              },
+              {
+                "Type": "State",
+                "State": ".Ready"
+              }
+            ]
+          },
+          {
+            "Sensor": {
+              "Type": "Target",
+              "TargetSlot": "CatToyOwner",
+              "Range": 8
+            },
+            "BodyMotion": {
+              "Type": "Nothing"
+            },
+            "HeadMotion": {
+              "Type": "Watch"
+            }
+          }
+        ]
+      },
+      {
+        "Sensor": {
+          "Type": "State",
+          "State": ".Ready"
+        },
+        "Instructions": [
+          {
+            "$Comment": "Choose one reaction per cycle: quick swipes are more common than backed-up pounces.",
+            "Sensor": {
+              "Type": "And",
+              "Sensors": [
+                {
+                  "Type": "Target",
+                  "TargetSlot": "CatToyOwner",
+                  "Range": 2.5,
+                  "Filters": [
+                    {
+                      "Type": "TameworkInteractionActive",
+                      "RootInteractionId": "AlecsCats_Teaser_Use"
+                    },
+                    {
+                      "Type": "SpotsMe",
+                      "ViewAngle": 100,
+                      "TestLineOfSight": true
+                    }
+                  ]
+                },
+                {
+                  "Type": "Timer",
+                  "Name": "CatToy_Swat",
+                  "State": "Stopped"
+                },
+                {
+                  "Type": "Not",
+                  "Sensor": {
+                    "Type": "InAir"
+                  }
+                }
+              ]
+            },
+            "Instructions": [
+              {
+                "Type": "Random",
+                "Instructions": [
+                  {
+                    "Weight": 3,
+                    "Actions": [
+                      {
+                        "Type": "PlayAnimation",
+                        "Slot": "Action",
+                        "Animation": "ToyPlay"
+                      },
+                      {
+                        "Type": "TimerStart",
+                        "Name": "CatToy_Reaction",
+                        "StartValueRange": [
+                          1,
+                          1
+                        ],
+                        "RestartValueRange": [
+                          1,
+                          1
+                        ]
+                      },
+                      {
+                        "Type": "TimerRestart",
+                        "Name": "CatToy_Reaction"
+                      },
+                      {
+                        "Type": "State",
+                        "State": ".Swipe"
+                      }
+                    ]
+                  },
+                  {
+                    "Weight": 1,
+                    "Actions": [
+                      {
+                        "Type": "TimerStart",
+                        "Name": "CatToy_Retreat",
+                        "StartValueRange": [
+                          2,
+                          2
+                        ],
+                        "RestartValueRange": [
+                          2,
+                          2
+                        ]
+                      },
+                      {
+                        "Type": "TimerRestart",
+                        "Name": "CatToy_Retreat"
+                      },
+                      {
+                        "Type": "State",
+                        "State": ".Retreat"
+                      }
+                    ]
+                  }
+                ],
+                "Name": "CatToy_ChooseReaction",
+                "$Comment": "Completion and re-entry reset this choice explicitly; component-local state changes do not reset Random."
+              }
+            ],
+            "BodyMotion": {
+              "Type": "Nothing"
+            },
+            "HeadMotion": {
+              "Type": "Watch"
+            }
+          },
+          {
+            "$Comment": "Use normal pathfinding to approach from farther away.",
+            "Sensor": {
+              "Type": "And",
+              "Sensors": [
+                {
+                  "Type": "Target",
+                  "TargetSlot": "CatToyOwner",
+                  "Range": 8
+                },
+                {
+                  "Type": "Not",
+                  "Sensor": {
+                    "Type": "Target",
+                    "TargetSlot": "CatToyOwner",
+                    "Range": 3
+                  }
+                }
+              ]
+            },
+            "BodyMotion": {
+              "Type": "Seek",
+              "RelativeSpeed": 0.45,
+              "SlowDownDistance": 3,
+              "StopDistance": 2.2,
+              "RelaxedConstraints": []
+            },
+            "HeadMotion": {
+              "Type": "Watch"
+            }
+          },
+          {
+            "$Comment": "Stay near the wand in front of the player using native MaintainDistance steering. 180 degrees faces the player head-on.",
+            "Sensor": {
+              "Type": "Target",
+              "TargetSlot": "CatToyOwner",
+              "Range": 8
+            },
+            "BodyMotion": {
+              "Type": "TameworkMaintainDistance",
+              "DesiredDistanceRange": [
+                1.3,
+                1.8
+              ],
+              "PositioningAngle": 180,
+              "MoveThreshold": 0.2,
+              "RelativeForwardsSpeed": 0.35,
+              "RelativeBackwardsSpeed": 0.25,
+              "MoveTowardsSlowdownThreshold": 1
+            },
+            "HeadMotion": {
+              "Type": "Watch"
+            }
+          }
+        ]
       }
     ]
-  }
+  },
+  "DefaultState": ".Ready"
 }

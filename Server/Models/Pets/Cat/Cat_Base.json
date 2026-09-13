@@ -180,13 +180,15 @@
       "Animations": [
         {
           "Animation": "NPC/Pets/Cat/Animations/Attacks/Left_Swipe.blockyanim",
-          "Weight": 3,
           "Looping": false,
           "BlendingDuration": 0.1
-        },
+        }
+      ]
+    },
+    "ToyPounce": {
+      "Animations": [
         {
-          "Animation": "NPC/Pets/Cat/Animations/Jump.blockyanim",
-          "Weight": 1,
+          "Animation": "NPC/Pets/Cat/Animations/Jump_Far.blockyanim",
           "Looping": false,
           "BlendingDuration": 0.1
         }
