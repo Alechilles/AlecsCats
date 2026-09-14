@@ -9,6 +9,13 @@ All notable changes to **Alec's Cats!** will be documented in this file.
 - Moved companion icon variants into shared dynamic icon assets used by capture items and both command panels. Requires the matching Tamework dynamic-icon development build.
 - Pet cats now accept the Animal Husbandry Follow Close state while reusing the existing follow behavior and passive-state handling.
 
+## 1.12.6 - Beacon telemetry descriptor migration - 2026-09-01
+
+### Changed
+
+- Moved the passive telemetry descriptor to Beacon's `Server/Beacon/project.json` contract.
+- Updated the current telemetry guidance to link to Beacon.
+
 ## 1.12.5 - Wild Cat Targeting Hotfix - 2026-08-31
 
 ### Fixed
