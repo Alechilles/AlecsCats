@@ -1,7 +1,7 @@
 {
   "Group": "Alechilles",
   "Name": "Alec's Cats!",
-  "Version": "1.12.6",
+  "Version": "1.13.0",
   "Description": "Adds lots of tameable cats to Hytale!",
   "Authors": [
     {
@@ -18,7 +18,7 @@
   "Website": "",
   "ServerVersion": ">=0.5.0 <0.7.0",
   "Dependencies": {
-    "Alechilles:Alec's Tamework!": ">=3.0.0 <4.0.0"
+    "Alechilles:Alec's Tamework!": ">=4.0.0 <5.0.0"
   },
   "OptionalDependencies": {
     "Alechilles:Alec's Nametags!": "*"

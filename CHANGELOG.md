@@ -2,11 +2,12 @@
 
 All notable changes to **Alec's Cats!** will be documented in this file.
 
-## Unreleased development changes
+## 1.13.0 - Tamework 4, Cat Play, and Localization - 2026-09-14
 
+- Updated the required Alec's Tamework dependency to `>=4.0.0 <5.0.0`. Install Tamework 4.0.0 or newer in the 4.x line before updating Cats.
 - Localized cat items, commands, interaction states, traits, happiness bands, and appearance labels. Added French Canadian language support.
-- Added a Cat Teaser Wand prototype: hold it to attract nearby idle owned cats, then hold Use for harmless swats and physical pounces in front of you. Cats back away and pause before hopping toward the feather; releasing Use cancels the preparation. Cats lose interest shortly after Use ends, and commands or urgent needs interrupt play. Requires the matching Tamework teaser development build; available in Creative inventory without a crafting recipe.
-- Moved companion icon variants into shared dynamic icon assets used by capture items and both command panels. Requires the matching Tamework dynamic-icon development build.
+- Added a Cat Teaser Wand prototype: hold it to attract nearby idle owned cats, then hold Use for harmless swats and physical pounces in front of you. Cats back away and pause before hopping toward the feather; releasing Use cancels the preparation. Cats lose interest shortly after Use ends, and commands or urgent needs interrupt play. Available in Creative inventory without a crafting recipe.
+- Moved companion icon variants into shared dynamic icon assets used by capture items and both command panels in Tamework 4.0.0.
 - Pet cats now accept the Animal Husbandry Follow Close state while reusing the existing follow behavior and passive-state handling.
 
 ## 1.12.6 - Beacon telemetry descriptor migration - 2026-09-01

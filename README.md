@@ -30,7 +30,7 @@ This mod started as a simple cat conversion from unused base-game assets and has
 --------------
 <H2>Required:</H2>
 <ul>
-<li><a href="https://www.curseforge.com/hytale/mods/alecs-tamework">Alec's Tamework!</a> <code>&gt;=3.0.0 &lt;4.0.0</code></li>
+<li><a href="https://www.curseforge.com/hytale/mods/alecs-tamework">Alec's Tamework!</a> <code>&gt;=4.0.0 &lt;5.0.0</code></li>
 </ul>
 <H2>Recommended:</H2>
 <ul>
@@ -74,12 +74,12 @@ This mod started as a simple cat conversion from unused base-game assets and has
 
 ## Cat Treat Bag (Command Item)
 - **Left click on a cat**: link/unlink that cat to the bag.
-- **Right click**: open command selection wheel.
+- **Right click**: open the companion command panel.
 - **Left click (while not targeting link action)**: execute selected command on linked cats.
 
 Default commands:
 - Follow
-- Follow Close (through the Animal Husbandry flute; requires the matching Tamework development build)
+- Follow Close (through a Tamework 4-compatible Animal Husbandry flute)
 - Hold
 - Recall
 - Move To Ping
@@ -90,14 +90,14 @@ Default commands:
 Notes:
 - Commands require ownership + tamed cats by default.
 
-## Cat Teaser Wand (Development)
+## Cat Teaser Wand (Prototype)
 Hold the **Cat Teaser Wand** (`Cat_Teaser_Toy`) in your main hand to draw in your awake, idle cats within six blocks. Hold **Use** to bounce the feather while cats gather in front of you and play with harmless swats and pounces. Swats are more common; before a pounce, the cat backs away to roughly three blocks, pauses briefly, then hops forward toward the feather. Releasing Use cancels the preparation, and a blocked retreat times out.
 
 After you release Use, cats watch for another three to four seconds before returning to idle. Use it again to renew their interest. Putting the wand away, moving out of range, losing line of sight, or taking damage ends play. Commands and urgent needs take priority. Play currently grants no happiness or XP.
 
-This prototype is available from Creative inventory and has no crafting recipe yet. It requires the matching Tamework development build with `TameworkMaintainDistance` and `TameworkInteractionActive`; the declared `>=3.0.0 <4.0.0` dependency range alone does not identify that build. Front positioning follows the player's body facing direction and still needs in-game tuning around obstacles and moving players.
+This prototype is available from Creative inventory and has no crafting recipe yet. It uses Tamework 4.0.0's `TameworkMaintainDistance` and `TameworkInteractionActive` support. Front positioning follows the player's body facing direction and still needs in-game tuning around obstacles and moving players.
 
-When testing, replace older Tamework development JARs with the matching build and restart the world/server. Reloading Cats assets cannot add the Java builders to a running server.
+Install Tamework 4.0.0 or newer in the 4.x line and restart the world/server before using these assets. Reloading Cats assets cannot add the Java builders to a running server.
 
 ## Taming and Ownership
 - Taming assigns ownership.
