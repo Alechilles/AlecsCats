@@ -9,6 +9,7 @@ All notable changes to **Alec's Cats!** will be documented in this file.
 - Added a Cat Teaser Wand prototype: hold it to attract nearby idle owned cats, then hold Use for harmless swats and physical pounces in front of you. Cats back away and pause before hopping toward the feather; releasing Use cancels the preparation. Cats lose interest shortly after Use ends, and commands or urgent needs interrupt play. Available in Creative inventory without a crafting recipe.
 - Moved companion icon variants into shared dynamic icon assets used by capture items and both command panels in Tamework 4.0.0.
 - Pet cats now accept the Animal Husbandry Follow Close state while reusing the existing follow behavior and passive-state handling.
+- Fixed a Cat Teaser Wand NPC load error caused by motion fields sharing an instruction with nested reaction choices.
 
 ## 1.12.6 - Beacon telemetry descriptor migration - 2026-09-01
 

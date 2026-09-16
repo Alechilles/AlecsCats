@@ -865,6 +865,12 @@
                 "Instructions": [
                   {
                     "Weight": 3,
+                    "BodyMotion": {
+                      "Type": "Nothing"
+                    },
+                    "HeadMotion": {
+                      "Type": "Watch"
+                    },
                     "Actions": [
                       {
                         "Type": "PlayAnimation",
@@ -895,6 +901,12 @@
                   },
                   {
                     "Weight": 1,
+                    "BodyMotion": {
+                      "Type": "Nothing"
+                    },
+                    "HeadMotion": {
+                      "Type": "Watch"
+                    },
                     "Actions": [
                       {
                         "Type": "TimerStart",
@@ -922,13 +934,7 @@
                 "Name": "CatToy_ChooseReaction",
                 "$Comment": "Completion and re-entry reset this choice explicitly; component-local state changes do not reset Random."
               }
-            ],
-            "BodyMotion": {
-              "Type": "Nothing"
-            },
-            "HeadMotion": {
-              "Type": "Watch"
-            }
+            ]
           },
           {
             "$Comment": "Use normal pathfinding to approach from farther away.",
