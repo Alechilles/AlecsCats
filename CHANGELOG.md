@@ -2,6 +2,10 @@
 
 All notable changes to **Alec's Cats!** will be documented in this file.
 
+## 1.13.1 - Cat Teaser Wand Hotfix - 2026-09-16
+
+- Fixed NPC loading errors introduced in 1.13.0 by the Cat Teaser Wand reaction instructions.
+
 ## 1.13.0 - Tamework 4, Cat Play, and Localization - 2026-09-14
 
 - Updated the required Alec's Tamework dependency to `>=4.0.0 <5.0.0`. Install Tamework 4.0.0 or newer in the 4.x line before updating Cats.
@@ -9,7 +13,6 @@ All notable changes to **Alec's Cats!** will be documented in this file.
 - Added a Cat Teaser Wand prototype: hold it to attract nearby idle owned cats, then hold Use for harmless swats and physical pounces in front of you. Cats back away and pause before hopping toward the feather; releasing Use cancels the preparation. Cats lose interest shortly after Use ends, and commands or urgent needs interrupt play. Available in Creative inventory without a crafting recipe.
 - Moved companion icon variants into shared dynamic icon assets used by capture items and both command panels in Tamework 4.0.0.
 - Pet cats now accept the Animal Husbandry Follow Close state while reusing the existing follow behavior and passive-state handling.
-- Fixed Cat Teaser Wand NPC load errors by keeping reaction motions on leaf instructions with their own owner-target sensors.
 
 ## 1.12.6 - Beacon telemetry descriptor migration - 2026-09-01
 
