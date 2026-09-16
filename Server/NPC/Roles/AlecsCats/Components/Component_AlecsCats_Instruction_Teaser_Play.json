@@ -865,6 +865,11 @@
                 "Instructions": [
                   {
                     "Weight": 3,
+                    "Sensor": {
+                      "Type": "Target",
+                      "TargetSlot": "CatToyOwner",
+                      "Range": 2.5
+                    },
                     "BodyMotion": {
                       "Type": "Nothing"
                     },
@@ -901,6 +906,11 @@
                   },
                   {
                     "Weight": 1,
+                    "Sensor": {
+                      "Type": "Target",
+                      "TargetSlot": "CatToyOwner",
+                      "Range": 2.5
+                    },
                     "BodyMotion": {
                       "Type": "Nothing"
                     },
