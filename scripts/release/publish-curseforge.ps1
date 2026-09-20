@@ -135,6 +135,10 @@ $normalizedVersion = (($Version.Trim()) -replace "^v", "")
 $curseforgeConfig = $config.curseforge
 $projectId = $curseforgeConfig.projectId
 $gameVersionTypeIds = @($curseforgeConfig.gameVersionTypeIds)
+$hytaleGameVersion = [string]$curseforgeConfig.gameVersion
+if ($hytaleGameVersion -ne "0.6" -or $gameVersionTypeIds.Count -ne 1 -or [int]$gameVersionTypeIds[0] -ne 65438) {
+    throw "CurseForge uploads must target Hytale 0.6 (gameVersion: 0.6, gameVersionTypeIds: [65438]) in $ConfigPath."
+}
 $requiredProjectIdsProperty = $curseforgeConfig.PSObject.Properties["requiredProjectIds"]
 $requiredProjectIds = if ($null -eq $requiredProjectIdsProperty) { @() } else { @($requiredProjectIdsProperty.Value) }
 $requiredProjectsProperty = $curseforgeConfig.PSObject.Properties["requiredProjects"]
