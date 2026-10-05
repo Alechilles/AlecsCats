@@ -2,7 +2,7 @@
 
 All notable changes to **Alec's Cats!** will be documented in this file.
 
-## Unreleased development changes
+## 1.14.0 - Cat Animation Rework - 2026-10-05
 
 - Reworked the cat lie-down, wake, and stand-up animations so they move smoothly between standing, sleeping, and sitting, with the front end settling first, the head and tail following, and a small settle at the end.
 - Replaced the search, alerted, and curious animations that were ported from other animals with cat-specific ones: cats now scent the air and ground while searching, stand tall with a raised quivering tail when alerted, and tilt their head while sniffing when curious.
