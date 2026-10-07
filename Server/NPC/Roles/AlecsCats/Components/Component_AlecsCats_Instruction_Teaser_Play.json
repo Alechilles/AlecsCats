@@ -727,10 +727,8 @@
             },
             "Actions": [
               {
-                "Type": "Attack",
-                "Attack": "AlecsCats_Teaser_Pounce",
-                "SkipAiming": true,
-                "AvoidFriendlyFire": false
+                "Type": "StorePosition",
+                "Slot": "CatToyPounce"
               },
               {
                 "Type": "PlayAnimation",
@@ -741,12 +739,12 @@
                 "Type": "TimerStart",
                 "Name": "CatToy_AirborneMinimum",
                 "StartValueRange": [
-                  0.25,
-                  0.25
+                  0.6,
+                  0.6
                 ],
                 "RestartValueRange": [
-                  0.25,
-                  0.25
+                  0.6,
+                  0.6
                 ]
               },
               {
@@ -779,8 +777,7 @@
                 "SetTo": true
               }
             ],
-            "ActionsBlocking": true,
-            "$Comment": "The named interaction applies one physical impulse and contains no damage actions."
+            "$Comment": "Stores the player's position for the leap; the pounce is movement only and deals no damage."
           },
           {
             "Sensor": {
@@ -804,7 +801,7 @@
         },
         "Instructions": [
           {
-            "$Comment": "Let the impulse finish before returning to steering; use a bounded fallback when landing cannot be observed.",
+            "$Comment": "Let the leap finish before returning to steering; use a bounded fallback when landing cannot be observed.",
             "Sensor": {
               "Type": "Or",
               "Sensors": [
@@ -863,6 +860,24 @@
                 "State": ".Ready"
               }
             ]
+          },
+          {
+            "$Comment": "Leap toward where the player stood at takeoff, landing a block short.",
+            "Sensor": {
+              "Type": "ReadPosition",
+              "Slot": "CatToyPounce",
+              "UseMarkedTarget": false,
+              "Range": 8
+            },
+            "BodyMotion": {
+              "Type": "TameworkLeap",
+              "Duration": 0.6,
+              "Height": 0.9,
+              "StopDistance": 1
+            },
+            "HeadMotion": {
+              "Type": "Nothing"
+            }
           },
           {
             "Sensor": {
