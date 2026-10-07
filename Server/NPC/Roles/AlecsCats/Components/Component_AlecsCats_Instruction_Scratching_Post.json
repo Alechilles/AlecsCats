@@ -348,11 +348,16 @@
             "Type": "SetFlag",
             "Name": "CatPost_Scratching",
             "SetTo": true
+          },
+          {
+            "Type": "SetFlag",
+            "Name": "CatPost_FxRight",
+            "SetTo": false
           }
         ]
       },
       {
-        "$Comment": "Scratch sound and a few fibres with each pull.",
+        "$Comment": "Scratch sound and a few fibres with each pull, at the front paw that is pulling down. The Scratch clip is 0.67 s and starts with the left paw, so the paws alternate every 0.33 s.",
         "Continue": true,
         "Sensor": {
           "Type": "And",
@@ -368,36 +373,85 @@
             }
           ]
         },
-        "Actions": [
+        "Instructions": [
           {
-            "Type": "PlaySound",
-            "SoundEventId": "SFX_Cloth_Hit"
-          },
-          {
-            "Type": "SpawnParticles",
-            "ParticleSystem": "Block_Hit_Wood",
-            "Scale": 0.4,
-            "Offset": [
-              0,
-              0.7,
-              0.5
+            "Sensor": {
+              "Type": "Flag",
+              "Name": "CatPost_FxRight"
+            },
+            "Actions": [
+              {
+                "Type": "PlaySound",
+                "SoundEventId": "SFX_Cloth_Hit"
+              },
+              {
+                "Type": "SpawnParticles",
+                "ParticleSystem": "Block_Hit_Wood",
+                "Scale": 0.4,
+                "TargetNodeName": "R-Foot"
+              },
+              {
+                "Type": "SetFlag",
+                "Name": "CatPost_FxRight",
+                "SetTo": false
+              },
+              {
+                "Type": "TimerStart",
+                "Name": "CatPost_Fx",
+                "StartValueRange": [
+                  0.33,
+                  0.33
+                ],
+                "RestartValueRange": [
+                  0.33,
+                  0.33
+                ]
+              },
+              {
+                "Type": "TimerRestart",
+                "Name": "CatPost_Fx"
+              }
             ]
           },
           {
-            "Type": "TimerStart",
-            "Name": "CatPost_Fx",
-            "StartValueRange": [
-              0.33,
-              0.33
-            ],
-            "RestartValueRange": [
-              0.33,
-              0.33
+            "Sensor": {
+              "Type": "Flag",
+              "Name": "CatPost_FxRight",
+              "Set": false
+            },
+            "Actions": [
+              {
+                "Type": "PlaySound",
+                "SoundEventId": "SFX_Cloth_Hit"
+              },
+              {
+                "Type": "SpawnParticles",
+                "ParticleSystem": "Block_Hit_Wood",
+                "Scale": 0.4,
+                "TargetNodeName": "L-Foot"
+              },
+              {
+                "Type": "SetFlag",
+                "Name": "CatPost_FxRight",
+                "SetTo": true
+              },
+              {
+                "Type": "TimerStart",
+                "Name": "CatPost_Fx",
+                "StartValueRange": [
+                  0.33,
+                  0.33
+                ],
+                "RestartValueRange": [
+                  0.33,
+                  0.33
+                ]
+              },
+              {
+                "Type": "TimerRestart",
+                "Name": "CatPost_Fx"
+              }
             ]
-          },
-          {
-            "Type": "TimerRestart",
-            "Name": "CatPost_Fx"
           }
         ]
       },
