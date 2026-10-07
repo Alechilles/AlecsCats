@@ -437,7 +437,104 @@
         }
       },
       {
-        "$Comment": "Walk up to the post.",
+        "$Comment": "Ended up on top of a cat tower (more than 0.7 above or below the post's cell centre) instead of beside its post: give up this time, without a reward, so the cat is not left standing there.",
+        "Sensor": {
+          "Type": "And",
+          "Sensors": [
+            {
+              "Type": "Flag",
+              "Name": "CatPost_Scratching",
+              "Set": false
+            },
+            {
+              "Type": "AdjustPosition",
+              "Offset": [
+                0,
+                0,
+                0
+              ],
+              "Sensor": {
+                "Type": "Block",
+                "Range": 1.9,
+                "MaxHeight": 3,
+                "Blocks": {
+                  "Compute": "CatPostBlockSet"
+                },
+                "Random": true
+              }
+            },
+            {
+              "Type": "Not",
+              "Sensor": {
+                "Type": "AdjustPosition",
+                "Offset": [
+                  0,
+                  0,
+                  0
+                ],
+                "Sensor": {
+                  "Type": "Block",
+                  "Range": 1.9,
+                  "MaxHeight": 0.7,
+                  "Blocks": {
+                    "Compute": "CatPostBlockSet"
+                  },
+                  "Random": true
+                }
+              }
+            }
+          ]
+        },
+        "Actions": [
+          {
+            "Type": "TimerStart",
+            "Name": "CatPost_Cooldown",
+            "StartValueRange": [
+              45,
+              90
+            ],
+            "RestartValueRange": [
+              45,
+              90
+            ]
+          },
+          {
+            "Type": "TimerRestart",
+            "Name": "CatPost_Cooldown"
+          },
+          {
+            "Type": "TimerStart",
+            "Name": "CatEnrich_Rest",
+            "StartValueRange": [
+              12,
+              25
+            ],
+            "RestartValueRange": [
+              12,
+              25
+            ]
+          },
+          {
+            "Type": "TimerRestart",
+            "Name": "CatEnrich_Rest"
+          },
+          {
+            "Type": "ResetBlockSensors"
+          },
+          {
+            "Type": "SetFlag",
+            "Name": "CatPost_Engaged",
+            "SetTo": false
+          },
+          {
+            "Type": "SetFlag",
+            "Name": "CatEnrich_Busy",
+            "SetTo": false
+          }
+        ]
+      },
+      {
+        "$Comment": "Walk up to the post. The stop distance is just outside where the cat's body meets the post, so the walk ends there and the cat does not hunt for a way to get closer.",
         "Sensor": {
           "Type": "And",
           "Sensors": [
@@ -471,7 +568,7 @@
           "Type": "Seek",
           "RelativeSpeed": 0.55,
           "SlowDownDistance": 1.5,
-          "StopDistance": 0.4,
+          "StopDistance": 0.55,
           "RelaxedMoveConstraints": false
         },
         "HeadMotion": {

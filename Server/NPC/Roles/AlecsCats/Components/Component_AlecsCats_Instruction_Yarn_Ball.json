@@ -1,5 +1,5 @@
 {
-  "$Comment": "Idle pet cats chase a thrown Cat Yarn Ball (the Cat_Yarn_Ball creature) and play with it for a while, with a happiness gain. They swat it and now and then back off and pounce on it. The ball rolls away each time a cat swats it or lands a pounce.",
+  "$Comment": "Idle pet cats chase a thrown Cat Yarn Ball (the Cat_Yarn_Ball creature) and bat at it for a while, with a happiness gain. The ball rolls away each time a cat reaches it.",
   "Type": "Component",
   "Class": "Instruction",
   "Parameters": {
@@ -199,11 +199,6 @@
               "Type": "Timer",
               "Name": "CatYarn_Session",
               "State": "Stopped"
-            },
-            {
-              "Type": "Flag",
-              "Name": "CatYarn_Pouncing",
-              "Set": false
             }
           ]
         },
@@ -274,16 +269,6 @@
             "Type": "SetFlag",
             "Name": "CatEnrich_Busy",
             "SetTo": false
-          },
-          {
-            "Type": "SetFlag",
-            "Name": "CatYarn_Stalking",
-            "SetTo": false
-          },
-          {
-            "Type": "SetFlag",
-            "Name": "CatYarn_Pouncing",
-            "SetTo": false
           }
         ]
       },
@@ -339,22 +324,6 @@
             "Name": "CatYarn_Session"
           },
           {
-            "Type": "TimerStart",
-            "Name": "CatYarn_PounceWait",
-            "StartValueRange": [
-              3,
-              6
-            ],
-            "RestartValueRange": [
-              3,
-              6
-            ]
-          },
-          {
-            "Type": "TimerRestart",
-            "Name": "CatYarn_PounceWait"
-          },
-          {
             "Type": "SetFlag",
             "Name": "CatYarn_Playing",
             "SetTo": true
@@ -362,390 +331,7 @@
         ]
       },
       {
-        "$Comment": "Mid-pounce: leap to the spot the ball was at on takeoff, then knock the ball away once the cat lands. The landing timer is a fallback when landing cannot be observed.",
-        "Sensor": {
-          "Type": "Flag",
-          "Name": "CatYarn_Pouncing"
-        },
-        "Instructions": [
-          {
-            "Sensor": {
-              "Type": "Or",
-              "Sensors": [
-                {
-                  "Type": "Timer",
-                  "Name": "CatYarn_Landing",
-                  "State": "Stopped"
-                },
-                {
-                  "Type": "And",
-                  "Sensors": [
-                    {
-                      "Type": "Timer",
-                      "Name": "CatYarn_AirborneMinimum",
-                      "State": "Stopped"
-                    },
-                    {
-                      "Type": "Not",
-                      "Sensor": {
-                        "Type": "InAir"
-                      }
-                    }
-                  ]
-                }
-              ]
-            },
-            "Actions": [
-              {
-                "Type": "PlayAnimation",
-                "Slot": "Action"
-              },
-              {
-                "Type": "Beacon",
-                "Message": "AlecsCats_Yarn_Swat",
-                "Range": 3,
-                "TargetGroups": [
-                  "AlecsCats_Yarn_Ball"
-                ],
-                "ExpirationTime": 0.5
-              },
-              {
-                "Type": "TimerStart",
-                "Name": "CatYarn_PounceWait",
-                "StartValueRange": [
-                  4,
-                  8
-                ],
-                "RestartValueRange": [
-                  4,
-                  8
-                ]
-              },
-              {
-                "Type": "TimerRestart",
-                "Name": "CatYarn_PounceWait"
-              },
-              {
-                "Type": "TimerStart",
-                "Name": "CatYarn_Swat",
-                "StartValueRange": [
-                  1.2,
-                  2.4
-                ],
-                "RestartValueRange": [
-                  1.2,
-                  2.4
-                ]
-              },
-              {
-                "Type": "TimerRestart",
-                "Name": "CatYarn_Swat"
-              },
-              {
-                "Type": "SetFlag",
-                "Name": "CatYarn_Pouncing",
-                "SetTo": false
-              }
-            ]
-          },
-          {
-            "Sensor": {
-              "Type": "ReadPosition",
-              "Slot": "CatYarnPounce",
-              "UseMarkedTarget": false,
-              "Range": 8
-            },
-            "BodyMotion": {
-              "Type": "TameworkLeap",
-              "Duration": 0.6,
-              "Height": 0.9
-            },
-            "HeadMotion": {
-              "Type": "Nothing"
-            }
-          },
-          {
-            "Sensor": {
-              "Type": "Any"
-            },
-            "BodyMotion": {
-              "Type": "Nothing"
-            }
-          }
-        ]
-      },
-      {
-        "$Comment": "Pounce from two to three blocks away, either on the way in or after backing off. Stores the ball's position for the leap; the ball sensor comes before the Not sensor so it supplies that position.",
-        "Sensor": {
-          "Type": "And",
-          "Sensors": [
-            {
-              "Type": "Flag",
-              "Name": "CatYarn_Playing"
-            },
-            {
-              "Type": "Or",
-              "Sensors": [
-                {
-                  "Type": "Flag",
-                  "Name": "CatYarn_Stalking"
-                },
-                {
-                  "Type": "Timer",
-                  "Name": "CatYarn_PounceWait",
-                  "State": "Stopped"
-                }
-              ]
-            },
-            {
-              "Type": "Not",
-              "Sensor": {
-                "Type": "InAir"
-              }
-            },
-            {
-              "Type": "Mob",
-              "Range": 3.3,
-              "GetPlayers": false,
-              "GetNPCs": true,
-              "Filters": [
-                {
-                  "Type": "NPCGroup",
-                  "IncludeGroups": [
-                    "AlecsCats_Yarn_Ball"
-                  ]
-                }
-              ]
-            },
-            {
-              "Type": "Not",
-              "Sensor": {
-                "Type": "Mob",
-                "Range": 2.3,
-                "GetPlayers": false,
-                "GetNPCs": true,
-                "Filters": [
-                  {
-                    "Type": "NPCGroup",
-                    "IncludeGroups": [
-                      "AlecsCats_Yarn_Ball"
-                    ]
-                  }
-                ]
-              }
-            }
-          ]
-        },
-        "BodyMotion": {
-          "Type": "Nothing"
-        },
-        "HeadMotion": {
-          "Type": "Watch"
-        },
-        "Actions": [
-          {
-            "Type": "StorePosition",
-            "Slot": "CatYarnPounce"
-          },
-          {
-            "Type": "PlayAnimation",
-            "Slot": "Action",
-            "Animation": "ToyPounce"
-          },
-          {
-            "Type": "TimerStart",
-            "Name": "CatYarn_AirborneMinimum",
-            "StartValueRange": [
-              0.6,
-              0.6
-            ],
-            "RestartValueRange": [
-              0.6,
-              0.6
-            ]
-          },
-          {
-            "Type": "TimerRestart",
-            "Name": "CatYarn_AirborneMinimum"
-          },
-          {
-            "Type": "TimerStart",
-            "Name": "CatYarn_Landing",
-            "StartValueRange": [
-              1.2,
-              1.2
-            ],
-            "RestartValueRange": [
-              1.2,
-              1.2
-            ]
-          },
-          {
-            "Type": "TimerRestart",
-            "Name": "CatYarn_Landing"
-          },
-          {
-            "Type": "SetFlag",
-            "Name": "CatYarn_Stalking",
-            "SetTo": false
-          },
-          {
-            "Type": "SetFlag",
-            "Name": "CatYarn_Pouncing",
-            "SetTo": true
-          }
-        ]
-      },
-      {
-        "$Comment": "Backing off for a pounce: give up after a couple of seconds if there is no room.",
-        "Sensor": {
-          "Type": "And",
-          "Sensors": [
-            {
-              "Type": "Flag",
-              "Name": "CatYarn_Stalking"
-            },
-            {
-              "Type": "Timer",
-              "Name": "CatYarn_Stalk",
-              "State": "Stopped"
-            }
-          ]
-        },
-        "Actions": [
-          {
-            "Type": "TimerStart",
-            "Name": "CatYarn_PounceWait",
-            "StartValueRange": [
-              4,
-              8
-            ],
-            "RestartValueRange": [
-              4,
-              8
-            ]
-          },
-          {
-            "Type": "TimerRestart",
-            "Name": "CatYarn_PounceWait"
-          },
-          {
-            "Type": "SetFlag",
-            "Name": "CatYarn_Stalking",
-            "SetTo": false
-          }
-        ]
-      },
-      {
-        "$Comment": "Back away from the ball while facing it.",
-        "Sensor": {
-          "Type": "And",
-          "Sensors": [
-            {
-              "Type": "Flag",
-              "Name": "CatYarn_Stalking"
-            },
-            {
-              "Type": "Mob",
-              "Range": {
-                "Compute": "CatYarnSearchRange"
-              },
-              "GetPlayers": false,
-              "GetNPCs": true,
-              "Filters": [
-                {
-                  "Type": "NPCGroup",
-                  "IncludeGroups": [
-                    "AlecsCats_Yarn_Ball"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        "BodyMotion": {
-          "Type": "MaintainDistance",
-          "DesiredDistanceRange": [
-            2.7,
-            2.9
-          ],
-          "MoveThreshold": 0.2,
-          "RelativeForwardsSpeed": 0.25,
-          "RelativeBackwardsSpeed": 0.3,
-          "MoveTowardsSlowdownThreshold": 1
-        },
-        "HeadMotion": {
-          "Type": "Watch"
-        }
-      },
-      {
-        "$Comment": "Every so often, back off for a pounce instead of swatting.",
-        "Sensor": {
-          "Type": "And",
-          "Sensors": [
-            {
-              "Type": "Flag",
-              "Name": "CatYarn_Playing"
-            },
-            {
-              "Type": "Timer",
-              "Name": "CatYarn_PounceWait",
-              "State": "Stopped"
-            },
-            {
-              "Type": "Not",
-              "Sensor": {
-                "Type": "InAir"
-              }
-            },
-            {
-              "Type": "Mob",
-              "Range": 1.1,
-              "GetPlayers": false,
-              "GetNPCs": true,
-              "Filters": [
-                {
-                  "Type": "NPCGroup",
-                  "IncludeGroups": [
-                    "AlecsCats_Yarn_Ball"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        "BodyMotion": {
-          "Type": "Nothing"
-        },
-        "HeadMotion": {
-          "Type": "Watch"
-        },
-        "Actions": [
-          {
-            "Type": "TimerStart",
-            "Name": "CatYarn_Stalk",
-            "StartValueRange": [
-              2,
-              2
-            ],
-            "RestartValueRange": [
-              2,
-              2
-            ]
-          },
-          {
-            "Type": "TimerRestart",
-            "Name": "CatYarn_Stalk"
-          },
-          {
-            "Type": "SetFlag",
-            "Name": "CatYarn_Stalking",
-            "SetTo": true
-          }
-        ]
-      },
-      {
-        "$Comment": "Swat at the ball every second or two while in paw reach. The beacon tells the ball to roll on the swat.",
+        "$Comment": "Swat at the ball every second or two while close to it.",
         "Continue": true,
         "Sensor": {
           "Type": "And",
@@ -757,7 +343,7 @@
             },
             {
               "Type": "Mob",
-              "Range": 1.1,
+              "Range": 1.6,
               "GetPlayers": false,
               "GetNPCs": true,
               "Filters": [
@@ -776,15 +362,6 @@
             "Type": "PlayAnimation",
             "Slot": "Action",
             "Animation": "ToyPlay"
-          },
-          {
-            "Type": "Beacon",
-            "Message": "AlecsCats_Yarn_Swat",
-            "Range": 3,
-            "TargetGroups": [
-              "AlecsCats_Yarn_Ball"
-            ],
-            "ExpirationTime": 0.5
           },
           {
             "Type": "TimerStart",
