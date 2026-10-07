@@ -1,0 +1,53 @@
+{
+  "Model": "NPC/Pets/Cat_Yarn_Ball/Models/Model.blockymodel",
+  "Texture": "NPC/Pets/Cat_Yarn_Ball/Models/Texture.png",
+  "EyeHeight": 0.15,
+  "HitBox": {
+    "Max": {
+      "X": 0.15,
+      "Y": 0.3,
+      "Z": 0.15
+    },
+    "Min": {
+      "X": -0.15,
+      "Y": 0,
+      "Z": -0.15
+    }
+  },
+  "MinScale": 1,
+  "MaxScale": 1,
+  "AnimationSets": {
+    "Idle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pets/Cat_Yarn_Ball/Animations/Idle.blockyanim",
+          "Looping": true
+        }
+      ]
+    },
+    "Walk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pets/Cat_Yarn_Ball/Animations/Roll.blockyanim",
+          "Looping": true
+        }
+      ]
+    },
+    "Run": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pets/Cat_Yarn_Ball/Animations/Roll.blockyanim",
+          "Looping": true
+        }
+      ]
+    },
+    "Fall": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pets/Cat_Yarn_Ball/Animations/Roll.blockyanim",
+          "Looping": true
+        }
+      ]
+    }
+  }
+}

@@ -1,18 +1,18 @@
 {
-  "$Comment": "Idle pet cats run to a Cat Yarn Ball lying on the ground and bat at it for a while, with a happiness gain.",
+  "$Comment": "Idle pet cats chase a thrown Cat Yarn Ball (the Cat_Yarn_Ball creature) and bat at it for a while, with a happiness gain. The ball rolls away each time a cat reaches it.",
   "Type": "Component",
   "Class": "Instruction",
   "Parameters": {
     "CatYarnSearchRange": {
-      "Value": 8,
-      "Description": "How far an idle cat notices a dropped yarn ball."
+      "Value": 10,
+      "Description": "How far an idle cat notices a yarn ball."
     },
     "CatYarnPlayDurationRange": {
       "Value": [
-        8,
-        14
+        14,
+        22
       ],
-      "Description": "Seconds a cat bats at the ball."
+      "Description": "Seconds a cat chases and bats at the ball."
     },
     "CatYarnHappiness": {
       "Value": 5,
@@ -53,12 +53,19 @@
           ]
         },
         {
-          "Type": "DroppedItem",
+          "Type": "Mob",
           "Range": {
             "Compute": "CatYarnSearchRange"
           },
-          "Items": [
-            "Cat_Yarn_Ball"
+          "GetPlayers": false,
+          "GetNPCs": true,
+          "Filters": [
+            {
+              "Type": "NPCGroup",
+              "IncludeGroups": [
+                "AlecsCats_Yarn_Ball"
+              ]
+            }
           ]
         }
       ]
@@ -87,12 +94,12 @@
             "Type": "TimerStart",
             "Name": "CatEnrich_Watchdog",
             "StartValueRange": [
-              45,
-              45
+              60,
+              60
             ],
             "RestartValueRange": [
-              45,
-              45
+              60,
+              60
             ]
           },
           {
@@ -198,10 +205,17 @@
               "Set": false
             },
             {
-              "Type": "DroppedItem",
-              "Range": 1.3,
-              "Items": [
-                "Cat_Yarn_Ball"
+              "Type": "Mob",
+              "Range": 1.6,
+              "GetPlayers": false,
+              "GetNPCs": true,
+              "Filters": [
+                {
+                  "Type": "NPCGroup",
+                  "IncludeGroups": [
+                    "AlecsCats_Yarn_Ball"
+                  ]
+                }
               ]
             }
           ]
@@ -239,7 +253,8 @@
         ]
       },
       {
-        "$Comment": "Swat the ball every second or two.",
+        "$Comment": "Swat at the ball every second or two while close to it.",
+        "Continue": true,
         "Sensor": {
           "Type": "And",
           "Sensors": [
@@ -249,19 +264,20 @@
               "State": "Stopped"
             },
             {
-              "Type": "DroppedItem",
-              "Range": 1.3,
-              "Items": [
-                "Cat_Yarn_Ball"
+              "Type": "Mob",
+              "Range": 1.6,
+              "GetPlayers": false,
+              "GetNPCs": true,
+              "Filters": [
+                {
+                  "Type": "NPCGroup",
+                  "IncludeGroups": [
+                    "AlecsCats_Yarn_Ball"
+                  ]
+                }
               ]
             }
           ]
-        },
-        "BodyMotion": {
-          "Type": "Nothing"
-        },
-        "HeadMotion": {
-          "Type": "Watch"
         },
         "Actions": [
           {
@@ -288,12 +304,19 @@
         ]
       },
       {
-        "$Comment": "Watch the ball between swats.",
+        "$Comment": "Right on top of the ball: wait for it to roll.",
         "Sensor": {
-          "Type": "DroppedItem",
-          "Range": 1.3,
-          "Items": [
-            "Cat_Yarn_Ball"
+          "Type": "Mob",
+          "Range": 0.8,
+          "GetPlayers": false,
+          "GetNPCs": true,
+          "Filters": [
+            {
+              "Type": "NPCGroup",
+              "IncludeGroups": [
+                "AlecsCats_Yarn_Ball"
+              ]
+            }
           ]
         },
         "BodyMotion": {
@@ -304,21 +327,28 @@
         }
       },
       {
-        "$Comment": "Run to the ball.",
+        "$Comment": "Chase the ball.",
         "Sensor": {
-          "Type": "DroppedItem",
+          "Type": "Mob",
           "Range": {
             "Compute": "CatYarnSearchRange"
           },
-          "Items": [
-            "Cat_Yarn_Ball"
+          "GetPlayers": false,
+          "GetNPCs": true,
+          "Filters": [
+            {
+              "Type": "NPCGroup",
+              "IncludeGroups": [
+                "AlecsCats_Yarn_Ball"
+              ]
+            }
           ]
         },
         "BodyMotion": {
           "Type": "Seek",
           "RelativeSpeed": 0.8,
-          "SlowDownDistance": 2,
-          "StopDistance": 0.7,
+          "SlowDownDistance": 1.5,
+          "StopDistance": 0.6,
           "RelaxedMoveConstraints": false
         },
         "HeadMotion": {

@@ -29,6 +29,13 @@
       -10
     ]
   },
+  "Interactions": {
+    "Secondary": {
+      "Interactions": [
+        "AlecsCats_Yarn_Ball_Throw"
+      ]
+    }
+  },
   "Recipe": {
     "Input": [
       {

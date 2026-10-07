@@ -1,0 +1,308 @@
+{
+  "$Comment": "The thrown Cat Yarn Ball. It does nothing on its own: it rolls away for a second when a pet cat or a player touches it, turns back into the item when a player uses it, and drops as the item after a few minutes.",
+  "Type": "Generic",
+  "Appearance": "Cat_Yarn_Ball",
+  "NameTranslationKey": "server.npcRoles.Cat_Yarn_Ball.name",
+  "Invulnerable": true,
+  "KnockbackScale": 0,
+  "DefaultPlayerAttitude": "Neutral",
+  "DefaultNPCAttitude": "Ignore",
+  "MaxHealth": {
+    "Compute": "MaxHealth"
+  },
+  "Parameters": {
+    "MaxHealth": {
+      "Value": 100,
+      "Description": "Unused: the ball cannot be hurt."
+    }
+  },
+  "MotionControllerList": [
+    {
+      "Type": "Walk",
+      "MaxWalkSpeed": 5,
+      "Gravity": 10,
+      "MaxFallSpeed": 20,
+      "Acceleration": 14
+    }
+  ],
+  "Instructions": [
+    {
+      "Instructions": [
+        {
+          "$Comment": "Start the lifetime clock once.",
+          "Continue": true,
+          "Sensor": {
+            "Type": "Flag",
+            "Name": "Ball_Started",
+            "Set": false
+          },
+          "Actions": [
+            {
+              "Type": "TimerStart",
+              "Name": "Ball_Life",
+              "StartValueRange": [
+                240,
+                240
+              ],
+              "RestartValueRange": [
+                240,
+                240
+              ]
+            },
+            {
+              "Type": "TimerRestart",
+              "Name": "Ball_Life"
+            },
+            {
+              "Type": "SetFlag",
+              "Name": "Ball_Started",
+              "SetTo": true
+            }
+          ]
+        },
+        {
+          "$Comment": "Left alone for four minutes: become the item again so it is not lost.",
+          "Sensor": {
+            "Type": "And",
+            "Sensors": [
+              {
+                "Type": "Flag",
+                "Name": "Ball_Started"
+              },
+              {
+                "Type": "Timer",
+                "Name": "Ball_Life",
+                "State": "Stopped"
+              }
+            ]
+          },
+          "Actions": [
+            {
+              "Type": "DropItem",
+              "Item": "Cat_Yarn_Ball",
+              "Distance": [
+                0,
+                0
+              ]
+            },
+            {
+              "Type": "Remove",
+              "UseTarget": false
+            }
+          ]
+        },
+        {
+          "$Comment": "Roll away from whoever touched it while the roll timer runs.",
+          "Sensor": {
+            "Type": "And",
+            "Sensors": [
+              {
+                "Type": "Not",
+                "Sensor": {
+                  "Type": "Timer",
+                  "Name": "Ball_Roll",
+                  "State": "Stopped"
+                }
+              },
+              {
+                "Type": "Target",
+                "TargetSlot": "Batter",
+                "Range": 12
+              }
+            ]
+          },
+          "BodyMotion": {
+            "Type": "Flee",
+            "RelativeSpeed": 1,
+            "SlowDownDistance": 6,
+            "StopDistance": 8
+          }
+        },
+        {
+          "$Comment": "A pet cat reached the ball.",
+          "Sensor": {
+            "Type": "And",
+            "Sensors": [
+              {
+                "Type": "Timer",
+                "Name": "Ball_Rest",
+                "State": "Stopped"
+              },
+              {
+                "Type": "Mob",
+                "Range": 1.0,
+                "GetPlayers": false,
+                "GetNPCs": true,
+                "LockOnTarget": true,
+                "LockedTargetSlot": "Batter",
+                "Filters": [
+                  {
+                    "Type": "NPCGroup",
+                    "IncludeGroups": [
+                      "AlecsCats_Pet_Cats"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "BodyMotion": {
+            "Type": "Nothing"
+          },
+          "Actions": [
+            {
+              "Type": "TimerStart",
+              "Name": "Ball_Roll",
+              "StartValueRange": [
+                0.8,
+                1.3
+              ],
+              "RestartValueRange": [
+                0.8,
+                1.3
+              ]
+            },
+            {
+              "Type": "TimerRestart",
+              "Name": "Ball_Roll"
+            },
+            {
+              "Type": "TimerStart",
+              "Name": "Ball_Rest",
+              "StartValueRange": [
+                1.8,
+                2.4
+              ],
+              "RestartValueRange": [
+                1.8,
+                2.4
+              ]
+            },
+            {
+              "Type": "TimerRestart",
+              "Name": "Ball_Rest"
+            }
+          ]
+        },
+        {
+          "$Comment": "A player walked into the ball.",
+          "Sensor": {
+            "Type": "And",
+            "Sensors": [
+              {
+                "Type": "Timer",
+                "Name": "Ball_Rest",
+                "State": "Stopped"
+              },
+              {
+                "Type": "Mob",
+                "Range": 0.7,
+                "GetPlayers": true,
+                "GetNPCs": false,
+                "LockOnTarget": true,
+                "LockedTargetSlot": "Batter"
+              }
+            ]
+          },
+          "BodyMotion": {
+            "Type": "Nothing"
+          },
+          "Actions": [
+            {
+              "Type": "TimerStart",
+              "Name": "Ball_Roll",
+              "StartValueRange": [
+                0.8,
+                1.3
+              ],
+              "RestartValueRange": [
+                0.8,
+                1.3
+              ]
+            },
+            {
+              "Type": "TimerRestart",
+              "Name": "Ball_Roll"
+            },
+            {
+              "Type": "TimerStart",
+              "Name": "Ball_Rest",
+              "StartValueRange": [
+                1.8,
+                2.4
+              ],
+              "RestartValueRange": [
+                1.8,
+                2.4
+              ]
+            },
+            {
+              "Type": "TimerRestart",
+              "Name": "Ball_Rest"
+            }
+          ]
+        },
+        {
+          "Sensor": {
+            "Type": "Any"
+          },
+          "BodyMotion": {
+            "Type": "Nothing"
+          }
+        }
+      ]
+    }
+  ],
+  "InteractionInstruction": {
+    "Instructions": [
+      {
+        "Sensor": {
+          "Type": "Not",
+          "Sensor": {
+            "Type": "CanInteract",
+            "ViewSector": 360
+          }
+        },
+        "Actions": [
+          {
+            "Type": "SetInteractable",
+            "Interactable": false
+          }
+        ]
+      },
+      {
+        "Continue": true,
+        "Sensor": {
+          "Type": "Any"
+        },
+        "Actions": [
+          {
+            "Type": "SetInteractable",
+            "Interactable": true,
+            "Hint": "server.interactionHints.alecsCats.pickUpBall"
+          }
+        ]
+      },
+      {
+        "$Comment": "Using the ball picks it up: it drops as the item where it lies.",
+        "Sensor": {
+          "Type": "HasInteracted"
+        },
+        "Actions": [
+          {
+            "Type": "DropItem",
+            "Item": "Cat_Yarn_Ball",
+            "Distance": [
+              0,
+              0
+            ]
+          },
+          {
+            "Type": "Remove",
+            "UseTarget": false
+          }
+        ]
+      }
+    ]
+  }
+}
