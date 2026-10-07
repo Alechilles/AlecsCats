@@ -297,7 +297,7 @@
           },
           {
             "Type": "SpawnParticles",
-            "ParticleSystem": "Block_Land_Wood_Bits",
+            "ParticleSystem": "Block_Hit_Wood",
             "Scale": 0.4,
             "Offset": [
               0,

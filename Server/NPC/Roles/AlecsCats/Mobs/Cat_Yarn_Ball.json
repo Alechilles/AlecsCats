@@ -59,6 +59,11 @@
             "Sensors": [
               {
                 "Type": "Flag",
+                "Name": "Ball_Gone",
+                "Set": false
+              },
+              {
+                "Type": "Flag",
                 "Name": "Ball_Started"
               },
               {
@@ -79,10 +84,24 @@
               "ThrowSpeed": 4
             },
             {
-              "Type": "Remove",
-              "UseTarget": false
+              "Type": "SetFlag",
+              "Name": "Ball_Gone",
+              "SetTo": true
+            },
+            {
+              "Type": "Despawn"
             }
           ]
+        },
+        {
+          "$Comment": "Picked up or expired: stay still until the despawn completes.",
+          "Sensor": {
+            "Type": "Flag",
+            "Name": "Ball_Gone"
+          },
+          "BodyMotion": {
+            "Type": "Nothing"
+          }
         },
         {
           "$Comment": "Roll away from whoever touched it while the roll timer runs.",
@@ -234,7 +253,17 @@
       {
         "$Comment": "Using the ball picks it up: it drops as the item where it lies.",
         "Sensor": {
-          "Type": "HasInteracted"
+          "Type": "And",
+          "Sensors": [
+            {
+              "Type": "Flag",
+              "Name": "Ball_Gone",
+              "Set": false
+            },
+            {
+              "Type": "HasInteracted"
+            }
+          ]
         },
         "Actions": [
           {
@@ -247,8 +276,12 @@
             "ThrowSpeed": 4
           },
           {
-            "Type": "Remove",
-            "UseTarget": false
+            "Type": "SetFlag",
+            "Name": "Ball_Gone",
+            "SetTo": true
+          },
+          {
+            "Type": "Despawn"
           }
         ]
       }
