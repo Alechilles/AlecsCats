@@ -13,6 +13,7 @@ All notable changes to **Alec's Cats!** will be documented in this file.
 - The Cat Teaser Wand is no longer a prototype. It has a crafting recipe, and cats gain happiness from playing with it, at most once every few minutes per cat.
 - Cats gain a little happiness after a nap in a bed, a scratch, time on a tower perch, or play with a yarn ball. They rest between activities and stop when given a command or when they need food, water, or sleep.
 - Pet cats now treat the spot where they are told to idle or hold as their new home area, so a cat that followed you somewhere no longer runs back to where it used to wander.
+- The Cat Treat Bag now supports Tamework's command hotswap keys (Q, E, and R), like other command items.
 - All new items are crafted at a Tier 2 Workbench in the Tinkering tab and are translated in every supported language.
 
 ## 1.14.0 - Cat Animation Rework - 2026-10-05

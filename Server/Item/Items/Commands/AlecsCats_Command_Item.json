@@ -20,6 +20,30 @@
           "CommandId": "OpenSelectionMenu"
         }
       ]
+    },
+    "Ability1": {
+      "Interactions": [
+        {
+          "Type": "TameworkCommandHotswap",
+          "Slot": "Q"
+        }
+      ]
+    },
+    "Ability2": {
+      "Interactions": [
+        {
+          "Type": "TameworkCommandHotswap",
+          "Slot": "E"
+        }
+      ]
+    },
+    "Ability3": {
+      "Interactions": [
+        {
+          "Type": "TameworkCommandHotswap",
+          "Slot": "R"
+        }
+      ]
     }
   },
   "Model": "Items/Tools/Feedbag/Feedbag.blockymodel",
