@@ -351,6 +351,10 @@
         "Actions": [
           {
             "Type": "PlayAnimation",
+            "Slot": "Action"
+          },
+          {
+            "Type": "PlayAnimation",
             "Slot": "Status",
             "Animation": "Sit"
           },
@@ -478,6 +482,11 @@
               0.4,
               0.8
             ]
+          },
+          {
+            "Type": "PlayAnimation",
+            "Slot": "Action",
+            "Animation": "Leap"
           },
           {
             "Type": "TimerStart",

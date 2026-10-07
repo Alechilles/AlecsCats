@@ -168,6 +168,13 @@
         }
       ]
     },
+    "Leap": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pets/Cat/Animations/Jump_Far.blockyanim"
+        }
+      ]
+    },
     "Scratch": {
       "Animations": [
         {
