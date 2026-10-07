@@ -182,14 +182,12 @@
           {
             "Type": "TimerStart",
             "Name": "CatBed_Cooldown",
-            "StartValueRange": [
-              120,
-              240
-            ],
-            "RestartValueRange": [
-              120,
-              240
-            ]
+            "StartValueRange": {
+              "Compute": "CatBedCooldownRange"
+            },
+            "RestartValueRange": {
+              "Compute": "CatBedCooldownRange"
+            }
           },
           {
             "Type": "TimerRestart",
@@ -250,7 +248,7 @@
               ],
               "Sensor": {
                 "Type": "Block",
-                "Range": 0.2,
+                "Range": 0.45,
                 "MaxHeight": 3,
                 "Blocks": {
                   "Compute": "CatBedBlockSet"

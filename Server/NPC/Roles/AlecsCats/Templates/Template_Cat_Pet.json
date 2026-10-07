@@ -971,6 +971,32 @@
         {
           "Type": "ReleaseTarget",
           "TargetSlot": "CatToyOwner"
+        },
+        {
+          "Type": "SetFlag",
+          "Name": "CatToy_Played",
+          "SetTo": false
+        }
+      ]
+    },
+    {
+      "$Comment": "A nap, scratch or perch cut short by hunger, thirst or breeding drops its pose before the cat walks off.",
+      "States": [
+        {
+          "From": [
+            "Idle"
+          ],
+          "To": [
+            "NeedsSeekWater",
+            "NeedsSeekFood",
+            "BreedPair"
+          ]
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "PlayAnimation",
+          "Slot": "Status"
         }
       ]
     },
@@ -1742,6 +1768,11 @@
                     "Type": "Timer",
                     "Name": "CatBox_Sit_Cooldown",
                     "State": "Stopped"
+                  },
+                  {
+                    "Type": "Flag",
+                    "Name": "CatEnrich_Busy",
+                    "Set": false
                   },
                   {
                     "Type": "AdjustPosition",
