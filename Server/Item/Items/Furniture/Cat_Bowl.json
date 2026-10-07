@@ -1,0 +1,1441 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Cat_Bowl.name",
+    "Description": "server.items.Cat_Bowl.description"
+  },
+  "PlayerAnimationsId": "Block",
+  "Categories": [
+    "Furniture.Furniture"
+  ],
+  "Set": "Cats",
+  "Icon": "Icons/ItemsGenerated/Cat_Bowl.png",
+  "IconProperties": {
+    "Scale": 0.9,
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Translation": [
+      0,
+      -13.5
+    ]
+  },
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Soil_Clay",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Plant_Flower_Catnip",
+        "Quantity": 1
+      }
+    ],
+    "Output": [
+      {
+        "ItemId": "Cat_Bowl",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Workbench",
+        "RequiredTierLevel": 2,
+        "Categories": [
+          "Workbench_Tinkering"
+        ]
+      }
+    ],
+    "OutputQuantity": 1,
+    "TimeSeconds": 3
+  },
+  "BlockType": {
+    "Material": "Solid",
+    "DrawType": "Model",
+    "Opacity": "Transparent",
+    "CustomModel": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Empty.blockymodel",
+    "CustomModelScale": 1,
+    "CustomModelTexture": [
+      {
+        "Texture": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Empty_Texture.png",
+        "Weight": 1
+      }
+    ],
+    "HitboxType": "Cat_Bowl",
+    "VariantRotation": "NESW",
+    "Support": {
+      "Down": [
+        {
+          "FaceType": "Full"
+        }
+      ]
+    },
+    "BlockParticleSetId": "Clay",
+    "BlockSoundSetId": "Clay_Pot_Small",
+    "ParticleColor": "#cfc8ba",
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "Benches",
+        "ItemId": "Cat_Bowl"
+      }
+    },
+    "Interactions": {
+      "Use": "Open_Container"
+    },
+    "InteractionHint": "server.interactionHints.alecsCats.openBowl",
+    "Flags": {
+      "IsUsable": true
+    },
+    "BlockEntity": {
+      "Components": {
+        "ItemContainerBlock": {
+          "Capacity": 2
+        },
+        "TameworkFeedTroughWaterCharges": {
+          "BaseBlockId": "Cat_Bowl",
+          "MaxWaterCharges": 20,
+          "FoodCapacity": 2,
+          "WaterCharges": 0
+        }
+      }
+    }
+  },
+  "Tags": {
+    "Type": [
+      "Furniture"
+    ]
+  },
+  "ItemSoundSetId": "ISS_Items_Clay",
+  "ItemLevel": 3,
+  "MaxStack": 10,
+  "Variant": false,
+  "Container": {
+    "Capacity": 2
+  },
+  "State": {
+    "Water": {
+      "BlockType": {
+        "Material": "Solid",
+        "DrawType": "Model",
+        "Opacity": "Transparent",
+        "CustomModel": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Water.blockymodel",
+        "CustomModelScale": 1,
+        "CustomModelTexture": [
+          {
+            "Texture": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Water_Texture.png",
+            "Weight": 1
+          }
+        ],
+        "HitboxType": "Cat_Bowl",
+        "VariantRotation": "NESW",
+        "Support": {
+          "Down": [
+            {
+              "FaceType": "Full"
+            }
+          ]
+        },
+        "BlockParticleSetId": "Clay",
+        "BlockSoundSetId": "Clay_Pot_Small",
+        "ParticleColor": "#cfc8ba",
+        "Gathering": {
+          "Breaking": {
+            "GatherType": "Benches",
+            "ItemId": "Cat_Bowl"
+          }
+        },
+        "Interactions": {
+          "Use": {
+            "Interactions": [
+              {
+                "Type": "Charging",
+                "DisplayProgress": true,
+                "Next": {
+                  "1.25": {
+                    "Type": "TameworkClearFeedTroughWater",
+                    "RequireEmptyHand": false
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "InteractionHint": "server.interactionHints.alecsCats.emptyBowl",
+        "Flags": {
+          "IsUsable": true
+        },
+        "BlockEntity": {
+          "Components": {
+            "ItemContainerBlock": {
+              "Capacity": 1
+            },
+            "TameworkFeedTroughWaterCharges": {
+              "BaseBlockId": "Cat_Bowl",
+              "MaxWaterCharges": 20,
+              "FoodCapacity": 2,
+              "WaterCharges": 0
+            }
+          }
+        }
+      },
+      "Variant": true,
+      "Container": {
+        "GlobalFilter": "DenyAll",
+        "Capacity": 0
+      },
+      "State": {
+        "Full": {
+          "BlockType": {
+            "Material": "Solid",
+            "DrawType": "Model",
+            "Opacity": "Transparent",
+            "CustomModel": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Water.blockymodel",
+            "CustomModelScale": 1,
+            "CustomModelTexture": [
+              {
+                "Texture": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Water_Texture.png",
+                "Weight": 1
+              }
+            ],
+            "HitboxType": "Cat_Bowl",
+            "VariantRotation": "NESW",
+            "Support": {
+              "Down": [
+                {
+                  "FaceType": "Full"
+                }
+              ]
+            },
+            "BlockParticleSetId": "Clay",
+            "BlockSoundSetId": "Clay_Pot_Small",
+            "ParticleColor": "#cfc8ba",
+            "Gathering": {
+              "Breaking": {
+                "GatherType": "Benches",
+                "ItemId": "Cat_Bowl"
+              }
+            },
+            "Interactions": {
+              "Use": {
+                "Interactions": [
+                  {
+                    "Type": "Charging",
+                    "DisplayProgress": true,
+                    "Next": {
+                      "1.25": {
+                        "Type": "TameworkClearFeedTroughWater",
+                        "RequireEmptyHand": false
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "InteractionHint": "server.interactionHints.alecsCats.emptyBowl",
+            "Flags": {
+              "IsUsable": true
+            },
+            "BlockEntity": {
+              "Components": {
+                "ItemContainerBlock": {
+                  "Capacity": 1
+                },
+                "TameworkFeedTroughWaterCharges": {
+                  "BaseBlockId": "Cat_Bowl",
+                  "MaxWaterCharges": 20,
+                  "FoodCapacity": 2,
+                  "WaterCharges": 0
+                }
+              }
+            }
+          }
+        },
+        "90": {
+          "BlockType": {
+            "Material": "Solid",
+            "DrawType": "Model",
+            "Opacity": "Transparent",
+            "CustomModel": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Water.blockymodel",
+            "CustomModelScale": 1,
+            "CustomModelTexture": [
+              {
+                "Texture": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Water_Texture.png",
+                "Weight": 1
+              }
+            ],
+            "HitboxType": "Cat_Bowl",
+            "VariantRotation": "NESW",
+            "Support": {
+              "Down": [
+                {
+                  "FaceType": "Full"
+                }
+              ]
+            },
+            "BlockParticleSetId": "Clay",
+            "BlockSoundSetId": "Clay_Pot_Small",
+            "ParticleColor": "#cfc8ba",
+            "Gathering": {
+              "Breaking": {
+                "GatherType": "Benches",
+                "ItemId": "Cat_Bowl"
+              }
+            },
+            "Interactions": {
+              "Use": {
+                "Interactions": [
+                  {
+                    "Type": "Charging",
+                    "DisplayProgress": true,
+                    "Next": {
+                      "1.25": {
+                        "Type": "TameworkClearFeedTroughWater",
+                        "RequireEmptyHand": false
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "InteractionHint": "server.interactionHints.alecsCats.emptyBowl",
+            "Flags": {
+              "IsUsable": true
+            },
+            "BlockEntity": {
+              "Components": {
+                "ItemContainerBlock": {
+                  "Capacity": 1
+                },
+                "TameworkFeedTroughWaterCharges": {
+                  "BaseBlockId": "Cat_Bowl",
+                  "MaxWaterCharges": 20,
+                  "FoodCapacity": 2,
+                  "WaterCharges": 0
+                }
+              }
+            }
+          }
+        },
+        "80": {
+          "BlockType": {
+            "Material": "Solid",
+            "DrawType": "Model",
+            "Opacity": "Transparent",
+            "CustomModel": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Water.blockymodel",
+            "CustomModelScale": 1,
+            "CustomModelTexture": [
+              {
+                "Texture": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Water_Texture.png",
+                "Weight": 1
+              }
+            ],
+            "HitboxType": "Cat_Bowl",
+            "VariantRotation": "NESW",
+            "Support": {
+              "Down": [
+                {
+                  "FaceType": "Full"
+                }
+              ]
+            },
+            "BlockParticleSetId": "Clay",
+            "BlockSoundSetId": "Clay_Pot_Small",
+            "ParticleColor": "#cfc8ba",
+            "Gathering": {
+              "Breaking": {
+                "GatherType": "Benches",
+                "ItemId": "Cat_Bowl"
+              }
+            },
+            "Interactions": {
+              "Use": {
+                "Interactions": [
+                  {
+                    "Type": "Charging",
+                    "DisplayProgress": true,
+                    "Next": {
+                      "1.25": {
+                        "Type": "TameworkClearFeedTroughWater",
+                        "RequireEmptyHand": false
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "InteractionHint": "server.interactionHints.alecsCats.emptyBowl",
+            "Flags": {
+              "IsUsable": true
+            },
+            "BlockEntity": {
+              "Components": {
+                "ItemContainerBlock": {
+                  "Capacity": 1
+                },
+                "TameworkFeedTroughWaterCharges": {
+                  "BaseBlockId": "Cat_Bowl",
+                  "MaxWaterCharges": 20,
+                  "FoodCapacity": 2,
+                  "WaterCharges": 0
+                }
+              }
+            }
+          }
+        },
+        "70": {
+          "BlockType": {
+            "Material": "Solid",
+            "DrawType": "Model",
+            "Opacity": "Transparent",
+            "CustomModel": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Water.blockymodel",
+            "CustomModelScale": 1,
+            "CustomModelTexture": [
+              {
+                "Texture": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Water_Texture.png",
+                "Weight": 1
+              }
+            ],
+            "HitboxType": "Cat_Bowl",
+            "VariantRotation": "NESW",
+            "Support": {
+              "Down": [
+                {
+                  "FaceType": "Full"
+                }
+              ]
+            },
+            "BlockParticleSetId": "Clay",
+            "BlockSoundSetId": "Clay_Pot_Small",
+            "ParticleColor": "#cfc8ba",
+            "Gathering": {
+              "Breaking": {
+                "GatherType": "Benches",
+                "ItemId": "Cat_Bowl"
+              }
+            },
+            "Interactions": {
+              "Use": {
+                "Interactions": [
+                  {
+                    "Type": "Charging",
+                    "DisplayProgress": true,
+                    "Next": {
+                      "1.25": {
+                        "Type": "TameworkClearFeedTroughWater",
+                        "RequireEmptyHand": false
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "InteractionHint": "server.interactionHints.alecsCats.emptyBowl",
+            "Flags": {
+              "IsUsable": true
+            },
+            "BlockEntity": {
+              "Components": {
+                "ItemContainerBlock": {
+                  "Capacity": 1
+                },
+                "TameworkFeedTroughWaterCharges": {
+                  "BaseBlockId": "Cat_Bowl",
+                  "MaxWaterCharges": 20,
+                  "FoodCapacity": 2,
+                  "WaterCharges": 0
+                }
+              }
+            }
+          }
+        },
+        "60": {
+          "BlockType": {
+            "Material": "Solid",
+            "DrawType": "Model",
+            "Opacity": "Transparent",
+            "CustomModel": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Water.blockymodel",
+            "CustomModelScale": 1,
+            "CustomModelTexture": [
+              {
+                "Texture": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Water_Texture.png",
+                "Weight": 1
+              }
+            ],
+            "HitboxType": "Cat_Bowl",
+            "VariantRotation": "NESW",
+            "Support": {
+              "Down": [
+                {
+                  "FaceType": "Full"
+                }
+              ]
+            },
+            "BlockParticleSetId": "Clay",
+            "BlockSoundSetId": "Clay_Pot_Small",
+            "ParticleColor": "#cfc8ba",
+            "Gathering": {
+              "Breaking": {
+                "GatherType": "Benches",
+                "ItemId": "Cat_Bowl"
+              }
+            },
+            "Interactions": {
+              "Use": {
+                "Interactions": [
+                  {
+                    "Type": "Charging",
+                    "DisplayProgress": true,
+                    "Next": {
+                      "1.25": {
+                        "Type": "TameworkClearFeedTroughWater",
+                        "RequireEmptyHand": false
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "InteractionHint": "server.interactionHints.alecsCats.emptyBowl",
+            "Flags": {
+              "IsUsable": true
+            },
+            "BlockEntity": {
+              "Components": {
+                "ItemContainerBlock": {
+                  "Capacity": 1
+                },
+                "TameworkFeedTroughWaterCharges": {
+                  "BaseBlockId": "Cat_Bowl",
+                  "MaxWaterCharges": 20,
+                  "FoodCapacity": 2,
+                  "WaterCharges": 0
+                }
+              }
+            }
+          }
+        },
+        "50": {
+          "BlockType": {
+            "Material": "Solid",
+            "DrawType": "Model",
+            "Opacity": "Transparent",
+            "CustomModel": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Water.blockymodel",
+            "CustomModelScale": 1,
+            "CustomModelTexture": [
+              {
+                "Texture": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Water_Texture.png",
+                "Weight": 1
+              }
+            ],
+            "HitboxType": "Cat_Bowl",
+            "VariantRotation": "NESW",
+            "Support": {
+              "Down": [
+                {
+                  "FaceType": "Full"
+                }
+              ]
+            },
+            "BlockParticleSetId": "Clay",
+            "BlockSoundSetId": "Clay_Pot_Small",
+            "ParticleColor": "#cfc8ba",
+            "Gathering": {
+              "Breaking": {
+                "GatherType": "Benches",
+                "ItemId": "Cat_Bowl"
+              }
+            },
+            "Interactions": {
+              "Use": {
+                "Interactions": [
+                  {
+                    "Type": "Charging",
+                    "DisplayProgress": true,
+                    "Next": {
+                      "1.25": {
+                        "Type": "TameworkClearFeedTroughWater",
+                        "RequireEmptyHand": false
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "InteractionHint": "server.interactionHints.alecsCats.emptyBowl",
+            "Flags": {
+              "IsUsable": true
+            },
+            "BlockEntity": {
+              "Components": {
+                "ItemContainerBlock": {
+                  "Capacity": 1
+                },
+                "TameworkFeedTroughWaterCharges": {
+                  "BaseBlockId": "Cat_Bowl",
+                  "MaxWaterCharges": 20,
+                  "FoodCapacity": 2,
+                  "WaterCharges": 0
+                }
+              }
+            }
+          }
+        },
+        "40": {
+          "BlockType": {
+            "Material": "Solid",
+            "DrawType": "Model",
+            "Opacity": "Transparent",
+            "CustomModel": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Water_Low.blockymodel",
+            "CustomModelScale": 1,
+            "CustomModelTexture": [
+              {
+                "Texture": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Water_Low_Texture.png",
+                "Weight": 1
+              }
+            ],
+            "HitboxType": "Cat_Bowl",
+            "VariantRotation": "NESW",
+            "Support": {
+              "Down": [
+                {
+                  "FaceType": "Full"
+                }
+              ]
+            },
+            "BlockParticleSetId": "Clay",
+            "BlockSoundSetId": "Clay_Pot_Small",
+            "ParticleColor": "#cfc8ba",
+            "Gathering": {
+              "Breaking": {
+                "GatherType": "Benches",
+                "ItemId": "Cat_Bowl"
+              }
+            },
+            "Interactions": {
+              "Use": {
+                "Interactions": [
+                  {
+                    "Type": "Charging",
+                    "DisplayProgress": true,
+                    "Next": {
+                      "1.25": {
+                        "Type": "TameworkClearFeedTroughWater",
+                        "RequireEmptyHand": false
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "InteractionHint": "server.interactionHints.alecsCats.emptyBowl",
+            "Flags": {
+              "IsUsable": true
+            },
+            "BlockEntity": {
+              "Components": {
+                "ItemContainerBlock": {
+                  "Capacity": 1
+                },
+                "TameworkFeedTroughWaterCharges": {
+                  "BaseBlockId": "Cat_Bowl",
+                  "MaxWaterCharges": 20,
+                  "FoodCapacity": 2,
+                  "WaterCharges": 0
+                }
+              }
+            }
+          }
+        },
+        "30": {
+          "BlockType": {
+            "Material": "Solid",
+            "DrawType": "Model",
+            "Opacity": "Transparent",
+            "CustomModel": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Water_Low.blockymodel",
+            "CustomModelScale": 1,
+            "CustomModelTexture": [
+              {
+                "Texture": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Water_Low_Texture.png",
+                "Weight": 1
+              }
+            ],
+            "HitboxType": "Cat_Bowl",
+            "VariantRotation": "NESW",
+            "Support": {
+              "Down": [
+                {
+                  "FaceType": "Full"
+                }
+              ]
+            },
+            "BlockParticleSetId": "Clay",
+            "BlockSoundSetId": "Clay_Pot_Small",
+            "ParticleColor": "#cfc8ba",
+            "Gathering": {
+              "Breaking": {
+                "GatherType": "Benches",
+                "ItemId": "Cat_Bowl"
+              }
+            },
+            "Interactions": {
+              "Use": {
+                "Interactions": [
+                  {
+                    "Type": "Charging",
+                    "DisplayProgress": true,
+                    "Next": {
+                      "1.25": {
+                        "Type": "TameworkClearFeedTroughWater",
+                        "RequireEmptyHand": false
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "InteractionHint": "server.interactionHints.alecsCats.emptyBowl",
+            "Flags": {
+              "IsUsable": true
+            },
+            "BlockEntity": {
+              "Components": {
+                "ItemContainerBlock": {
+                  "Capacity": 1
+                },
+                "TameworkFeedTroughWaterCharges": {
+                  "BaseBlockId": "Cat_Bowl",
+                  "MaxWaterCharges": 20,
+                  "FoodCapacity": 2,
+                  "WaterCharges": 0
+                }
+              }
+            }
+          }
+        },
+        "20": {
+          "BlockType": {
+            "Material": "Solid",
+            "DrawType": "Model",
+            "Opacity": "Transparent",
+            "CustomModel": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Water_Low.blockymodel",
+            "CustomModelScale": 1,
+            "CustomModelTexture": [
+              {
+                "Texture": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Water_Low_Texture.png",
+                "Weight": 1
+              }
+            ],
+            "HitboxType": "Cat_Bowl",
+            "VariantRotation": "NESW",
+            "Support": {
+              "Down": [
+                {
+                  "FaceType": "Full"
+                }
+              ]
+            },
+            "BlockParticleSetId": "Clay",
+            "BlockSoundSetId": "Clay_Pot_Small",
+            "ParticleColor": "#cfc8ba",
+            "Gathering": {
+              "Breaking": {
+                "GatherType": "Benches",
+                "ItemId": "Cat_Bowl"
+              }
+            },
+            "Interactions": {
+              "Use": {
+                "Interactions": [
+                  {
+                    "Type": "Charging",
+                    "DisplayProgress": true,
+                    "Next": {
+                      "1.25": {
+                        "Type": "TameworkClearFeedTroughWater",
+                        "RequireEmptyHand": false
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "InteractionHint": "server.interactionHints.alecsCats.emptyBowl",
+            "Flags": {
+              "IsUsable": true
+            },
+            "BlockEntity": {
+              "Components": {
+                "ItemContainerBlock": {
+                  "Capacity": 1
+                },
+                "TameworkFeedTroughWaterCharges": {
+                  "BaseBlockId": "Cat_Bowl",
+                  "MaxWaterCharges": 20,
+                  "FoodCapacity": 2,
+                  "WaterCharges": 0
+                }
+              }
+            }
+          }
+        },
+        "10": {
+          "BlockType": {
+            "Material": "Solid",
+            "DrawType": "Model",
+            "Opacity": "Transparent",
+            "CustomModel": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Water_Low.blockymodel",
+            "CustomModelScale": 1,
+            "CustomModelTexture": [
+              {
+                "Texture": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Water_Low_Texture.png",
+                "Weight": 1
+              }
+            ],
+            "HitboxType": "Cat_Bowl",
+            "VariantRotation": "NESW",
+            "Support": {
+              "Down": [
+                {
+                  "FaceType": "Full"
+                }
+              ]
+            },
+            "BlockParticleSetId": "Clay",
+            "BlockSoundSetId": "Clay_Pot_Small",
+            "ParticleColor": "#cfc8ba",
+            "Gathering": {
+              "Breaking": {
+                "GatherType": "Benches",
+                "ItemId": "Cat_Bowl"
+              }
+            },
+            "Interactions": {
+              "Use": {
+                "Interactions": [
+                  {
+                    "Type": "Charging",
+                    "DisplayProgress": true,
+                    "Next": {
+                      "1.25": {
+                        "Type": "TameworkClearFeedTroughWater",
+                        "RequireEmptyHand": false
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "InteractionHint": "server.interactionHints.alecsCats.emptyBowl",
+            "Flags": {
+              "IsUsable": true
+            },
+            "BlockEntity": {
+              "Components": {
+                "ItemContainerBlock": {
+                  "Capacity": 1
+                },
+                "TameworkFeedTroughWaterCharges": {
+                  "BaseBlockId": "Cat_Bowl",
+                  "MaxWaterCharges": 20,
+                  "FoodCapacity": 2,
+                  "WaterCharges": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Food": {
+      "BlockType": {
+        "Material": "Solid",
+        "DrawType": "Model",
+        "Opacity": "Transparent",
+        "CustomModel": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Food.blockymodel",
+        "CustomModelScale": 1,
+        "CustomModelTexture": [
+          {
+            "Texture": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Food_Texture.png",
+            "Weight": 1
+          }
+        ],
+        "HitboxType": "Cat_Bowl",
+        "VariantRotation": "NESW",
+        "Support": {
+          "Down": [
+            {
+              "FaceType": "Full"
+            }
+          ]
+        },
+        "BlockParticleSetId": "Clay",
+        "BlockSoundSetId": "Clay_Pot_Small",
+        "ParticleColor": "#cfc8ba",
+        "Gathering": {
+          "Breaking": {
+            "GatherType": "Benches",
+            "ItemId": "Cat_Bowl"
+          }
+        },
+        "Interactions": {
+          "Use": "Open_Container"
+        },
+        "InteractionHint": "server.interactionHints.alecsCats.openBowl",
+        "Flags": {
+          "IsUsable": true
+        },
+        "BlockEntity": {
+          "Components": {
+            "ItemContainerBlock": {
+              "Capacity": 2
+            },
+            "TameworkFeedTroughWaterCharges": {
+              "BaseBlockId": "Cat_Bowl",
+              "MaxWaterCharges": 20,
+              "FoodCapacity": 2,
+              "WaterCharges": 0
+            }
+          }
+        }
+      },
+      "Variant": true,
+      "Container": {
+        "Capacity": 2
+      },
+      "State": {
+        "Full": {
+          "BlockType": {
+            "Material": "Solid",
+            "DrawType": "Model",
+            "Opacity": "Transparent",
+            "CustomModel": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Food.blockymodel",
+            "CustomModelScale": 1,
+            "CustomModelTexture": [
+              {
+                "Texture": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Food_Texture.png",
+                "Weight": 1
+              }
+            ],
+            "HitboxType": "Cat_Bowl",
+            "VariantRotation": "NESW",
+            "Support": {
+              "Down": [
+                {
+                  "FaceType": "Full"
+                }
+              ]
+            },
+            "BlockParticleSetId": "Clay",
+            "BlockSoundSetId": "Clay_Pot_Small",
+            "ParticleColor": "#cfc8ba",
+            "Gathering": {
+              "Breaking": {
+                "GatherType": "Benches",
+                "ItemId": "Cat_Bowl"
+              }
+            },
+            "Interactions": {
+              "Use": "Open_Container"
+            },
+            "InteractionHint": "server.interactionHints.alecsCats.openBowl",
+            "Flags": {
+              "IsUsable": true
+            },
+            "BlockEntity": {
+              "Components": {
+                "ItemContainerBlock": {
+                  "Capacity": 2
+                },
+                "TameworkFeedTroughWaterCharges": {
+                  "BaseBlockId": "Cat_Bowl",
+                  "MaxWaterCharges": 20,
+                  "FoodCapacity": 2,
+                  "WaterCharges": 0
+                }
+              }
+            }
+          }
+        },
+        "90": {
+          "BlockType": {
+            "Material": "Solid",
+            "DrawType": "Model",
+            "Opacity": "Transparent",
+            "CustomModel": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Food.blockymodel",
+            "CustomModelScale": 1,
+            "CustomModelTexture": [
+              {
+                "Texture": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Food_Texture.png",
+                "Weight": 1
+              }
+            ],
+            "HitboxType": "Cat_Bowl",
+            "VariantRotation": "NESW",
+            "Support": {
+              "Down": [
+                {
+                  "FaceType": "Full"
+                }
+              ]
+            },
+            "BlockParticleSetId": "Clay",
+            "BlockSoundSetId": "Clay_Pot_Small",
+            "ParticleColor": "#cfc8ba",
+            "Gathering": {
+              "Breaking": {
+                "GatherType": "Benches",
+                "ItemId": "Cat_Bowl"
+              }
+            },
+            "Interactions": {
+              "Use": "Open_Container"
+            },
+            "InteractionHint": "server.interactionHints.alecsCats.openBowl",
+            "Flags": {
+              "IsUsable": true
+            },
+            "BlockEntity": {
+              "Components": {
+                "ItemContainerBlock": {
+                  "Capacity": 2
+                },
+                "TameworkFeedTroughWaterCharges": {
+                  "BaseBlockId": "Cat_Bowl",
+                  "MaxWaterCharges": 20,
+                  "FoodCapacity": 2,
+                  "WaterCharges": 0
+                }
+              }
+            }
+          }
+        },
+        "80": {
+          "BlockType": {
+            "Material": "Solid",
+            "DrawType": "Model",
+            "Opacity": "Transparent",
+            "CustomModel": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Food.blockymodel",
+            "CustomModelScale": 1,
+            "CustomModelTexture": [
+              {
+                "Texture": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Food_Texture.png",
+                "Weight": 1
+              }
+            ],
+            "HitboxType": "Cat_Bowl",
+            "VariantRotation": "NESW",
+            "Support": {
+              "Down": [
+                {
+                  "FaceType": "Full"
+                }
+              ]
+            },
+            "BlockParticleSetId": "Clay",
+            "BlockSoundSetId": "Clay_Pot_Small",
+            "ParticleColor": "#cfc8ba",
+            "Gathering": {
+              "Breaking": {
+                "GatherType": "Benches",
+                "ItemId": "Cat_Bowl"
+              }
+            },
+            "Interactions": {
+              "Use": "Open_Container"
+            },
+            "InteractionHint": "server.interactionHints.alecsCats.openBowl",
+            "Flags": {
+              "IsUsable": true
+            },
+            "BlockEntity": {
+              "Components": {
+                "ItemContainerBlock": {
+                  "Capacity": 2
+                },
+                "TameworkFeedTroughWaterCharges": {
+                  "BaseBlockId": "Cat_Bowl",
+                  "MaxWaterCharges": 20,
+                  "FoodCapacity": 2,
+                  "WaterCharges": 0
+                }
+              }
+            }
+          }
+        },
+        "70": {
+          "BlockType": {
+            "Material": "Solid",
+            "DrawType": "Model",
+            "Opacity": "Transparent",
+            "CustomModel": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Food.blockymodel",
+            "CustomModelScale": 1,
+            "CustomModelTexture": [
+              {
+                "Texture": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Food_Texture.png",
+                "Weight": 1
+              }
+            ],
+            "HitboxType": "Cat_Bowl",
+            "VariantRotation": "NESW",
+            "Support": {
+              "Down": [
+                {
+                  "FaceType": "Full"
+                }
+              ]
+            },
+            "BlockParticleSetId": "Clay",
+            "BlockSoundSetId": "Clay_Pot_Small",
+            "ParticleColor": "#cfc8ba",
+            "Gathering": {
+              "Breaking": {
+                "GatherType": "Benches",
+                "ItemId": "Cat_Bowl"
+              }
+            },
+            "Interactions": {
+              "Use": "Open_Container"
+            },
+            "InteractionHint": "server.interactionHints.alecsCats.openBowl",
+            "Flags": {
+              "IsUsable": true
+            },
+            "BlockEntity": {
+              "Components": {
+                "ItemContainerBlock": {
+                  "Capacity": 2
+                },
+                "TameworkFeedTroughWaterCharges": {
+                  "BaseBlockId": "Cat_Bowl",
+                  "MaxWaterCharges": 20,
+                  "FoodCapacity": 2,
+                  "WaterCharges": 0
+                }
+              }
+            }
+          }
+        },
+        "60": {
+          "BlockType": {
+            "Material": "Solid",
+            "DrawType": "Model",
+            "Opacity": "Transparent",
+            "CustomModel": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Food.blockymodel",
+            "CustomModelScale": 1,
+            "CustomModelTexture": [
+              {
+                "Texture": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Food_Texture.png",
+                "Weight": 1
+              }
+            ],
+            "HitboxType": "Cat_Bowl",
+            "VariantRotation": "NESW",
+            "Support": {
+              "Down": [
+                {
+                  "FaceType": "Full"
+                }
+              ]
+            },
+            "BlockParticleSetId": "Clay",
+            "BlockSoundSetId": "Clay_Pot_Small",
+            "ParticleColor": "#cfc8ba",
+            "Gathering": {
+              "Breaking": {
+                "GatherType": "Benches",
+                "ItemId": "Cat_Bowl"
+              }
+            },
+            "Interactions": {
+              "Use": "Open_Container"
+            },
+            "InteractionHint": "server.interactionHints.alecsCats.openBowl",
+            "Flags": {
+              "IsUsable": true
+            },
+            "BlockEntity": {
+              "Components": {
+                "ItemContainerBlock": {
+                  "Capacity": 2
+                },
+                "TameworkFeedTroughWaterCharges": {
+                  "BaseBlockId": "Cat_Bowl",
+                  "MaxWaterCharges": 20,
+                  "FoodCapacity": 2,
+                  "WaterCharges": 0
+                }
+              }
+            }
+          }
+        },
+        "50": {
+          "BlockType": {
+            "Material": "Solid",
+            "DrawType": "Model",
+            "Opacity": "Transparent",
+            "CustomModel": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Food.blockymodel",
+            "CustomModelScale": 1,
+            "CustomModelTexture": [
+              {
+                "Texture": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Food_Texture.png",
+                "Weight": 1
+              }
+            ],
+            "HitboxType": "Cat_Bowl",
+            "VariantRotation": "NESW",
+            "Support": {
+              "Down": [
+                {
+                  "FaceType": "Full"
+                }
+              ]
+            },
+            "BlockParticleSetId": "Clay",
+            "BlockSoundSetId": "Clay_Pot_Small",
+            "ParticleColor": "#cfc8ba",
+            "Gathering": {
+              "Breaking": {
+                "GatherType": "Benches",
+                "ItemId": "Cat_Bowl"
+              }
+            },
+            "Interactions": {
+              "Use": "Open_Container"
+            },
+            "InteractionHint": "server.interactionHints.alecsCats.openBowl",
+            "Flags": {
+              "IsUsable": true
+            },
+            "BlockEntity": {
+              "Components": {
+                "ItemContainerBlock": {
+                  "Capacity": 2
+                },
+                "TameworkFeedTroughWaterCharges": {
+                  "BaseBlockId": "Cat_Bowl",
+                  "MaxWaterCharges": 20,
+                  "FoodCapacity": 2,
+                  "WaterCharges": 0
+                }
+              }
+            }
+          }
+        },
+        "40": {
+          "BlockType": {
+            "Material": "Solid",
+            "DrawType": "Model",
+            "Opacity": "Transparent",
+            "CustomModel": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Food_Low.blockymodel",
+            "CustomModelScale": 1,
+            "CustomModelTexture": [
+              {
+                "Texture": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Food_Low_Texture.png",
+                "Weight": 1
+              }
+            ],
+            "HitboxType": "Cat_Bowl",
+            "VariantRotation": "NESW",
+            "Support": {
+              "Down": [
+                {
+                  "FaceType": "Full"
+                }
+              ]
+            },
+            "BlockParticleSetId": "Clay",
+            "BlockSoundSetId": "Clay_Pot_Small",
+            "ParticleColor": "#cfc8ba",
+            "Gathering": {
+              "Breaking": {
+                "GatherType": "Benches",
+                "ItemId": "Cat_Bowl"
+              }
+            },
+            "Interactions": {
+              "Use": "Open_Container"
+            },
+            "InteractionHint": "server.interactionHints.alecsCats.openBowl",
+            "Flags": {
+              "IsUsable": true
+            },
+            "BlockEntity": {
+              "Components": {
+                "ItemContainerBlock": {
+                  "Capacity": 2
+                },
+                "TameworkFeedTroughWaterCharges": {
+                  "BaseBlockId": "Cat_Bowl",
+                  "MaxWaterCharges": 20,
+                  "FoodCapacity": 2,
+                  "WaterCharges": 0
+                }
+              }
+            }
+          }
+        },
+        "30": {
+          "BlockType": {
+            "Material": "Solid",
+            "DrawType": "Model",
+            "Opacity": "Transparent",
+            "CustomModel": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Food_Low.blockymodel",
+            "CustomModelScale": 1,
+            "CustomModelTexture": [
+              {
+                "Texture": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Food_Low_Texture.png",
+                "Weight": 1
+              }
+            ],
+            "HitboxType": "Cat_Bowl",
+            "VariantRotation": "NESW",
+            "Support": {
+              "Down": [
+                {
+                  "FaceType": "Full"
+                }
+              ]
+            },
+            "BlockParticleSetId": "Clay",
+            "BlockSoundSetId": "Clay_Pot_Small",
+            "ParticleColor": "#cfc8ba",
+            "Gathering": {
+              "Breaking": {
+                "GatherType": "Benches",
+                "ItemId": "Cat_Bowl"
+              }
+            },
+            "Interactions": {
+              "Use": "Open_Container"
+            },
+            "InteractionHint": "server.interactionHints.alecsCats.openBowl",
+            "Flags": {
+              "IsUsable": true
+            },
+            "BlockEntity": {
+              "Components": {
+                "ItemContainerBlock": {
+                  "Capacity": 2
+                },
+                "TameworkFeedTroughWaterCharges": {
+                  "BaseBlockId": "Cat_Bowl",
+                  "MaxWaterCharges": 20,
+                  "FoodCapacity": 2,
+                  "WaterCharges": 0
+                }
+              }
+            }
+          }
+        },
+        "20": {
+          "BlockType": {
+            "Material": "Solid",
+            "DrawType": "Model",
+            "Opacity": "Transparent",
+            "CustomModel": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Food_Low.blockymodel",
+            "CustomModelScale": 1,
+            "CustomModelTexture": [
+              {
+                "Texture": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Food_Low_Texture.png",
+                "Weight": 1
+              }
+            ],
+            "HitboxType": "Cat_Bowl",
+            "VariantRotation": "NESW",
+            "Support": {
+              "Down": [
+                {
+                  "FaceType": "Full"
+                }
+              ]
+            },
+            "BlockParticleSetId": "Clay",
+            "BlockSoundSetId": "Clay_Pot_Small",
+            "ParticleColor": "#cfc8ba",
+            "Gathering": {
+              "Breaking": {
+                "GatherType": "Benches",
+                "ItemId": "Cat_Bowl"
+              }
+            },
+            "Interactions": {
+              "Use": "Open_Container"
+            },
+            "InteractionHint": "server.interactionHints.alecsCats.openBowl",
+            "Flags": {
+              "IsUsable": true
+            },
+            "BlockEntity": {
+              "Components": {
+                "ItemContainerBlock": {
+                  "Capacity": 2
+                },
+                "TameworkFeedTroughWaterCharges": {
+                  "BaseBlockId": "Cat_Bowl",
+                  "MaxWaterCharges": 20,
+                  "FoodCapacity": 2,
+                  "WaterCharges": 0
+                }
+              }
+            }
+          }
+        },
+        "10": {
+          "BlockType": {
+            "Material": "Solid",
+            "DrawType": "Model",
+            "Opacity": "Transparent",
+            "CustomModel": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Food_Low.blockymodel",
+            "CustomModelScale": 1,
+            "CustomModelTexture": [
+              {
+                "Texture": "Blocks/CatFurniture/CatBowl/Cat_Bowl_Food_Low_Texture.png",
+                "Weight": 1
+              }
+            ],
+            "HitboxType": "Cat_Bowl",
+            "VariantRotation": "NESW",
+            "Support": {
+              "Down": [
+                {
+                  "FaceType": "Full"
+                }
+              ]
+            },
+            "BlockParticleSetId": "Clay",
+            "BlockSoundSetId": "Clay_Pot_Small",
+            "ParticleColor": "#cfc8ba",
+            "Gathering": {
+              "Breaking": {
+                "GatherType": "Benches",
+                "ItemId": "Cat_Bowl"
+              }
+            },
+            "Interactions": {
+              "Use": "Open_Container"
+            },
+            "InteractionHint": "server.interactionHints.alecsCats.openBowl",
+            "Flags": {
+              "IsUsable": true
+            },
+            "BlockEntity": {
+              "Components": {
+                "ItemContainerBlock": {
+                  "Capacity": 2
+                },
+                "TameworkFeedTroughWaterCharges": {
+                  "BaseBlockId": "Cat_Bowl",
+                  "MaxWaterCharges": 20,
+                  "FoodCapacity": 2,
+                  "WaterCharges": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

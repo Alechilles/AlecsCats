@@ -160,6 +160,29 @@
         }
       ]
     },
+    "Eat": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pets/Cat/Animations/Eat.blockyanim",
+          "Looping": true
+        }
+      ]
+    },
+    "Leap": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pets/Cat/Animations/Jump_Far.blockyanim"
+        }
+      ]
+    },
+    "Scratch": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pets/Cat/Animations/Scratch.blockyanim",
+          "Looping": true
+        }
+      ]
+    },
     "Sit": {
       "Animations": [
         {

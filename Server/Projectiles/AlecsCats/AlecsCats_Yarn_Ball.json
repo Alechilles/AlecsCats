@@ -1,0 +1,15 @@
+{
+  "$Comment": "The Cat Yarn Ball in flight. It ends on its first contact with a block or an entity, and the throw interaction then spawns the Cat_Yarn_Ball creature where it ended.",
+  "Appearance": "Cat_Yarn_Ball",
+  "MuzzleVelocity": 16,
+  "TerminalVelocity": 50,
+  "Gravity": 15,
+  "SticksVertically": true,
+  "Damage": 0,
+  "DeadTime": 0,
+  "DeadTimeMiss": 0,
+  "DepthShot": 0.6,
+  "HorizontalCenterShot": 0.3,
+  "VerticalCenterShot": 0.2,
+  "Density": 500
+}

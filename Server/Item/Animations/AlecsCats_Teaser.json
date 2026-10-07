@@ -1,9 +1,67 @@
 {
-  "Parent": "Block",
+  "Parent": "Stick",
   "Animations": {
+    "Idle": {
+      "FirstPerson": "Characters/Animations/Items/AlecsCats/Teaser_Idle_FPS.blockyanim",
+      "Speed": 0.5,
+      "ThirdPerson": "Characters/Animations/Items/AlecsCats/Teaser_Idle.blockyanim",
+      "Looping": true
+    },
+    "Walk": {
+      "FirstPerson": "Characters/Animations/Items/AlecsCats/Teaser_Walk_FPS.blockyanim",
+      "Speed": 1.0,
+      "ThirdPerson": "Characters/Animations/Items/AlecsCats/Teaser_Walk.blockyanim",
+      "Looping": true
+    },
+    "WalkBackward": {
+      "FirstPerson": "Characters/Animations/Items/AlecsCats/Teaser_WalkBackward_FPS.blockyanim",
+      "Speed": 1.0,
+      "ThirdPerson": "Characters/Animations/Items/AlecsCats/Teaser_WalkBackward.blockyanim",
+      "Looping": true
+    },
+    "Run": {
+      "FirstPerson": "Characters/Animations/Items/AlecsCats/Teaser_Run_FPS.blockyanim",
+      "Speed": 0.9,
+      "ThirdPerson": "Characters/Animations/Items/AlecsCats/Teaser_Run.blockyanim",
+      "Looping": true
+    },
+    "RunBackward": {
+      "FirstPerson": "Characters/Animations/Items/AlecsCats/Teaser_RunBackward_FPS.blockyanim",
+      "Speed": 0.9,
+      "ThirdPerson": "Characters/Animations/Items/AlecsCats/Teaser_RunBackward.blockyanim",
+      "Looping": true
+    },
+    "Sprint": {
+      "FirstPerson": "Characters/Animations/Items/AlecsCats/Teaser_Sprint_FPS.blockyanim",
+      "Speed": 1.1,
+      "ThirdPerson": "Characters/Animations/Items/AlecsCats/Teaser_Sprint.blockyanim",
+      "Looping": true
+    },
+    "Crouch": {
+      "BlendingDuration": 0.1,
+      "FirstPerson": "Characters/Animations/Items/AlecsCats/Teaser_Crouch_FPS.blockyanim",
+      "Speed": 0.5,
+      "ThirdPerson": "Characters/Animations/Items/AlecsCats/Teaser_Crouch.blockyanim",
+      "Looping": true
+    },
+    "CrouchWalk": {
+      "BlendingDuration": 0.1,
+      "ThirdPerson": "Characters/Animations/Items/AlecsCats/Teaser_CrouchWalk.blockyanim",
+      "Speed": 0.8,
+      "FirstPerson": "Characters/Animations/Items/AlecsCats/Teaser_CrouchWalk_FPS.blockyanim",
+      "Looping": true
+    },
+    "CrouchWalkBackward": {
+      "BlendingDuration": 0.1,
+      "ThirdPerson": "Characters/Animations/Items/AlecsCats/Teaser_CrouchWalkBackward.blockyanim",
+      "Speed": 0.8,
+      "FirstPerson": "Characters/Animations/Items/AlecsCats/Teaser_CrouchWalkBackward_FPS.blockyanim",
+      "Looping": true
+    },
     "Tease": {
-      "ThirdPerson": "Characters/Animations/Items/AlecsCats/Cat_Toy_Bounce.blockyanim",
-      "FirstPerson": "Characters/Animations/Items/AlecsCats/Cat_Toy_Bounce.blockyanim",
+      "ThirdPerson": "Characters/Animations/Items/AlecsCats/Teaser_Tease.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/AlecsCats/Teaser_Tease_Moving.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/AlecsCats/Teaser_Tease_FPS.blockyanim",
       "Looping": true,
       "Speed": 1
     }

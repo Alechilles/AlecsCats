@@ -1,0 +1,70 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Cat_Yarn_Ball.name",
+    "Description": "server.items.Cat_Yarn_Ball.description"
+  },
+  "Model": "Items/CatToys/Cat_Yarn_Ball.blockymodel",
+  "Texture": "Items/CatToys/Cat_Yarn_Ball_Texture.png",
+  "Icon": "Icons/ItemsGenerated/Cat_Yarn_Ball.png",
+  "PlayerAnimationsId": "Item",
+  "Categories": [
+    "Tool"
+  ],
+  "Set": "Cats",
+  "Tags": {
+    "Type": [
+      "Tool"
+    ]
+  },
+  "ItemSoundSetId": "ISS_Items_Cloth",
+  "IconProperties": {
+    "Scale": 0.9,
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Translation": [
+      0,
+      -10
+    ]
+  },
+  "Interactions": {
+    "Secondary": {
+      "Interactions": [
+        "AlecsCats_Yarn_Ball_Throw"
+      ]
+    }
+  },
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Ingredient_Fabric_Scrap_Wool",
+        "Quantity": 4
+      },
+      {
+        "ItemId": "Plant_Flower_Catnip",
+        "Quantity": 1
+      }
+    ],
+    "Output": [
+      {
+        "ItemId": "Cat_Yarn_Ball",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Workbench",
+        "RequiredTierLevel": 2,
+        "Categories": [
+          "Workbench_Tinkering"
+        ]
+      }
+    ],
+    "OutputQuantity": 1,
+    "TimeSeconds": 3
+  },
+  "MaxStack": 10
+}

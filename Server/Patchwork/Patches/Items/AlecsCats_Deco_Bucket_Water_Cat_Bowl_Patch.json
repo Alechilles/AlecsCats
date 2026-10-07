@@ -1,0 +1,30 @@
+{
+  "Id": "AlecsCats_Deco_Bucket_Water_Cat_Bowl_Patch",
+  "Target": "Server/Item/Items/Deco/Deco_Bucket.json",
+  "Priority": -90,
+  "Operations": [
+    {
+      "Id": "add-cat-bowl-to-water-fill",
+      "Op": "MergeMatching",
+      "Path": "/State/Filled_Water/Interactions/Secondary/Interactions",
+      "Match": {
+        "Type": "ChangeBlock"
+      },
+      "Value": {
+        "Changes": {
+          "Cat_Bowl": "**Cat_Bowl_State_Water_State_Full",
+          "*Cat_Bowl_State_Water": "**Cat_Bowl_State_Water_State_Full",
+          "**Cat_Bowl_State_Water_State_90": "**Cat_Bowl_State_Water_State_Full",
+          "**Cat_Bowl_State_Water_State_80": "**Cat_Bowl_State_Water_State_Full",
+          "**Cat_Bowl_State_Water_State_70": "**Cat_Bowl_State_Water_State_Full",
+          "**Cat_Bowl_State_Water_State_60": "**Cat_Bowl_State_Water_State_Full",
+          "**Cat_Bowl_State_Water_State_50": "**Cat_Bowl_State_Water_State_Full",
+          "**Cat_Bowl_State_Water_State_40": "**Cat_Bowl_State_Water_State_Full",
+          "**Cat_Bowl_State_Water_State_30": "**Cat_Bowl_State_Water_State_Full",
+          "**Cat_Bowl_State_Water_State_20": "**Cat_Bowl_State_Water_State_Full",
+          "**Cat_Bowl_State_Water_State_10": "**Cat_Bowl_State_Water_State_Full"
+        }
+      }
+    }
+  ]
+}

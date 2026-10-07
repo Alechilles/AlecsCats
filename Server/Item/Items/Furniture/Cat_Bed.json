@@ -1,0 +1,97 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Cat_Bed.name",
+    "Description": "server.items.Cat_Bed.description"
+  },
+  "PlayerAnimationsId": "Block",
+  "Categories": [
+    "Furniture.Beds"
+  ],
+  "Set": "Cats",
+  "Icon": "Icons/ItemsGenerated/Cat_Bed.png",
+  "IconProperties": {
+    "Scale": 0.55,
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Translation": [
+      0,
+      -13.5
+    ]
+  },
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Ingredient_Fabric_Scrap_Linen",
+        "Quantity": 6
+      },
+      {
+        "ItemId": "Ingredient_Fibre",
+        "Quantity": 10
+      },
+      {
+        "ItemId": "Plant_Flower_Catnip",
+        "Quantity": 2
+      }
+    ],
+    "Output": [
+      {
+        "ItemId": "Cat_Bed",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Workbench",
+        "RequiredTierLevel": 2,
+        "Categories": [
+          "Workbench_Tinkering"
+        ]
+      }
+    ],
+    "OutputQuantity": 1,
+    "TimeSeconds": 3
+  },
+  "BlockType": {
+    "Material": "Solid",
+    "DrawType": "Model",
+    "Opacity": "Transparent",
+    "CustomModel": "Blocks/CatFurniture/CatBed/Cat_Bed.blockymodel",
+    "CustomModelScale": 1,
+    "CustomModelTexture": [
+      {
+        "Texture": "Blocks/CatFurniture/CatBed/Cat_Bed_Texture.png",
+        "Weight": 1
+      }
+    ],
+    "HitboxType": "Cat_Bed",
+    "VariantRotation": "NESW",
+    "Support": {
+      "Down": [
+        {
+          "FaceType": "Full"
+        }
+      ]
+    },
+    "BlockParticleSetId": "Wood",
+    "BlockSoundSetId": "Cloth",
+    "ParticleColor": "#448882",
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "Benches",
+        "ItemId": "Cat_Bed"
+      }
+    }
+  },
+  "Tags": {
+    "Type": [
+      "Furniture"
+    ]
+  },
+  "ItemSoundSetId": "ISS_Items_Cloth",
+  "ItemLevel": 3,
+  "MaxStack": 1
+}

@@ -30,7 +30,48 @@
     ]
   },
   "Interactions": {
+    "Primary": "AlecsCats_Teaser_Use",
+    "Secondary": "AlecsCats_Teaser_Use",
     "Use": "AlecsCats_Teaser_Use"
   },
-  "MaxStack": 1
+  "MaxStack": 1,
+  "Set": "Cats",
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Ingredient_Stick",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Ingredient_Feathers_Light",
+        "Quantity": 3
+      },
+      {
+        "ItemId": "Ingredient_Fibre",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Plant_Flower_Catnip",
+        "Quantity": 1
+      }
+    ],
+    "Output": [
+      {
+        "ItemId": "Cat_Teaser_Toy",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Workbench",
+        "RequiredTierLevel": 2,
+        "Categories": [
+          "Workbench_Tinkering"
+        ]
+      }
+    ],
+    "OutputQuantity": 1,
+    "TimeSeconds": 3
+  }
 }

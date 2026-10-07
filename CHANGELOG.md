@@ -2,6 +2,21 @@
 
 All notable changes to **Alec's Cats!** will be documented in this file.
 
+## 1.15.0 - Cat Enrichment - Unreleased
+
+- Updated the required Alec's Tamework dependency to `>=5.2.0 <6.0.0` and the required Hytale server version to `>=0.6.7 <0.7.0`. Install Tamework 5.2.0 or newer before updating Cats, and follow Tamework's 5.0 upgrade notes if the world still runs Tamework 4.x.
+- Added the Cat Bed. Idle pet cats walk onto it, lie down, and nap.
+- Added the Cat Scratching Post. Idle pet cats rear up and scratch it.
+- Added the Cat Tower, two blocks wide and two tall. Idle pet cats leap onto the top perch and sit there, and scratch its post. It replaces the unused placeholder tower model.
+- Added the Cat Bowl, which holds food or water like Tamework's feed trough. Put raw fish or Tamework Carnivore Kibble in it, or right-click it with a filled water bucket or tankard. Hungry and thirsty cats walk over to it, and the bowl shows what it holds and how full it is.
+- Added the Cat Yarn Ball. Throw it and idle pet cats chase it, swat it, and now and then back off and pounce on it. It rolls away each time a cat bats it. Press Use on the ball to pick it up.
+- The Cat Teaser Wand is no longer a prototype. It has a crafting recipe, and cats gain happiness from playing with it, at most once every few minutes per cat.
+- Cats gain a little happiness after a nap in a bed, a scratch, time on a tower perch, or play with a yarn ball. They rest between activities and stop when given a command or when they need food, water, or sleep.
+- Pet cats now treat the spot where they are told to idle or hold as their new home area, so a cat that followed you somewhere no longer runs back to where it used to wander.
+- The Cat Treat Bag now supports Tamework's command hotswap keys (Q, E, and R), like other command items.
+- Added a Cat Playhouse prefab (`AlecsCats/Cat_Playhouse/AlecsCats_Cat_Playhouse_001`): an open-fronted cottage and fenced garden with every cat furniture piece placed, plus a chest holding yarn balls, a teaser wand, a treat bag, raw fish, and a bucket. Paste it with the creative prefab tools.
+- All new items are crafted at a Tier 2 Workbench in the Tinkering tab and are translated in every supported language.
+
 ## 1.14.0 - Cat Animation Rework - 2026-10-05
 
 - Reworked the cat lie-down, wake, and stand-up animations so they move smoothly between standing, sleeping, and sitting, with the front end settling first, the head and tail following, and a small settle at the end.

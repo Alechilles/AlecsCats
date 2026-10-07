@@ -275,8 +275,8 @@
       "Description": "The particle system that spawns to indicate the cat wants food."
     },
     "NeedsSeekConsumeAnimation": {
-      "Value": "",
-      "Description": "Optional animation played when consuming a needs resource. Cats leave this blank because their model does not expose a dedicated eat animation."
+      "Value": "Eat",
+      "Description": "Animation played while a cat eats or drinks from a needs resource: head down at the bowl with small bites."
     },
     "NeedsSeekConsumeStartDistance": {
       "Value": 1.65,
@@ -608,8 +608,8 @@
     "Compute": "FlockArray"
   },
   "ApplySeparation": true,
-  "SeparationDistance": 0.5,
-  "SeparationWeight": 1.2,
+  "SeparationDistance": 0.9,
+  "SeparationWeight": 2,
   "SeparationDistanceTarget": 1.5,
   "SeparationNearRadiusTarget": 3,
   "SeparationFarRadiusTarget": 8,
@@ -971,6 +971,119 @@
         {
           "Type": "ReleaseTarget",
           "TargetSlot": "CatToyOwner"
+        },
+        {
+          "Type": "SetFlag",
+          "Name": "CatToy_Played",
+          "SetTo": false
+        }
+      ]
+    },
+    {
+      "$Comment": "A nap, scratch or perch cut short by hunger, thirst or breeding drops its pose before the cat walks off.",
+      "States": [
+        {
+          "From": [
+            "Idle"
+          ],
+          "To": [
+            "NeedsSeekWater",
+            "NeedsSeekFood",
+            "BreedPair"
+          ]
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "PlayAnimation",
+          "Slot": "Status"
+        }
+      ]
+    },
+    {
+      "$Comment": "Leaving Idle abandons any furniture or toy activity so it cannot resume half-done.",
+      "States": [
+        {
+          "From": [
+            "Idle"
+          ],
+          "To": [
+            "Follow",
+            "FollowClose",
+            "Hold",
+            "Defend",
+            "CommandMove",
+            "NeedsSeekWater",
+            "NeedsSeekFood",
+            "BreedPair",
+            "Sleep",
+            "CatToyPlay"
+          ]
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "ResetBlockSensors"
+        },
+        {
+          "Type": "SetFlag",
+          "Name": "CatEnrich_Busy",
+          "SetTo": false
+        },
+        {
+          "Type": "SetFlag",
+          "Name": "CatBed_Engaged",
+          "SetTo": false
+        },
+        {
+          "Type": "SetFlag",
+          "Name": "CatBed_Napping",
+          "SetTo": false
+        },
+        {
+          "Type": "SetFlag",
+          "Name": "CatPost_Engaged",
+          "SetTo": false
+        },
+        {
+          "Type": "SetFlag",
+          "Name": "CatPost_Scratching",
+          "SetTo": false
+        },
+        {
+          "Type": "SetFlag",
+          "Name": "CatTower_Engaged",
+          "SetTo": false
+        },
+        {
+          "Type": "SetFlag",
+          "Name": "CatTower_Leaping",
+          "SetTo": false
+        },
+        {
+          "Type": "SetFlag",
+          "Name": "CatTower_Perched",
+          "SetTo": false
+        },
+        {
+          "Type": "SetFlag",
+          "Name": "CatYarn_Engaged",
+          "SetTo": false
+        },
+        {
+          "Type": "SetFlag",
+          "Name": "CatYarn_Playing",
+          "SetTo": false
+        },
+        {
+          "Type": "SetFlag",
+          "Name": "CatYarn_Stalking",
+          "SetTo": false
+        },
+        {
+          "Type": "SetFlag",
+          "Name": "CatYarn_Pouncing",
+          "SetTo": false
         }
       ]
     }
@@ -1598,6 +1711,20 @@
           },
           "Instructions": [
             {
+              "$Comment": "Refresh the base leash point when the cat settles into Idle so leash and wander behavior use the current area.",
+              "Continue": true,
+              "Sensor": {
+                "Type": "Any",
+                "Once": true
+              },
+              "Actions": [
+                {
+                  "Type": "SetLeashPosition",
+                  "ToCurrent": true
+                }
+              ]
+            },
+            {
               "$Comment": "Keep flock followers near their leader before regular idle wander.",
               "Reference": "Component_Tamework_Instruction_Flock_Follow_Wander",
               "Modify": {
@@ -1616,6 +1743,44 @@
               }
             },
             {
+              "$Comment": "Free a cat whose furniture or toy activity could not finish.",
+              "Reference": "Component_AlecsCats_Instruction_Enrichment_Watchdog",
+              "Modify": {
+                "CatEnrichGiveUpCooldownRange": [
+                  30,
+                  60
+                ]
+              }
+            },
+            {
+              "$Comment": "A yarn ball lying nearby draws idle cats to bat at it.",
+              "Reference": "Component_AlecsCats_Instruction_Yarn_Ball",
+              "Modify": {
+                "CatYarnSearchRange": 10
+              }
+            },
+            {
+              "$Comment": "Idle cats scratch a nearby scratching post.",
+              "Reference": "Component_AlecsCats_Instruction_Scratching_Post",
+              "Modify": {
+                "CatPostSearchRange": 10
+              }
+            },
+            {
+              "$Comment": "Idle cats leap onto a nearby cat tower and sit on its perch.",
+              "Reference": "Component_AlecsCats_Instruction_Cat_Tower",
+              "Modify": {
+                "CatTowerSearchRange": 12
+              }
+            },
+            {
+              "$Comment": "Idle cats nap in a nearby cat bed.",
+              "Reference": "Component_AlecsCats_Instruction_Cat_Bed",
+              "Modify": {
+                "CatBedSearchRange": 10
+              }
+            },
+            {
               "$Comment": "When an open cardboard box is nearby, idle cats can move into it and sit.",
               "Enabled": {
                 "Compute": "!isEmpty(CatBoxBlockSet) && CatBoxSearchRange > 0"
@@ -1627,6 +1792,11 @@
                     "Type": "Timer",
                     "Name": "CatBox_Sit_Cooldown",
                     "State": "Stopped"
+                  },
+                  {
+                    "Type": "Flag",
+                    "Name": "CatEnrich_Busy",
+                    "Set": false
                   },
                   {
                     "Type": "AdjustPosition",
@@ -2028,6 +2198,20 @@
             "State": "Hold"
           },
           "Instructions": [
+            {
+              "$Comment": "Refresh the base leash point when command hold settles the cat in place.",
+              "Continue": true,
+              "Sensor": {
+                "Type": "Any",
+                "Once": true
+              },
+              "Actions": [
+                {
+                  "Type": "SetLeashPosition",
+                  "ToCurrent": true
+                }
+              ]
+            },
             {
               "Reference": "Component_Tamework_Instruction_Hold",
               "Modify": {

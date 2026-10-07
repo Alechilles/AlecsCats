@@ -1,0 +1,8 @@
+{
+  "IncludeRoles": [
+    "Cat_Pet",
+    "Cat_Longhair_Pet",
+    "Cat_Shorthair_Pet",
+    "Cat_Bobtail_Pet"
+  ]
+}

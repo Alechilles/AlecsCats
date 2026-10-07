@@ -1,0 +1,37 @@
+{
+  "Type": "Serial",
+  "Interactions": [
+    {
+      "Type": "Simple",
+      "RunTime": 0.25,
+      "Effects": {
+        "ItemAnimationId": "Throw"
+      }
+    },
+    {
+      "Type": "ResetCooldown",
+      "Cooldown": {
+        "Cooldown": 1
+      }
+    },
+    {
+      "$Comment": "Throw along the look direction. Tamework spawns the ball creature wherever the projectile ends, including in mid-air after hitting an entity.",
+      "Type": "TameworkLaunchProjectile",
+      "ProjectileId": "AlecsCats_Yarn_Ball",
+      "TrajectoryMode": "Direct",
+      "LookTargetDistance": 10,
+      "ImpactSpawnNpcRole": "Cat_Yarn_Ball"
+    },
+    {
+      "Type": "Simple",
+      "RunTime": 0.2
+    },
+    {
+      "Type": "ModifyInventory",
+      "ItemToRemove": {
+        "Id": "Cat_Yarn_Ball",
+        "Quantity": 1
+      }
+    }
+  ]
+}

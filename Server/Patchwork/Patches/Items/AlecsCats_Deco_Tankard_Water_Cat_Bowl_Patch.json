@@ -1,0 +1,44 @@
+{
+  "Id": "AlecsCats_Deco_Tankard_Water_Cat_Bowl_Patch",
+  "Target": "Server/Item/Items/Deco/Deco_Tankard.json",
+  "Priority": -90,
+  "Operations": [
+    {
+      "Id": "pour-tankard-into-cat-bowl",
+      "Op": "Replace",
+      "Path": "/State/Filled_Water/Interactions/Secondary",
+      "Value": {
+        "Interactions": [
+          {
+            "Type": "ChangeBlock",
+            "Changes": {
+              "Cat_Bowl": "**Cat_Bowl_State_Water_State_Full",
+              "*Cat_Bowl_State_Water": "**Cat_Bowl_State_Water_State_Full",
+              "**Cat_Bowl_State_Water_State_90": "**Cat_Bowl_State_Water_State_Full",
+              "**Cat_Bowl_State_Water_State_80": "**Cat_Bowl_State_Water_State_Full",
+              "**Cat_Bowl_State_Water_State_70": "**Cat_Bowl_State_Water_State_Full",
+              "**Cat_Bowl_State_Water_State_60": "**Cat_Bowl_State_Water_State_Full",
+              "**Cat_Bowl_State_Water_State_50": "**Cat_Bowl_State_Water_State_Full",
+              "**Cat_Bowl_State_Water_State_40": "**Cat_Bowl_State_Water_State_Full",
+              "**Cat_Bowl_State_Water_State_30": "**Cat_Bowl_State_Water_State_Full",
+              "**Cat_Bowl_State_Water_State_20": "**Cat_Bowl_State_Water_State_Full",
+              "**Cat_Bowl_State_Water_State_10": "**Cat_Bowl_State_Water_State_Full"
+            },
+            "Effects": {
+              "WorldSoundEventId": "SFX_Water_MoveOut"
+            },
+            "Next": {
+              "Type": "ModifyInventory",
+              "AdjustHeldItemDurability": -1,
+              "BrokenItem": "Deco_Tankard"
+            },
+            "Failed": {
+              "Type": "RunRootInteraction",
+              "RootInteraction": "Root_Secondary_Consume_Drink"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
