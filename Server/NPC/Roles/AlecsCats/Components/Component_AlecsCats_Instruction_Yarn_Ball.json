@@ -362,7 +362,7 @@
         ]
       },
       {
-        "$Comment": "Mid-pounce: hold still until the cat lands, then knock the ball away. The landing timer is a fallback when landing cannot be observed.",
+        "$Comment": "Mid-pounce: leap to the spot the ball was at on takeoff, then knock the ball away once the cat lands. The landing timer is a fallback when landing cannot be observed.",
         "Sensor": {
           "Type": "Flag",
           "Name": "CatYarn_Pouncing"
@@ -450,6 +450,22 @@
           },
           {
             "Sensor": {
+              "Type": "ReadPosition",
+              "Slot": "CatYarnPounce",
+              "UseMarkedTarget": false,
+              "Range": 8
+            },
+            "BodyMotion": {
+              "Type": "TameworkLeap",
+              "Duration": 0.6,
+              "Height": 0.9
+            },
+            "HeadMotion": {
+              "Type": "Nothing"
+            }
+          },
+          {
+            "Sensor": {
               "Type": "Any"
             },
             "BodyMotion": {
@@ -459,7 +475,7 @@
         ]
       },
       {
-        "$Comment": "Pounce from two to three blocks away, either on the way in or after backing off. The named interaction applies one physical impulse and contains no damage actions.",
+        "$Comment": "Pounce from two to three blocks away, either on the way in or after backing off. Stores the ball's position for the leap; the ball sensor comes before the Not sensor so it supplies that position.",
         "Sensor": {
           "Type": "And",
           "Sensors": [
@@ -488,6 +504,20 @@
               }
             },
             {
+              "Type": "Mob",
+              "Range": 3.3,
+              "GetPlayers": false,
+              "GetNPCs": true,
+              "Filters": [
+                {
+                  "Type": "NPCGroup",
+                  "IncludeGroups": [
+                    "AlecsCats_Yarn_Ball"
+                  ]
+                }
+              ]
+            },
+            {
               "Type": "Not",
               "Sensor": {
                 "Type": "Mob",
@@ -503,20 +533,6 @@
                   }
                 ]
               }
-            },
-            {
-              "Type": "Mob",
-              "Range": 3.3,
-              "GetPlayers": false,
-              "GetNPCs": true,
-              "Filters": [
-                {
-                  "Type": "NPCGroup",
-                  "IncludeGroups": [
-                    "AlecsCats_Yarn_Ball"
-                  ]
-                }
-              ]
             }
           ]
         },
@@ -526,13 +542,10 @@
         "HeadMotion": {
           "Type": "Watch"
         },
-        "ActionsBlocking": true,
         "Actions": [
           {
-            "Type": "Attack",
-            "Attack": "AlecsCats_Teaser_Pounce",
-            "SkipAiming": true,
-            "AvoidFriendlyFire": false
+            "Type": "StorePosition",
+            "Slot": "CatYarnPounce"
           },
           {
             "Type": "PlayAnimation",
@@ -543,12 +556,12 @@
             "Type": "TimerStart",
             "Name": "CatYarn_AirborneMinimum",
             "StartValueRange": [
-              0.25,
-              0.25
+              0.6,
+              0.6
             ],
             "RestartValueRange": [
-              0.25,
-              0.25
+              0.6,
+              0.6
             ]
           },
           {
