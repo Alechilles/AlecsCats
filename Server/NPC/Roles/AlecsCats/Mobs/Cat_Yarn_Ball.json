@@ -1,5 +1,5 @@
 {
-  "$Comment": "The thrown Cat Yarn Ball. It does nothing on its own: it rolls away for a second when a pet cat or a player touches it, turns back into the item when a player uses it, and drops as the item after a few minutes.",
+  "$Comment": "The thrown Cat Yarn Ball. It does nothing on its own: it rolls away for a second when a pet cat swats it or a player touches it, turns back into the item when a player uses it, and drops as the item after a few minutes.",
   "Type": "Generic",
   "Appearance": "Cat_Yarn_Ball",
   "NameTranslationKey": "server.npcRoles.Cat_Yarn_Ball.name",
@@ -104,6 +104,34 @@
           }
         },
         {
+          "$Comment": "A pet cat swatted the ball: start rolling on this same tick.",
+          "Continue": true,
+          "Sensor": {
+            "Type": "Beacon",
+            "Message": "AlecsCats_Yarn_Swat",
+            "Range": 3,
+            "TargetSlot": "Batter"
+          },
+          "Actions": [
+            {
+              "Type": "TimerStart",
+              "Name": "Ball_Roll",
+              "StartValueRange": [
+                0.8,
+                1.3
+              ],
+              "RestartValueRange": [
+                0.8,
+                1.3
+              ]
+            },
+            {
+              "Type": "TimerRestart",
+              "Name": "Ball_Roll"
+            }
+          ]
+        },
+        {
           "$Comment": "Roll away from whoever touched it while the roll timer runs.",
           "Sensor": {
             "Type": "And",
@@ -131,7 +159,7 @@
           }
         },
         {
-          "$Comment": "A pet cat reached the ball, or a player walked into it.",
+          "$Comment": "A player walked into it.",
           "Sensor": {
             "Type": "And",
             "Sensors": [
@@ -141,33 +169,12 @@
                 "State": "Stopped"
               },
               {
-                "Type": "Or",
-                "Sensors": [
-                  {
-                    "Type": "Mob",
-                    "Range": 1.0,
-                    "GetPlayers": false,
-                    "GetNPCs": true,
-                    "LockOnTarget": true,
-                    "LockedTargetSlot": "Batter",
-                    "Filters": [
-                      {
-                        "Type": "NPCGroup",
-                        "IncludeGroups": [
-                          "AlecsCats_Pet_Cats"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "Type": "Mob",
-                    "Range": 0.7,
-                    "GetPlayers": true,
-                    "GetNPCs": false,
-                    "LockOnTarget": true,
-                    "LockedTargetSlot": "Batter"
-                  }
-                ]
+                "Type": "Mob",
+                "Range": 0.7,
+                "GetPlayers": true,
+                "GetNPCs": false,
+                "LockOnTarget": true,
+                "LockedTargetSlot": "Batter"
               }
             ]
           },

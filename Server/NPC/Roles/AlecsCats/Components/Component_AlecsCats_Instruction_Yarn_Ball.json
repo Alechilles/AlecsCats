@@ -1,5 +1,5 @@
 {
-  "$Comment": "Idle pet cats chase a thrown Cat Yarn Ball (the Cat_Yarn_Ball creature) and bat at it for a while, with a happiness gain. The ball rolls away each time a cat reaches it.",
+  "$Comment": "Idle pet cats chase a thrown Cat Yarn Ball (the Cat_Yarn_Ball creature) and bat at it for a while, with a happiness gain. The ball rolls away each time a cat swats it.",
   "Type": "Component",
   "Class": "Instruction",
   "Parameters": {
@@ -331,7 +331,7 @@
         ]
       },
       {
-        "$Comment": "Swat at the ball every second or two while close to it.",
+        "$Comment": "Swat at the ball every second or two while in paw reach. The beacon tells the ball to roll on the swat.",
         "Continue": true,
         "Sensor": {
           "Type": "And",
@@ -343,7 +343,7 @@
             },
             {
               "Type": "Mob",
-              "Range": 1.6,
+              "Range": 1.1,
               "GetPlayers": false,
               "GetNPCs": true,
               "Filters": [
@@ -362,6 +362,15 @@
             "Type": "PlayAnimation",
             "Slot": "Action",
             "Animation": "ToyPlay"
+          },
+          {
+            "Type": "Beacon",
+            "Message": "AlecsCats_Yarn_Swat",
+            "Range": 3,
+            "TargetGroups": [
+              "AlecsCats_Yarn_Ball"
+            ],
+            "ExpirationTime": 0.5
           },
           {
             "Type": "TimerStart",
