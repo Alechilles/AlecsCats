@@ -1,0 +1,382 @@
+{
+  "$Comment": "Idle pet cats walk to a nearby cat bed, lie down and nap, then wake with a small happiness gain.",
+  "Type": "Component",
+  "Class": "Instruction",
+  "Parameters": {
+    "CatBedBlockSet": {
+      "Value": "AlecsCats_Cat_Bed",
+      "Description": "Block set of cat beds."
+    },
+    "CatBedSearchRange": {
+      "Value": 10,
+      "Description": "How far an idle cat looks for a cat bed."
+    },
+    "CatBedNapDurationRange": {
+      "Value": [
+        30,
+        60
+      ],
+      "Description": "Seconds a cat naps in a bed."
+    },
+    "CatBedCooldownRange": {
+      "Value": [
+        120,
+        240
+      ],
+      "Description": "Seconds before the cat uses a bed again."
+    },
+    "CatBedHappiness": {
+      "Value": 3,
+      "Description": "Happiness gained after a nap in a bed."
+    }
+  },
+  "Content": {
+    "Sensor": {
+      "Type": "And",
+      "Sensors": [
+        {
+          "Type": "Timer",
+          "Name": "CatBed_Cooldown",
+          "State": "Stopped"
+        },
+        {
+          "Type": "Timer",
+          "Name": "CatEnrich_Rest",
+          "State": "Stopped"
+        },
+        {
+          "Type": "Flag",
+          "Name": "CatBox_Sitting",
+          "Set": false
+        },
+        {
+          "Type": "Or",
+          "Sensors": [
+            {
+              "Type": "Flag",
+              "Name": "CatBed_Engaged"
+            },
+            {
+              "Type": "Flag",
+              "Name": "CatEnrich_Busy",
+              "Set": false
+            }
+          ]
+        },
+        {
+          "Type": "AdjustPosition",
+          "Offset": [
+            0,
+            0,
+            0
+          ],
+          "Sensor": {
+            "Type": "Block",
+            "Range": {
+              "Compute": "CatBedSearchRange"
+            },
+            "MaxHeight": 3,
+            "Blocks": {
+              "Compute": "CatBedBlockSet"
+            },
+            "Random": true,
+            "Reserve": true
+          }
+        }
+      ]
+    },
+    "Instructions": [
+      {
+        "$Comment": "Claim the cat for this activity. The watchdog frees it if the activity cannot finish.",
+        "Continue": true,
+        "Sensor": {
+          "Type": "Flag",
+          "Name": "CatBed_Engaged",
+          "Set": false
+        },
+        "Actions": [
+          {
+            "Type": "SetFlag",
+            "Name": "CatBed_Engaged",
+            "SetTo": true
+          },
+          {
+            "Type": "SetFlag",
+            "Name": "CatEnrich_Busy",
+            "SetTo": true
+          },
+          {
+            "Type": "TimerStart",
+            "Name": "CatEnrich_Watchdog",
+            "StartValueRange": [
+              180,
+              180
+            ],
+            "RestartValueRange": [
+              180,
+              180
+            ]
+          },
+          {
+            "Type": "TimerRestart",
+            "Name": "CatEnrich_Watchdog"
+          }
+        ]
+      },
+      {
+        "$Comment": "Nap over: wake, stand, reward, cool down.",
+        "Sensor": {
+          "Type": "And",
+          "Sensors": [
+            {
+              "Type": "Flag",
+              "Name": "CatBed_Napping"
+            },
+            {
+              "Type": "Timer",
+              "Name": "CatBed_Nap",
+              "State": "Stopped"
+            }
+          ]
+        },
+        "BodyMotion": {
+          "Type": "Nothing"
+        },
+        "HeadMotion": {
+          "Type": "Nothing"
+        },
+        "ActionsBlocking": true,
+        "Actions": [
+          {
+            "Type": "PlayAnimation",
+            "Slot": "Status",
+            "Animation": "Wake"
+          },
+          {
+            "Type": "Timeout",
+            "Delay": [
+              1,
+              1
+            ]
+          },
+          {
+            "Type": "PlayAnimation",
+            "Slot": "Status"
+          },
+          {
+            "Type": "TameworkProgressionReward",
+            "Happiness": {
+              "Compute": "CatBedHappiness"
+            }
+          },
+          {
+            "Type": "SpawnParticles",
+            "ParticleSystem": "Hearts_Subtle",
+            "Offset": [
+              0,
+              0.6,
+              0
+            ],
+            "TargetNodeName": "Head"
+          },
+          {
+            "Type": "TimerStart",
+            "Name": "CatBed_Cooldown",
+            "StartValueRange": [
+              120,
+              240
+            ],
+            "RestartValueRange": [
+              120,
+              240
+            ]
+          },
+          {
+            "Type": "TimerRestart",
+            "Name": "CatBed_Cooldown"
+          },
+          {
+            "Type": "TimerStart",
+            "Name": "CatEnrich_Rest",
+            "StartValueRange": [
+              12,
+              25
+            ],
+            "RestartValueRange": [
+              12,
+              25
+            ]
+          },
+          {
+            "Type": "TimerRestart",
+            "Name": "CatEnrich_Rest"
+          },
+          {
+            "Type": "ResetBlockSensors"
+          },
+          {
+            "Type": "SetFlag",
+            "Name": "CatBed_Napping",
+            "SetTo": false
+          },
+          {
+            "Type": "SetFlag",
+            "Name": "CatBed_Engaged",
+            "SetTo": false
+          },
+          {
+            "Type": "SetFlag",
+            "Name": "CatEnrich_Busy",
+            "SetTo": false
+          }
+        ]
+      },
+      {
+        "$Comment": "On the bed: lie down, then sleep for the nap duration.",
+        "Sensor": {
+          "Type": "And",
+          "Sensors": [
+            {
+              "Type": "Flag",
+              "Name": "CatBed_Napping",
+              "Set": false
+            },
+            {
+              "Type": "AdjustPosition",
+              "Offset": [
+                0,
+                0,
+                0
+              ],
+              "Sensor": {
+                "Type": "Block",
+                "Range": 0.2,
+                "MaxHeight": 3,
+                "Blocks": {
+                  "Compute": "CatBedBlockSet"
+                },
+                "Random": true
+              }
+            }
+          ]
+        },
+        "BodyMotion": {
+          "Type": "Nothing"
+        },
+        "HeadMotion": {
+          "Type": "Nothing"
+        },
+        "ActionsBlocking": true,
+        "Actions": [
+          {
+            "Type": "PlayAnimation",
+            "Slot": "Status",
+            "Animation": "Laydown"
+          },
+          {
+            "Type": "Timeout",
+            "Delay": [
+              0.83,
+              0.83
+            ]
+          },
+          {
+            "Type": "PlayAnimation",
+            "Slot": "Status",
+            "Animation": "Sleep"
+          },
+          {
+            "Type": "TimerStart",
+            "Name": "CatBed_Nap",
+            "StartValueRange": {
+              "Compute": "CatBedNapDurationRange"
+            },
+            "RestartValueRange": {
+              "Compute": "CatBedNapDurationRange"
+            }
+          },
+          {
+            "Type": "TimerRestart",
+            "Name": "CatBed_Nap"
+          },
+          {
+            "Type": "SetFlag",
+            "Name": "CatBed_Napping",
+            "SetTo": true
+          },
+          {
+            "Type": "TimerStart",
+            "Name": "CatEnrich_Watchdog",
+            "StartValueRange": [
+              180,
+              180
+            ],
+            "RestartValueRange": [
+              180,
+              180
+            ]
+          },
+          {
+            "Type": "TimerRestart",
+            "Name": "CatEnrich_Watchdog"
+          }
+        ]
+      },
+      {
+        "$Comment": "Stay put while napping.",
+        "Sensor": {
+          "Type": "Flag",
+          "Name": "CatBed_Napping"
+        },
+        "BodyMotion": {
+          "Type": "Nothing"
+        },
+        "HeadMotion": {
+          "Type": "Nothing"
+        }
+      },
+      {
+        "$Comment": "Walk to the middle of the bed.",
+        "Sensor": {
+          "Type": "And",
+          "Sensors": [
+            {
+              "Type": "Flag",
+              "Name": "CatBed_Napping",
+              "Set": false
+            },
+            {
+              "Type": "AdjustPosition",
+              "Offset": [
+                0,
+                0,
+                0
+              ],
+              "Sensor": {
+                "Type": "Block",
+                "Range": {
+                  "Compute": "CatBedSearchRange"
+                },
+                "MaxHeight": 3,
+                "Blocks": {
+                  "Compute": "CatBedBlockSet"
+                },
+                "Random": true
+              }
+            }
+          ]
+        },
+        "BodyMotion": {
+          "Type": "Seek",
+          "RelativeSpeed": 0.55,
+          "SlowDownDistance": 2,
+          "StopDistance": 0.01,
+          "RelaxedMoveConstraints": false
+        },
+        "HeadMotion": {
+          "Type": "Nothing"
+        }
+      }
+    ]
+  }
+}

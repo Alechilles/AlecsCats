@@ -1,0 +1,330 @@
+{
+  "$Comment": "Idle pet cats run to a Cat Yarn Ball lying on the ground and bat at it for a while, with a happiness gain.",
+  "Type": "Component",
+  "Class": "Instruction",
+  "Parameters": {
+    "CatYarnSearchRange": {
+      "Value": 8,
+      "Description": "How far an idle cat notices a dropped yarn ball."
+    },
+    "CatYarnPlayDurationRange": {
+      "Value": [
+        8,
+        14
+      ],
+      "Description": "Seconds a cat bats at the ball."
+    },
+    "CatYarnHappiness": {
+      "Value": 5,
+      "Description": "Happiness gained after playing with the ball."
+    }
+  },
+  "Content": {
+    "Sensor": {
+      "Type": "And",
+      "Sensors": [
+        {
+          "Type": "Timer",
+          "Name": "CatYarn_Cooldown",
+          "State": "Stopped"
+        },
+        {
+          "Type": "Timer",
+          "Name": "CatEnrich_Rest",
+          "State": "Stopped"
+        },
+        {
+          "Type": "Flag",
+          "Name": "CatBox_Sitting",
+          "Set": false
+        },
+        {
+          "Type": "Or",
+          "Sensors": [
+            {
+              "Type": "Flag",
+              "Name": "CatYarn_Engaged"
+            },
+            {
+              "Type": "Flag",
+              "Name": "CatEnrich_Busy",
+              "Set": false
+            }
+          ]
+        },
+        {
+          "Type": "DroppedItem",
+          "Range": {
+            "Compute": "CatYarnSearchRange"
+          },
+          "Items": [
+            "Cat_Yarn_Ball"
+          ]
+        }
+      ]
+    },
+    "Instructions": [
+      {
+        "$Comment": "Claim the cat for this activity. The watchdog frees it if the activity cannot finish.",
+        "Continue": true,
+        "Sensor": {
+          "Type": "Flag",
+          "Name": "CatYarn_Engaged",
+          "Set": false
+        },
+        "Actions": [
+          {
+            "Type": "SetFlag",
+            "Name": "CatYarn_Engaged",
+            "SetTo": true
+          },
+          {
+            "Type": "SetFlag",
+            "Name": "CatEnrich_Busy",
+            "SetTo": true
+          },
+          {
+            "Type": "TimerStart",
+            "Name": "CatEnrich_Watchdog",
+            "StartValueRange": [
+              45,
+              45
+            ],
+            "RestartValueRange": [
+              45,
+              45
+            ]
+          },
+          {
+            "Type": "TimerRestart",
+            "Name": "CatEnrich_Watchdog"
+          }
+        ]
+      },
+      {
+        "$Comment": "Play session over: reward and cool down.",
+        "Sensor": {
+          "Type": "And",
+          "Sensors": [
+            {
+              "Type": "Flag",
+              "Name": "CatYarn_Playing"
+            },
+            {
+              "Type": "Timer",
+              "Name": "CatYarn_Session",
+              "State": "Stopped"
+            }
+          ]
+        },
+        "Actions": [
+          {
+            "Type": "PlayAnimation",
+            "Slot": "Action"
+          },
+          {
+            "Type": "TameworkProgressionReward",
+            "Happiness": {
+              "Compute": "CatYarnHappiness"
+            }
+          },
+          {
+            "Type": "SpawnParticles",
+            "ParticleSystem": "Hearts_Subtle",
+            "Offset": [
+              0,
+              0.6,
+              0
+            ],
+            "TargetNodeName": "Head"
+          },
+          {
+            "Type": "TimerStart",
+            "Name": "CatYarn_Cooldown",
+            "StartValueRange": [
+              45,
+              90
+            ],
+            "RestartValueRange": [
+              45,
+              90
+            ]
+          },
+          {
+            "Type": "TimerRestart",
+            "Name": "CatYarn_Cooldown"
+          },
+          {
+            "Type": "TimerStart",
+            "Name": "CatEnrich_Rest",
+            "StartValueRange": [
+              12,
+              25
+            ],
+            "RestartValueRange": [
+              12,
+              25
+            ]
+          },
+          {
+            "Type": "TimerRestart",
+            "Name": "CatEnrich_Rest"
+          },
+          {
+            "Type": "SetFlag",
+            "Name": "CatYarn_Playing",
+            "SetTo": false
+          },
+          {
+            "Type": "SetFlag",
+            "Name": "CatYarn_Engaged",
+            "SetTo": false
+          },
+          {
+            "Type": "SetFlag",
+            "Name": "CatEnrich_Busy",
+            "SetTo": false
+          }
+        ]
+      },
+      {
+        "$Comment": "Reached the ball: start the play session with a trill.",
+        "Sensor": {
+          "Type": "And",
+          "Sensors": [
+            {
+              "Type": "Flag",
+              "Name": "CatYarn_Playing",
+              "Set": false
+            },
+            {
+              "Type": "DroppedItem",
+              "Range": 1.3,
+              "Items": [
+                "Cat_Yarn_Ball"
+              ]
+            }
+          ]
+        },
+        "BodyMotion": {
+          "Type": "Nothing"
+        },
+        "HeadMotion": {
+          "Type": "Watch"
+        },
+        "Actions": [
+          {
+            "Type": "PlaySound",
+            "SoundEventId": "SFX_AlecsCats_Cat_Trill"
+          },
+          {
+            "Type": "TimerStart",
+            "Name": "CatYarn_Session",
+            "StartValueRange": {
+              "Compute": "CatYarnPlayDurationRange"
+            },
+            "RestartValueRange": {
+              "Compute": "CatYarnPlayDurationRange"
+            }
+          },
+          {
+            "Type": "TimerRestart",
+            "Name": "CatYarn_Session"
+          },
+          {
+            "Type": "SetFlag",
+            "Name": "CatYarn_Playing",
+            "SetTo": true
+          }
+        ]
+      },
+      {
+        "$Comment": "Swat the ball every second or two.",
+        "Sensor": {
+          "Type": "And",
+          "Sensors": [
+            {
+              "Type": "Timer",
+              "Name": "CatYarn_Swat",
+              "State": "Stopped"
+            },
+            {
+              "Type": "DroppedItem",
+              "Range": 1.3,
+              "Items": [
+                "Cat_Yarn_Ball"
+              ]
+            }
+          ]
+        },
+        "BodyMotion": {
+          "Type": "Nothing"
+        },
+        "HeadMotion": {
+          "Type": "Watch"
+        },
+        "Actions": [
+          {
+            "Type": "PlayAnimation",
+            "Slot": "Action",
+            "Animation": "ToyPlay"
+          },
+          {
+            "Type": "TimerStart",
+            "Name": "CatYarn_Swat",
+            "StartValueRange": [
+              1.2,
+              2.4
+            ],
+            "RestartValueRange": [
+              1.2,
+              2.4
+            ]
+          },
+          {
+            "Type": "TimerRestart",
+            "Name": "CatYarn_Swat"
+          }
+        ]
+      },
+      {
+        "$Comment": "Watch the ball between swats.",
+        "Sensor": {
+          "Type": "DroppedItem",
+          "Range": 1.3,
+          "Items": [
+            "Cat_Yarn_Ball"
+          ]
+        },
+        "BodyMotion": {
+          "Type": "Nothing"
+        },
+        "HeadMotion": {
+          "Type": "Watch"
+        }
+      },
+      {
+        "$Comment": "Run to the ball.",
+        "Sensor": {
+          "Type": "DroppedItem",
+          "Range": {
+            "Compute": "CatYarnSearchRange"
+          },
+          "Items": [
+            "Cat_Yarn_Ball"
+          ]
+        },
+        "BodyMotion": {
+          "Type": "Seek",
+          "RelativeSpeed": 0.8,
+          "SlowDownDistance": 2,
+          "StopDistance": 0.7,
+          "RelaxedMoveConstraints": false
+        },
+        "HeadMotion": {
+          "Type": "Watch"
+        }
+      }
+    ]
+  }
+}

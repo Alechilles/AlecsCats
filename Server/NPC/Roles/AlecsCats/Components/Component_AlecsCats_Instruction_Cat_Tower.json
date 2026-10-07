@@ -1,0 +1,471 @@
+{
+  "$Comment": "Idle pet cats walk to a nearby cat tower, leap onto its perch and sit there for a while, with a small happiness gain. The perch sits over the tower's origin cell, so the target does not depend on how the tower was rotated.",
+  "Type": "Component",
+  "Class": "Instruction",
+  "Parameters": {
+    "CatTowerBlockSet": {
+      "Value": "AlecsCats_Cat_Tower",
+      "Description": "Block set of cat towers."
+    },
+    "CatTowerSearchRange": {
+      "Value": 12,
+      "Description": "How far an idle cat looks for a cat tower."
+    },
+    "CatTowerPerchDurationRange": {
+      "Value": [
+        25,
+        50
+      ],
+      "Description": "Seconds a cat sits on the perch."
+    },
+    "CatTowerHappiness": {
+      "Value": 4,
+      "Description": "Happiness gained after sitting on the perch."
+    }
+  },
+  "Content": {
+    "Sensor": {
+      "Type": "And",
+      "Sensors": [
+        {
+          "Type": "Timer",
+          "Name": "CatTower_Cooldown",
+          "State": "Stopped"
+        },
+        {
+          "Type": "Timer",
+          "Name": "CatEnrich_Rest",
+          "State": "Stopped"
+        },
+        {
+          "Type": "Flag",
+          "Name": "CatBox_Sitting",
+          "Set": false
+        },
+        {
+          "Type": "Or",
+          "Sensors": [
+            {
+              "Type": "Flag",
+              "Name": "CatTower_Engaged"
+            },
+            {
+              "Type": "Flag",
+              "Name": "CatEnrich_Busy",
+              "Set": false
+            }
+          ]
+        },
+        {
+          "Type": "AdjustPosition",
+          "Offset": [
+            0,
+            -0.5,
+            0
+          ],
+          "Sensor": {
+            "Type": "Block",
+            "Range": {
+              "Compute": "CatTowerSearchRange"
+            },
+            "MaxHeight": 3,
+            "Blocks": {
+              "Compute": "CatTowerBlockSet"
+            },
+            "Random": true,
+            "Reserve": true
+          }
+        }
+      ]
+    },
+    "Instructions": [
+      {
+        "$Comment": "Claim the cat for this activity. The watchdog frees it if the activity cannot finish.",
+        "Continue": true,
+        "Sensor": {
+          "Type": "Flag",
+          "Name": "CatTower_Engaged",
+          "Set": false
+        },
+        "Actions": [
+          {
+            "Type": "SetFlag",
+            "Name": "CatTower_Engaged",
+            "SetTo": true
+          },
+          {
+            "Type": "SetFlag",
+            "Name": "CatEnrich_Busy",
+            "SetTo": true
+          },
+          {
+            "Type": "TimerStart",
+            "Name": "CatEnrich_Watchdog",
+            "StartValueRange": [
+              120,
+              120
+            ],
+            "RestartValueRange": [
+              120,
+              120
+            ]
+          },
+          {
+            "Type": "TimerRestart",
+            "Name": "CatEnrich_Watchdog"
+          }
+        ]
+      },
+      {
+        "$Comment": "Perch time over: stand, reward, cool down. The cat walks down by the cubby roof.",
+        "Sensor": {
+          "Type": "And",
+          "Sensors": [
+            {
+              "Type": "Flag",
+              "Name": "CatTower_Perched"
+            },
+            {
+              "Type": "Timer",
+              "Name": "CatTower_Perch",
+              "State": "Stopped"
+            }
+          ]
+        },
+        "BodyMotion": {
+          "Type": "Nothing"
+        },
+        "HeadMotion": {
+          "Type": "Nothing"
+        },
+        "ActionsBlocking": true,
+        "Actions": [
+          {
+            "Type": "PlayAnimation",
+            "Slot": "Status",
+            "Animation": "StandUp"
+          },
+          {
+            "Type": "Timeout",
+            "Delay": [
+              0.83,
+              0.83
+            ]
+          },
+          {
+            "Type": "PlayAnimation",
+            "Slot": "Status"
+          },
+          {
+            "Type": "TameworkProgressionReward",
+            "Happiness": {
+              "Compute": "CatTowerHappiness"
+            }
+          },
+          {
+            "Type": "SpawnParticles",
+            "ParticleSystem": "Hearts_Subtle",
+            "Offset": [
+              0,
+              0.6,
+              0
+            ],
+            "TargetNodeName": "Head"
+          },
+          {
+            "Type": "TimerStart",
+            "Name": "CatTower_Cooldown",
+            "StartValueRange": [
+              120,
+              240
+            ],
+            "RestartValueRange": [
+              120,
+              240
+            ]
+          },
+          {
+            "Type": "TimerRestart",
+            "Name": "CatTower_Cooldown"
+          },
+          {
+            "Type": "TimerStart",
+            "Name": "CatEnrich_Rest",
+            "StartValueRange": [
+              12,
+              25
+            ],
+            "RestartValueRange": [
+              12,
+              25
+            ]
+          },
+          {
+            "Type": "TimerRestart",
+            "Name": "CatEnrich_Rest"
+          },
+          {
+            "Type": "ResetBlockSensors"
+          },
+          {
+            "Type": "SetFlag",
+            "Name": "CatTower_Perched",
+            "SetTo": false
+          },
+          {
+            "Type": "SetFlag",
+            "Name": "CatTower_Leaping",
+            "SetTo": false
+          },
+          {
+            "Type": "SetFlag",
+            "Name": "CatTower_Engaged",
+            "SetTo": false
+          },
+          {
+            "Type": "SetFlag",
+            "Name": "CatEnrich_Busy",
+            "SetTo": false
+          }
+        ]
+      },
+      {
+        "$Comment": "Stay on the perch.",
+        "Sensor": {
+          "Type": "Flag",
+          "Name": "CatTower_Perched"
+        },
+        "BodyMotion": {
+          "Type": "Nothing"
+        },
+        "HeadMotion": {
+          "Type": "Nothing"
+        }
+      },
+      {
+        "$Comment": "Leap finished and the cat has landed: sit down.",
+        "Sensor": {
+          "Type": "And",
+          "Sensors": [
+            {
+              "Type": "Flag",
+              "Name": "CatTower_Leaping"
+            },
+            {
+              "Type": "Timer",
+              "Name": "CatTower_Leap",
+              "State": "Stopped"
+            },
+            {
+              "Type": "Not",
+              "Sensor": {
+                "Type": "InAir"
+              }
+            }
+          ]
+        },
+        "BodyMotion": {
+          "Type": "Nothing"
+        },
+        "HeadMotion": {
+          "Type": "Nothing"
+        },
+        "Actions": [
+          {
+            "Type": "PlayAnimation",
+            "Slot": "Status",
+            "Animation": "Sit"
+          },
+          {
+            "Type": "TimerStart",
+            "Name": "CatTower_Perch",
+            "StartValueRange": {
+              "Compute": "CatTowerPerchDurationRange"
+            },
+            "RestartValueRange": {
+              "Compute": "CatTowerPerchDurationRange"
+            }
+          },
+          {
+            "Type": "TimerRestart",
+            "Name": "CatTower_Perch"
+          },
+          {
+            "Type": "SetFlag",
+            "Name": "CatTower_Perched",
+            "SetTo": true
+          },
+          {
+            "Type": "SetFlag",
+            "Name": "CatTower_Leaping",
+            "SetTo": false
+          },
+          {
+            "Type": "TimerStart",
+            "Name": "CatEnrich_Watchdog",
+            "StartValueRange": [
+              120,
+              120
+            ],
+            "RestartValueRange": [
+              120,
+              120
+            ]
+          },
+          {
+            "Type": "TimerRestart",
+            "Name": "CatEnrich_Watchdog"
+          }
+        ]
+      },
+      {
+        "$Comment": "Leap in an arc to the perch. Solid blocks stop the arc and gravity takes over.",
+        "Sensor": {
+          "Type": "And",
+          "Sensors": [
+            {
+              "Type": "Flag",
+              "Name": "CatTower_Leaping"
+            },
+            {
+              "Type": "AdjustPosition",
+              "Offset": [
+                0,
+                1.55,
+                0
+              ],
+              "Sensor": {
+                "Type": "Block",
+                "Range": {
+                  "Compute": "CatTowerSearchRange"
+                },
+                "MaxHeight": 3,
+                "Blocks": {
+                  "Compute": "CatTowerBlockSet"
+                },
+                "Random": true
+              }
+            }
+          ]
+        },
+        "BodyMotion": {
+          "Type": "TameworkLeap",
+          "Duration": 0.8,
+          "Height": 1.2
+        },
+        "HeadMotion": {
+          "Type": "Watch"
+        }
+      },
+      {
+        "$Comment": "Beside the tower: crouch for a moment, then leap.",
+        "Sensor": {
+          "Type": "And",
+          "Sensors": [
+            {
+              "Type": "Flag",
+              "Name": "CatTower_Leaping",
+              "Set": false
+            },
+            {
+              "Type": "AdjustPosition",
+              "Offset": [
+                0,
+                1.55,
+                0
+              ],
+              "Sensor": {
+                "Type": "Block",
+                "Range": 2.1,
+                "MaxHeight": 3,
+                "Blocks": {
+                  "Compute": "CatTowerBlockSet"
+                },
+                "Random": true
+              }
+            }
+          ]
+        },
+        "BodyMotion": {
+          "Type": "Nothing"
+        },
+        "HeadMotion": {
+          "Type": "Watch"
+        },
+        "ActionsBlocking": true,
+        "Actions": [
+          {
+            "Type": "Timeout",
+            "Delay": [
+              0.4,
+              0.8
+            ]
+          },
+          {
+            "Type": "TimerStart",
+            "Name": "CatTower_Leap",
+            "StartValueRange": [
+              1.0,
+              1.0
+            ],
+            "RestartValueRange": [
+              1.0,
+              1.0
+            ]
+          },
+          {
+            "Type": "TimerRestart",
+            "Name": "CatTower_Leap"
+          },
+          {
+            "Type": "SetFlag",
+            "Name": "CatTower_Leaping",
+            "SetTo": true
+          }
+        ]
+      },
+      {
+        "$Comment": "Walk to the foot of the tower.",
+        "Sensor": {
+          "Type": "And",
+          "Sensors": [
+            {
+              "Type": "Flag",
+              "Name": "CatTower_Leaping",
+              "Set": false
+            },
+            {
+              "Type": "AdjustPosition",
+              "Offset": [
+                0,
+                -0.5,
+                0
+              ],
+              "Sensor": {
+                "Type": "Block",
+                "Range": {
+                  "Compute": "CatTowerSearchRange"
+                },
+                "MaxHeight": 3,
+                "Blocks": {
+                  "Compute": "CatTowerBlockSet"
+                },
+                "Random": true
+              }
+            }
+          ]
+        },
+        "BodyMotion": {
+          "Type": "Seek",
+          "RelativeSpeed": 0.55,
+          "SlowDownDistance": 2.5,
+          "StopDistance": 1.5,
+          "RelaxedMoveConstraints": false
+        },
+        "HeadMotion": {
+          "Type": "Watch"
+        }
+      }
+    ]
+  }
+}

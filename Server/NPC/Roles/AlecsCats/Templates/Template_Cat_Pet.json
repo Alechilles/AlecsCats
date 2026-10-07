@@ -973,6 +973,83 @@
           "TargetSlot": "CatToyOwner"
         }
       ]
+    },
+    {
+      "$Comment": "Leaving Idle abandons any furniture or toy activity so it cannot resume half-done.",
+      "States": [
+        {
+          "From": [
+            "Idle"
+          ],
+          "To": [
+            "Follow",
+            "FollowClose",
+            "Hold",
+            "Defend",
+            "CommandMove",
+            "NeedsSeekWater",
+            "NeedsSeekFood",
+            "BreedPair",
+            "Sleep",
+            "CatToyPlay"
+          ]
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "ResetBlockSensors"
+        },
+        {
+          "Type": "SetFlag",
+          "Name": "CatEnrich_Busy",
+          "SetTo": false
+        },
+        {
+          "Type": "SetFlag",
+          "Name": "CatBed_Engaged",
+          "SetTo": false
+        },
+        {
+          "Type": "SetFlag",
+          "Name": "CatBed_Napping",
+          "SetTo": false
+        },
+        {
+          "Type": "SetFlag",
+          "Name": "CatPost_Engaged",
+          "SetTo": false
+        },
+        {
+          "Type": "SetFlag",
+          "Name": "CatPost_Scratching",
+          "SetTo": false
+        },
+        {
+          "Type": "SetFlag",
+          "Name": "CatTower_Engaged",
+          "SetTo": false
+        },
+        {
+          "Type": "SetFlag",
+          "Name": "CatTower_Leaping",
+          "SetTo": false
+        },
+        {
+          "Type": "SetFlag",
+          "Name": "CatTower_Perched",
+          "SetTo": false
+        },
+        {
+          "Type": "SetFlag",
+          "Name": "CatYarn_Engaged",
+          "SetTo": false
+        },
+        {
+          "Type": "SetFlag",
+          "Name": "CatYarn_Playing",
+          "SetTo": false
+        }
+      ]
     }
   ],
   "InteractionVars": {
@@ -1613,6 +1690,44 @@
                 "FlockFollowerStopDistance": {
                   "Compute": "FlockFollowerStopDistance"
                 }
+              }
+            },
+            {
+              "$Comment": "Free a cat whose furniture or toy activity could not finish.",
+              "Reference": "Component_AlecsCats_Instruction_Enrichment_Watchdog",
+              "Modify": {
+                "CatEnrichGiveUpCooldownRange": [
+                  30,
+                  60
+                ]
+              }
+            },
+            {
+              "$Comment": "A yarn ball lying nearby draws idle cats to bat at it.",
+              "Reference": "Component_AlecsCats_Instruction_Yarn_Ball",
+              "Modify": {
+                "CatYarnSearchRange": 8
+              }
+            },
+            {
+              "$Comment": "Idle cats scratch a nearby scratching post.",
+              "Reference": "Component_AlecsCats_Instruction_Scratching_Post",
+              "Modify": {
+                "CatPostSearchRange": 10
+              }
+            },
+            {
+              "$Comment": "Idle cats leap onto a nearby cat tower and sit on its perch.",
+              "Reference": "Component_AlecsCats_Instruction_Cat_Tower",
+              "Modify": {
+                "CatTowerSearchRange": 12
+              }
+            },
+            {
+              "$Comment": "Idle cats nap in a nearby cat bed.",
+              "Reference": "Component_AlecsCats_Instruction_Cat_Bed",
+              "Modify": {
+                "CatBedSearchRange": 10
               }
             },
             {

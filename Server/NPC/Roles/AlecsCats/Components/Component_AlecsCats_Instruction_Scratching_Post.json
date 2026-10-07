@@ -1,0 +1,405 @@
+{
+  "$Comment": "Idle pet cats walk to a nearby scratching post and scratch it for a few seconds, with a small happiness gain.",
+  "Type": "Component",
+  "Class": "Instruction",
+  "Parameters": {
+    "CatPostBlockSet": {
+      "Value": "AlecsCats_Cat_Scratching_Post",
+      "Description": "Block set of scratching posts."
+    },
+    "CatPostSearchRange": {
+      "Value": 10,
+      "Description": "How far an idle cat looks for a scratching post."
+    },
+    "CatPostScratchDurationRange": {
+      "Value": [
+        5,
+        9
+      ],
+      "Description": "Seconds a cat scratches the post."
+    },
+    "CatPostHappiness": {
+      "Value": 4,
+      "Description": "Happiness gained after scratching."
+    }
+  },
+  "Content": {
+    "Sensor": {
+      "Type": "And",
+      "Sensors": [
+        {
+          "Type": "Timer",
+          "Name": "CatPost_Cooldown",
+          "State": "Stopped"
+        },
+        {
+          "Type": "Timer",
+          "Name": "CatEnrich_Rest",
+          "State": "Stopped"
+        },
+        {
+          "Type": "Flag",
+          "Name": "CatBox_Sitting",
+          "Set": false
+        },
+        {
+          "Type": "Or",
+          "Sensors": [
+            {
+              "Type": "Flag",
+              "Name": "CatPost_Engaged"
+            },
+            {
+              "Type": "Flag",
+              "Name": "CatEnrich_Busy",
+              "Set": false
+            }
+          ]
+        },
+        {
+          "Type": "AdjustPosition",
+          "Offset": [
+            0,
+            -0.5,
+            0
+          ],
+          "Sensor": {
+            "Type": "Block",
+            "Range": {
+              "Compute": "CatPostSearchRange"
+            },
+            "MaxHeight": 3,
+            "Blocks": {
+              "Compute": "CatPostBlockSet"
+            },
+            "Random": true,
+            "Reserve": true
+          }
+        }
+      ]
+    },
+    "Instructions": [
+      {
+        "$Comment": "Claim the cat for this activity. The watchdog frees it if the activity cannot finish.",
+        "Continue": true,
+        "Sensor": {
+          "Type": "Flag",
+          "Name": "CatPost_Engaged",
+          "Set": false
+        },
+        "Actions": [
+          {
+            "Type": "SetFlag",
+            "Name": "CatPost_Engaged",
+            "SetTo": true
+          },
+          {
+            "Type": "SetFlag",
+            "Name": "CatEnrich_Busy",
+            "SetTo": true
+          },
+          {
+            "Type": "TimerStart",
+            "Name": "CatEnrich_Watchdog",
+            "StartValueRange": [
+              60,
+              60
+            ],
+            "RestartValueRange": [
+              60,
+              60
+            ]
+          },
+          {
+            "Type": "TimerRestart",
+            "Name": "CatEnrich_Watchdog"
+          }
+        ]
+      },
+      {
+        "$Comment": "Done scratching: drop to all fours, reward, cool down.",
+        "Sensor": {
+          "Type": "And",
+          "Sensors": [
+            {
+              "Type": "Flag",
+              "Name": "CatPost_Scratching"
+            },
+            {
+              "Type": "Timer",
+              "Name": "CatPost_Scratch",
+              "State": "Stopped"
+            }
+          ]
+        },
+        "BodyMotion": {
+          "Type": "Nothing"
+        },
+        "HeadMotion": {
+          "Type": "Nothing"
+        },
+        "Actions": [
+          {
+            "Type": "PlayAnimation",
+            "Slot": "Status"
+          },
+          {
+            "Type": "TameworkProgressionReward",
+            "Happiness": {
+              "Compute": "CatPostHappiness"
+            }
+          },
+          {
+            "Type": "SpawnParticles",
+            "ParticleSystem": "Hearts_Subtle",
+            "Offset": [
+              0,
+              0.6,
+              0
+            ],
+            "TargetNodeName": "Head"
+          },
+          {
+            "Type": "TimerStart",
+            "Name": "CatPost_Cooldown",
+            "StartValueRange": [
+              90,
+              180
+            ],
+            "RestartValueRange": [
+              90,
+              180
+            ]
+          },
+          {
+            "Type": "TimerRestart",
+            "Name": "CatPost_Cooldown"
+          },
+          {
+            "Type": "TimerStart",
+            "Name": "CatEnrich_Rest",
+            "StartValueRange": [
+              12,
+              25
+            ],
+            "RestartValueRange": [
+              12,
+              25
+            ]
+          },
+          {
+            "Type": "TimerRestart",
+            "Name": "CatEnrich_Rest"
+          },
+          {
+            "Type": "ResetBlockSensors"
+          },
+          {
+            "Type": "SetFlag",
+            "Name": "CatPost_Scratching",
+            "SetTo": false
+          },
+          {
+            "Type": "SetFlag",
+            "Name": "CatPost_Engaged",
+            "SetTo": false
+          },
+          {
+            "Type": "SetFlag",
+            "Name": "CatEnrich_Busy",
+            "SetTo": false
+          }
+        ]
+      },
+      {
+        "$Comment": "At the post: rear up and start scratching.",
+        "Sensor": {
+          "Type": "And",
+          "Sensors": [
+            {
+              "Type": "Flag",
+              "Name": "CatPost_Scratching",
+              "Set": false
+            },
+            {
+              "Type": "AdjustPosition",
+              "Offset": [
+                0,
+                -0.5,
+                0
+              ],
+              "Sensor": {
+                "Type": "Block",
+                "Range": 1.35,
+                "MaxHeight": 3,
+                "Blocks": {
+                  "Compute": "CatPostBlockSet"
+                },
+                "Random": true
+              }
+            }
+          ]
+        },
+        "BodyMotion": {
+          "Type": "Nothing"
+        },
+        "HeadMotion": {
+          "Type": "Watch"
+        },
+        "Actions": [
+          {
+            "Type": "PlayAnimation",
+            "Slot": "Status",
+            "Animation": "Scratch"
+          },
+          {
+            "Type": "TimerStart",
+            "Name": "CatPost_Scratch",
+            "StartValueRange": {
+              "Compute": "CatPostScratchDurationRange"
+            },
+            "RestartValueRange": {
+              "Compute": "CatPostScratchDurationRange"
+            }
+          },
+          {
+            "Type": "TimerRestart",
+            "Name": "CatPost_Scratch"
+          },
+          {
+            "Type": "SetFlag",
+            "Name": "CatPost_Scratching",
+            "SetTo": true
+          }
+        ]
+      },
+      {
+        "$Comment": "Scratch sound and a few fibres with each pull.",
+        "Continue": true,
+        "Sensor": {
+          "Type": "And",
+          "Sensors": [
+            {
+              "Type": "Flag",
+              "Name": "CatPost_Scratching"
+            },
+            {
+              "Type": "Timer",
+              "Name": "CatPost_Fx",
+              "State": "Stopped"
+            }
+          ]
+        },
+        "Actions": [
+          {
+            "Type": "PlaySound",
+            "SoundEventId": "SFX_Cloth_Hit"
+          },
+          {
+            "Type": "SpawnParticles",
+            "ParticleSystem": "Block_Land_Wood_Bits",
+            "Scale": 0.4,
+            "Offset": [
+              0,
+              0.7,
+              0.5
+            ]
+          },
+          {
+            "Type": "TimerStart",
+            "Name": "CatPost_Fx",
+            "StartValueRange": [
+              0.33,
+              0.33
+            ],
+            "RestartValueRange": [
+              0.33,
+              0.33
+            ]
+          },
+          {
+            "Type": "TimerRestart",
+            "Name": "CatPost_Fx"
+          }
+        ]
+      },
+      {
+        "$Comment": "Hold position while scratching.",
+        "Sensor": {
+          "Type": "And",
+          "Sensors": [
+            {
+              "Type": "Flag",
+              "Name": "CatPost_Scratching"
+            },
+            {
+              "Type": "AdjustPosition",
+              "Offset": [
+                0,
+                -0.5,
+                0
+              ],
+              "Sensor": {
+                "Type": "Block",
+                "Range": 1.35,
+                "MaxHeight": 3,
+                "Blocks": {
+                  "Compute": "CatPostBlockSet"
+                },
+                "Random": true
+              }
+            }
+          ]
+        },
+        "BodyMotion": {
+          "Type": "Nothing"
+        },
+        "HeadMotion": {
+          "Type": "Watch"
+        }
+      },
+      {
+        "$Comment": "Walk up to the post.",
+        "Sensor": {
+          "Type": "And",
+          "Sensors": [
+            {
+              "Type": "Flag",
+              "Name": "CatPost_Scratching",
+              "Set": false
+            },
+            {
+              "Type": "AdjustPosition",
+              "Offset": [
+                0,
+                -0.5,
+                0
+              ],
+              "Sensor": {
+                "Type": "Block",
+                "Range": {
+                  "Compute": "CatPostSearchRange"
+                },
+                "MaxHeight": 3,
+                "Blocks": {
+                  "Compute": "CatPostBlockSet"
+                },
+                "Random": true
+              }
+            }
+          ]
+        },
+        "BodyMotion": {
+          "Type": "Seek",
+          "RelativeSpeed": 0.55,
+          "SlowDownDistance": 2,
+          "StopDistance": 0.9,
+          "RelaxedMoveConstraints": false
+        },
+        "HeadMotion": {
+          "Type": "Watch"
+        }
+      }
+    ]
+  }
+}

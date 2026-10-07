@@ -1,0 +1,146 @@
+{
+  "$Comment": "Frees a cat whose furniture or toy activity did not finish in time (blocked path, removed block, picked-up toy) and starts every activity cooldown so it does not retry at once.",
+  "Type": "Component",
+  "Class": "Instruction",
+  "Parameters": {
+    "CatEnrichGiveUpCooldownRange": {
+      "Value": [
+        30,
+        60
+      ],
+      "Description": "Seconds every activity waits after one was abandoned."
+    }
+  },
+  "Content": {
+    "Continue": true,
+    "Sensor": {
+      "Type": "And",
+      "Sensors": [
+        {
+          "Type": "Flag",
+          "Name": "CatEnrich_Busy"
+        },
+        {
+          "Type": "Timer",
+          "Name": "CatEnrich_Watchdog",
+          "State": "Stopped"
+        }
+      ]
+    },
+    "Actions": [
+      {
+        "Type": "PlayAnimation",
+        "Slot": "Status"
+      },
+      {
+        "Type": "ResetBlockSensors"
+      },
+      {
+        "Type": "TimerStart",
+        "Name": "CatBed_Cooldown",
+        "StartValueRange": {
+          "Compute": "CatEnrichGiveUpCooldownRange"
+        },
+        "RestartValueRange": {
+          "Compute": "CatEnrichGiveUpCooldownRange"
+        }
+      },
+      {
+        "Type": "TimerRestart",
+        "Name": "CatBed_Cooldown"
+      },
+      {
+        "Type": "TimerStart",
+        "Name": "CatPost_Cooldown",
+        "StartValueRange": {
+          "Compute": "CatEnrichGiveUpCooldownRange"
+        },
+        "RestartValueRange": {
+          "Compute": "CatEnrichGiveUpCooldownRange"
+        }
+      },
+      {
+        "Type": "TimerRestart",
+        "Name": "CatPost_Cooldown"
+      },
+      {
+        "Type": "TimerStart",
+        "Name": "CatTower_Cooldown",
+        "StartValueRange": {
+          "Compute": "CatEnrichGiveUpCooldownRange"
+        },
+        "RestartValueRange": {
+          "Compute": "CatEnrichGiveUpCooldownRange"
+        }
+      },
+      {
+        "Type": "TimerRestart",
+        "Name": "CatTower_Cooldown"
+      },
+      {
+        "Type": "TimerStart",
+        "Name": "CatYarn_Cooldown",
+        "StartValueRange": {
+          "Compute": "CatEnrichGiveUpCooldownRange"
+        },
+        "RestartValueRange": {
+          "Compute": "CatEnrichGiveUpCooldownRange"
+        }
+      },
+      {
+        "Type": "TimerRestart",
+        "Name": "CatYarn_Cooldown"
+      },
+      {
+        "Type": "SetFlag",
+        "Name": "CatEnrich_Busy",
+        "SetTo": false
+      },
+      {
+        "Type": "SetFlag",
+        "Name": "CatBed_Engaged",
+        "SetTo": false
+      },
+      {
+        "Type": "SetFlag",
+        "Name": "CatBed_Napping",
+        "SetTo": false
+      },
+      {
+        "Type": "SetFlag",
+        "Name": "CatPost_Engaged",
+        "SetTo": false
+      },
+      {
+        "Type": "SetFlag",
+        "Name": "CatPost_Scratching",
+        "SetTo": false
+      },
+      {
+        "Type": "SetFlag",
+        "Name": "CatTower_Engaged",
+        "SetTo": false
+      },
+      {
+        "Type": "SetFlag",
+        "Name": "CatTower_Leaping",
+        "SetTo": false
+      },
+      {
+        "Type": "SetFlag",
+        "Name": "CatTower_Perched",
+        "SetTo": false
+      },
+      {
+        "Type": "SetFlag",
+        "Name": "CatYarn_Engaged",
+        "SetTo": false
+      },
+      {
+        "Type": "SetFlag",
+        "Name": "CatYarn_Playing",
+        "SetTo": false
+      }
+    ]
+  }
+}

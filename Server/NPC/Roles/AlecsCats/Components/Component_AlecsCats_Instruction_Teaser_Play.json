@@ -267,6 +267,61 @@
         ]
       },
       {
+        "$Comment": "Playing makes the cat happier, at most once every few minutes so the wand cannot be farmed.",
+        "Continue": true,
+        "Sensor": {
+          "Type": "And",
+          "Sensors": [
+            {
+              "Type": "Flag",
+              "Name": "CatToy_Played"
+            },
+            {
+              "Type": "Timer",
+              "Name": "CatToy_RewardCooldown",
+              "State": "Stopped"
+            }
+          ]
+        },
+        "Actions": [
+          {
+            "Type": "TameworkProgressionReward",
+            "Happiness": 6
+          },
+          {
+            "Type": "SpawnParticles",
+            "ParticleSystem": "Hearts_Subtle",
+            "Offset": [
+              0,
+              0.6,
+              0
+            ],
+            "TargetNodeName": "Head"
+          },
+          {
+            "Type": "TimerStart",
+            "Name": "CatToy_RewardCooldown",
+            "StartValueRange": [
+              150,
+              210
+            ],
+            "RestartValueRange": [
+              150,
+              210
+            ]
+          },
+          {
+            "Type": "TimerRestart",
+            "Name": "CatToy_RewardCooldown"
+          },
+          {
+            "Type": "SetFlag",
+            "Name": "CatToy_Played",
+            "SetTo": false
+          }
+        ]
+      },
+      {
         "Sensor": {
           "Type": "State",
           "State": ".Swipe"
@@ -717,6 +772,11 @@
               {
                 "Type": "State",
                 "State": ".Pounce"
+              },
+              {
+                "Type": "SetFlag",
+                "Name": "CatToy_Played",
+                "SetTo": true
               }
             ],
             "ActionsBlocking": true,
@@ -901,6 +961,11 @@
                       {
                         "Type": "State",
                         "State": ".Swipe"
+                      },
+                      {
+                        "Type": "SetFlag",
+                        "Name": "CatToy_Played",
+                        "SetTo": true
                       }
                     ]
                   },
