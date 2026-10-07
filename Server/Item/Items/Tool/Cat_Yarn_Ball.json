@@ -66,5 +66,5 @@
     "OutputQuantity": 1,
     "TimeSeconds": 3
   },
-  "MaxStack": 1
+  "MaxStack": 10
 }
