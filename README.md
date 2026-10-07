@@ -30,7 +30,7 @@ This mod started as a simple cat conversion from unused base-game assets and has
 --------------
 <H2>Required:</H2>
 <ul>
-<li><a href="https://www.curseforge.com/hytale/mods/alecs-tamework">Alec's Tamework!</a> <code>&gt;=4.0.0 &lt;5.0.0</code></li>
+<li><a href="https://www.curseforge.com/hytale/mods/alecs-tamework">Alec's Tamework!</a> <code>&gt;=5.2.0 &lt;6.0.0</code></li>
 </ul>
 <H2>Recommended:</H2>
 <ul>
@@ -63,6 +63,42 @@ This mod started as a simple cat conversion from unused base-game assets and has
 - 10x Catnip Plant
 - Bench: Workbench Tier 2 (Tinkering)
 
+### Cat Teaser Wand
+- 2x Stick
+- 3x Light Feathers
+- 2x Plant Fiber
+- 1x Catnip Plant
+- Bench: Workbench Tier 2 (Tinkering)
+
+### Cat Yarn Ball
+- 4x Wool Scraps
+- 1x Catnip Plant
+- Bench: Workbench Tier 2 (Tinkering)
+
+### Cat Bed
+- 6x Linen Scraps
+- 10x Plant Fiber
+- 2x Catnip Plant
+- Bench: Workbench Tier 2 (Tinkering)
+
+### Cat Scratching Post
+- 4x Stick
+- 12x Plant Fiber
+- 2x Catnip Plant
+- Bench: Workbench Tier 2 (Tinkering)
+
+### Cat Tower
+- 8x Softwood Planks
+- 20x Plant Fiber
+- 6x Linen Scraps
+- 5x Catnip Plant
+- Bench: Workbench Tier 2 (Tinkering)
+
+### Cat Food Bowl and Cat Water Bowl
+- 2x Clay
+- 1x Catnip Plant
+- Bench: Workbench Tier 2 (Tinkering)
+
 ## Quick Start
 1. Find a wild cat.
 2. Hold raw fish to draw it in curiously, then feed it to make it friendly.
@@ -90,14 +126,26 @@ Default commands:
 Notes:
 - Commands require ownership + tamed cats by default.
 
-## Cat Teaser Wand (Prototype)
+## Cat Teaser Wand
 Hold the **Cat Teaser Wand** (`Cat_Teaser_Toy`) in your main hand to draw in your awake, idle cats within six blocks. Hold **Use** to bounce the feather while cats gather in front of you and play with harmless swats and pounces. Swats are more common; before a pounce, the cat backs away to roughly three blocks, pauses briefly, then hops forward toward the feather. Releasing Use cancels the preparation, and a blocked retreat times out.
 
-After you release Use, cats watch for another three to four seconds before returning to idle. Use it again to renew their interest. Putting the wand away, moving out of range, losing line of sight, or taking damage ends play. Commands and urgent needs take priority. Play currently grants no happiness or XP.
+After you release Use, cats watch for another three to four seconds before returning to idle. Use it again to renew their interest. Putting the wand away, moving out of range, losing line of sight, or taking damage ends play. Commands and urgent needs take priority.
 
-This prototype is available from Creative inventory and has no crafting recipe yet. It uses Tamework 4.0.0's `TameworkMaintainDistance` and `TameworkInteractionActive` support. Front positioning follows the player's body facing direction and still needs in-game tuning around obstacles and moving players.
+A cat that swats or pounces gains happiness, at most once every few minutes per cat. Front positioning follows the player's body facing direction and can look off around obstacles and moving players.
 
-Install Tamework 4.0.0 or newer in the 4.x line and restart the world/server before using these assets. Reloading Cats assets cannot add the Java builders to a running server.
+## Cat Furniture and Toys
+Idle pet cats use these on their own. Each one gives the cat a small happiness gain when it finishes, then the cat rests before choosing another. A command, sleep, hunger, or thirst ends the activity.
+
+- **Cat Bed** (`Cat_Bed`): cats walk onto it, lie down, and nap for 30 to 60 seconds.
+- **Cat Scratching Post** (`Cat_Scratching_Post`): cats walk up, rear onto their hind legs, and scratch for a few seconds.
+- **Cat Tower** (`Cat_Tower`): two blocks wide and two tall. Cats leap onto the top perch and sit there for a while. Leave the space above the perch open.
+- **Cat Yarn Ball** (`Cat_Yarn_Ball`): drop it on the ground. Cats within eight blocks run over and bat at it. Pick it up to use it again.
+- **Cat Food Bowl** (`Cat_Food_Bowl`): open it and put in raw fish or Tamework Carnivore Kibble. Hungry cats walk over and eat from it, and the bowl shows how full it is.
+- **Cat Water Bowl** (`Cat_Water_Bowl`): hold Use to fill it. Thirsty cats walk over and drink, and the bowl empties after about 20 drinks. Hold Use again to top it up.
+
+The bowls use Tamework's feed trough system, so other Tamework companions can eat and drink from them too.
+
+Install Tamework 5.2.0 or newer in the 5.x line on Hytale 0.6.7 or newer, and restart the world/server before using these assets. Reloading Cats assets cannot add the Java builders to a running server.
 
 ## Taming and Ownership
 - Taming assigns ownership.
@@ -110,7 +158,8 @@ Install Tamework 4.0.0 or newer in the 4.x line and restart the world/server bef
 - Happiness fluctuates based on if the Cat's needs are being met
 - Cats will automatically eat raw fish or Tamework Carnivore Kibble from storage containers nearby
 - Tamework Carnivore Kibble can also be used as backup hand-feed, but it is less satisfying than their preferred food
-- Cats will automatically drink water from water sources nearby
+- Cats will automatically drink water from water sources nearby, including a filled Cat Water Bowl
+- Playing with the Cat Teaser Wand or a Cat Yarn Ball, and using cat furniture, makes cats happier
 - Cats prefer to have at least one cat friend nearby, but don't like to be overcrowded
 - Cats like when their owner is nearby
 
