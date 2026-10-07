@@ -114,6 +114,6 @@ items.Cat_Bowl.description=放入生鱼，或用装满水的桶或酒杯倒入�
 items.Cat_Yarn_Ball.name=猫毛线球
 items.Cat_Yarn_Ball.description=使用即可扔出。空闲的猫会追着它拍打。对地上的毛线球使用即可捡起。
 npcRoles.Cat_Yarn_Ball.name=毛线球
-interactionHints.alecsCats.openBowl=按 [{key}] 打开碗
+interactionHints.alecsCats.openBowl=按 [{key}] 打开碗 | 手持水桶或酒杯按 [RMB] 加水
 interactionHints.alecsCats.emptyBowl=按住 [{key}] 清空碗
 interactionHints.alecsCats.pickUpBall=按 [{key}] 捡起毛线球

@@ -115,6 +115,6 @@ items.Cat_Bowl.description=Put raw fish in it, or pour in water from a filled bu
 items.Cat_Yarn_Ball.name=Cat Yarn Ball
 items.Cat_Yarn_Ball.description=Use it to throw it. Your idle cats chase it and bat it around. Use the ball on the ground to pick it up.
 npcRoles.Cat_Yarn_Ball.name=Yarn Ball
-interactionHints.alecsCats.openBowl=Press [{key}] to open the bowl
+interactionHints.alecsCats.openBowl=Press [{key}] to open the bowl | [RMB] with a Water Bucket or Tankard to fill
 interactionHints.alecsCats.emptyBowl=Hold [{key}] to empty the bowl
 interactionHints.alecsCats.pickUpBall=Press [{key}] to pick up the yarn ball

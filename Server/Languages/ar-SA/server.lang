@@ -114,6 +114,6 @@ items.Cat_Bowl.description=ضع فيه سمكًا نيئًا أو اسكب في�
 items.Cat_Yarn_Ball.name=كرة صوف للقطط
 items.Cat_Yarn_Ball.description=استخدمها لرميها. تطاردها قططك الخاملة وتضربها بمخالبها. استخدم الكرة على الأرض لالتقاطها.
 npcRoles.Cat_Yarn_Ball.name=كرة صوف
-interactionHints.alecsCats.openBowl=اضغط [{key}] لفتح الوعاء
+interactionHints.alecsCats.openBowl=اضغط [{key}] لفتح الوعاء | [RMB] مع دلو ماء أو كوب لملئه
 interactionHints.alecsCats.emptyBowl=اضغط مطولًا على [{key}] لإفراغ الوعاء
 interactionHints.alecsCats.pickUpBall=اضغط [{key}] لالتقاط كرة الصوف

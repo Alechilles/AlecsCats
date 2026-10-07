@@ -114,6 +114,6 @@ items.Cat_Bowl.description=Mettez-y du poisson cru ou versez-y l'eau d'un seau o
 items.Cat_Yarn_Ball.name=Balle de laine pour chat
 items.Cat_Yarn_Ball.description=Utilisez-la pour la lancer. Vos chats inactifs la poursuivent et la frappent de la patte. Utilisez la balle au sol pour la ramasser.
 npcRoles.Cat_Yarn_Ball.name=Balle de laine
-interactionHints.alecsCats.openBowl=Appuyez sur [{key}] pour ouvrir le bol
+interactionHints.alecsCats.openBowl=Appuyez sur [{key}] pour ouvrir le bol | [RMB] avec un seau d'eau ou une chope pour le remplir
 interactionHints.alecsCats.emptyBowl=Maintenez [{key}] pour vider le bol
 interactionHints.alecsCats.pickUpBall=Appuyez sur [{key}] pour ramasser la balle de laine

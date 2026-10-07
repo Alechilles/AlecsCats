@@ -114,6 +114,6 @@ items.Cat_Bowl.description=生魚を入れるか、水の入ったバケツや�
 items.Cat_Yarn_Ball.name=ネコ用毛糸玉
 items.Cat_Yarn_Ball.description=使用すると投げます。ひまなネコが追いかけてじゃれつきます。地面の毛糸玉に使用すると拾えます。
 npcRoles.Cat_Yarn_Ball.name=毛糸玉
-interactionHints.alecsCats.openBowl=[{key}] を押してボウルを開く
+interactionHints.alecsCats.openBowl=[{key}] を押してボウルを開く | 水入りバケツかジョッキを持って [RMB] で水を入れる
 interactionHints.alecsCats.emptyBowl=[{key}] を長押ししてボウルを空にする
 interactionHints.alecsCats.pickUpBall=[{key}] を押して毛糸玉を拾う
