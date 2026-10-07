@@ -1701,6 +1701,20 @@
           },
           "Instructions": [
             {
+              "$Comment": "Refresh the base leash point when the cat settles into Idle so leash and wander behavior use the current area.",
+              "Continue": true,
+              "Sensor": {
+                "Type": "Any",
+                "Once": true
+              },
+              "Actions": [
+                {
+                  "Type": "SetLeashPosition",
+                  "ToCurrent": true
+                }
+              ]
+            },
+            {
               "$Comment": "Keep flock followers near their leader before regular idle wander.",
               "Reference": "Component_Tamework_Instruction_Flock_Follow_Wander",
               "Modify": {
@@ -2174,6 +2188,20 @@
             "State": "Hold"
           },
           "Instructions": [
+            {
+              "$Comment": "Refresh the base leash point when command hold settles the cat in place.",
+              "Continue": true,
+              "Sensor": {
+                "Type": "Any",
+                "Once": true
+              },
+              "Actions": [
+                {
+                  "Type": "SetLeashPosition",
+                  "ToCurrent": true
+                }
+              ]
+            },
             {
               "Reference": "Component_Tamework_Instruction_Hold",
               "Modify": {
