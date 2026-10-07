@@ -7,15 +7,7 @@
   "KnockbackScale": 0,
   "DefaultPlayerAttitude": "Neutral",
   "DefaultNPCAttitude": "Ignore",
-  "MaxHealth": {
-    "Compute": "MaxHealth"
-  },
-  "Parameters": {
-    "MaxHealth": {
-      "Value": 100,
-      "Description": "Unused: the ball cannot be hurt."
-    }
-  },
+  "MaxHealth": 100,
   "MotionControllerList": [
     {
       "Type": "Walk",
@@ -83,7 +75,8 @@
               "Distance": [
                 0,
                 0
-              ]
+              ],
+              "ThrowSpeed": 4
             },
             {
               "Type": "Remove",
@@ -119,7 +112,7 @@
           }
         },
         {
-          "$Comment": "A pet cat reached the ball.",
+          "$Comment": "A pet cat reached the ball, or a player walked into it.",
           "Sensor": {
             "Type": "And",
             "Sensors": [
@@ -129,78 +122,33 @@
                 "State": "Stopped"
               },
               {
-                "Type": "Mob",
-                "Range": 1.0,
-                "GetPlayers": false,
-                "GetNPCs": true,
-                "LockOnTarget": true,
-                "LockedTargetSlot": "Batter",
-                "Filters": [
+                "Type": "Or",
+                "Sensors": [
                   {
-                    "Type": "NPCGroup",
-                    "IncludeGroups": [
-                      "AlecsCats_Pet_Cats"
+                    "Type": "Mob",
+                    "Range": 1.0,
+                    "GetPlayers": false,
+                    "GetNPCs": true,
+                    "LockOnTarget": true,
+                    "LockedTargetSlot": "Batter",
+                    "Filters": [
+                      {
+                        "Type": "NPCGroup",
+                        "IncludeGroups": [
+                          "AlecsCats_Pet_Cats"
+                        ]
+                      }
                     ]
+                  },
+                  {
+                    "Type": "Mob",
+                    "Range": 0.7,
+                    "GetPlayers": true,
+                    "GetNPCs": false,
+                    "LockOnTarget": true,
+                    "LockedTargetSlot": "Batter"
                   }
                 ]
-              }
-            ]
-          },
-          "BodyMotion": {
-            "Type": "Nothing"
-          },
-          "Actions": [
-            {
-              "Type": "TimerStart",
-              "Name": "Ball_Roll",
-              "StartValueRange": [
-                0.8,
-                1.3
-              ],
-              "RestartValueRange": [
-                0.8,
-                1.3
-              ]
-            },
-            {
-              "Type": "TimerRestart",
-              "Name": "Ball_Roll"
-            },
-            {
-              "Type": "TimerStart",
-              "Name": "Ball_Rest",
-              "StartValueRange": [
-                1.8,
-                2.4
-              ],
-              "RestartValueRange": [
-                1.8,
-                2.4
-              ]
-            },
-            {
-              "Type": "TimerRestart",
-              "Name": "Ball_Rest"
-            }
-          ]
-        },
-        {
-          "$Comment": "A player walked into the ball.",
-          "Sensor": {
-            "Type": "And",
-            "Sensors": [
-              {
-                "Type": "Timer",
-                "Name": "Ball_Rest",
-                "State": "Stopped"
-              },
-              {
-                "Type": "Mob",
-                "Range": 0.7,
-                "GetPlayers": true,
-                "GetNPCs": false,
-                "LockOnTarget": true,
-                "LockedTargetSlot": "Batter"
               }
             ]
           },
@@ -295,7 +243,8 @@
             "Distance": [
               0,
               0
-            ]
+            ],
+            "ThrowSpeed": 4
           },
           {
             "Type": "Remove",

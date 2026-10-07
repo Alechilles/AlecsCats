@@ -1732,7 +1732,7 @@
               "$Comment": "A yarn ball lying nearby draws idle cats to bat at it.",
               "Reference": "Component_AlecsCats_Instruction_Yarn_Ball",
               "Modify": {
-                "CatYarnSearchRange": 8
+                "CatYarnSearchRange": 10
               }
             },
             {
