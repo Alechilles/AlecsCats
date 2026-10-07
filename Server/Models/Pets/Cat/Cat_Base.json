@@ -160,6 +160,14 @@
         }
       ]
     },
+    "Eat": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pets/Cat/Animations/Eat.blockyanim",
+          "Looping": true
+        }
+      ]
+    },
     "Scratch": {
       "Animations": [
         {

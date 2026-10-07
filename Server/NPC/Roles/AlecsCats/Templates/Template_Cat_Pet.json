@@ -275,8 +275,8 @@
       "Description": "The particle system that spawns to indicate the cat wants food."
     },
     "NeedsSeekConsumeAnimation": {
-      "Value": "",
-      "Description": "Optional animation played when consuming a needs resource. Cats leave this blank because their model does not expose a dedicated eat animation."
+      "Value": "Eat",
+      "Description": "Animation played while a cat eats or drinks from a needs resource: head down at the bowl with small bites."
     },
     "NeedsSeekConsumeStartDistance": {
       "Value": 1.65,

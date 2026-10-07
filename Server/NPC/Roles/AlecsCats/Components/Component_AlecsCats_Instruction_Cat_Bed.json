@@ -87,6 +87,84 @@
     },
     "Instructions": [
       {
+        "$Comment": "The cat was sitting: stand up before moving, and tell the wander cycle to start over later.",
+        "Sensor": {
+          "Type": "And",
+          "Sensors": [
+            {
+              "Type": "Flag",
+              "Name": "CatBed_Engaged",
+              "Set": false
+            },
+            {
+              "Type": "Flag",
+              "Name": "Tamework_Wander_Settled"
+            }
+          ]
+        },
+        "BodyMotion": {
+          "Type": "Nothing"
+        },
+        "HeadMotion": {
+          "Type": "Nothing"
+        },
+        "ActionsBlocking": true,
+        "Actions": [
+          {
+            "Type": "PlayAnimation",
+            "Slot": "Status",
+            "Animation": "StandUp"
+          },
+          {
+            "Type": "Timeout",
+            "Delay": [
+              0.83,
+              0.83
+            ]
+          },
+          {
+            "Type": "PlayAnimation",
+            "Slot": "Status"
+          },
+          {
+            "Type": "SetFlag",
+            "Name": "Tamework_Wander_Settled",
+            "SetTo": false
+          },
+          {
+            "Type": "SetFlag",
+            "Name": "Tamework_Wander_Reset",
+            "SetTo": true
+          },
+          {
+            "Type": "SetFlag",
+            "Name": "CatBed_Engaged",
+            "SetTo": true
+          },
+          {
+            "Type": "SetFlag",
+            "Name": "CatEnrich_Busy",
+            "SetTo": true
+          },
+          {
+            "Type": "TimerStart",
+            "Name": "CatEnrich_Watchdog",
+            "StartValueRange": [
+              180,
+              180
+            ],
+            "RestartValueRange": [
+              180,
+              180
+            ]
+          },
+          {
+            "Type": "TimerRestart",
+            "Name": "CatEnrich_Watchdog"
+          }
+        ]
+      },
+      {
         "$Comment": "Claim the cat for this activity. The watchdog frees it if the activity cannot finish.",
         "Continue": true,
         "Sensor": {
