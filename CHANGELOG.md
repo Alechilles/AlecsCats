@@ -9,7 +9,7 @@ All notable changes to **Alec's Cats!** will be documented in this file.
 - Added the Cat Scratching Post. Idle pet cats rear up and scratch it.
 - Added the Cat Tower, two blocks wide and two tall. Idle pet cats leap onto the top perch and sit there, and scratch its post. It replaces the unused placeholder tower model.
 - Added the Cat Bowl, which holds food or water like Tamework's feed trough. Put raw fish or Tamework Carnivore Kibble in it, or right-click it with a filled water bucket or tankard. Hungry and thirsty cats walk over to it, and the bowl shows what it holds and how full it is.
-- Added the Cat Yarn Ball. Throw it and idle pet cats chase it, and it rolls away each time a cat bats it. Press Use on the ball to pick it up.
+- Added the Cat Yarn Ball. Throw it and idle pet cats chase it, swat it, and now and then back off and pounce on it. It rolls away each time a cat bats it. Press Use on the ball to pick it up.
 - The Cat Teaser Wand is no longer a prototype. It has a crafting recipe, and cats gain happiness from playing with it, at most once every few minutes per cat.
 - Cats gain a little happiness after a nap in a bed, a scratch, time on a tower perch, or play with a yarn ball. They rest between activities and stop when given a command or when they need food, water, or sleep.
 - Pet cats now treat the spot where they are told to idle or hold as their new home area, so a cat that followed you somewhere no longer runs back to where it used to wander.

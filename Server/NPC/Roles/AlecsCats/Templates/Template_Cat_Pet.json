@@ -1074,6 +1074,16 @@
           "Type": "SetFlag",
           "Name": "CatYarn_Playing",
           "SetTo": false
+        },
+        {
+          "Type": "SetFlag",
+          "Name": "CatYarn_Stalking",
+          "SetTo": false
+        },
+        {
+          "Type": "SetFlag",
+          "Name": "CatYarn_Pouncing",
+          "SetTo": false
         }
       ]
     }
