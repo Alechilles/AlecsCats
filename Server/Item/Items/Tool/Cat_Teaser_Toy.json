@@ -30,6 +30,8 @@
     ]
   },
   "Interactions": {
+    "Primary": "AlecsCats_Teaser_Use",
+    "Secondary": "AlecsCats_Teaser_Use",
     "Use": "AlecsCats_Teaser_Use"
   },
   "MaxStack": 1,
