@@ -78,10 +78,11 @@
               "Type": "DropItem",
               "Item": "Cat_Yarn_Ball",
               "Distance": [
-                0,
-                0
+                0.2,
+                0.5
               ],
-              "ThrowSpeed": 4
+              "ThrowSpeed": 3,
+              "PitchHigh": true
             },
             {
               "Type": "SetFlag",
@@ -425,10 +426,11 @@
             "Type": "DropItem",
             "Item": "Cat_Yarn_Ball",
             "Distance": [
-              0,
-              0
+              0.2,
+              0.5
             ],
-            "ThrowSpeed": 4
+            "ThrowSpeed": 3,
+            "PitchHigh": true
           },
           {
             "Type": "SetFlag",
