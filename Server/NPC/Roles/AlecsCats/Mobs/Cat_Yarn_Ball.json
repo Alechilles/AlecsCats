@@ -1,5 +1,5 @@
 {
-  "$Comment": "The thrown Cat Yarn Ball. It does nothing on its own: it rolls away for a second when a pet cat swats it or a player touches it, stays within six blocks of where it landed, turns back into the item when a player uses it, and drops as the item after a few minutes.",
+  "$Comment": "The thrown Cat Yarn Ball. It does nothing on its own: it rolls away for a second when a pet cat swats it or a player touches it, stays within six blocks of where it landed, and turns back into the item when a player uses it.",
   "Type": "Generic",
   "Appearance": "Cat_Yarn_Ball",
   "NameTranslationKey": "server.npcRoles.Cat_Yarn_Ball.name",
@@ -21,81 +21,7 @@
     {
       "Instructions": [
         {
-          "$Comment": "Start the lifetime clock once.",
-          "Continue": true,
-          "Sensor": {
-            "Type": "Flag",
-            "Name": "Ball_Started",
-            "Set": false
-          },
-          "Actions": [
-            {
-              "Type": "TimerStart",
-              "Name": "Ball_Life",
-              "StartValueRange": [
-                240,
-                240
-              ],
-              "RestartValueRange": [
-                240,
-                240
-              ]
-            },
-            {
-              "Type": "TimerRestart",
-              "Name": "Ball_Life"
-            },
-            {
-              "Type": "SetFlag",
-              "Name": "Ball_Started",
-              "SetTo": true
-            }
-          ]
-        },
-        {
-          "$Comment": "Left alone for four minutes: become the item again so it is not lost.",
-          "Sensor": {
-            "Type": "And",
-            "Sensors": [
-              {
-                "Type": "Flag",
-                "Name": "Ball_Gone",
-                "Set": false
-              },
-              {
-                "Type": "Flag",
-                "Name": "Ball_Started"
-              },
-              {
-                "Type": "Timer",
-                "Name": "Ball_Life",
-                "State": "Stopped"
-              }
-            ]
-          },
-          "Actions": [
-            {
-              "Type": "DropItem",
-              "Item": "Cat_Yarn_Ball",
-              "Distance": [
-                0.2,
-                0.5
-              ],
-              "ThrowSpeed": 3,
-              "PitchHigh": true
-            },
-            {
-              "Type": "SetFlag",
-              "Name": "Ball_Gone",
-              "SetTo": true
-            },
-            {
-              "Type": "Despawn"
-            }
-          ]
-        },
-        {
-          "$Comment": "Picked up or expired: stay still until the despawn completes.",
+          "$Comment": "Picked up: stay still until the despawn completes.",
           "Sensor": {
             "Type": "Flag",
             "Name": "Ball_Gone"
