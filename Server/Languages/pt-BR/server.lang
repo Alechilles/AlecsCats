@@ -114,6 +114,6 @@ items.Cat_Bowl.description=Coloque peixe cru nela ou despeje água de um balde o
 items.Cat_Yarn_Ball.name=Novelo de lã de gato
 items.Cat_Yarn_Ball.description=Use-o para arremessá-lo. Seus gatos ociosos o perseguem e dão patadas nele. Use o novelo no chão para pegá-lo.
 npcRoles.Cat_Yarn_Ball.name=Novelo de lã
-interactionHints.alecsCats.openBowl=Pressione [{key}] para abrir a tigela | [RMB] com um balde de água ou caneca para encher
+interactionHints.alecsCats.openBowl=Pressione [{key}] para abrir a tigela | [RMB] com água para encher
 interactionHints.alecsCats.emptyBowl=Segure [{key}] para esvaziar a tigela
 interactionHints.alecsCats.pickUpBall=Pressione [{key}] para pegar o novelo de lã

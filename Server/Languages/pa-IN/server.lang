@@ -115,6 +115,6 @@ items.Cat_Bowl.description=ਇਸ ਵਿੱਚ ਕੱਚੀ ਮੱਛੀ ਰੱ�
 items.Cat_Yarn_Ball.name=ਬਿੱਲੀ ਦਾ ਉੱਨ ਦਾ ਗੋਲਾ
 items.Cat_Yarn_Ball.description=ਇਸਨੂੰ ਸੁੱਟਣ ਲਈ ਵਰਤੋ। ਤੁਹਾਡੀਆਂ ਵਿਹਲੀਆਂ ਬਿੱਲੀਆਂ ਇਸਦਾ ਪਿੱਛਾ ਕਰਦੀਆਂ ਹਨ ਅਤੇ ਇਸ ਉੱਤੇ ਪੰਜੇ ਮਾਰਦੀਆਂ ਹਨ। ਇਸਨੂੰ ਚੁੱਕਣ ਲਈ ਜ਼ਮੀਨ ਉੱਤੇ ਪਏ ਗੋਲੇ ਉੱਤੇ ਵਰਤੋ।
 npcRoles.Cat_Yarn_Ball.name=ਉੱਨ ਦਾ ਗੋਲਾ
-interactionHints.alecsCats.openBowl=ਕਟੋਰਾ ਖੋਲ੍ਹਣ ਲਈ [{key}] ਦਬਾਓ | ਭਰਨ ਲਈ ਪਾਣੀ ਦੀ ਬਾਲਟੀ ਜਾਂ ਮੱਗ ਨਾਲ [RMB]
+interactionHints.alecsCats.openBowl=ਕਟੋਰਾ ਖੋਲ੍ਹਣ ਲਈ [{key}] ਦਬਾਓ | ਭਰਨ ਲਈ ਪਾਣੀ ਨਾਲ [RMB]
 interactionHints.alecsCats.emptyBowl=ਕਟੋਰਾ ਖਾਲੀ ਕਰਨ ਲਈ [{key}] ਦਬਾ ਕੇ ਰੱਖੋ
 interactionHints.alecsCats.pickUpBall=ਉੱਨ ਦਾ ਗੋਲਾ ਚੁੱਕਣ ਲਈ [{key}] ਦਬਾਓ

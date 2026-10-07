@@ -115,6 +115,6 @@ items.Cat_Bowl.description=এতে কাঁচা মাছ রাখুন, 
 items.Cat_Yarn_Ball.name=বিড়ালের উলের বল
 items.Cat_Yarn_Ball.description=ছুড়তে এটি ব্যবহার করুন। আপনার অলস বিড়ালরা এর পিছু নেয় ও এতে থাবা মারে। তুলে নিতে মাটিতে থাকা বলটিতে ব্যবহার করুন।
 npcRoles.Cat_Yarn_Ball.name=উলের বল
-interactionHints.alecsCats.openBowl=বাটি খুলতে [{key}] চাপুন | ভরতে পানির বালতি বা মগ নিয়ে [RMB]
+interactionHints.alecsCats.openBowl=বাটি খুলতে [{key}] চাপুন | ভরতে পানি নিয়ে [RMB]
 interactionHints.alecsCats.emptyBowl=বাটি খালি করতে [{key}] চেপে ধরুন
 interactionHints.alecsCats.pickUpBall=উলের বল তুলতে [{key}] চাপুন

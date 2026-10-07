@@ -114,6 +114,6 @@ items.Cat_Bowl.description=Pon pescado crudo dentro o vierte agua de un cubo o u
 items.Cat_Yarn_Ball.name=Ovillo de lana para gatos
 items.Cat_Yarn_Ball.description=Úsalo para lanzarlo. Tus gatos ociosos lo persiguen y le dan zarpazos. Usa el ovillo en el suelo para recogerlo.
 npcRoles.Cat_Yarn_Ball.name=Ovillo de lana
-interactionHints.alecsCats.openBowl=Pulsa [{key}] para abrir el cuenco | [RMB] con un cubo de agua o una jarra para llenarlo
+interactionHints.alecsCats.openBowl=Pulsa [{key}] para abrir el cuenco | [RMB] con agua para llenarlo
 interactionHints.alecsCats.emptyBowl=Mantén [{key}] para vaciar el cuenco
 interactionHints.alecsCats.pickUpBall=Pulsa [{key}] para recoger el ovillo de lana

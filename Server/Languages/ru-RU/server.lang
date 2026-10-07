@@ -114,6 +114,6 @@ items.Cat_Bowl.description=Положите в неё сырую рыбу или
 items.Cat_Yarn_Ball.name=Кошачий клубок
 items.Cat_Yarn_Ball.description=Используйте его, чтобы бросить. Бездельничающие кошки гоняются за ним и бьют по нему лапой. Используйте клубок на земле, чтобы подобрать его.
 npcRoles.Cat_Yarn_Ball.name=Клубок
-interactionHints.alecsCats.openBowl=Нажмите [{key}], чтобы открыть миску | [RMB] с ведром воды или кружкой, чтобы наполнить
+interactionHints.alecsCats.openBowl=Нажмите [{key}], чтобы открыть миску | [RMB] с водой, чтобы наполнить
 interactionHints.alecsCats.emptyBowl=Удерживайте [{key}], чтобы опустошить миску
 interactionHints.alecsCats.pickUpBall=Нажмите [{key}], чтобы подобрать клубок

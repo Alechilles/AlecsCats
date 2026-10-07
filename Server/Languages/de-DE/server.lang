@@ -114,6 +114,6 @@ items.Cat_Bowl.description=Lege rohen Fisch hinein oder gieße Wasser aus einem 
 items.Cat_Yarn_Ball.name=Katzen-Wollknäuel
 items.Cat_Yarn_Ball.description=Benutze es, um es zu werfen. Deine untätigen Katzen jagen es und schlagen es umher. Benutze das Knäuel am Boden, um es aufzuheben.
 npcRoles.Cat_Yarn_Ball.name=Wollknäuel
-interactionHints.alecsCats.openBowl=Drücke [{key}], um den Napf zu öffnen | [RMB] mit Wassereimer oder Krug zum Füllen
+interactionHints.alecsCats.openBowl=Drücke [{key}], um den Napf zu öffnen | [RMB] mit Wasser zum Füllen
 interactionHints.alecsCats.emptyBowl=Halte [{key}], um den Napf zu leeren
 interactionHints.alecsCats.pickUpBall=Drücke [{key}], um das Wollknäuel aufzuheben
