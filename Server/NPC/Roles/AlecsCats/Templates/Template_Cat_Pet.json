@@ -608,8 +608,8 @@
     "Compute": "FlockArray"
   },
   "ApplySeparation": true,
-  "SeparationDistance": 0.5,
-  "SeparationWeight": 1.2,
+  "SeparationDistance": 0.9,
+  "SeparationWeight": 2,
   "SeparationDistanceTarget": 1.5,
   "SeparationNearRadiusTarget": 3,
   "SeparationFarRadiusTarget": 8,
