@@ -94,7 +94,7 @@ This mod started as a simple cat conversion from unused base-game assets and has
 - 5x Catnip Plant
 - Bench: Workbench Tier 2 (Tinkering)
 
-### Cat Food Bowl and Cat Water Bowl
+### Cat Bowl
 - 2x Clay
 - 1x Catnip Plant
 - Bench: Workbench Tier 2 (Tinkering)
@@ -140,10 +140,12 @@ Idle pet cats use these on their own. Each one gives the cat a small happiness g
 - **Cat Scratching Post** (`Cat_Scratching_Post`): cats walk up, rear onto their hind legs, and scratch for a few seconds.
 - **Cat Tower** (`Cat_Tower`): two blocks wide and two tall. Cats leap onto the top perch and sit there for a while. Leave the space above the perch open.
 - **Cat Yarn Ball** (`Cat_Yarn_Ball`): drop it on the ground. Cats within eight blocks run over and bat at it. Pick it up to use it again.
-- **Cat Food Bowl** (`Cat_Food_Bowl`): open it and put in raw fish or Tamework Carnivore Kibble. Hungry cats walk over and eat from it, and the bowl shows how full it is.
-- **Cat Water Bowl** (`Cat_Water_Bowl`): hold Use to fill it. Thirsty cats walk over and drink, and the bowl empties after about 20 drinks. Hold Use again to top it up.
+- **Cat Bowl** (`Cat_Bowl`): one bowl for food or water, like Tamework's feed trough.
+  - Food: open it and put in raw fish or Tamework Carnivore Kibble. Hungry cats walk over and eat from it.
+  - Water: right-click it with a filled water bucket or a filled tankard. Thirsty cats walk over and drink, and the bowl empties after about 20 drinks. Hold Use to pour the water out.
+  - The bowl shows what it holds and how full it is. Empty it before switching between food and water.
 
-The bowls use Tamework's feed trough system, so other Tamework companions can eat and drink from them too.
+The bowl uses Tamework's feed trough system, so other Tamework companions can eat and drink from it too.
 
 Install Tamework 5.2.0 or newer in the 5.x line on Hytale 0.6.7 or newer, and restart the world/server before using these assets. Reloading Cats assets cannot add the Java builders to a running server.
 
@@ -158,7 +160,7 @@ Install Tamework 5.2.0 or newer in the 5.x line on Hytale 0.6.7 or newer, and re
 - Happiness fluctuates based on if the Cat's needs are being met
 - Cats will automatically eat raw fish or Tamework Carnivore Kibble from storage containers nearby
 - Tamework Carnivore Kibble can also be used as backup hand-feed, but it is less satisfying than their preferred food
-- Cats will automatically drink water from water sources nearby, including a filled Cat Water Bowl
+- Cats will automatically drink water from water sources nearby, including a Cat Bowl filled with water
 - Playing with the Cat Teaser Wand or a Cat Yarn Ball, and using cat furniture, makes cats happier
 - Cats prefer to have at least one cat friend nearby, but don't like to be overcrowded
 - Cats like when their owner is nearby
