@@ -1,11 +1,11 @@
 {
-  "$Comment": "Idle pet cats walk to a nearby scratching post and scratch it for a few seconds, with a small happiness gain.",
+  "$Comment": "Idle pet cats walk to a nearby scratching post, or the post of a cat tower, and scratch it for a few seconds, with a small happiness gain. A tower's post is in its origin cell; the cubby in the next cell is solid, so cats reach the post from the three open sides or from the cubby roof.",
   "Type": "Component",
   "Class": "Instruction",
   "Parameters": {
     "CatPostBlockSet": {
       "Value": "AlecsCats_Cat_Scratching_Post",
-      "Description": "Block set of scratching posts."
+      "Description": "Block set of things to scratch: scratching posts and cat towers."
     },
     "CatPostSearchRange": {
       "Value": 10,

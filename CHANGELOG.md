@@ -7,7 +7,7 @@ All notable changes to **Alec's Cats!** will be documented in this file.
 - Updated the required Alec's Tamework dependency to `>=5.2.0 <6.0.0` and the required Hytale server version to `>=0.6.7 <0.7.0`. Install Tamework 5.2.0 or newer before updating Cats, and follow Tamework's 5.0 upgrade notes if the world still runs Tamework 4.x.
 - Added the Cat Bed. Idle pet cats walk onto it, lie down, and nap.
 - Added the Cat Scratching Post. Idle pet cats rear up and scratch it.
-- Added the Cat Tower, two blocks wide and two tall. Idle pet cats leap onto the top perch and sit there. It replaces the unused placeholder tower model.
+- Added the Cat Tower, two blocks wide and two tall. Idle pet cats leap onto the top perch and sit there, and scratch its post. It replaces the unused placeholder tower model.
 - Added the Cat Bowl, which holds food or water like Tamework's feed trough. Put raw fish or Tamework Carnivore Kibble in it, or right-click it with a filled water bucket or tankard. Hungry and thirsty cats walk over to it, and the bowl shows what it holds and how full it is.
 - Added the Cat Yarn Ball. Throw it and idle pet cats chase it, and it rolls away each time a cat bats it. Press Use on the ball to pick it up.
 - The Cat Teaser Wand is no longer a prototype. It has a crafting recipe, and cats gain happiness from playing with it, at most once every few minutes per cat.
