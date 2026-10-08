@@ -41,6 +41,8 @@ This mod started as a simple cat conversion from unused base-game assets and has
 ------------
 
 ## Craftable Items
+With [Alec's Animal Husbandry!](https://www.curseforge.com/hytale/mods/alecs-animal-husbandry) installed, every recipe below moves to the **Cats** tab of the Animal Husbandry Workbench. Without it, the benches listed below apply. Catnip Seeds are always crafted at the Farmer's Workbench.
+
 ### Cat Collar (Capture/Spawn Item)
 - 3x Light Leather
 - 1x Gold Bar

@@ -117,3 +117,4 @@ npcRoles.Cat_Yarn_Ball.name=Клубок
 interactionHints.alecsCats.openBowl=Нажмите [{key}], чтобы открыть миску | [RMB] с водой, чтобы наполнить
 interactionHints.alecsCats.emptyBowl=Удерживайте [{key}], чтобы опустошить миску
 interactionHints.alecsCats.pickUpBall=Нажмите [{key}], чтобы подобрать клубок
+benchCategories.alecsCats.cats=Кошки

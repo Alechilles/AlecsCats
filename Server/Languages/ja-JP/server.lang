@@ -117,3 +117,4 @@ npcRoles.Cat_Yarn_Ball.name=毛糸玉
 interactionHints.alecsCats.openBowl=[{key}] を押してボウルを開く | 水を持って [RMB] で入れる
 interactionHints.alecsCats.emptyBowl=[{key}] を長押ししてボウルを空にする
 interactionHints.alecsCats.pickUpBall=[{key}] を押して毛糸玉を拾う
+benchCategories.alecsCats.cats=猫

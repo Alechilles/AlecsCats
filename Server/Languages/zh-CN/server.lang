@@ -117,3 +117,4 @@ npcRoles.Cat_Yarn_Ball.name=毛线球
 interactionHints.alecsCats.openBowl=按 [{key}] 打开碗 | 手持水按 [RMB] 加水
 interactionHints.alecsCats.emptyBowl=按住 [{key}] 清空碗
 interactionHints.alecsCats.pickUpBall=按 [{key}] 捡起毛线球
+benchCategories.alecsCats.cats=猫

@@ -117,3 +117,4 @@ npcRoles.Cat_Yarn_Ball.name=Novelo de lã
 interactionHints.alecsCats.openBowl=Pressione [{key}] para abrir a tigela | [RMB] com água para encher
 interactionHints.alecsCats.emptyBowl=Segure [{key}] para esvaziar a tigela
 interactionHints.alecsCats.pickUpBall=Pressione [{key}] para pegar o novelo de lã
+benchCategories.alecsCats.cats=Gatos

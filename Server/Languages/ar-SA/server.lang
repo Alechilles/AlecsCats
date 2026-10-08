@@ -117,3 +117,4 @@ npcRoles.Cat_Yarn_Ball.name=كرة صوف
 interactionHints.alecsCats.openBowl=اضغط [{key}] لفتح الوعاء | [RMB] مع الماء لملئه
 interactionHints.alecsCats.emptyBowl=اضغط مطولًا على [{key}] لإفراغ الوعاء
 interactionHints.alecsCats.pickUpBall=اضغط [{key}] لالتقاط كرة الصوف
+benchCategories.alecsCats.cats=القطط
