@@ -117,3 +117,4 @@ npcRoles.Cat_Yarn_Ball.name=ऊन का गोला
 interactionHints.alecsCats.openBowl=कटोरा खोलने के लिए [{key}] दबाएँ | भरने के लिए पानी के साथ [RMB]
 interactionHints.alecsCats.emptyBowl=कटोरा खाली करने के लिए [{key}] दबाए रखें
 interactionHints.alecsCats.pickUpBall=ऊन का गोला उठाने के लिए [{key}] दबाएँ
+benchCategories.alecsCats.cats=बिल्लियाँ

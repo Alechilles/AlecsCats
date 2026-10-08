@@ -118,3 +118,4 @@ npcRoles.Cat_Yarn_Ball.name=উলের বল
 interactionHints.alecsCats.openBowl=বাটি খুলতে [{key}] চাপুন | ভরতে পানি নিয়ে [RMB]
 interactionHints.alecsCats.emptyBowl=বাটি খালি করতে [{key}] চেপে ধরুন
 interactionHints.alecsCats.pickUpBall=উলের বল তুলতে [{key}] চাপুন
+benchCategories.alecsCats.cats=বিড়াল

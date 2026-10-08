@@ -1,0 +1,23 @@
+{
+  "Id": "AlecsCats_Husbandry_Bench_Cats_Category",
+  "$Comment": "Adds a Cats tab to the Animal Husbandry Workbench when Alec's Animal Husbandry is installed.",
+  "Target": "Server/Item/Items/Bench/AH_Bench_Husbandry.json",
+  "When": {
+    "TargetExists": true
+  },
+  "Operations": [
+    {
+      "Id": "add-cats-category",
+      "Op": "Insert",
+      "Path": "/BlockType/Bench/Categories",
+      "Existing": {
+        "Id": "AlecsCats_Cats"
+      },
+      "Value": {
+        "Id": "AlecsCats_Cats",
+        "Icon": "Icons/ItemsGenerated/Egg_Spawner_Cat_Empty.png",
+        "Name": "server.benchCategories.alecsCats.cats"
+      }
+    }
+  ]
+}

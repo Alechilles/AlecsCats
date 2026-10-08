@@ -117,3 +117,4 @@ npcRoles.Cat_Yarn_Ball.name=Pelote de laine
 interactionHints.alecsCats.openBowl=Appuyez sur [{key}] pour ouvrir la gamelle | [RMB] avec de l'eau pour la remplir
 interactionHints.alecsCats.emptyBowl=Maintenez [{key}] pour vider la gamelle
 interactionHints.alecsCats.pickUpBall=Appuyez sur [{key}] pour ramasser la pelote de laine
+benchCategories.alecsCats.cats=Chats

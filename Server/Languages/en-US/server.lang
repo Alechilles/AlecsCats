@@ -118,3 +118,4 @@ npcRoles.Cat_Yarn_Ball.name=Yarn Ball
 interactionHints.alecsCats.openBowl=Press [{key}] to open the bowl | [RMB] with Water to fill
 interactionHints.alecsCats.emptyBowl=Hold [{key}] to empty the bowl
 interactionHints.alecsCats.pickUpBall=Press [{key}] to pick up the yarn ball
+benchCategories.alecsCats.cats=Cats

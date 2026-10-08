@@ -1,0 +1,36 @@
+{
+  "Id": "AlecsCats_Husbandry_Bench_Recipes",
+  "$Comment": "Moves every Alec's Cats recipe to the Cats tab of the Animal Husbandry Workbench when Alec's Animal Husbandry is installed.",
+  "Targets": [
+    "Server/Item/Items/Furniture/Cat_Bed.json",
+    "Server/Item/Items/Furniture/Cat_Bowl.json",
+    "Server/Item/Items/Furniture/Cat_Box.json",
+    "Server/Item/Items/Furniture/Cat_Box2.json",
+    "Server/Item/Items/Furniture/Cat_Scratching_Post.json",
+    "Server/Item/Items/Furniture/Cat_Tower.json",
+    "Server/Item/Items/Ingredient/Commands/Ingredient_AlecsCats_Command_Item.json",
+    "Server/Item/Items/Ingredient/EggSpawner/Ingredient_Egg_Spawner_Cat_Empty.json",
+    "Server/Item/Items/Plant/Plant_Seeds_Catnip.json",
+    "Server/Item/Items/Tool/Cat_Teaser_Toy.json",
+    "Server/Item/Items/Tool/Cat_Yarn_Ball.json"
+  ],
+  "When": {
+    "AssetExists": "Server/Item/Items/Bench/AH_Bench_Husbandry.json"
+  },
+  "Operations": [
+    {
+      "Id": "move-to-husbandry-bench-cats-tab",
+      "Op": "Replace",
+      "Path": "/Recipe/BenchRequirement",
+      "Value": [
+        {
+          "Type": "Crafting",
+          "Id": "AH_Husbandrybench",
+          "Categories": [
+            "AlecsCats_Cats"
+          ]
+        }
+      ]
+    }
+  ]
+}
