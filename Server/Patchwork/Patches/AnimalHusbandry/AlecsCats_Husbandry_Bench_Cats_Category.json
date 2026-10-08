@@ -15,7 +15,7 @@
       },
       "Value": {
         "Id": "AlecsCats_Cats",
-        "Icon": "Icons/ItemsGenerated/Egg_Spawner_Cat_Empty.png",
+        "Icon": "Icons/CraftingCategories/AlecsCats/Cats.png",
         "Name": "server.benchCategories.alecsCats.cats"
       }
     }
