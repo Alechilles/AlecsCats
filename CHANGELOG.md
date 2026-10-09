@@ -2,6 +2,10 @@
 
 All notable changes to **Alec's Cats!** will be documented in this file.
 
+## 2.0.1 - Treat Bag Shortcuts on Update 7 - 2026-10-09
+
+- On Hytale Update 7, the E and R shortcuts on the Cat Treat Bag keep working. The Update 7 client only sends those keys with a weapon in hand, so the bag counts as a weapon there. Nothing changes on Update 6.
+
 ## 2.0.0 - Cat Enrichment - 2026-10-07
 
 - Updated the required Alec's Tamework dependency to `>=5.2.0 <6.0.0` and the required Hytale server version to `>=0.6.7 <0.7.0`. Install Tamework 5.2.0 or newer before updating Cats, and follow Tamework's 5.0 upgrade notes if the world still runs Tamework 4.x.
