@@ -1,0 +1,23 @@
+{
+  "$Comment": "Update 7 only sends E/R with a weapon in hand. Keep legacy tool classification when rune assets are absent.",
+  "Id": "AlecsCats_Update7_Command_Item_Input",
+  "Target": "Server/Item/Items/Commands/AlecsCats_Command_Item.json",
+  "When": {
+    "AssetExists": "Server/Item/Items/Rune/Ability/Rune_Enrage.json"
+  },
+  "Operations": [
+    {
+      "Id": "enable-rune-input",
+      "Op": "Merge",
+      "Path": "",
+      "Value": {
+        "Weapon": {},
+        "Tags": {
+          "Family": [
+            "TameworkInput"
+          ]
+        }
+      }
+    }
+  ]
+}
