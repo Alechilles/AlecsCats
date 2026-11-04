@@ -2,7 +2,7 @@
   "modName": "Alec's Cats!",
   "repository": "Alechilles/AlecsCats",
   "packaging": "zip",
-  "artifactNameTemplate": "Alec's Cats! v{version}.zip",
+  "artifactNameTemplate": "Alecs-Cats-v{version}.zip",
   "versionSource": "manifest",
   "versionFile": "manifest.json",
   "requiresTameworkDependency": true,
