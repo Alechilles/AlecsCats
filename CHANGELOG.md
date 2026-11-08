@@ -2,6 +2,10 @@
 
 All notable changes to **Alec's Cats!** will be documented in this file.
 
+## Unreleased
+
+- Reviving a dead pet cat from the companion panel now costs 50 Life Essence. The essence is taken when you confirm the revive and given back if the revive fails. The 20-minute wait after death is unchanged.
+
 ## 2.1.0 - Leveling and Talents - 2026-10-22
 
 Supports Hytale 0.6.7 and later in Update 6, and Hytale 0.7. Requires Alec's Tamework `>=5.4.0 <6.0.0`; update Tamework first.
