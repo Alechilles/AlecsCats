@@ -2,9 +2,10 @@
 
 All notable changes to **Alec's Cats!** will be documented in this file.
 
-## Unreleased
+## 2.2.0 - Companion Inspect - 2026-11-10
 
-- Pet cats support Tamework's companion card: **Pet** is a button on the card. With the card on, F with an empty hand opens the card instead of petting.
+- Requires Alec's Tamework! 5.10.0 or newer.
+- Pet cats support Tamework's Companion Inspect: **Pet** is a button on the panel. With Inspect chosen for F, F with an empty hand opens Companion Inspect instead of petting; use its **Pet** button.
 - Reviving a dead pet cat from the companion panel now costs 50 Life Essence. The essence is taken when you confirm the revive and given back if the revive fails. The 20-minute wait after death is unchanged.
 
 ## 2.1.0 - Leveling and Talents - 2026-10-22
